@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Corporate Craving | Executive Dining</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@100..900&family=Plus+Jakarta+Sans:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed": "#e1e2e6",
+                    "surface-dim": "#121411",
+                    "primary-fixed": "#ffe089",
+                    "error": "#ffb4ab",
+                    "secondary": "#c6c6c9",
+                    "surface-container-low": "#1a1c19",
+                    "inverse-primary": "#745c00",
+                    "surface-bright": "#383a36",
+                    "secondary-container": "#454749",
+                    "on-error": "#690005",
+                    "inverse-surface": "#e3e3de",
+                    "on-tertiary-fixed": "#191c1f",
+                    "on-tertiary-fixed-variant": "#44474a",
+                    "error-container": "#93000a",
+                    "primary": "#ffe6a3",
+                    "on-surface-variant": "#d1c5ab",
+                    "surface-container": "#1e201d",
+                    "secondary-fixed-dim": "#c6c6c9",
+                    "on-primary-fixed": "#241a00",
+                    "surface-tint": "#f0c100",
+                    "on-primary-fixed-variant": "#574500",
+                    "on-secondary": "#2f3133",
+                    "surface-container-high": "#292a27",
+                    "on-primary": "#3d2f00",
+                    "on-tertiary": "#2e3134",
+                    "on-background": "#e3e3de",
+                    "tertiary-container": "#caccd0",
+                    "tertiary-fixed-dim": "#c5c6ca",
+                    "primary-container": "#f6c60c",
+                    "on-error-container": "#ffdad6",
+                    "on-secondary-fixed": "#1a1c1e",
+                    "on-tertiary-container": "#53565a",
+                    "on-primary-container": "#695300",
+                    "outline-variant": "#4e4632",
+                    "primary-fixed-dim": "#f0c100",
+                    "surface-container-highest": "#333532",
+                    "surface-variant": "#333532",
+                    "surface-container-lowest": "#0d0f0c",
+                    "on-secondary-fixed-variant": "#454749",
+                    "inverse-on-surface": "#2f312e",
+                    "surface": "#121411",
+                    "on-surface": "#e3e3de",
+                    "outline": "#9a9078",
+                    "secondary-fixed": "#e2e2e5",
+                    "tertiary": "#e6e8ec",
+                    "on-secondary-container": "#b4b5b7",
+                    "background": "#121411"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "md": "24px",
+                    "base": "4px",
+                    "container-max": "1200px",
+                    "xl": "80px",
+                    "sm": "16px",
+                    "gutter": "24px",
+                    "xs": "8px",
+                    "lg": "48px"
+            },
+            "fontFamily": {
+                    "body-md": ["Plus Jakarta Sans"],
+                    "headline-md": ["Playfair Display"],
+                    "headline-sm": ["Playfair Display"],
+                    "display-lg-mobile": ["Playfair Display"],
+                    "label-md": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "caption": ["Plus Jakarta Sans"],
+                    "display-lg": ["Playfair Display"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "display-lg-mobile": ["36px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "caption": ["12px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-nav {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .saffron-glow {
+            text-shadow: 0 0 15px rgba(246, 198, 12, 0.4);
+        }
+        .card-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px -10px rgba(246, 198, 12, 0.2);
+        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0d0f0c; }
+        ::-webkit-scrollbar-thumb { background: #333532; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #4e4632; }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-md shadow-sm">
+<div class="flex justify-between items-center px-lg py-sm w-full max-w-container-max mx-auto">
+<div class="flex items-center gap-xl">
+<span class="font-headline-md text-headline-md text-primary tracking-tight saffron-glow">Corporate Craving</span>
+<div class="hidden md:flex items-center gap-md">
+<a class="font-body-md text-body-md text-primary border-b-2 border-primary pb-1 transition-colors duration-300" href="#">Dashboard</a>
+<a class="font-body-md text-body-md text-on-background hover:text-primary-fixed-dim transition-colors duration-300" href="#">Reservations</a>
+<a class="font-body-md text-body-md text-on-background hover:text-primary-fixed-dim transition-colors duration-300" href="#">Menu</a>
+<a class="font-body-md text-body-md text-on-background hover:text-primary-fixed-dim transition-colors duration-300" href="#">Events</a>
+<a class="font-body-md text-body-md text-on-background hover:text-primary-fixed-dim transition-colors duration-300" href="#">Concierge</a>
+</div>
+</div>
+<div class="flex items-center gap-sm">
+<button class="px-md py-xs font-label-md text-label-md text-on-background hover:text-primary transition-colors">Sign In</button>
+<button class="px-md py-xs bg-primary text-on-primary font-label-md text-label-md rounded-xl hover:bg-primary-container active:scale-95 transition-all">Member Club</button>
+</div>
+</div>
+</nav>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="relative h-[870px] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center scale-105 opacity-60" data-alt="A moody, high-end fine dining room at night with warm candlelight illuminating polished mahogany tables and crystal glassware. The atmosphere is quiet and exclusive, with deep charcoal and slate tones in the shadows and soft saffron gold highlights from the candle flames. The camera angle is low and intimate, capturing the luxurious executive atmosphere of a private member club." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD2YaApacDnupLuWxrw9EQgpNXQWt3i7PygJC-U2GL3AzdNcruzaRb5PurPmgCuqVCKtFxByuSORXcpGkMzotP1InG7onaaoflg-7h-FTlmG1QyBCVKttHphtP2qk6ScvhgN0Hus8HH2A86bth9Od0wt4IbAZcYr8ggLQyPgsB1sNZNv3erdZXmT_V6hzp3joqiTI19LSepytZtD0Sm1peOu4R2A0xThldV39BIMIXbibXcuRzCjiRGdcua0WRL7Yor-Wf4dB32PfqL')"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-background via-background/40 to-transparent"></div>
+</div>
+<div class="relative z-10 w-full max-w-container-max mx-auto px-lg">
+<div class="max-w-2xl">
+<span class="inline-block px-sm py-1 rounded-full border border-primary/30 text-primary font-label-md text-label-md uppercase tracking-widest mb-md bg-primary/5">Authentic Heritage</span>
+<h1 class="font-display-lg text-display-lg text-primary mb-md leading-none saffron-glow">The Pinnacle of Executive Dining.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-lg leading-relaxed">
+                        Where heritage meets high-stakes hospitality. Experience a culinary sanctuary designed exclusively for the modern corporate leader.
+                    </p>
+<div class="flex gap-md">
+<button class="px-lg py-md bg-primary text-on-primary font-label-md text-label-md rounded-xl shadow-lg hover:bg-primary-container transition-all active:scale-95">Secure a Table</button>
+<button class="px-lg py-md border border-primary text-primary font-label-md text-label-md rounded-xl hover:bg-primary/5 transition-all">Explore the Menu</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Values / Bento Grid -->
+<section class="py-xl bg-background">
+<div class="max-w-container-max mx-auto px-lg">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Feature 1: Large -->
+<div class="md:col-span-8 bg-surface-container-low rounded-xl overflow-hidden group border border-outline/10 flex flex-col md:flex-row card-lift transition-all">
+<div class="md:w-1/2 p-lg flex flex-col justify-center">
+<span class="material-symbols-outlined text-primary mb-md" style="font-size: 32px;">workspace_premium</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-sm">Unrivaled Privacy</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Host high-stakes negotiations in sound-proofed executive suites, designed for discretion and absolute focus.</p>
+</div>
+<div class="md:w-1/2 h-64 md:h-auto overflow-hidden">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-110 transition-transform duration-700" data-alt="A dark, sophisticated private meeting room in a luxury restaurant. Deep grey slate walls, a minimalist table with a single spotlight, and high-end ergonomic chairs. The mood is powerful and quiet, emphasizing elite corporate privacy and exclusive business discussions in a refined setting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC7s1AYol4CeQp6flJxAaoevFG82d9udZp09foiuyr8y8S7E47LrIToqP3NP7eCRDcZC4NgLqrBII7sZ3MvI1g9SoLoaK8EpjSZMDdqFtay124iFjSlRiaOBRvykxMLP0nqnelpCRGQUM1SNErb0kWNLZdMKG2vr8m0wd57YHMyt-0sNGBZEe4n66s24c3yQXi0hN7YP_X-rNYXR_t82y2MSE10DaLuWLkX87YV3_bOTz0_QEjUmglyGajWZTsZqfqiNIMZUw2r1et6')"></div>
+</div>
+</div>
+<!-- Feature 2: Small -->
+<div class="md:col-span-4 bg-surface-container-low rounded-xl p-lg border border-outline/10 card-lift transition-all flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-primary mb-md" style="font-size: 32px;">liquor</span>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-sm">The Cellar</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">A curated collection of rare vintages and bespoke spirits, selected by our world-class master sommeliers.</p>
+</div>
+<!-- Feature 3: Small -->
+<div class="md:col-span-4 bg-surface-container-low rounded-xl p-lg border border-outline/10 card-lift transition-all">
+<span class="material-symbols-outlined text-primary mb-md" style="font-size: 32px;">restaurant</span>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-sm">Culinary Heritage</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Traditional techniques meet modern innovation. Our chefs preserve the essence of legacy flavors.</p>
+</div>
+<!-- Feature 4: Long Wide -->
+<div class="md:col-span-8 bg-surface-container-low rounded-xl overflow-hidden border border-outline/10 card-lift transition-all relative">
+<div class="absolute inset-0 bg-cover bg-center opacity-30" data-alt="A macro close-up of a chef's hand meticulously plating a high-end gourmet dish with golden saffron accents. The lighting is low-key, dramatic, and warm, highlighting the texture of the food against a dark slate plate. The atmosphere is one of intense focus and artistic culinary precision." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAPt3fcvAQsInqiLpAwql64SykLwVi2FlDG-v2sXRGd7DilnVtc5NMx6koEGaYaGuCQNDz5VImNKZTvCVS2QXbB6cmgor-xbhVSfbtkoFdiYdtdAAhs_tCCOmmmXZrXretLUX4qDou1Wy8fvT3bGVpi10O7vm9F35bwertXrMIjWigMpdeUVu4tKImqmarUb0-3qpK1xSXHA0NsTrPBh8hsmj2G8N5mY6QQyMnoqU5_NbnaULzy6JW8Qtx05Di5m4n4vxhdTukji9jj')"></div>
+<div class="relative z-10 p-lg h-full flex flex-col justify-end min-h-[300px]">
+<h3 class="font-headline-md text-headline-md text-primary mb-sm">Member Concierge</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">Priority access, personalized menu planning, and global travel arrangements for our elite membership circle.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Culinary Section -->
+<section class="py-xl bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto px-lg">
+<div class="flex flex-col md:flex-row items-center gap-xl">
+<div class="md:w-1/2">
+<div class="relative group">
+<div class="absolute -inset-2 bg-primary/10 blur-xl group-hover:bg-primary/20 transition duration-1000"></div>
+<div class="relative aspect-square rounded-xl bg-cover bg-center shadow-2xl border border-outline/20" data-alt="A portrait of a master chef in a dark charcoal uniform, standing in a sleek, modern commercial kitchen. The kitchen is dim with warm task lighting on stainless steel surfaces. The chef has an expression of calm confidence and authority. The aesthetic is extremely polished and high-end." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAYJr5pyQE-yDN8BGLzFO5XoSfsYo_2gzu7UNgagM8I6CMb4wOGYdwu35Bql-JNNw1aoOkfq_4cmfE9NXMcERqL1PkzZjGPHRL3wyYmW-uPTN1oUS6oYAs2q10UVNpzGoD4OnZeYY0Qt1J_MdfT_4MWyjCacwvKi2-PjXB9R4MvzLZYXQfcKosT9FaS0x_l82xktk4dxHJ0qoiSZQI7FnApaXWI0sJ1fv-X051vcAA07Yqiaq15pGZL8la2fzGt3a3dyidMR38eMECF')"></div>
+</div>
+</div>
+<div class="md:w-1/2">
+<h2 class="font-headline-md text-headline-md text-primary mb-md leading-tight">Mastery in Every Movement.</h2>
+<div class="space-y-md">
+<div class="flex gap-md">
+<span class="text-primary font-bold">01</span>
+<div>
+<h4 class="font-label-md text-label-md text-primary uppercase mb-1">Sourcing</h4>
+<p class="text-on-surface-variant">Ingredients flown in daily from the world's most prestigious small-batch producers.</p>
+</div>
+</div>
+<div class="flex gap-md">
+<span class="text-primary font-bold">02</span>
+<div>
+<h4 class="font-label-md text-label-md text-primary uppercase mb-1">Execution</h4>
+<p class="text-on-surface-variant">Kitchen operations governed by a zero-compromise standard of excellence.</p>
+</div>
+</div>
+<div class="flex gap-md">
+<span class="text-primary font-bold">03</span>
+<div>
+<h4 class="font-label-md text-label-md text-primary uppercase mb-1">Presentation</h4>
+<p class="text-on-surface-variant">Plating designed as architectural art, stimulating both vision and palate.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Locations Section -->
+<section class="py-xl bg-background">
+<div class="max-w-container-max mx-auto px-lg">
+<div class="text-center mb-lg">
+<h2 class="font-display-lg text-display-lg text-primary mb-sm">Global Footprint.</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">From London to Tokyo, our heritage spans the globe.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="group cursor-pointer">
+<div class="h-80 rounded-xl overflow-hidden border border-outline/10 mb-md relative">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-110 transition-transform duration-700" data-alt="A night view of the London skyline with the Shard and the Thames, filtered through a sophisticated dark lens. The city lights are soft and warm, casting a golden glow over the dark, deep slate urban landscape. The mood is high-end, executive, and global." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD84pl5QdQ0UoY1x3CbeOQmVZYaFDgriguYb-hG6gPlvUDiIeycBMuAh-7O-cGuD9h5r_vfG1vGwcge-oGBp9IZk-1a1hchvC5UmIQm1cKqaWaiz02mwWlZeAeqQ4MOKc_jLWvyrP1bQBUsKyabi1njg9y1dAShFgasELgFxaBBX_7qAUBEvbGJmEtA118lEtUfkelWGHTZpsETfdfGxcm82RpZ0xbAE1lGkjJ3aARJnX-iq9Y4qCraCd87txYYAKnpfmB__QIvnOzO')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60"></div>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-1">London</h3>
+<p class="text-on-surface-variant">Mayfair District</p>
+</div>
+<div class="group cursor-pointer">
+<div class="h-80 rounded-xl overflow-hidden border border-outline/10 mb-md relative">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-110 transition-transform duration-700" data-alt="A sleek evening shot of the New York City skyline with luxury skyscrapers. The sky is a deep nocturnal indigo. The architecture is illuminated by warm interior lights, creating a moody, elite atmosphere of business power and prestige." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCSVCb1Zivcahxm8FtjPBZOXdCIDgirqSKLw3efE4L3v-yzPCfqsCT_uYX5fFsz53axJ2nRKIeLAjbymGsCS7P7Kp1S_UAJ960PorN-7chz6Jn00llcvxHMQsI4P2prdimP4H2whK_o-1km6U3L8S_ayujweBYuoCtigPRGQlto8t507N8DRIDmBo6s5ncsBu-cnT-AzusWBOQVMMkVYXRAVuovod4FWwUbjeIFBGJtq8X29Y640Z228G-2271CAixKFUMYWfYkIgCA')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60"></div>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-1">New York</h3>
+<p class="text-on-surface-variant">Financial District</p>
+</div>
+<div class="group cursor-pointer">
+<div class="h-80 rounded-xl overflow-hidden border border-outline/10 mb-md relative">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-110 transition-transform duration-700" data-alt="The Tokyo skyline at night, featuring glowing neon accents in soft warm tones and the dark, elegant silhouettes of futuristic architecture. The mood is technologically advanced yet grounded in refined luxury, with deep charcoal and saffron contrasts." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCbmIu7xII7lpXOnAxIVV_sv3HG8GVPpm9_EnhoUQTbcZCHQo44Art1UOTVw1YwI2GwoWF_Tx8hKiIrhD1IKnXu9jidJZvZ-LfJACcB5LA1W1GW1mNmW5M7zrN10Vq1KxFjNFEzrIbEcnGskuDQve6I3HCL-qPPQlbSvnCIO1eKGH3UlIl2i0XjXwytxu135xe74u0apjWYv_x7mQfOKE4ODtzm3VB9rDYY_B8nQOSjdwPhZm-miwWUXuMfc83ZLq-CxYKZAgEF1FoF')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60"></div>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-1">Tokyo</h3>
+<p class="text-on-surface-variant">Ginza District</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-xl">
+<div class="max-w-container-max mx-auto px-lg">
+<div class="bg-surface-container rounded-xl p-xl text-center border border-primary/20 relative overflow-hidden">
+<div class="absolute inset-0 opacity-10">
+<div class="w-full h-full bg-cover bg-center" data-alt="An abstract texture pattern of gold silk fabric rippling in the dark. The lighting is very soft and directional, highlighting the shimmering saffron gold threads against a deep slate background. The texture is luxurious and elegant." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCPfNMdEQa40dBuS-frnXNxFm18r_TXGZmlKfW5Q82FZ-WPEKjYg1gXDx4iMhSJKZO8YDB8DWtUSXKCUxLA9GbyEarn4g81ACnHxqY3qhrg_LzwkUfsoH3o_UKdLloFbesY8BSLmNfBxwTckjq6PEoJmAPgXTHuEAnhNkoypreieiQ6qBB8N-xR3hsUHrQJXLAvCKB2VhudOq74H3vj1y8t-mvmBLdEi5z_1jo3rV8cj5OZXVfIjdlK21fjYP4JTQKhTzNKzmcDDlv4')"></div>
+</div>
+<div class="relative z-10">
+<h2 class="font-display-lg text-display-lg text-primary mb-md">Join the Inner Circle.</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-lg max-w-xl mx-auto">Membership is strictly curated. Apply today to gain access to our global dining sanctuaries and exclusive concierge services.</p>
+<button class="px-xl py-md bg-primary text-on-primary font-label-md text-label-md rounded-xl hover:bg-primary-container transition-all shadow-[0_0_20px_rgba(246,198,12,0.3)]">Apply for Membership</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-on-background/10 bg-surface-container-lowest py-xl px-lg">
+<div class="max-w-container-max mx-auto flex flex-col items-center justify-center">
+<span class="font-headline-sm text-headline-sm text-primary mb-md saffron-glow">Corporate Craving</span>
+<div class="flex flex-wrap justify-center gap-md mb-lg">
+<a class="font-caption text-caption text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-caption text-caption text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="font-caption text-caption text-on-surface-variant hover:text-primary transition-colors" href="#">Sustainability</a>
+<a class="font-caption text-caption text-on-surface-variant hover:text-primary transition-colors" href="#">Global Locations</a>
+<a class="font-caption text-caption text-on-surface-variant hover:text-primary transition-colors" href="#">Contact Us</a>
+</div>
+<p class="font-caption text-caption text-on-surface-variant">© 2024 Corporate Craving. The Pinnacle of Executive Dining.</p>
+</div>
+</footer>
+<script>
+        // Smooth scroll interaction for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Simple scroll effect for navbar
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-lg');
+                nav.classList.remove('shadow-sm');
+            } else {
+                nav.classList.add('shadow-sm');
+                nav.classList.remove('shadow-lg');
+            }
+        });
+    </script>
+</body></html>

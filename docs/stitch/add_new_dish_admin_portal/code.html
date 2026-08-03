@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Admin Portal - Create Dish | Corporate Craving</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #e4e2de;
+            border-radius: 10px;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(8px);
+            border: 1px solid #E5E7EB;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error-container": "#ffdad6",
+                        "error": "#ba1a1a",
+                        "surface-tint": "#745c00",
+                        "on-surface-variant": "#4e4632",
+                        "on-tertiary-container": "#00642b",
+                        "on-secondary-container": "#5c6274",
+                        "primary-fixed": "#ffe089",
+                        "surface-container-highest": "#e4e2de",
+                        "on-tertiary-fixed": "#002109",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed-dim": "#3de273",
+                        "surface-variant": "#e4e2de",
+                        "surface-dim": "#dbdad6",
+                        "background": "#fbf9f5",
+                        "surface-container": "#efeeea",
+                        "secondary-fixed-dim": "#c0c6db",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed-variant": "#574500",
+                        "on-surface": "#1b1c1a",
+                        "primary-fixed-dim": "#f0c100",
+                        "charcoal-text": "#111827",
+                        "surface-cream": "#FDFBF7",
+                        "danger-ruby": "#E11D48",
+                        "tertiary-fixed": "#66ff8e",
+                        "on-tertiary": "#ffffff",
+                        "secondary-container": "#d9dff5",
+                        "secondary-fixed": "#dce2f7",
+                        "outline-variant": "#d1c5ab",
+                        "surface-container-low": "#f5f3ef",
+                        "inverse-primary": "#f0c100",
+                        "on-primary-container": "#695300",
+                        "tertiary-container": "#45e878",
+                        "on-primary": "#ffffff",
+                        "secondary": "#575e70",
+                        "tertiary": "#006d2f",
+                        "on-primary-fixed": "#241a00",
+                        "on-error": "#ffffff",
+                        "success-emerald": "#10B981",
+                        "on-tertiary-fixed-variant": "#005322",
+                        "surface-container-high": "#eae8e4",
+                        "outline": "#807660",
+                        "on-secondary-fixed": "#141b2b",
+                        "on-secondary-fixed-variant": "#404758",
+                        "inverse-on-surface": "#f2f0ed",
+                        "inverse-surface": "#30312e",
+                        "surface": "#fbf9f5",
+                        "primary": "#745c00",
+                        "on-error-container": "#93000a",
+                        "primary-container": "#f6c60c",
+                        "surface-bright": "#fbf9f5",
+                        "on-background": "#1b1c1a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "margin-desktop": "40px",
+                        "gutter": "24px",
+                        "base": "8px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Playfair Display"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "title-md": ["Plus Jakarta Sans"],
+                        "label-sm": ["Plus Jakarta Sans"],
+                        "label-bold": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Playfair Display"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "body-sm": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "title-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }],
+                        "label-bold": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-surface font-body-lg text-on-surface custom-scrollbar">
+<!-- Sidebar Layout Container -->
+<div class="flex h-screen overflow-hidden">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full w-[280px] bg-surface-container-low flex flex-col p-4 gap-2 border-r border-outline-variant z-50">
+<div class="mb-8 px-4">
+<h1 class="font-headline-lg text-headline-lg text-primary">Admin Portal</h1>
+<p class="font-label-bold text-label-bold text-on-surface-variant opacity-70">Management Console</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 hover:bg-surface-container-highest transition-all duration-200 ease-in-out font-label-bold text-label-bold" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                    Overview
+                </a>
+<a class="flex items-center gap-3 bg-secondary-container text-on-secondary-container rounded-xl px-4 py-3 font-label-bold text-label-bold" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+                    Catalog
+                </a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 hover:bg-surface-container-highest transition-all duration-200 ease-in-out font-label-bold text-label-bold" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+                    Packages
+                </a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 hover:bg-surface-container-highest transition-all duration-200 ease-in-out font-label-bold text-label-bold" href="#">
+<span class="material-symbols-outlined">shopping_cart</span>
+                    Orders
+                </a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 hover:bg-surface-container-highest transition-all duration-200 ease-in-out font-label-bold text-label-bold" href="#">
+<span class="material-symbols-outlined">local_shipping</span>
+                    Operations
+                </a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 hover:bg-surface-container-highest transition-all duration-200 ease-in-out font-label-bold text-label-bold" href="#">
+<span class="material-symbols-outlined">article</span>
+                    Content
+                </a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 hover:bg-surface-container-highest transition-all duration-200 ease-in-out font-label-bold text-label-bold" href="#">
+<span class="material-symbols-outlined">group</span>
+                    People
+                </a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 hover:bg-surface-container-highest transition-all duration-200 ease-in-out font-label-bold text-label-bold" href="#">
+<span class="material-symbols-outlined">settings</span>
+                    System
+                </a>
+</nav>
+<div class="mt-auto border-t border-outline-variant pt-4">
+<div class="flex items-center gap-3 px-4 py-2">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container font-bold">
+                        A
+                    </div>
+<div>
+<p class="font-label-bold text-label-bold text-on-surface">Admin User</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-wider">Super Admin</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 ml-[280px] overflow-y-auto bg-background">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-40 flex justify-between items-center px-8 h-16 w-full bg-surface-container-high shadow-sm">
+<div class="flex items-center gap-4">
+<nav class="flex items-center gap-2 text-on-surface-variant font-label-bold text-label-bold">
+<a class="hover:text-primary transition-colors" href="#">Catalog</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-on-surface">Add New Dish</span>
+</nav>
+</div>
+<div class="flex items-center gap-3">
+<button class="p-2 hover:bg-surface-container-highest rounded-full transition-transform active:scale-90">
+<span class="material-symbols-outlined text-on-surface-variant">notifications</span>
+</button>
+<button class="p-2 hover:bg-surface-container-highest rounded-full transition-transform active:scale-90">
+<span class="material-symbols-outlined text-on-surface-variant">account_circle</span>
+</button>
+<button class="p-2 hover:bg-surface-container-highest rounded-full transition-transform active:scale-90" onclick="document.documentElement.classList.toggle('dark')">
+<span class="material-symbols-outlined text-on-surface-variant">dark_mode</span>
+</button>
+</div>
+</header>
+<!-- Form Canvas -->
+<div class="max-w-4xl mx-auto px-margin-desktop py-12">
+<div class="flex justify-between items-end mb-8">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Create New Dish</h2>
+<p class="font-body-lg text-on-surface-variant mt-2">Add a new culinary item to the corporate catering menu.</p>
+</div>
+<div class="flex gap-4">
+<button class="px-6 py-2 rounded-xl bg-surface-container-highest text-on-surface-variant font-label-bold text-label-bold hover:bg-outline-variant transition-colors active:scale-95">
+                            Cancel
+                        </button>
+<button class="px-8 py-2 rounded-xl bg-primary text-on-primary font-label-bold text-label-bold shadow-sm hover:opacity-90 transition-all active:scale-95">
+                            Save Dish
+                        </button>
+</div>
+</div>
+<form class="space-y-gutter">
+<!-- General Information Section -->
+<section class="glass-card rounded-xl p-8 space-y-6">
+<h3 class="font-title-md text-title-md text-primary flex items-center gap-2">
+<span class="material-symbols-outlined">info</span>
+                            Basic Details
+                        </h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label-bold text-label-bold text-on-surface-variant block uppercase tracking-wider">Dish Name</label>
+<input class="w-full bg-surface-container-low border-outline-variant rounded-xl p-4 focus:ring-primary focus:border-primary text-on-surface transition-all" placeholder="e.g. Traditional Chicken Biryani" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-bold text-label-bold text-on-surface-variant block uppercase tracking-wider">Category</label>
+<select class="w-full bg-surface-container-low border-outline-variant rounded-xl p-4 focus:ring-primary focus:border-primary text-on-surface appearance-none">
+<option>Main Course</option>
+<option>Appetizers</option>
+<option>Desserts</option>
+<option>Beverages</option>
+<option>Side Dishes</option>
+</select>
+</div>
+<div class="md:col-span-2 space-y-2">
+<label class="font-label-bold text-label-bold text-on-surface-variant block uppercase tracking-wider">Description</label>
+<textarea class="w-full bg-surface-container-low border-outline-variant rounded-xl p-4 focus:ring-primary focus:border-primary text-on-surface transition-all" placeholder="Describe the flavors, ingredients, and heritage of this dish..." rows="3"></textarea>
+</div>
+</div>
+</section>
+<!-- Image Section -->
+<section class="glass-card rounded-xl p-8 space-y-6">
+<h3 class="font-title-md text-title-md text-primary flex items-center gap-2">
+<span class="material-symbols-outlined">image</span>
+                            Dish Media
+                        </h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+<div class="space-y-4">
+<div class="border-2 border-dashed border-outline-variant rounded-xl p-8 text-center flex flex-col items-center justify-center gap-3 bg-surface-container-lowest hover:bg-surface-container-low transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-4xl text-outline group-hover:text-primary transition-colors">cloud_upload</span>
+<div>
+<p class="font-label-bold text-label-bold text-on-surface">Upload high-res image</p>
+<p class="text-[10px] text-on-surface-variant uppercase mt-1">JPG, PNG up to 10MB</p>
+</div>
+<input class="hidden" type="file"/>
+</div>
+<div class="flex items-center gap-2 p-3 bg-primary-container/20 rounded-lg">
+<span class="material-symbols-outlined text-primary">tips_and_updates</span>
+<p class="text-body-sm text-on-primary-container">Use 1.49 aspect ratio for best display results.</p>
+</div>
+</div>
+<div class="relative group aspect-[1.49] overflow-hidden rounded-xl border border-outline-variant shadow-sm bg-surface-container-highest">
+<img alt="Chicken Biryani Preview" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzY5mKCrpEyKy1_xoGMTN32nWYB_tI6drJT8-P71JtqDOquf8vLJBZ_38AbO3mauRFqTKrWU7sqaiu_Jd-juxWRYDOnip35oPmPnmTtQhGju8XTpF_KN_-m6-uXl0kVUG93NhvwfmV87FRzL8rHZDpbbGYgnFC6FFKdtwOKFYet4awEsXtTB0q0DYULaDevgPtG2TIfTMtSCPGY3FImr4XGcfwANGSLo5v024HZVYXAc4IEeK5s9osjUdZrHO0oFHPaB6gXXGRhaLO"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<button class="bg-white/90 text-on-surface px-4 py-2 rounded-full font-label-bold text-label-bold flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+                                        Change Preview
+                                    </button>
+</div>
+<div class="absolute bottom-3 left-3 bg-white/80 backdrop-blur px-2 py-1 rounded-md text-[10px] font-bold text-primary uppercase">Current Preview</div>
+</div>
+</div>
+</section>
+<!-- Variations Section -->
+<section class="glass-card rounded-xl p-8 space-y-6">
+<div class="flex justify-between items-center">
+<h3 class="font-title-md text-title-md text-primary flex items-center gap-2">
+<span class="material-symbols-outlined">layers</span>
+                                Portion Variations
+                            </h3>
+<button class="text-primary font-label-bold text-label-bold flex items-center gap-1 hover:underline" type="button">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+                                Add Variation
+                            </button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-outline-variant">
+<th class="py-4 px-2 font-label-bold text-label-bold text-on-surface-variant uppercase">Label</th>
+<th class="py-4 px-2 font-label-bold text-label-bold text-on-surface-variant uppercase">Quantity</th>
+<th class="py-4 px-2 font-label-bold text-label-bold text-on-surface-variant uppercase">Unit</th>
+<th class="py-4 px-2 font-label-bold text-label-bold text-on-surface-variant uppercase">Price (PKR)</th>
+<th class="py-4 px-2 font-label-bold text-label-bold text-on-surface-variant uppercase">Type</th>
+<th class="py-4 px-2"></th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/30">
+<tr>
+<td class="py-4 px-2">
+<input class="w-full bg-surface-container-low border-none rounded-lg p-2 focus:ring-1 focus:ring-primary text-body-sm" type="text" value="Single Serving"/>
+</td>
+<td class="py-4 px-2">
+<input class="w-20 bg-surface-container-low border-none rounded-lg p-2 focus:ring-1 focus:ring-primary text-body-sm text-center" type="number" value="1"/>
+</td>
+<td class="py-4 px-2">
+<select class="bg-surface-container-low border-none rounded-lg p-2 focus:ring-1 focus:ring-primary text-body-sm">
+<option selected="">Plate</option>
+<option>KG</option>
+<option>Person</option>
+<option>Handi</option>
+</select>
+</td>
+<td class="py-4 px-2">
+<input class="w-24 bg-surface-container-low border-none rounded-lg p-2 focus:ring-1 focus:ring-primary text-body-sm font-bold" type="text" value="850"/>
+</td>
+<td class="py-4 px-2">
+<span class="px-2 py-1 rounded bg-secondary-container text-on-secondary-container text-[10px] font-bold uppercase">Single</span>
+</td>
+<td class="py-4 px-2 text-right">
+<button class="text-outline hover:text-error transition-colors" type="button">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</td>
+</tr>
+<tr class="bg-surface-container-low/30">
+<td class="py-4 px-2">
+<input class="w-full bg-white border-none rounded-lg p-2 focus:ring-1 focus:ring-primary text-body-sm" type="text" value="Corporate Bulk (10+)"/>
+</td>
+<td class="py-4 px-2">
+<input class="w-20 bg-white border-none rounded-lg p-2 focus:ring-1 focus:ring-primary text-body-sm text-center" type="number" value="10"/>
+</td>
+<td class="py-4 px-2">
+<select class="bg-white border-none rounded-lg p-2 focus:ring-1 focus:ring-primary text-body-sm">
+<option>Plate</option>
+<option>KG</option>
+<option selected="">Person</option>
+<option>Handi</option>
+</select>
+</td>
+<td class="py-4 px-2">
+<input class="w-24 bg-white border-none rounded-lg p-2 focus:ring-1 focus:ring-primary text-body-sm font-bold" type="text" value="7500"/>
+</td>
+<td class="py-4 px-2">
+<span class="px-2 py-1 rounded bg-tertiary-container text-on-tertiary-container text-[10px] font-bold uppercase">Bulk</span>
+</td>
+<td class="py-4 px-2 text-right">
+<button class="text-outline hover:text-error transition-colors" type="button">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Final Actions -->
+<div class="flex justify-end gap-4 pb-20">
+<button class="flex items-center gap-2 text-on-surface-variant font-label-bold text-label-bold px-6 py-3 hover:bg-surface-container-highest rounded-xl transition-all" type="button">
+<span class="material-symbols-outlined">history</span>
+                             Discard Draft
+                         </button>
+<button class="flex items-center gap-2 bg-charcoal-text text-white font-label-bold text-label-bold px-10 py-3 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all active:scale-95" type="submit">
+<span class="material-symbols-outlined">check_circle</span>
+                             Publish to Menu
+                         </button>
+</div>
+</form>
+</div>
+<!-- Footer Area (Shared Structure) -->
+<footer class="w-full bg-surface-container-highest border-t border-outline-variant py-12">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+<div class="col-span-2">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Corporate Craving</h2>
+<p class="text-body-sm text-on-surface-variant max-w-sm mb-6">Authentic Pakistani flavors delivered with professional precision for your corporate needs. Heritage in every bite.</p>
+<p class="font-label-bold text-label-bold text-on-surface-variant">© 2024 Corporate Craving. Islamabad, Pakistan.</p>
+</div>
+<div>
+<h4 class="font-label-bold text-label-bold text-on-surface mb-4 uppercase tracking-widest">Internal Links</h4>
+<ul class="space-y-2">
+<li><a class="text-body-sm text-on-surface-variant hover:text-primary underline transition-colors" href="#">Admin Dashboard</a></li>
+<li><a class="text-body-sm text-on-surface-variant hover:text-primary underline transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-body-sm text-on-surface-variant hover:text-primary underline transition-colors" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-bold text-label-bold text-on-surface mb-4 uppercase tracking-widest">Support</h4>
+<ul class="space-y-2">
+<li><a class="text-body-sm text-on-surface-variant hover:text-primary underline transition-colors" href="#">Documentation</a></li>
+<li><a class="text-body-sm text-on-surface-variant hover:text-primary underline transition-colors" href="#">WhatsApp Support</a></li>
+<li><a class="text-body-sm text-on-surface-variant hover:text-primary underline transition-colors" href="#">Refund Policy</a></li>
+</ul>
+</div>
+</div>
+</footer>
+</main>
+</div>
+<!-- Micro-interaction Scripts -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Success Feedback Simulation
+            const form = document.querySelector('form');
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const btn = e.target.querySelector('button[type="submit"]');
+                const originalText = btn.innerHTML;
+                
+                btn.innerHTML = '<span class="material-symbols-outlined animate-spin">sync</span> Saving...';
+                btn.classList.add('opacity-80', 'pointer-events-none');
+                
+                setTimeout(() => {
+                    btn.innerHTML = '<span class="material-symbols-outlined">done_all</span> Dish Published!';
+                    btn.classList.replace('bg-charcoal-text', 'bg-success-emerald');
+                    
+                    setTimeout(() => {
+                        btn.innerHTML = originalText;
+                        btn.classList.replace('bg-success-emerald', 'bg-charcoal-text');
+                        btn.classList.remove('opacity-80', 'pointer-events-none');
+                    }, 3000);
+                }, 1500);
+            });
+
+            // Hover effects for inputs
+            const inputs = document.querySelectorAll('input, select, textarea');
+            inputs.forEach(input => {
+                input.addEventListener('focus', () => {
+                    input.parentElement.classList.add('scale-[1.01]');
+                });
+                input.addEventListener('blur', () => {
+                    input.parentElement.classList.remove('scale-[1.01]');
+                });
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Corporate Craving | Customer Portal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed": "#66ff8e",
+                        "surface-container-highest": "#e4e2de",
+                        "surface-variant": "#e4e2de",
+                        "tertiary-container": "#45e878",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#002109",
+                        "on-primary-fixed": "#241a00",
+                        "on-background": "#1b1c1a",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed-variant": "#574500",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#d9dff5",
+                        "on-tertiary-container": "#00642b",
+                        "primary-fixed-dim": "#f0c100",
+                        "on-secondary-fixed": "#141b2b",
+                        "secondary-fixed": "#dce2f7",
+                        "outline-variant": "#d1c5ab",
+                        "inverse-on-surface": "#f2f0ed",
+                        "surface-container": "#efeeea",
+                        "on-error-container": "#93000a",
+                        "on-secondary-container": "#5c6274",
+                        "secondary-fixed-dim": "#c0c6db",
+                        "secondary": "#575e70",
+                        "surface-bright": "#fbf9f5",
+                        "on-error": "#ffffff",
+                        "tertiary": "#006d2f",
+                        "on-surface-variant": "#4e4632",
+                        "surface-dim": "#dbdad6",
+                        "surface-tint": "#745c00",
+                        "surface": "#fbf9f5",
+                        "primary": "#745c00",
+                        "on-tertiary": "#ffffff",
+                        "outline": "#807660",
+                        "tertiary-fixed-dim": "#3de273",
+                        "surface-container-high": "#eae8e4",
+                        "charcoal-text": "#111827",
+                        "surface-cream": "#FDFBF7",
+                        "inverse-primary": "#f0c100",
+                        "on-secondary": "#ffffff",
+                        "danger-ruby": "#E11D48",
+                        "on-tertiary-fixed-variant": "#005322",
+                        "surface-container-low": "#f5f3ef",
+                        "primary-container": "#f6c60c",
+                        "on-surface": "#1b1c1a",
+                        "inverse-surface": "#30312e",
+                        "background": "#fbf9f5",
+                        "primary-fixed": "#ffe089",
+                        "on-secondary-fixed-variant": "#404758",
+                        "success-emerald": "#10B981",
+                        "on-primary-container": "#695300"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "base": "8px",
+                        "gutter": "24px",
+                        "margin-desktop": "40px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "label-bold": ["Plus Jakarta Sans"],
+                        "body-sm": ["Plus Jakarta Sans"],
+                        "title-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "label-sm": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-bold": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #fbf9f5; /* surface */
+            color: #1b1c1a; /* on-surface */
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .soft-plinth {
+            box-shadow: 0px 4px 20px rgba(17, 24, 39, 0.04);
+        }
+        .nav-item-active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #745c00;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+<!-- TopNavBar -->
+<header class="bg-surface border-b border-outline-variant h-20 flex justify-center sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-full">
+<div class="font-headline-lg text-headline-lg text-primary">Corporate Craving</div>
+<nav class="hidden md:flex items-center gap-gutter h-full">
+<a class="relative h-full flex items-center text-primary border-b-2 border-primary font-label-bold text-label-bold" href="#">My Schedule</a>
+<a class="text-on-surface-variant font-label-bold text-label-bold hover:text-primary transition-colors duration-200" href="#">My Package</a>
+<a class="text-on-surface-variant font-label-bold text-label-bold hover:text-primary transition-colors duration-200" href="#">Account</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden border border-outline-variant">
+<div class="w-full h-full bg-cover" data-alt="A professional headshot of a corporate procurement officer, wearing a tailored blazer, smiling warmly in a bright, modern office setting. High-key lighting, soft focus background, professional and approachable aesthetic consistent with corporate logistics." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCCjCUiGeLRy7vgzHRDHkjbEUgmZ15DShrbLPyyTx9dO_6t7-vYFsK66Gee0x3v8MO9y4O16N-3LK6WdMEbBwI3f4wFIfaGYIT3Gzrx5d9xtYWTnkwmEVs0FibGQWqhODAmcVLDcqbr1NzFqguE2si6S8Xhj90WuHXQZzfWb3Z9wqIi9NdHDVmGP3_OusTQheojSUDvHagm_tiFf-VZaxOcnwY_xH0CISPSyKP0Z8pWUF3QtyRaBe7YN_UDSCWyAV7v_ggiLTKDhd39')"></div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12">
+<!-- Welcome Greeting -->
+<section class="mb-12">
+<h1 class="font-headline-lg text-headline-lg md:text-display-lg md:font-display-lg text-charcoal-text mb-2">Welcome back, Telenor Team</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Your premium catering schedule is perfectly on track for today.</p>
+</section>
+<!-- Dashboard Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Left Column: Main Stats & Today -->
+<div class="lg:col-span-8 flex flex-col gap-gutter">
+<!-- Today's Delivery Card -->
+<div class="bg-white border border-outline-variant rounded-xl overflow-hidden soft-plinth flex flex-col md:flex-row h-auto md:h-64">
+<div class="md:w-2/5 relative">
+<img alt="Authentic Pakistani Chicken Biryani in a traditional copper handi" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLuLis1hd_x8Mr4uLX64CJd0JgM_C-iUGSHd3uV19UwUtKrCR7OgoEs0uhqR7rJwmrnw_0232syJVVv2vvdYBJFtwUkib4ivnUGf2sTgCRVQOd8mAkP_lX-WmUoLVxq3NgeFUs_ciUj4qMXQLToVLfN8yPxbWkCuBA5RDZbDwMsvQvAWlb-nzgtjlS_Os9BoVQ_i7BRV5nvtIm7r0GXgtnYqbGlcXMU3lhUSxHG9hcrfeZcfLqVGGHopq6ji"/>
+<div class="absolute top-4 left-4">
+<span class="bg-primary text-white font-label-bold text-label-sm px-3 py-1 rounded-full uppercase tracking-wider">Today's Menu</span>
+</div>
+</div>
+<div class="md:w-3/5 p-8 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="bg-primary-container text-on-primary-container font-label-bold text-label-sm px-3 py-1 rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined text-[14px]">local_shipping</span>
+                                    On its way
+                                </span>
+<span class="font-label-bold text-label-sm text-on-surface-variant">ETA: 12:45 PM</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-charcoal-text mb-2">Chicken Biryani &amp; Raita</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Traditional copper-pot cooked long grain basmati with hand-ground spices and fresh mint.</p>
+</div>
+<div class="flex items-center gap-4 mt-4">
+<button class="bg-primary text-white font-label-bold text-label-bold px-6 py-3 rounded-lg hover:opacity-90 transition-opacity flex items-center gap-2">
+                                Track Delivery
+                                <span class="material-symbols-outlined">map</span>
+</button>
+<button class="text-on-surface-variant font-label-bold text-label-bold hover:text-primary transition-colors">View Recipe</button>
+</div>
+</div>
+</div>
+<!-- Subscription Health Card -->
+<div class="bg-surface-cream border border-outline-variant rounded-xl p-8 soft-plinth">
+<div class="flex items-center justify-between mb-8">
+<h3 class="font-title-md text-title-md text-charcoal-text flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">analytics</span>
+                            Subscription Health
+                        </h3>
+<span class="text-primary font-label-bold text-label-bold">Premium Enterprise Plan</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div class="flex flex-col gap-4">
+<div class="flex justify-between items-end">
+<span class="font-label-bold text-label-bold text-on-surface-variant">Cycle Progress</span>
+<span class="font-headline-lg text-headline-lg text-charcoal-text">14 <span class="font-body-sm text-body-sm text-on-surface-variant">days left</span></span>
+</div>
+<div class="w-full bg-surface-container-highest h-3 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 65%;"></div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Cycle resets on October 1st, 2024</p>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-white p-4 rounded-lg border border-outline-variant text-center">
+<span class="block text-on-surface-variant font-label-bold text-label-sm mb-1 uppercase">Meals Served</span>
+<span class="font-headline-lg text-headline-lg text-primary">142</span>
+</div>
+<div class="bg-white p-4 rounded-lg border border-outline-variant text-center">
+<span class="block text-on-surface-variant font-label-bold text-label-sm mb-1 uppercase">Satisfaction</span>
+<span class="font-headline-lg text-headline-lg text-success-emerald">98%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Recent Activity -->
+<div class="bg-white border border-outline-variant rounded-xl p-8 soft-plinth">
+<h3 class="font-title-md text-title-md text-charcoal-text mb-6">Recent Activity</h3>
+<div class="space-y-6">
+<!-- Activity Item 1 -->
+<div class="flex items-center justify-between pb-6 border-b border-outline-variant">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container rounded-lg flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">restaurant</span>
+</div>
+<div>
+<h4 class="font-label-bold text-label-bold text-charcoal-text">Beef Nihari &amp; Hot Naan</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Delivered yesterday at 1:10 PM</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<div class="flex text-primary-fixed-dim">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<button class="text-on-surface-variant font-label-bold text-label-sm px-3 py-1 hover:bg-surface-container rounded-full transition-colors">Edit</button>
+</div>
+</div>
+<!-- Activity Item 2 -->
+<div class="flex items-center justify-between pb-6 border-b border-outline-variant">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container rounded-lg flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">restaurant</span>
+</div>
+<div>
+<h4 class="font-label-bold text-label-bold text-charcoal-text">Karahi Paneer (V)</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Delivered Sep 15, 12:55 PM</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="bg-secondary-container text-on-secondary-container font-label-bold text-label-sm px-3 py-1 rounded-full">Rated 4.5/5</span>
+</div>
+</div>
+<!-- Activity Item 3 -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container rounded-lg flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">restaurant</span>
+</div>
+<div>
+<h4 class="font-label-bold text-label-bold text-charcoal-text">Mutton Pulao</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Delivered Sep 14, 1:05 PM</p>
+</div>
+</div>
+<button class="bg-white border border-primary text-primary font-label-bold text-label-sm px-4 py-1.5 rounded-lg hover:bg-primary-fixed transition-colors">Leave Feedback</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Quick Actions & Support -->
+<div class="lg:col-span-4 flex flex-col gap-gutter">
+<!-- Quick Actions -->
+<div class="bg-charcoal-text text-white rounded-xl p-8 soft-plinth">
+<h3 class="font-title-md text-title-md mb-8 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container">bolt</span>
+                        Quick Actions
+                    </h3>
+<div class="grid grid-cols-1 gap-4">
+<button class="w-full flex items-center justify-between p-4 bg-white/5 hover:bg-white/10 rounded-lg transition-colors border border-white/10 group">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-danger-ruby">report</span>
+<span class="font-label-bold text-label-bold">Report an Issue</span>
+</div>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between p-4 bg-white/5 hover:bg-white/10 rounded-lg transition-colors border border-white/10 group">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary-container">event_repeat</span>
+<span class="font-label-bold text-label-bold">Request Schedule Change</span>
+</div>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between p-4 bg-white/5 hover:bg-white/10 rounded-lg transition-colors border border-white/10 group">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-tertiary-fixed-dim">download</span>
+<span class="font-label-bold text-label-bold">Download Invoices</span>
+</div>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- WhatsApp CTA -->
+<div class="bg-[#25D366] text-white rounded-xl p-8 flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-4xl">support_agent</span>
+</div>
+<h3 class="font-title-md text-title-md mb-2">Dedicated Concierge</h3>
+<p class="font-body-sm text-body-sm mb-6 opacity-90">Need urgent changes? Your account manager is available 24/7 on WhatsApp.</p>
+<a class="w-full bg-white text-[#25D366] font-label-bold text-label-bold py-4 rounded-lg flex items-center justify-center gap-2 hover:scale-[1.02] transition-transform" href="#">
+                        Chat with Zaid
+                        <span class="material-symbols-outlined text-[20px]">chat</span>
+</a>
+</div>
+<!-- Account Summary -->
+<div class="bg-white border border-outline-variant rounded-xl p-8 soft-plinth">
+<h3 class="font-label-bold text-label-bold text-on-surface-variant uppercase mb-6 tracking-widest">Account Overview</h3>
+<ul class="space-y-4">
+<li class="flex justify-between items-center">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Account Manager</span>
+<span class="font-label-bold text-label-bold">Zaid Ahmed</span>
+</li>
+<li class="flex justify-between items-center">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Current Headcount</span>
+<span class="font-label-bold text-label-bold">45 Staff</span>
+</li>
+<li class="flex justify-between items-center">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Last Invoice</span>
+<span class="font-label-bold text-label-bold">Paid</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low border-t border-outline-variant">
+<div class="w-full py-12 px-margin-desktop max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-base">
+<div class="flex flex-col gap-2">
+<div class="font-headline-lg text-headline-lg text-primary">Corporate Craving</div>
+<p class="text-secondary font-body-sm text-body-sm">Premium logistics meets authentic heritage.</p>
+</div>
+<div class="flex gap-gutter">
+<a class="text-on-surface-variant font-label-bold text-label-bold hover:text-primary transition-colors" href="#">Support</a>
+<a class="text-on-surface-variant font-label-bold text-label-bold hover:text-primary transition-colors" href="#">Privacy</a>
+<a class="text-on-surface-variant font-label-bold text-label-bold hover:text-primary transition-colors" href="#">Terms</a>
+</div>
+<div class="text-on-surface-variant font-body-sm text-body-sm">
+                © 2024 Corporate Craving. All rights reserved.
+            </div>
+</div>
+</footer>
+<!-- Mobile Bottom NavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-margin-mobile py-2 bg-surface/90 backdrop-blur-md border-t border-outline-variant md:hidden z-50">
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="font-label-sm text-label-sm">Schedule</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-label-sm text-label-sm">Package</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm">Account</span>
+</a>
+</nav>
+<script>
+        // Simple micro-interaction for ratings
+        document.querySelectorAll('.material-symbols-outlined').forEach(star => {
+            if (star.innerText === 'star') {
+                star.addEventListener('click', function() {
+                    const parent = this.parentElement;
+                    const stars = Array.from(parent.children);
+                    const index = stars.indexOf(this);
+                    
+                    stars.forEach((s, i) => {
+                        if (i <= index) {
+                            s.style.fontVariationSettings = "'FILL' 1";
+                        } else {
+                            s.style.fontVariationSettings = "'FILL' 0";
+                        }
+                    });
+                });
+            }
+        });
+    </script>
+</body></html>

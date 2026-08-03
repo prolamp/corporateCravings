@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        @keyframes slow-zoom {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+        .animate-slow-zoom {
+            animation: slow-zoom 20s ease-out forwards;
+        }
+        .glass-effect {
+            background: rgba(27, 28, 26, 0.4);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+        .text-shadow-sm {
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-secondary-fixed": "#141b2b",
+                      "on-secondary": "#ffffff",
+                      "on-surface-variant": "#4e4632",
+                      "on-tertiary": "#ffffff",
+                      "surface-container": "#efeeea",
+                      "secondary-fixed": "#dce2f7",
+                      "on-primary-fixed": "#241a00",
+                      "surface": "#fbf9f5",
+                      "primary-fixed-dim": "#f0c100",
+                      "secondary-fixed-dim": "#c0c6db",
+                      "surface-tint": "#745c00",
+                      "surface-container-highest": "#e4e2de",
+                      "background": "#fbf9f5",
+                      "tertiary": "#006d2f",
+                      "on-secondary-fixed-variant": "#404758",
+                      "primary-fixed": "#ffe089",
+                      "on-secondary-container": "#5c6274",
+                      "outline-variant": "#d1c5ab",
+                      "inverse-primary": "#f0c100",
+                      "on-tertiary-container": "#00642b",
+                      "charcoal-text": "#111827",
+                      "surface-bright": "#fbf9f5",
+                      "on-tertiary-fixed-variant": "#005322",
+                      "inverse-on-surface": "#f2f0ed",
+                      "surface-container-lowest": "#ffffff",
+                      "on-error": "#ffffff",
+                      "inverse-surface": "#30312e",
+                      "error": "#ba1a1a",
+                      "primary": "#745c00",
+                      "on-primary-container": "#695300",
+                      "on-tertiary-fixed": "#002109",
+                      "on-error-container": "#93000a",
+                      "tertiary-container": "#45e878",
+                      "surface-container-low": "#f5f3ef",
+                      "outline": "#807660",
+                      "error-container": "#ffdad6",
+                      "surface-variant": "#e4e2de",
+                      "on-surface": "#1b1c1a",
+                      "surface-container-high": "#eae8e4",
+                      "primary-container": "#f6c60c",
+                      "on-primary": "#ffffff",
+                      "surface-dim": "#dbdad6",
+                      "tertiary-fixed-dim": "#3de273",
+                      "on-background": "#1b1c1a",
+                      "on-primary-fixed-variant": "#574500",
+                      "secondary": "#575e70",
+                      "danger-ruby": "#E11D48",
+                      "surface-cream": "#FDFBF7",
+                      "tertiary-fixed": "#66ff8e",
+                      "secondary-container": "#d9dff5",
+                      "success-emerald": "#10B981"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "margin-mobile": "16px",
+                      "margin-desktop": "40px",
+                      "container-max": "1280px",
+                      "gutter": "24px",
+                      "base": "8px"
+              },
+              "fontFamily": {
+                      "label-bold": ["Plus Jakarta Sans"],
+                      "headline-lg-mobile": ["Playfair Display"],
+                      "headline-lg": ["Playfair Display"],
+                      "display-lg": ["Playfair Display"],
+                      "body-sm": ["Plus Jakarta Sans"],
+                      "title-md": ["Plus Jakarta Sans"],
+                      "label-sm": ["Plus Jakarta Sans"],
+                      "body-lg": ["Plus Jakarta Sans"]
+              },
+              "fontSize": {
+                      "label-bold": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                      "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "500"}],
+                      "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-charcoal-text flex items-center justify-center min-h-screen p-4">
+<!-- Instagram Story Container (9:16 Aspect Ratio) -->
+<div class="relative w-full max-w-[450px] aspect-[9/16] bg-black overflow-hidden shadow-2xl rounded-xl">
+<!-- Background Image with Zoom Animation -->
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full animate-slow-zoom bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida/AP1WRLuLis1hd_x8Mr4uLX64CJd0JgM_C-iUGSHd3uV19UwUtKrCR7OgoEs0uhqR7rJwmrnw_0232syJVVv2vvdYBJFtwUkib4ivnUGf2sTgCRVQOd8mAkP_lX-WmUoLVxq3NgeFUs_ciUj4qMXQLToVLfN8yPxbWkCuBA5RDZbDwMsvQvAWlb-nzgtjlS_Os9BoVQ_i7BRV5nvtIm7r0GXgtnYqbGlcXMU3lhUSxHG9hcrfeZcfLqVGGHopq6ji')"></div>
+<!-- Gradient Overlay for Readability -->
+<div class="absolute inset-0 bg-gradient-to-t from-charcoal-text via-transparent to-charcoal-text/60"></div>
+</div>
+<!-- Branding / Header Area -->
+<div class="relative z-10 p-8 pt-12 flex flex-col items-center text-center">
+<div class="mb-4">
+<span class="font-label-bold text-label-bold text-primary-fixed uppercase tracking-[0.3em]">Corporate Craving</span>
+</div>
+<div class="w-12 h-[1px] bg-primary-fixed-dim/50"></div>
+</div>
+<!-- Main Content (Center) -->
+<div class="absolute inset-0 z-10 flex flex-col items-center justify-center px-margin-mobile text-center">
+<!-- Decorative Accent -->
+<div class="mb-6 opacity-80">
+<span class="material-symbols-outlined text-primary-fixed text-4xl">ac_unit</span>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-primary font-extrabold tracking-tight uppercase mb-4 text-shadow-sm">
+                THE ROYAL<br/>WINTER FEAST
+            </h1>
+<div class="w-16 h-1 bg-primary mb-6"></div>
+<p class="font-body-lg text-body-lg text-white/90 max-w-[280px] leading-relaxed italic">
+                A Seasonal Celebration of Heritage Flavors
+            </p>
+</div>
+<!-- Call to Action (Bottom) -->
+<div class="absolute bottom-0 left-0 w-full z-10 p-8 pb-16 flex flex-col items-center">
+<!-- Bottom Info Card -->
+<div class="glass-effect rounded-xl p-6 w-full border border-white/10 mb-8 transform transition-transform hover:scale-[1.02]">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-fixed text-sm">calendar_today</span>
+<span class="font-label-bold text-label-bold text-white uppercase">Dec 15 - Jan 31</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-fixed text-sm">location_on</span>
+<span class="font-label-bold text-label-bold text-white uppercase">Saffron Hall</span>
+</div>
+</div>
+<div class="flex items-center justify-center gap-4 text-white/60">
+<span class="text-[10px] tracking-[0.2em] uppercase font-label-bold">Exquisite Selection</span>
+<span class="w-1 h-1 rounded-full bg-primary-fixed"></span>
+<span class="text-[10px] tracking-[0.2em] uppercase font-label-bold">Artisanal Quality</span>
+</div>
+</div>
+<!-- Main Button -->
+<button class="w-full bg-primary hover:bg-primary-container text-on-primary font-label-bold text-label-bold py-5 rounded-lg flex items-center justify-center gap-3 shadow-lg active:scale-95 transition-all duration-150">
+                BOOK NOW
+                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+<!-- Interaction Hint -->
+<div class="mt-6 flex flex-col items-center animate-bounce opacity-40">
+<span class="material-symbols-outlined text-white text-xl">keyboard_double_arrow_up</span>
+<span class="font-label-sm text-label-sm text-white uppercase tracking-widest mt-1">Swipe up to Reserve</span>
+</div>
+</div>
+<!-- Floating Decorative Elements -->
+<div class="absolute top-1/4 left-4 z-10 opacity-20 rotate-12">
+<span class="material-symbols-outlined text-primary-fixed text-6xl" style="font-variation-settings: 'wght' 100;">restaurant_menu</span>
+</div>
+<div class="absolute top-2/3 right-4 z-10 opacity-20 -rotate-12">
+<span class="material-symbols-outlined text-primary-fixed text-6xl" style="font-variation-settings: 'wght' 100;">wine_bar</span>
+</div>
+<!-- Top Progress Bars (Story Style) -->
+<div class="absolute top-4 left-0 w-full px-4 z-20 flex gap-1">
+<div class="h-1 flex-1 bg-white rounded-full overflow-hidden">
+<div class="h-full bg-primary w-full origin-left transition-transform duration-[5000ms] linear" id="progress-bar"></div>
+</div>
+<div class="h-1 flex-1 bg-white/30 rounded-full"></div>
+<div class="h-1 flex-1 bg-white/30 rounded-full"></div>
+</div>
+</div>
+<script>
+        // Micro-interaction: Progress bar animation reset simulation
+        document.addEventListener('DOMContentLoaded', () => {
+            const bar = document.getElementById('progress-bar');
+            bar.style.transform = 'scaleX(0)';
+            setTimeout(() => {
+                bar.style.transform = 'scaleX(1)';
+            }, 100);
+        });
+
+        // Simple parallax effect on mouse move for the container
+        const container = document.querySelector('.aspect-\\[9\\/16\\]');
+        container.addEventListener('mousemove', (e) => {
+            const rect = container.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            const deltaX = (x - centerX) / 20;
+            const deltaY = (y - centerY) / 20;
+            
+            container.style.transform = `perspective(1000px) rotateY(${deltaX}deg) rotateX(${-deltaY}deg)`;
+        });
+
+        container.addEventListener('mouseleave', () => {
+            container.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg)';
+        });
+    </script>
+</body></html>

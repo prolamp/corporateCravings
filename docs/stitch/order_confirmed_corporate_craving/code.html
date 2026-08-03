@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Order Confirmed | Corporate Craving</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#f5f3ef",
+                        "surface-dim": "#dbdad6",
+                        "primary-container": "#f6c60c",
+                        "outline": "#807660",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed": "#241a00",
+                        "on-secondary-fixed-variant": "#404758",
+                        "charcoal-text": "#111827",
+                        "on-error": "#ffffff",
+                        "background": "#fbf9f5",
+                        "tertiary": "#006d2f",
+                        "surface-variant": "#e4e2de",
+                        "on-primary-fixed-variant": "#574500",
+                        "tertiary-fixed": "#66ff8e",
+                        "surface": "#fbf9f5",
+                        "surface-container-highest": "#e4e2de",
+                        "tertiary-fixed-dim": "#3de273",
+                        "secondary-container": "#d9dff5",
+                        "on-secondary": "#ffffff",
+                        "on-surface": "#1b1c1a",
+                        "inverse-surface": "#30312e",
+                        "on-secondary-fixed": "#141b2b",
+                        "danger-ruby": "#E11D48",
+                        "outline-variant": "#d1c5ab",
+                        "surface-cream": "#FDFBF7",
+                        "primary-fixed": "#ffe089",
+                        "inverse-primary": "#f0c100",
+                        "on-surface-variant": "#4e4632",
+                        "on-secondary-container": "#5c6274",
+                        "on-tertiary-container": "#00642b",
+                        "secondary-fixed-dim": "#c0c6db",
+                        "on-primary-container": "#695300",
+                        "secondary": "#575e70",
+                        "on-primary": "#ffffff",
+                        "surface-bright": "#fbf9f5",
+                        "surface-container": "#efeeea",
+                        "success-emerald": "#10B981",
+                        "tertiary-container": "#45e878",
+                        "error-container": "#ffdad6",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed-variant": "#005322",
+                        "surface-container-high": "#eae8e4",
+                        "surface-tint": "#745c00",
+                        "on-error-container": "#93000a",
+                        "inverse-on-surface": "#f2f0ed",
+                        "primary": "#745c00",
+                        "secondary-fixed": "#dce2f7",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed-dim": "#f0c100",
+                        "on-tertiary-fixed": "#002109",
+                        "on-background": "#1b1c1a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "container-max": "1280px",
+                        "gutter": "24px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "40px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Playfair Display"],
+                        "body-sm": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "label-bold": ["Plus Jakarta Sans"],
+                        "title-md": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "headline-lg": ["Playfair Display"],
+                        "label-sm": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-bold": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                        "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "500"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .confetti-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 50;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-lg overflow-x-hidden">
+<!-- TopNavBar (Large) -->
+<header class="bg-surface dark:bg-surface-dim border-b border-outline-variant dark:border-outline sticky top-0 z-40">
+<div class="flex justify-between items-center px-margin-desktop h-20 w-full max-w-container-max mx-auto">
+<div class="font-display-lg text-display-lg text-primary dark:text-primary-fixed-dim">
+                Corporate Craving
+            </div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="font-title-md text-title-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">Home</a>
+<a class="font-title-md text-title-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">Menu</a>
+<a class="font-title-md text-title-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">Packages</a>
+<a class="font-title-md text-title-md text-primary dark:text-primary-fixed-dim border-b-2 border-primary dark:border-primary-fixed-dim pb-1" href="#">Track Order</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="font-label-bold text-label-bold px-6 py-2 rounded-xl bg-primary text-on-primary hover:opacity-90 transition-opacity">Cart</button>
+</div>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12">
+<canvas class="confetti-canvas" id="confetti"></canvas>
+<div class="flex flex-col md:flex-row gap-gutter">
+<!-- Left Column: Success Message & Quick Actions -->
+<div class="flex-1 space-y-8">
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-8 text-center md:text-left relative overflow-hidden">
+<!-- Subtle heritage pattern overlay -->
+<div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: url('https://www.transparenttextures.com/patterns/p6.png')"></div>
+<div class="relative z-10">
+<div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-success-emerald/10 text-success-emerald mb-6">
+<span class="material-symbols-outlined !text-4xl" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-charcoal-text mb-2">Thank You, Ahmed!</h1>
+<p class="font-body-lg text-on-surface-variant max-w-lg">Your corporate banquet order has been successfully placed. We're getting the saffron and spices ready for an artisanal experience.</p>
+<div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="bg-surface-container p-4 rounded-xl border border-outline-variant/50">
+<span class="font-label-bold text-label-bold text-on-surface-variant uppercase">Order ID</span>
+<p class="font-title-md text-title-md text-primary font-bold">#CC-82910-PK</p>
+</div>
+<div class="bg-surface-container p-4 rounded-xl border border-outline-variant/50">
+<span class="font-label-bold text-label-bold text-on-surface-variant uppercase">Est. Delivery</span>
+<p class="font-title-md text-title-md text-primary font-bold">Today, 1:30 PM</p>
+</div>
+</div>
+<div class="mt-10 flex flex-col sm:flex-row gap-4">
+<button class="flex-1 bg-primary text-on-primary font-label-bold text-label-bold py-4 px-8 rounded-xl flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-95 transition-all shadow-sm">
+<span class="material-symbols-outlined">map</span>
+                                Track Order
+                            </button>
+<button class="flex-1 bg-[#25D366] text-white font-label-bold text-label-bold py-4 px-8 rounded-xl flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-95 transition-all shadow-sm">
+<span class="material-symbols-outlined">chat</span>
+                                WhatsApp Support
+                            </button>
+</div>
+</div>
+</div>
+<!-- Delivery Details Bento -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="bg-surface-cream border border-outline-variant rounded-xl p-6">
+<div class="flex items-center gap-3 mb-4 text-primary">
+<span class="material-symbols-outlined">local_shipping</span>
+<h3 class="font-label-bold text-label-bold uppercase">Delivery Address</h3>
+</div>
+<p class="font-body-lg text-on-surface">Floor 12, Blue Area Sector G-7/1<br/>Islamabad Corporate Plaza<br/>Islamabad, 44000</p>
+<p class="mt-2 text-on-surface-variant font-body-sm italic">"Gate 3 security, ask for Mr. Ahmed."</p>
+</div>
+<div class="bg-surface-cream border border-outline-variant rounded-xl p-6">
+<div class="flex items-center gap-3 mb-4 text-primary">
+<span class="material-symbols-outlined">payments</span>
+<h3 class="font-label-bold text-label-bold uppercase">Payment Method</h3>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant">account_balance</span>
+<div>
+<p class="font-body-lg text-on-surface">Corporate Account Billing</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Invoice will be sent to finance@company.pk</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Order Summary Card -->
+<div class="w-full md:w-[400px]">
+<div class="bg-surface-container-low border border-outline-variant rounded-xl sticky top-24 overflow-hidden">
+<div class="p-6 border-b border-outline-variant bg-surface">
+<h2 class="font-title-md text-title-md">Order Summary</h2>
+<span class="font-label-sm text-label-sm text-on-surface-variant">12 Items • Large Package</span>
+</div>
+<div class="p-6 space-y-6 max-h-[500px] overflow-y-auto">
+<!-- Item Row -->
+<div class="flex gap-4">
+<div class="w-16 h-16 rounded-lg bg-cover bg-center flex-shrink-0" data-alt="A macro photography shot of premium Pakistani saffron biryani with golden long-grain rice, aromatic spices, and tender pieces of meat, served in a traditional artisanal copper pot against a warm, sunlit background." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAkllhcAFhAMBMsK4kO3YfG-MCMJSPuPaqzYevZ_m-A3W386Rjo2GOkJsnvVrXpQWklnIwM6OljL68sLbJiYbfAw99pY1kUelMMytI5DlJp6i6sqWbyx91sOjh6xIV-fKqiSTm3kXHKcIl7H3lTF1AxUE2Y_GQvqBOlGu-bHDZr-KkKEGTgAeAC6I0xzxGNpEK7GuwqMjZVvDB6o4jY7IcGrOdmk9DfKuPQBHXU62SEt2owgOB5ApoQcxikiYbienfkpUHFSL-5H2xk')"></div>
+<div class="flex-1">
+<div class="flex justify-between">
+<h4 class="font-label-bold text-label-bold">Signature Saffron Biryani</h4>
+<span class="font-label-bold text-label-bold">PKR 8,500</span>
+</div>
+<p class="text-on-surface-variant font-body-sm">Package for 10 people</p>
+</div>
+</div>
+<!-- Item Row -->
+<div class="flex gap-4">
+<div class="w-16 h-16 rounded-lg bg-cover bg-center flex-shrink-0" data-alt="A professional food display of various traditional Pakistani kebabs, charred to perfection with visible grill marks, garnished with fresh mint and lemon wedges, presented on a rustic slate platter in a high-end corporate catering setting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC9SynBkHD7IhSdUPZr9LJCkN_XEgvCc6tQCGf--m3bHCKz-fhlGHAq7SLw_y-yXhaFaKvPDvnnb5gMdqG7YH7tbGx_OBfXyDGoEz4kjCUmaxiWK8BY6rWsfAnKQElU3zlaMkKGwu5YtLn1x8JB5kpyLud3Fo2WzxvcmNHzW0jo3cT-9bNYE2UIHRp1wHwMt_LHl0qiN6-kSPz0srNfulB6KhXP0Z2RKlI3iq1a_r6JkyhFM-9aKuLNz-MP_N4atGO67aIBgVSahuP-')"></div>
+<div class="flex-1">
+<div class="flex justify-between">
+<h4 class="font-label-bold text-label-bold">Assorted Kebab Platter</h4>
+<span class="font-label-bold text-label-bold">PKR 4,200</span>
+</div>
+<p class="text-on-surface-variant font-body-sm">24 pieces</p>
+</div>
+</div>
+<!-- Item Row -->
+<div class="flex gap-4">
+<div class="w-16 h-16 rounded-lg bg-cover bg-center flex-shrink-0" data-alt="Chilled artisanal mint lemonade drinks in elegant glassware with fresh mint sprigs and floating lemon slices, captured with soft bokeh lighting in a sophisticated office environment, conveying a refreshing and premium hospitality vibe." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCRuI74-CfCe-ZZbZIcK048TecHZATsB_sFPRGb_th9axOaJNMND8Qu0iMYKNRRGp1U4rjh_sDn-vWI8XSSZq8wlnEo8YsKVVUv0Zj7T31oDcYQdTANsOmhLPyGw8cI8m4FpdqaHXu5fS3VNreI3awJEMuLQvirHYU6ErJUNQkyvAHgYBoAC2BXlRcKcGUD3n-ZjQv08rtuwwxClhG5S9NxjEf_HLOShj5XVtpuLDdc0xEYs43fhpxEdNvQ6ODuiZkSNjNqujCSKem9')"></div>
+<div class="flex-1">
+<div class="flex justify-between">
+<h4 class="font-label-bold text-label-bold">Fresh Mint Lemonade</h4>
+<span class="font-label-bold text-label-bold">PKR 1,800</span>
+</div>
+<p class="text-on-surface-variant font-body-sm">2x 2L Pitchers</p>
+</div>
+</div>
+</div>
+<div class="p-6 bg-surface space-y-3 border-t border-outline-variant">
+<div class="flex justify-between font-body-sm text-on-surface-variant">
+<span>Subtotal</span>
+<span>PKR 14,500</span>
+</div>
+<div class="flex justify-between font-body-sm text-on-surface-variant">
+<span>Service &amp; Delivery</span>
+<span>PKR 500</span>
+</div>
+<div class="flex justify-between font-body-sm text-on-surface-variant">
+<span>Tax (GST)</span>
+<span>PKR 2,465</span>
+</div>
+<div class="pt-3 border-t border-outline-variant flex justify-between">
+<span class="font-label-bold text-label-bold text-on-surface">TOTAL AMOUNT</span>
+<span class="font-title-md text-title-md text-primary font-bold">PKR 17,465</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest dark:bg-surface-dim border-t border-outline-variant dark:border-outline mt-24">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-12 max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-2">
+<div class="font-headline-lg text-headline-lg text-primary dark:text-primary-fixed-dim mb-4">Corporate Craving</div>
+<p class="font-body-sm text-on-surface-variant max-w-sm mb-6">Elevating corporate dining with the heritage of Pakistani flavors. Premium, reliable, and artisanal catering for Islamabad's leaders.</p>
+<p class="font-body-sm text-on-surface-variant">© 2024 Corporate Craving. Islamabad, Pakistan.</p>
+</div>
+<div>
+<h4 class="font-label-bold text-label-bold text-primary mb-6">Support</h4>
+<ul class="space-y-4">
+<li><a class="font-body-sm text-on-surface-variant hover:text-primary transition-colors underline" href="#">WhatsApp Support</a></li>
+<li><a class="font-body-sm text-on-surface-variant hover:text-primary transition-colors underline" href="#">Refund Policy</a></li>
+<li><a class="font-body-sm text-on-surface-variant hover:text-primary transition-colors underline" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-bold text-label-bold text-primary mb-6">Company</h4>
+<ul class="space-y-4">
+<li><a class="font-body-sm text-on-surface-variant hover:text-primary transition-colors underline" href="#">About Us</a></li>
+<li><a class="font-body-sm text-on-surface-variant hover:text-primary transition-colors underline" href="#">Privacy Policy</a></li>
+<li><a class="font-body-sm text-on-surface-variant hover:text-primary transition-colors underline" href="#">Contact</a></li>
+</ul>
+</div>
+</div>
+</footer>
+<script>
+        // Simple confetti animation
+        function startConfetti() {
+            const canvas = document.getElementById('confetti');
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            const particles = [];
+            const colors = ['#745c00', '#f6c60c', '#575e70', '#10B981'];
+
+            for (let i = 0; i < 100; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height - canvas.height,
+                    size: Math.random() * 8 + 4,
+                    color: colors[Math.floor(Math.random() * colors.length)],
+                    speed: Math.random() * 3 + 2,
+                    angle: Math.random() * 360
+                });
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                particles.forEach(p => {
+                    p.y += p.speed;
+                    p.angle += 1;
+                    if (p.y > canvas.height) p.y = -20;
+                    
+                    ctx.save();
+                    ctx.translate(p.x, p.y);
+                    ctx.rotate(p.angle * Math.PI / 180);
+                    ctx.fillStyle = p.color;
+                    ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size);
+                    ctx.restore();
+                });
+                requestAnimationFrame(animate);
+            }
+            animate();
+            
+            // Stop confetti after 5 seconds to preserve performance
+            setTimeout(() => {
+                canvas.style.opacity = '0';
+                canvas.style.transition = 'opacity 2s ease-out';
+            }, 3000);
+        }
+
+        window.onload = startConfetti;
+
+        // Sticky header behavior
+        let lastScroll = 0;
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            if (currentScroll > 50) {
+                header.classList.add('shadow-md');
+            } else {
+                header.classList.remove('shadow-md');
+            }
+            lastScroll = currentScroll;
+        });
+    </script>
+</body></html>

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Menu | Corporate Craving</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Theme Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface": "#1b1c1a",
+                    "secondary": "#575e70",
+                    "on-surface-variant": "#4e4632",
+                    "tertiary": "#006d2f",
+                    "on-tertiary": "#ffffff",
+                    "on-background": "#1b1c1a",
+                    "inverse-surface": "#30312e",
+                    "inverse-primary": "#f0c100",
+                    "surface": "#fbf9f5",
+                    "surface-container-highest": "#e4e2de",
+                    "success-emerald": "#10B981",
+                    "on-tertiary-fixed-variant": "#005322",
+                    "danger-ruby": "#E11D48",
+                    "surface-variant": "#e4e2de",
+                    "on-secondary-container": "#5c6274",
+                    "outline": "#807660",
+                    "secondary-container": "#d9dff5",
+                    "surface-container-high": "#eae8e4",
+                    "error-container": "#ffdad6",
+                    "secondary-fixed": "#dce2f7",
+                    "primary-fixed-dim": "#f0c100",
+                    "outline-variant": "#d1c5ab",
+                    "primary-container": "#f6c60c",
+                    "on-primary-container": "#695300",
+                    "surface-dim": "#dbdad6",
+                    "on-error-container": "#93000a",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-container": "#00642b",
+                    "background": "#fbf9f5",
+                    "surface-container-low": "#f5f3ef",
+                    "primary": "#745c00",
+                    "tertiary-fixed-dim": "#3de273",
+                    "on-secondary-fixed": "#141b2b",
+                    "on-secondary": "#ffffff",
+                    "surface-cream": "#FDFBF7",
+                    "on-error": "#ffffff",
+                    "error": "#ba1a1a",
+                    "inverse-on-surface": "#f2f0ed",
+                    "tertiary-container": "#45e878",
+                    "on-primary-fixed-variant": "#574500",
+                    "secondary-fixed-dim": "#c0c6db",
+                    "surface-container": "#efeeea",
+                    "surface-bright": "#fbf9f5",
+                    "on-primary-fixed": "#241a00",
+                    "charcoal-text": "#111827",
+                    "primary-fixed": "#ffe089",
+                    "on-secondary-fixed-variant": "#404758",
+                    "on-primary": "#ffffff",
+                    "tertiary-fixed": "#66ff8e",
+                    "surface-tint": "#745c00",
+                    "on-tertiary-fixed": "#002109"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-desktop": "40px",
+                    "base": "8px",
+                    "margin-mobile": "16px",
+                    "gutter": "24px",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Playfair Display"],
+                    "headline-lg": ["Playfair Display"],
+                    "title-md": ["Plus Jakarta Sans"],
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "body-sm": ["Plus Jakarta Sans"],
+                    "label-sm": ["Plus Jakarta Sans"],
+                    "label-bold": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "500"}],
+                    "label-bold": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-chip {
+            background-color: #745c00;
+            color: #ffffff;
+        }
+        body {
+            background-color: #fbf9f5;
+        }
+    </style>
+</head>
+<body class="font-body-lg text-on-surface">
+<!-- TopNavBar (Large) -->
+<nav class="bg-surface border-b border-outline-variant h-20 w-full sticky top-0 z-50">
+<div class="flex justify-between items-center px-margin-desktop h-full w-full max-w-container-max mx-auto">
+<div class="font-display-lg text-display-lg text-primary">Corporate Craving</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-title-md text-title-md text-on-surface-variant hover:text-primary transition-colors" href="#">Home</a>
+<a class="font-title-md text-title-md text-primary border-b-2 border-primary pb-1" href="#">Menu</a>
+<a class="font-title-md text-title-md text-on-surface-variant hover:text-primary transition-colors" href="#">Packages</a>
+<a class="font-title-md text-title-md text-on-surface-variant hover:text-primary transition-colors" href="#">Bulk Orders</a>
+<a class="font-title-md text-title-md text-on-surface-variant hover:text-primary transition-colors" href="#">Track Order</a>
+<a class="font-title-md text-title-md text-on-surface-variant hover:text-primary transition-colors" href="#">Contact</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="font-title-md text-title-md text-on-surface-variant hover:bg-surface-container-highest px-4 py-2 rounded-full transition-all">Login</button>
+<button class="bg-primary text-white font-title-md text-title-md px-6 py-2 rounded-xl active:scale-95 transition-transform flex items-center gap-2">
+<span class="material-symbols-outlined">shopping_cart</span>
+                    Cart
+                </button>
+</div>
+</div>
+</nav>
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12">
+<!-- Header Section -->
+<header class="mb-12">
+<h1 class="font-display-lg text-display-lg text-on-surface mb-4">Our Public Menu</h1>
+<p class="font-body-lg text-on-surface-variant max-w-2xl">Discover authentic flavors of Pakistan, meticulously prepared for professional settings. From aromatic Biryanis to succulent Karahis.</p>
+</header>
+<!-- Category Filter Chips -->
+<div class="flex flex-wrap gap-3 mb-10 overflow-x-auto pb-2 scrollbar-hide">
+<button class="category-chip px-6 py-3 rounded-full font-label-bold text-label-bold active-chip transition-all" onclick="filterMenu('All')">All Dishes</button>
+<button class="category-chip px-6 py-3 rounded-full font-label-bold text-label-bold bg-white border border-outline-variant text-on-surface-variant hover:border-primary transition-all" onclick="filterMenu('Biryani')">Biryani</button>
+<button class="category-chip px-6 py-3 rounded-full font-label-bold text-label-bold bg-white border border-outline-variant text-on-surface-variant hover:border-primary transition-all" onclick="filterMenu('Karahi')">Karahi</button>
+<button class="category-chip px-6 py-3 rounded-full font-label-bold text-label-bold bg-white border border-outline-variant text-on-surface-variant hover:border-primary transition-all" onclick="filterMenu('Platters')">Platters</button>
+<button class="category-chip px-6 py-3 rounded-full font-label-bold text-label-bold bg-white border border-outline-variant text-on-surface-variant hover:border-primary transition-all" onclick="filterMenu('Sides')">Sides</button>
+</div>
+<!-- Dish Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-gutter" id="dish-grid">
+<!-- Dish Card 1 -->
+<div class="bg-white rounded-xl border border-outline-variant overflow-hidden flex flex-col group hover:shadow-lg transition-shadow">
+<div class="h-56 w-full relative overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A professional high-angle food photograph of Sindhi Biryani served in a traditional clay pot. The rice is aromatic with vibrant orange and yellow grains, topped with fresh coriander, fried onions, and green chilies. The lighting is soft and warm, highlighting the moist texture of the long-grain basmati rice and tender chicken pieces. The aesthetic is modern-heritage with a clean white marble background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBS4XGrOmz1jB2af3htu0a1wtDfhkNmfhaXkYhkI5nSAH1hj_sOIlCo8YzBrMJowBC2dCMoZIH_oJN88TRhW_rrThrCchUXhtSmytNCIEOkbWLfl1QFxk1LDlmPLZrwab4Oq-QzidoyK-GJN9ZNLVfWywL8WGCUGYcC9egciYVDwLEOGZG1YEQnp6So3N1oNH29YB2Jycbqqq2C4mbB1ZhDgsumEETbhXxdJHKZxOtmJSOTPhX3zZ7HYgYiZFaS13gRWNMnsIZUh5uy"/>
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container px-3 py-1 rounded-full font-label-bold text-label-bold">Single Serving</div>
+</div>
+<div class="p-6 flex-grow flex flex-col">
+<h3 class="font-title-md text-title-md text-on-surface mb-2">Sindhi Special Biryani</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4 flex-grow line-clamp-2">Traditional spicy biryani cooked with marinated chicken, potatoes, and exotic Sindhi spices.</p>
+<div class="flex items-center justify-between mt-auto">
+<div>
+<span class="text-label-bold font-label-bold text-on-surface-variant block uppercase tracking-wider">Starts at</span>
+<span class="font-headline-lg text-headline-lg text-primary">Rs. 850</span>
+</div>
+<button class="bg-charcoal-text text-white p-3 rounded-xl hover:bg-on-surface transition-colors">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Dish Card 2 -->
+<div class="bg-white rounded-xl border border-outline-variant overflow-hidden flex flex-col group hover:shadow-lg transition-shadow">
+<div class="h-56 w-full relative overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A close-up shot of Mutton Karahi in a black iron wok, bubbling with a rich tomato-based gravy and garnished with julienned ginger and fresh cilantro. The meat looks tender and succulent. The scene is set in a dimly lit, high-end restaurant atmosphere with soft bokeh from warm hanging lights. The colors are deep reds and rich browns, conveying a flavorful and artisanal quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-2CQUSkhhSz4vB8jHxUshJ9_ZuusY9wMhXaZWvR0P6SEGfbLkVUpd31-YF8y1R3xu23OeeiQygWL8Q_vDwqtkdPJYTqgjJb-9EHsafCDb6PaY3xSeF3LxuGpiZC63iu82S0gxRce8KqXRN_YQvcfdX6KTkhtsajKiePn3lBxXVuKEF0DOlfffC0bg02YjFERPsZPbY1vph9-NJFVDZmUJ15ivyCyj4KPN9Bah5gAnJMDB5Q7n-rPA3M_AlTke1--OfxMj5AXcZ519"/>
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container px-3 py-1 rounded-full font-label-bold text-label-bold">Single Serving</div>
+</div>
+<div class="p-6 flex-grow flex flex-col">
+<h3 class="font-title-md text-title-md text-on-surface mb-2">Peshawari Mutton Karahi</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4 flex-grow line-clamp-2">Authentic wok-cooked mutton with fresh tomatoes, ginger, and cracked black pepper.</p>
+<div class="flex items-center justify-between mt-auto">
+<div>
+<span class="text-label-bold font-label-bold text-on-surface-variant block uppercase tracking-wider">Starts at</span>
+<span class="font-headline-lg text-headline-lg text-primary">Rs. 1,450</span>
+</div>
+<button class="bg-charcoal-text text-white p-3 rounded-xl hover:bg-on-surface transition-colors">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Dish Card 3 -->
+<div class="bg-white rounded-xl border border-outline-variant overflow-hidden flex flex-col group hover:shadow-lg transition-shadow">
+<div class="h-56 w-full relative overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A beautifully arranged Pakistani Mixed Grill Platter on a wooden board. It includes Seekh Kababs, Chicken Malai Boti, and Beef Tikka, served with mint chutney and fresh tandoori naan. The lighting is crisp and natural, showcasing the charred edges of the grill items. The color palette is earthy with vibrant greens from the chutney and lemon wedges, set against a clean linen tablecloth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCf-jGVb4I3lZOG1p0hcSVI3DY-EPXhwdmtQVHVtndyyfxWg20jOhYUUPipkwe4g2McyCvaDRW3uTytYemYGvYvs0x0VdmE2Fy6EVEIJdpf31vb3eDzAjlDLROd4A9CG1PIoD-YOsYiOWQl3DNDEnC-z-tzwtcn22iLs330v2n9gm-G4mfL0eI3kpKHDwBjp1N701yird43nOhHt3-HUbFbLcbi_0LUdKD2SNi9lJ-HjHUeTCebx3udOqy_t-e1-WJl5xKwP1obcMRK"/>
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container px-3 py-1 rounded-full font-label-bold text-label-bold">Single Serving</div>
+</div>
+<div class="p-6 flex-grow flex flex-col">
+<h3 class="font-title-md text-title-md text-on-surface mb-2">BBQ Solo Platter</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4 flex-grow line-clamp-2">A curated selection of Seekh Kabab, Malai Boti, and Tikka served with fresh Naan.</p>
+<div class="flex items-center justify-between mt-auto">
+<div>
+<span class="text-label-bold font-label-bold text-on-surface-variant block uppercase tracking-wider">Starts at</span>
+<span class="font-headline-lg text-headline-lg text-primary">Rs. 1,200</span>
+</div>
+<button class="bg-charcoal-text text-white p-3 rounded-xl hover:bg-on-surface transition-colors">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Dish Card 4 -->
+<div class="bg-white rounded-xl border border-outline-variant overflow-hidden flex flex-col group hover:shadow-lg transition-shadow">
+<div class="h-56 w-full relative overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A gourmet presentation of creamy Garlic Hummus and crispy seasoned Pita chips in a modern ceramic bowl. Garnished with a swirl of extra virgin olive oil and a dash of paprika. The setting is clean and minimalist, using a light mode aesthetic with white and beige tones. Soft shadows create a sense of depth and artisanal quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBo4-X8DYQAfjFvS7-MaIrElsb0AMEwetKpuFfv0CGAClPZHAPAdmKda0igs5zkpDrkWNQqgKR3CM2cfry47tBzLDFaYjKecyy8CF2QCLYzU8S4PuThOlNcdRHmWwEEi73fz1O4ky4AGD3YrIHEStHGMwqaWyUga7qn1UgcUbnoUsJCSBzBqe-L9sIVBr6Kzmh813pVJAZBgbpaOUcIzy1e7KLavlSGrHTSF4qqflv1CgRwPNmyq1kn21wMFSq6Vt3Zr1lFOX2J3CIO"/>
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container px-3 py-1 rounded-full font-label-bold text-label-bold">Single Serving</div>
+</div>
+<div class="p-6 flex-grow flex flex-col">
+<h3 class="font-title-md text-title-md text-on-surface mb-2">Artisanal Sides Trio</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4 flex-grow line-clamp-2">Seasonal garden salad, fresh raita, and your choice of garlic or butter naan.</p>
+<div class="flex items-center justify-between mt-auto">
+<div>
+<span class="text-label-bold font-label-bold text-on-surface-variant block uppercase tracking-wider">Starts at</span>
+<span class="font-headline-lg text-headline-lg text-primary">Rs. 450</span>
+</div>
+<button class="bg-charcoal-text text-white p-3 rounded-xl hover:bg-on-surface transition-colors">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Dish Card 5 (Biryani) -->
+<div class="bg-white rounded-xl border border-outline-variant overflow-hidden flex flex-col group hover:shadow-lg transition-shadow">
+<div class="h-56 w-full relative overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Beef Pulao in a traditional ceramic dish, showing tender chunks of beef nestled in perfectly separated grains of golden-brown rice. The image is bright and appetizing, emphasizing the moistness of the beef. Garnish includes fried onions and fresh mint leaves. Professional food photography style with neutral backgrounds." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCujMGeIre0oTEgfdTq-HXrXPQpmGrY39A7NsFhNnZuXhZKFvU2HcdO85Lx6AhfuuI4FUgviCt1ozoQE23ZESASxfrjl6iLjeTcSq0AEVJRY9hdiWJs21HvkWJaHDhKuLWBDYLggzhzCBkzUQjLz8axJ6ixYw1tYcToXfFFuUu8Qxk2MmfpjiTy2-gkr-1v5x9EeB9to3VpuLqZGtblsKelOUAT0qkuzkdtCwVOM5OR_kZF8nheQllzEydp4JM01q-0-Ctn49z5OMFa"/>
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container px-3 py-1 rounded-full font-label-bold text-label-bold">Single Serving</div>
+</div>
+<div class="p-6 flex-grow flex flex-col">
+<h3 class="font-title-md text-title-md text-on-surface mb-2">Beef Yakhni Pulao</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4 flex-grow line-clamp-2">Fragrant rice cooked in rich beef stock with aromatic whole spices and tender meat.</p>
+<div class="flex items-center justify-between mt-auto">
+<div>
+<span class="text-label-bold font-label-bold text-on-surface-variant block uppercase tracking-wider">Starts at</span>
+<span class="font-headline-lg text-headline-lg text-primary">Rs. 950</span>
+</div>
+<button class="bg-charcoal-text text-white p-3 rounded-xl hover:bg-on-surface transition-colors">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Dish Card 6 (Karahi) -->
+<div class="bg-white rounded-xl border border-outline-variant overflow-hidden flex flex-col group hover:shadow-lg transition-shadow">
+<div class="h-56 w-full relative overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A vibrant White Chicken Karahi (Chicken Achari) in a silver serving bowl. The sauce is thick and creamy white, flavored with green chilies and ginger. Garnished with fresh cream and coriander. Lighting is bright, high-key light mode, set on a modern dining table with corporate lunch vibes." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoy6XTu2n1ty55HANR2pLdC81fMSHEbti8oAEb-B9esfd5Y9s_iMF3WdYkyXBpVxvYZwjRLfhW34GASRgPXzpZ0IZwVXb4QdAq8dHmdauA8Pj5tU21ZxwUIiFP6s1tOg4fe5jq7YcQmD5L2YuAuSZZ_WM3fX8rdY_s7F1MGHUtkGMz5x4Fm3nUaiv0y2eo_lbAWC9j8tdlBnXRQaWpr7qm39EiVOIY-pRMu51kiwM1Npt_6J9krN7wLIu-kNlkAgk2qcfTDjZi9CBQ"/>
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container px-3 py-1 rounded-full font-label-bold text-label-bold">Single Serving</div>
+</div>
+<div class="p-6 flex-grow flex flex-col">
+<h3 class="font-title-md text-title-md text-on-surface mb-2">White Chicken Karahi</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4 flex-grow line-clamp-2">A creamy, rich chicken karahi prepared with yogurt, cream, and subtle white spices.</p>
+<div class="flex items-center justify-between mt-auto">
+<div>
+<span class="text-label-bold font-label-bold text-on-surface-variant block uppercase tracking-wider">Starts at</span>
+<span class="font-headline-lg text-headline-lg text-primary">Rs. 1,150</span>
+</div>
+<button class="bg-charcoal-text text-white p-3 rounded-xl hover:bg-on-surface transition-colors">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Bulk Order CTA Banner -->
+<section class="mt-20 bg-secondary-container rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8">
+<div class="max-w-xl text-center md:text-left">
+<h2 class="font-display-lg text-display-lg text-on-secondary-container mb-4">Ordering for a Team?</h2>
+<p class="font-body-lg text-on-secondary-container opacity-90">Get special corporate rates and customized packaging for orders of 20+ people. Perfect for meetings, events, and office lunches.</p>
+</div>
+<button class="bg-primary text-white px-8 py-4 rounded-xl font-title-md text-title-md shadow-lg active:scale-95 transition-transform whitespace-nowrap">Explore Bulk Packages</button>
+</section>
+</main>
+<!-- Footer Component -->
+<footer class="bg-surface-container-highest border-t border-outline-variant w-full mt-24">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-12 max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-1">
+<div class="font-headline-lg text-headline-lg text-primary mb-4">Corporate Craving</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Elevating corporate dining with the rich heritage of Pakistani flavors. Dependable, flavorful, and attentive.</p>
+</div>
+<div>
+<h4 class="font-title-md text-title-md text-on-surface mb-4">Company</h4>
+<ul class="space-y-2">
+<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">About Us</a></li>
+<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Our Menu</a></li>
+<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Bulk Orders</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-title-md text-title-md text-on-surface mb-4">Support</h4>
+<ul class="space-y-2">
+<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">WhatsApp Support</a></li>
+<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Refund Policy</a></li>
+<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-title-md text-title-md text-on-surface mb-4">Newsletter</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4">Get updates on new menu items and corporate deals.</p>
+<div class="flex">
+<input class="bg-white border border-outline-variant rounded-l-lg px-4 py-2 w-full focus:outline-primary" placeholder="Email address" type="email"/>
+<button class="bg-primary text-white px-4 py-2 rounded-r-lg"><span class="material-symbols-outlined">send</span></button>
+</div>
+</div>
+</div>
+<div class="border-t border-outline-variant/30 py-6 text-center">
+<p class="font-body-sm text-body-sm text-on-surface-variant">© 2024 Corporate Craving. Islamabad, Pakistan.</p>
+</div>
+</footer>
+<!-- Mobile Sticky Action Bar (Conditional for Menu/Cart logic) -->
+<div class="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-outline-variant p-4 flex justify-between items-center z-50">
+<div class="flex items-center gap-4">
+<span class="text-on-surface-variant font-label-bold text-label-bold">Items: 0</span>
+<span class="text-primary font-title-md text-title-md font-bold">Rs. 0</span>
+</div>
+<button class="bg-[#25D366] text-white px-6 py-2 rounded-xl flex items-center gap-2 font-title-md text-title-md">
+<span class="material-symbols-outlined">chat</span>
+            WhatsApp
+        </button>
+</div>
+<script>
+        function filterMenu(category) {
+            // Logic for visual feedback on chips
+            const chips = document.querySelectorAll('.category-chip');
+            chips.forEach(chip => {
+                if (chip.innerText.includes(category)) {
+                    chip.classList.add('active-chip');
+                    chip.classList.remove('bg-white', 'text-on-surface-variant', 'border-outline-variant');
+                } else {
+                    chip.classList.remove('active-chip');
+                    chip.classList.add('bg-white', 'text-on-surface-variant', 'border-outline-variant');
+                }
+            });
+
+            // Filtering simulation (in real app, this would filter a list)
+            console.log("Filtering by: " + category);
+            const grid = document.getElementById('dish-grid');
+            grid.style.opacity = '0.5';
+            setTimeout(() => {
+                grid.style.opacity = '1';
+            }, 300);
+        }
+
+        // Add to cart interaction
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', function() {
+                if (this.querySelector('.material-symbols-outlined')?.innerText === 'add_shopping_cart') {
+                    this.classList.add('bg-success-emerald');
+                    const icon = this.querySelector('.material-symbols-outlined');
+                    icon.innerText = 'check';
+                    setTimeout(() => {
+                        this.classList.remove('bg-success-emerald');
+                        icon.innerText = 'add_shopping_cart';
+                    }, 1500);
+                }
+            });
+        });
+    </script>
+</body></html>

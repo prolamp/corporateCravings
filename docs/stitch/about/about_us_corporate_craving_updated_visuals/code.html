@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Us | Corporate Craving</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "on-tertiary-fixed-variant": "#005322",
+                  "on-primary-fixed": "#241a00",
+                  "secondary-fixed": "#dce2f7",
+                  "inverse-on-surface": "#f2f0ed",
+                  "charcoal-text": "#111827",
+                  "on-background": "#1b1c1a",
+                  "on-tertiary-container": "#00642b",
+                  "secondary-container": "#d9dff5",
+                  "on-secondary": "#ffffff",
+                  "surface-dim": "#dbdad6",
+                  "inverse-primary": "#f0c100",
+                  "surface-container-low": "#f5f3ef",
+                  "surface-container-high": "#eae8e4",
+                  "inverse-surface": "#30312e",
+                  "surface-container": "#efeeea",
+                  "surface-tint": "#745c00",
+                  "on-primary": "#ffffff",
+                  "danger-ruby": "#E11D48",
+                  "background": "#fbf9f5",
+                  "on-tertiary-fixed": "#002109",
+                  "tertiary": "#006d2f",
+                  "on-error": "#ffffff",
+                  "outline": "#807660",
+                  "surface-cream": "#FDFBF7",
+                  "on-error-container": "#93000a",
+                  "tertiary-fixed": "#66ff8e",
+                  "surface-container-highest": "#e4e2de",
+                  "on-primary-fixed-variant": "#574500",
+                  "primary-fixed": "#ffe089",
+                  "surface": "#fbf9f5",
+                  "outline-variant": "#d1c5ab",
+                  "tertiary-fixed-dim": "#3de273",
+                  "surface-bright": "#fbf9f5",
+                  "error-container": "#ffdad6",
+                  "on-surface-variant": "#4e4632",
+                  "on-primary-container": "#695300",
+                  "primary-fixed-dim": "#f0c100",
+                  "error": "#ba1a1a",
+                  "primary": "#745c00",
+                  "on-tertiary": "#ffffff",
+                  "on-secondary-fixed": "#141b2b",
+                  "on-secondary-container": "#5c6274",
+                  "surface-container-lowest": "#ffffff",
+                  "success-emerald": "#10B981",
+                  "secondary-fixed-dim": "#c0c6db",
+                  "on-surface": "#1b1c1a",
+                  "on-secondary-fixed-variant": "#404758",
+                  "primary-container": "#f6c60c",
+                  "secondary": "#575e70",
+                  "surface-variant": "#e4e2de",
+                  "tertiary-container": "#45e878"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.125rem",
+                  "lg": "0.25rem",
+                  "xl": "0.5rem",
+                  "full": "0.75rem"
+          },
+          "spacing": {
+                  "margin-mobile": "16px",
+                  "margin-desktop": "40px",
+                  "base": "8px",
+                  "container-max": "1280px",
+                  "gutter": "24px"
+          },
+          "fontFamily": {
+                  "headline-lg": ["Playfair Display"],
+                  "body-lg": ["Plus Jakarta Sans"],
+                  "display-lg": ["Playfair Display"],
+                  "body-sm": ["Plus Jakarta Sans"],
+                  "title-md": ["Plus Jakarta Sans"],
+                  "label-sm": ["Plus Jakarta Sans"],
+                  "label-bold": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+                  "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                  "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                  "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                  "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                  "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                  "label-bold": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}]
+          }
+        },
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .text-balance { text-wrap: balance; }
+    .heritage-overlay {
+      background: linear-gradient(to right, rgba(27, 28, 26, 0.8), rgba(27, 28, 26, 0.2));
+    }
+    .card-hover:hover {
+      transform: translateY(-4px);
+      box-shadow: 0px 4px 20px rgba(17, 24, 39, 0.08);
+    }
+  </style>
+</head>
+<body class="bg-surface-cream text-on-surface font-body-lg overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 z-50 w-full bg-surface-cream/90 backdrop-blur-md border-b border-outline-variant">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto h-20">
+<div class="flex items-center gap-base">
+<span class="font-headline-lg text-headline-lg text-primary tracking-tight">Corporate Craving</span>
+</div>
+<!-- Desktop Links -->
+<div class="hidden md:flex items-center gap-10">
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary transition-colors" href="#">Weekly Menu</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary transition-colors" href="#">Corporate Catering</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary transition-colors" href="#">Referral Program</a>
+<a class="font-label-bold text-label-bold text-primary font-bold border-b-2 border-primary" href="#">About Us</a>
+</div>
+<div class="flex items-center gap-4">
+<a class="hidden lg:block font-label-bold text-label-bold text-on-surface-variant hover:text-primary px-4 py-2" href="#">Client Login</a>
+<button class="bg-primary text-on-primary px-6 py-3 rounded-xl font-label-bold text-label-bold transition-all active:scale-95 shadow-sm hover:brightness-95">
+          Get a Proposal
+        </button>
+</div>
+</div>
+</nav>
+<!-- Section 1: Hero -->
+<section class="relative h-[90vh] min-h-[600px] flex items-center pt-20 overflow-hidden">
+<div class="absolute inset-0 z-0 transition-all duration-700 opacity-100 translate-y-0">
+<div class="absolute inset-0 heritage-overlay z-10"></div>
+<img alt="Professional chefs meticulously plating gourmet dishes in a high-end commercial kitchen environment." class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLvH_Rts6TfBksMJhE2XO1-FT0EPr6cbAnuGzt_HhdCLLA6g25mV2w5_fSP-OAkcLqvQvYuHYgs68xxHLa4gz9krEpWQ2JGzdJ7kXGkCfC1EamRJkW0snYV5qcAKwHB5dXdyzqCdvZdZvjPJDSi0qbb88T0RaBuchGrRUWoDbs03UPlsjMBpGM7AxDqg0aTcx-KGzXCW1SehdoKQEtvt5r5Ere8xeS3xhKI3jyiNxBD_AuysIcto0PW5Ptpe"/>
+</div>
+<div class="relative z-20 w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop transition-all duration-700 opacity-100 translate-y-0">
+<div class="max-w-2xl text-white">
+<span class="font-label-bold text-label-bold tracking-widest uppercase text-primary-fixed mb-4 block">Our Legacy</span>
+<h1 class="font-display-lg text-[40px] md:text-display-lg leading-tight mb-6">Crafting Heritage for the Modern Workspace</h1>
+<p class="font-body-lg text-body-lg opacity-90 max-w-lg mb-10">Bringing the refined elegance of Pakistani culinary tradition to the professional landscape, one plate at a time.</p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-xl font-label-bold text-label-bold shadow-lg">Discover Our Menu</button>
+<button class="border border-white/30 backdrop-blur-md text-white px-8 py-4 rounded-xl font-label-bold text-label-bold hover:bg-white/10 transition-all">Watch Our Story</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Our Story -->
+<section class="py-24 bg-surface-cream">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop transition-all duration-700 opacity-100 translate-y-0">
+<div class="grid md:grid-cols-2 gap-16 items-center">
+<div class="order-2 md:order-1">
+<span class="font-label-bold text-label-bold text-primary mb-2 block">The Saffron &amp; Slate Philosophy</span>
+<h2 class="font-headline-lg text-headline-lg mb-8">A Journey of Flavor and Precision</h2>
+<div class="space-y-6 text-on-surface-variant font-body-lg leading-relaxed">
+<p class="">Our story began with a simple observation: corporate catering often sacrificed soul for efficiency. We envisioned a different path—one where the rich, aromatic heritage of Pakistan meets the rigorous demands of global business.</p>
+<p class="">The 'Saffron &amp; Slate' philosophy represents this duality. Saffron signifies our deep-rooted artisanal culinary tradition, the warmth of hospitality, and the vibrant spices of our ancestors. Slate represents the modern corporate environment—structured, professional, and reliable.</p>
+<p class="">Today, we serve as the culinary bridge between these two worlds, ensuring that every professional meal is an experience worth remembering.</p>
+</div>
+<div class="mt-10 pt-10 border-t border-outline-variant flex gap-8">
+<div>
+<p class="font-headline-lg text-headline-lg text-primary mb-1">15+</p>
+<p class="font-label-bold text-label-bold">Culinary Awards</p>
+</div>
+<div>
+<p class="font-headline-lg text-headline-lg text-primary mb-1">300+</p>
+<p class="font-label-bold text-label-bold">Handcrafted Recipes</p>
+</div>
+</div>
+</div>
+<div class="order-1 md:order-2">
+<div class="relative">
+<div class="absolute -top-4 -right-4 w-24 h-24 bg-primary-container/20 rounded-full blur-2xl"></div>
+<div class="rounded-2xl overflow-hidden shadow-xl border border-outline-variant">
+<img alt="Artisanal food detail: close-up shot of a gourmet dish featuring vibrant saffron threads and fresh herbs, styled on a contemporary slate plate." class="w-full aspect-[4/5] object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLv9v81eVAONj3uq1VOJPJXBTyliOpWIKxGAABK0wMZCruksfPDbvQRj_1GCI6brx4boO_OQjnZMkshmf_Nz1q28S99pyKBDrSpPQz0sdsreb6OqHBxTo4fUGDCuKKHA0ljaS4D4UwoAGhc_prK76BZn119gcccH_oVH9qKXfuFAxsa1R8Fem_DHi8cmaqPqFMXRfg_saUaYPd2lA2tOOa5oC60YEzU1ghqeYEi6T5oyy_8iY-lYcRhBEHUq"/>
+</div>
+<div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-lg border border-outline-variant hidden lg:block">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">restaurant</span>
+</div>
+<div>
+<p class="font-label-bold text-label-bold text-on-surface">Artisanal Quality</p>
+<p class="text-xs text-on-surface-variant">Daily Sourced Ingredients</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Built for Business -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop transition-all duration-700 opacity-100 translate-y-0">
+<div class="text-center max-w-3xl mx-auto mb-16">
+<h2 class="font-headline-lg text-headline-lg mb-4">Built for Business</h2>
+<p class="text-on-surface-variant">We understand that catering for a thousand employees requires more than just good food. It requires logistical excellence and uncompromising standards.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-gutter">
+<!-- Text Feature 1 -->
+<div class="bg-white p-10 rounded-2xl border border-outline-variant flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-primary text-4xl mb-6">precision_manufacturing</span>
+<h3 class="font-title-md text-title-md mb-4">Industrial Excellence</h3>
+<p class="text-on-surface-variant font-body-sm leading-relaxed mb-6">Our 20,000 sq ft ISO-certified commercial kitchen is the heart of our operations, combining traditional cooking methods with advanced safety protocols.</p>
+</div>
+<a class="text-primary font-label-bold text-label-bold flex items-center gap-2 hover:translate-x-1 transition-transform" href="#">
+            Learn About Safety <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<!-- Image Feature -->
+<div class="md:col-span-1 rounded-2xl overflow-hidden border border-outline-variant">
+<img alt="Large fleet of branded Corporate Craving delivery vans lined up outside a modern logistics facility at dawn." class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLvNT-FSvwWT3GH_ib_uOBLYfVEy5UhHYUFR8d5PYHzok1t8zG-xggk3DyWGK4CcZ_1_mXQbtEleUoT7GPUp1PGJirkIiLWCgYp_Wmmzqb0blcEoyy7O4BAzhpRu_e6PRYmhRY8ujm3zpmILKwTC-u4DfQXSg916f6q388gCxtF4LUL6FFyNC0RFWd5MX0CiZmBHrJnSldQ3hyjR7fs76uzExgeSTGO3x9fP0vTYEf_TouhjC69zr2YlkpRW"/>
+</div>
+<!-- Text Feature 2 -->
+<div class="bg-white p-10 rounded-2xl border border-outline-variant flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-primary text-4xl mb-6">local_shipping</span>
+<h3 class="font-title-md text-title-md mb-4">Fleet Logistics</h3>
+<p class="text-on-surface-variant font-body-sm leading-relaxed mb-6">Our temperature-controlled fleet ensures that every dish arrives at its destination exactly as the chef intended—fresh, hot, and delicious.</p>
+</div>
+<a class="text-primary font-label-bold text-label-bold flex items-center gap-2 hover:translate-x-1 transition-transform" href="#">
+            Fleet Operations <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Our Impact -->
+<section class="relative py-32 overflow-hidden">
+<div class="absolute inset-0 z-0 transition-all duration-700 opacity-100 translate-y-0">
+<img alt="A high-end corporate boardroom setting with a diverse group of professionals enjoying a catered gourmet lunch during a meeting." class="w-full h-full object-cover brightness-[0.3]" src="https://lh3.googleusercontent.com/aida/AP1WRLvtOfO0DwoglzG_T6Nc99v26DO0GVsKIJJGrF2I_E28mh-we5fBPJ8Qyiyu8vH0V6ID-ONLdfHGbGWkqpvWTrgN8777l1S5awvGi9vw3YOH4fkwK7nT8L3WXLczsexf2CM-r1f5-rWbYWgLtd7VcOM4j9eKOUe5bSNzEvhIL9hrGkjp5h6qkePfPiOZuQJSmromaRY8hajznv6hIsCiMDr1cxuNq2ECByK47Qcg8BV5DovORiipbM8YF38"/>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-white transition-all duration-700 opacity-100 translate-y-0">
+<div class="grid lg:grid-cols-2 gap-20 items-center">
+<div>
+<h2 class="font-display-lg text-[32px] md:text-[40px] leading-tight mb-8">The Preferred Partner for the Professional Palate</h2>
+<p class="text-lg opacity-80 mb-12">From daily cafeteria management to high-stakes executive dinners, we bring a level of care and sophistication that transforms the workplace culture.</p>
+<button class="bg-white text-on-surface px-8 py-4 rounded-xl font-label-bold text-label-bold flex items-center gap-2 transition-all hover:bg-surface-cream active:scale-95">
+            Become a Partner <span class="material-symbols-outlined">corporate_fare</span>
+</button>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+<div class="bg-white/10 backdrop-blur-lg border border-white/20 p-8 rounded-2xl text-center">
+<p class="font-headline-lg text-headline-lg mb-2">50+</p>
+<p class="font-label-bold text-label-bold uppercase tracking-wide opacity-80">Partners</p>
+</div>
+<div class="bg-white/10 backdrop-blur-lg border border-white/20 p-8 rounded-2xl text-center">
+<p class="font-headline-lg text-headline-lg mb-2">10k+</p>
+<p class="font-label-bold text-label-bold uppercase tracking-wide opacity-80">Monthly Meals</p>
+</div>
+<div class="bg-white/10 backdrop-blur-lg border border-white/20 p-8 rounded-2xl text-center">
+<p class="font-headline-lg text-headline-lg mb-2">98%</p>
+<p class="font-label-bold text-label-bold uppercase tracking-wide opacity-80">Satisfaction</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 5: Vision & Values -->
+<section class="py-24 bg-surface-cream">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop transition-all duration-700 opacity-100 translate-y-0">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
+<div class="max-w-xl">
+<span class="font-label-bold text-label-bold text-primary mb-2 block">Our Foundation</span>
+<h2 class="font-headline-lg text-headline-lg">Driven by Excellence, Rooted in Values</h2>
+</div>
+<p class="text-on-surface-variant max-w-sm">Every plate we serve is guided by three core pillars that define our commitment to your workplace.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<!-- Value 1 -->
+<div class="group bg-white p-10 rounded-2xl border border-outline-variant card-hover transition-all duration-300">
+<div class="w-16 h-16 bg-primary-container/20 rounded-xl flex items-center justify-center mb-8 group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-white transition-colors text-3xl">workspace_premium</span>
+</div>
+<h3 class="font-title-md text-title-md mb-4">Authenticity</h3>
+<p class="text-on-surface-variant font-body-lg">We respect the heritage of our ingredients and recipes, delivering flavors that are unmistakably authentic yet contemporary in presentation.</p>
+</div>
+<!-- Value 2 -->
+<div class="group bg-white p-10 rounded-2xl border border-outline-variant card-hover transition-all duration-300">
+<div class="w-16 h-16 bg-primary-container/20 rounded-xl flex items-center justify-center mb-8 group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-white transition-colors text-3xl">center_focus_strong</span>
+</div>
+<h3 class="font-title-md text-title-md mb-4">Precision</h3>
+<p class="text-on-surface-variant font-body-lg">From temperature control to table settings, we operate with a level of precision that matches the professional standards of our clients.</p>
+</div>
+<!-- Value 3 -->
+<div class="group bg-white p-10 rounded-2xl border border-outline-variant card-hover transition-all duration-300">
+<div class="w-16 h-16 bg-primary-container/20 rounded-xl flex items-center justify-center mb-8 group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-white transition-colors text-3xl">verified</span>
+</div>
+<h3 class="font-title-md text-title-md mb-4">Reliability</h3>
+<p class="text-on-surface-variant font-body-lg">Consistency is our promise. Our clients count on us for flawless execution every single day, without fail or compromise.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-20">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop transition-all duration-700 opacity-100 translate-y-0">
+<div class="bg-charcoal-text text-white rounded-3xl p-12 md:p-20 text-center relative overflow-hidden">
+<div class="absolute inset-0 opacity-20 pointer-events-none">
+<svg height="100%" preserveaspectratio="none" viewbox="0 0 100 100" width="100%">
+<path d="M0 0 L100 100 M100 0 L0 100" fill="none" stroke="white" stroke-width="0.1"></path>
+</svg>
+</div>
+<h2 class="font-headline-lg text-headline-lg mb-6 text-balance">Elevate Your Corporate Dining Experience</h2>
+<p class="max-w-2xl mx-auto opacity-70 mb-10 text-lg">Partner with Corporate Craving to bring a touch of heritage and professional excellence to your workspace. Let's create something extraordinary together.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<button class="bg-primary text-on-primary px-10 py-5 rounded-xl font-label-bold text-label-bold shadow-lg hover:brightness-110 active:scale-95 transition-all">Schedule a Tasting</button>
+<button class="bg-[#25D366] text-white px-10 py-5 rounded-xl font-label-bold text-label-bold flex items-center justify-center gap-2 hover:brightness-110 transition-all">
+<span class="material-symbols-outlined">chat</span>
+            Talk to an Expert
+          </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-highest border-t border-outline-variant">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-16 pb-8">
+<div class="grid md:grid-cols-4 gap-12 mb-16">
+<div class="col-span-2">
+<span class="font-headline-lg text-headline-lg text-on-surface mb-6 block">Corporate Craving</span>
+<p class="text-on-surface-variant font-body-sm max-w-sm leading-relaxed">
+            Modern-Heritage Catering for the Professional Palate. We bring centuries of flavor to the contemporary workspace with precision and pride.
+          </p>
+</div>
+<div>
+<h4 class="font-label-bold text-label-bold text-on-surface uppercase tracking-widest mb-6">Explore</h4>
+<ul class="space-y-4 font-label-bold text-label-bold text-on-surface-variant">
+<li class=""><a class="hover:text-primary transition-colors" href="#">Our Menus</a></li>
+<li class=""><a class="hover:text-primary transition-colors" href="#">Client Testimonials</a></li>
+<li class=""><a class="hover:text-primary transition-colors" href="#">Logistics &amp; Safety</a></li>
+<li class=""><a class="hover:text-primary transition-colors" href="#">Careers</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-bold text-label-bold text-on-surface uppercase tracking-widest mb-6">Contact</h4>
+<ul class="space-y-4 font-label-bold text-label-bold text-on-surface-variant">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">mail</span> info@corporatecraving.com</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">call</span> +92 300 1234567</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">location_on</span> Lahore, Pakistan</li>
+</ul>
+</div>
+</div>
+<div class="pt-8 border-t border-outline-variant flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-label-sm text-label-sm text-on-surface-variant">© 2024 Corporate Craving. Modern-Heritage Catering for the Professional Palate.</p>
+<div class="flex gap-8">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary" href="#">Terms of Service</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary" href="#">Sustainability</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+    // Micro-interactions and sticky header logic
+    const navbar = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 20) {
+        navbar.classList.add('shadow-md');
+        navbar.classList.remove('bg-surface-cream/90');
+        navbar.classList.add('bg-white');
+      } else {
+        navbar.classList.remove('shadow-md');
+        navbar.classList.add('bg-surface-cream/90');
+        navbar.classList.remove('bg-white');
+      }
+    });
+
+    // Simple reveal animation on scroll
+    const observerOptions = {
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('opacity-100', 'translate-y-0');
+          entry.target.classList.remove('opacity-0', 'translate-y-10');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('section > div').forEach(el => {
+      el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+      observer.observe(el);
+    });
+  </script>
+</body></html>

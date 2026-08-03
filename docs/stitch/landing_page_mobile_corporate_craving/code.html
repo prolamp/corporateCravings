@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Corporate Craving - Authentic Corporate Catering</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Source+Sans+3:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "on-tertiary-fixed-variant": "#474742",
+                    "surface-variant": "#e5e2e1",
+                    "surface-container-low": "#f6f3f2",
+                    "on-tertiary-container": "#40403b",
+                    "on-error-container": "#93000a",
+                    "inverse-on-surface": "#f3f0ef",
+                    "secondary": "#516169",
+                    "surface-container-high": "#eae7e7",
+                    "on-secondary-fixed-variant": "#3a4951",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed-dim": "#c9c6c0",
+                    "secondary-fixed-dim": "#b9c9d3",
+                    "tertiary-fixed": "#e5e2db",
+                    "surface-container": "#f0eded",
+                    "surface": "#fcf9f8",
+                    "surface-tint": "#855300",
+                    "on-primary-fixed": "#2a1700",
+                    "outline": "#857463",
+                    "on-surface-variant": "#524435",
+                    "primary-container": "#e89b2d",
+                    "on-error": "#ffffff",
+                    "on-secondary-fixed": "#0e1d25",
+                    "surface-bright": "#fcf9f8",
+                    "on-surface": "#1c1b1b",
+                    "tertiary": "#5f5e59",
+                    "on-secondary-container": "#55656d",
+                    "secondary-container": "#d2e2ec",
+                    "on-primary-fixed-variant": "#653e00",
+                    "inverse-primary": "#ffb95f",
+                    "background": "#fcf9f8",
+                    "outline-variant": "#d7c3af",
+                    "primary-fixed": "#ffddb8",
+                    "on-primary-container": "#5b3800",
+                    "primary-fixed-dim": "#ffb95f",
+                    "on-tertiary-fixed": "#1c1c18",
+                    "on-background": "#1c1b1b",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed": "#d5e5ef",
+                    "inverse-surface": "#313030",
+                    "tertiary-container": "#adaba5",
+                    "on-primary": "#ffffff",
+                    "surface-dim": "#dcd9d9",
+                    "surface-container-highest": "#e5e2e1",
+                    "primary": "#855300",
+                    "error-container": "#ffdad6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "stack-sm": "8px",
+                    "margin-mobile": "20px",
+                    "gutter-mobile": "16px",
+                    "touch-target-min": "48px",
+                    "stack-md": "16px",
+                    "stack-lg": "24px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Playfair Display"],
+                    "headline-lg": ["Playfair Display"],
+                    "label-sm": ["\"Source Sans 3\""],
+                    "headline-sm": ["Playfair Display"],
+                    "label-md": ["\"Source Sans 3\""],
+                    "body-md": ["\"Source Sans 3\""],
+                    "body-lg": ["\"Source Sans 3\""]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .thumb-zone-gradient {
+            background: linear-gradient(to top, rgba(252, 249, 248, 1) 0%, rgba(252, 249, 248, 0) 100%);
+        }
+        .order-now-sticky {
+            animation: slide-up 0.5s ease-out forwards;
+        }
+        @keyframes slide-up {
+            from { transform: translateY(100px); }
+            to { transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Top Navigation Bar (Desktop Hidden) -->
+<header class="bg-surface docked full-width top-0 z-50 flex justify-between items-center w-full px-margin-mobile h-20 border-b border-outline-variant">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Corporate Craving</h1>
+<div class="flex items-center gap-4">
+<button class="w-12 h-12 flex items-center justify-center rounded-full active:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined text-primary">notifications</span>
+</button>
+</div>
+</header>
+<main class="pb-24">
+<!-- Hero Section -->
+<section class="relative w-full h-[85vh] overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida/AP1WRLuLis1hd_x8Mr4uLX64CJd0JgM_C-iUGSHd3uV19UwUtKrCR7OgoEs0uhqR7rJwmrnw_0232syJVVv2vvdYBJFtwUkib4ivnUGf2sTgCRVQOd8mAkP_lX-WmUoLVxq3NgeFUs_ciUj4qMXQLToVLfN8yPxbWkCuBA5RDZbDwMsvQvAWlb-nzgtjlS_Os9BoVQ_i7BRV5nvtIm7r0GXgtnYqbGlcXMU3lhUSxHG9hcrfeZcfLqVGGHopq6ji')"></div>
+<div class="absolute inset-0 bg-black/30"></div>
+<div class="absolute bottom-0 left-0 w-full px-margin-mobile pb-32 pt-20 thumb-zone-gradient">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-stack-md leading-tight max-w-[80%]">
+                    Authentic Corporate Catering
+                </h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-[90%]">
+                    Elevating workplace dining with curated recipes and seamless office delivery management.
+                </p>
+</div>
+</section>
+<!-- Sticky Interaction Layer -->
+<div class="fixed bottom-24 left-0 w-full z-40 px-margin-mobile flex justify-center pointer-events-none">
+<button class="pointer-events-auto bg-primary text-on-secondary w-full h-[52px] flex items-center justify-center gap-2 rounded-full shadow-lg order-now-sticky transition-transform active:scale-95">
+<span class="font-label-md text-label-md">Order Now</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+<!-- Quick Links (Icon-based navigation) -->
+<section class="mt-[-40px] relative z-10 px-margin-mobile grid grid-cols-3 gap-gutter-mobile">
+<div class="bg-surface border border-outline-variant/30 p-stack-lg rounded-xl flex flex-col items-center text-center shadow-sm backdrop-blur-sm bg-surface/90">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center mb-stack-sm">
+<span class="material-symbols-outlined text-on-secondary-container">lunch_dining</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface">Daily Lunch</span>
+</div>
+<div class="bg-surface border border-outline-variant/30 p-stack-lg rounded-xl flex flex-col items-center text-center shadow-sm backdrop-blur-sm bg-surface/90">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center mb-stack-sm">
+<span class="material-symbols-outlined text-on-secondary-container">groups</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface">Bulk Orders</span>
+</div>
+<div class="bg-surface border border-outline-variant/30 p-stack-lg rounded-xl flex flex-col items-center text-center shadow-sm backdrop-blur-sm bg-surface/90">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center mb-stack-sm">
+<span class="material-symbols-outlined text-on-secondary-container">restaurant_menu</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface">Menu</span>
+</div>
+</section>
+<!-- Value Props -->
+<section class="mt-stack-lg px-margin-mobile py-stack-lg">
+<div class="bg-surface-container-low rounded-xl p-stack-lg space-y-stack-md">
+<div class="flex items-center gap-stack-md">
+<span class="material-symbols-outlined text-primary">schedule</span>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface">On-time Delivery</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Guaranteed delivery before your scheduled meetings.</p>
+</div>
+</div>
+<div class="flex items-center gap-stack-md">
+<span class="material-symbols-outlined text-primary">stars</span>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface">Authentic Taste</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Traditional recipes crafted by specialist chefs.</p>
+</div>
+</div>
+<div class="flex items-center gap-stack-md">
+<span class="material-symbols-outlined text-primary">analytics</span>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface">Hassle-free Management</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Easy invoicing and recurring order management tools.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="px-margin-mobile py-stack-lg">
+<div class="bg-inverse-surface rounded-xl p-stack-lg text-center">
+<h3 class="font-headline-sm text-headline-sm text-inverse-on-surface mb-stack-sm">Planning an Event?</h3>
+<p class="font-body-md text-body-md text-surface-variant mb-stack-lg">Our dedicated concierge team handles everything from custom menus to on-site service.</p>
+<button class="bg-secondary-fixed text-on-secondary-fixed w-full h-[52px] flex items-center justify-center gap-2 rounded-full font-label-md text-label-md hover:bg-secondary-fixed-dim transition-colors active:scale-95">
+<span class="material-symbols-outlined">support_agent</span>
+                    Contact our Concierge
+                </button>
+</div>
+</section>
+<!-- Additional Bento Style Content -->
+<section class="px-margin-mobile pb-stack-lg grid grid-cols-2 gap-stack-md">
+<div class="col-span-2 relative h-48 rounded-xl overflow-hidden bg-surface-container-high border border-outline-variant/20 shadow-sm">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A sophisticated business boardroom with elegantly plated authentic Indian dishes like biryani and raita served on a long mahogany table, soft evening light through windows, luxurious high-end atmosphere for corporate dining." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDmhh6uVhIYMODRgQ1SxgLdVMxfTrmVqFNRJPs1RxjYYcIsDjIwUoC4kMmTljDBC66zxkXm6Ys4cxMrn8Mm6hj4bm9MTJvj8znkG4ap7c1vnwOjytpBv3A5a8phVT1jHCSBZW5RV9NXDZMS46nCVDEQLpwhXN1fGp1F19KGShopdi1WlsTSRHKEXPKSC9BMvvd6w0MeLAddEubK09jFWG-mT6pqwEaDcJKplVNUMexc4ObvseW-MFXNV_SFB6KxPrlKYcqwU00vEmtX')"></div>
+<div class="absolute inset-0 bg-black/20"></div>
+<div class="absolute bottom-stack-md left-stack-md">
+<span class="bg-primary/90 text-white px-3 py-1 rounded-full font-label-sm text-[10px] uppercase tracking-widest">Featured</span>
+<h4 class="text-white font-headline-sm text-headline-sm mt-1">The Royal Feast</h4>
+</div>
+</div>
+<div class="bg-white p-stack-md rounded-xl border border-outline-variant/30 flex flex-col justify-between h-40">
+<span class="material-symbols-outlined text-primary text-[32px]">favorite</span>
+<span class="font-label-md text-label-md text-on-surface leading-tight">Member Favorites</span>
+</div>
+<div class="bg-primary-container p-stack-md rounded-xl border border-outline-variant/30 flex flex-col justify-between h-40">
+<span class="material-symbols-outlined text-on-primary-container text-[32px]">redeem</span>
+<span class="font-label-md text-label-md text-on-primary-container leading-tight">Corporate Gifting</span>
+</div>
+</section>
+<!-- Footer (Simplified for Mobile) -->
+<footer class="w-full py-12 px-margin-mobile border-t border-outline-variant bg-surface-container-low flex flex-col gap-6 text-center">
+<h2 class="font-headline-lg text-headline-lg text-primary">Corporate Craving</h2>
+<div class="flex flex-wrap justify-center gap-stack-lg">
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary transition-colors" href="#">Support</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary transition-colors" href="#">Terms</a>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant opacity-70">
+                © 2024 Corporate Craving. All rights reserved.
+            </p>
+</footer>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 md:hidden bg-surface/90 backdrop-blur-md border-t border-outline-variant h-[72px] flex justify-around items-center px-margin-mobile py-2">
+<!-- Schedule (Active State determined by intent - Home/Landing is often 'Schedule' or 'Explore', mapping here to main interaction) -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant transition-transform active:scale-95">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="font-label-sm text-label-sm mt-1">Schedule</span>
+</button>
+<!-- Package -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant transition-transform active:scale-95">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-label-sm text-label-sm mt-1">Package</span>
+</button>
+<!-- Account -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant transition-transform active:scale-95">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm mt-1">Account</span>
+</button>
+</nav>
+<script>
+        // Subtle scroll effects for the hero image and sticky button
+        window.addEventListener('scroll', () => {
+            const scrollPos = window.scrollY;
+            const heroImage = document.querySelector('.absolute.inset-0.bg-cover');
+            if (heroImage) {
+                heroImage.style.transform = `translateY(${scrollPos * 0.1}px)`;
+            }
+
+            // Hide/Show order now button based on footer proximity
+            const orderBtn = document.querySelector('.order-now-sticky').parentElement;
+            const footer = document.querySelector('footer');
+            const footerRect = footer.getBoundingClientRect();
+            
+            if (footerRect.top < window.innerHeight) {
+                orderBtn.style.opacity = '0';
+                orderBtn.style.pointerEvents = 'none';
+            } else {
+                orderBtn.style.opacity = '1';
+                orderBtn.style.pointerEvents = 'auto';
+            }
+        });
+    </script>
+</body></html>

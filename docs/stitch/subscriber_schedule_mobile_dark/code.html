@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Corporate Craving - Subscriber Schedule</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#333532",
+                    "surface-dim": "#121411",
+                    "on-tertiary-fixed": "#191c1f",
+                    "surface-container-highest": "#333532",
+                    "secondary-fixed-dim": "#c6c6c9",
+                    "on-error-container": "#ffdad6",
+                    "secondary": "#c6c6c9",
+                    "on-primary-fixed-variant": "#574500",
+                    "surface": "#121411",
+                    "surface-bright": "#383a36",
+                    "error-container": "#93000a",
+                    "tertiary-fixed": "#e1e2e6",
+                    "tertiary-container": "#caccd0",
+                    "background": "#121411",
+                    "secondary-container": "#454749",
+                    "on-surface": "#e3e3de",
+                    "on-secondary": "#2f3133",
+                    "surface-container-lowest": "#0d0f0c",
+                    "primary-container": "#f6c60c",
+                    "inverse-surface": "#e3e3de",
+                    "on-secondary-container": "#b4b5b7",
+                    "on-surface-variant": "#d1c5ab",
+                    "on-error": "#690005",
+                    "inverse-on-surface": "#2f312e",
+                    "on-primary-fixed": "#241a00",
+                    "on-primary-container": "#695300",
+                    "on-tertiary": "#2e3134",
+                    "inverse-primary": "#745c00",
+                    "tertiary": "#e6e8ec",
+                    "secondary-fixed": "#e2e2e5",
+                    "on-secondary-fixed-variant": "#454749",
+                    "on-secondary-fixed": "#1a1c1e",
+                    "surface-container": "#1e201d",
+                    "outline-variant": "#4e4632",
+                    "on-primary": "#3d2f00",
+                    "on-background": "#e3e3de",
+                    "surface-container-high": "#292a27",
+                    "surface-tint": "#f0c100",
+                    "tertiary-fixed-dim": "#c5c6ca",
+                    "on-tertiary-container": "#53565a",
+                    "surface-container-low": "#1a1c19",
+                    "primary-fixed-dim": "#f0c100",
+                    "primary": "#ffe6a3",
+                    "on-tertiary-fixed-variant": "#44474a",
+                    "error": "#ffb4ab",
+                    "outline": "#9a9078",
+                    "primary-fixed": "#ffe089"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1200px",
+                    "lg": "48px",
+                    "md": "24px",
+                    "xs": "8px",
+                    "xl": "80px",
+                    "sm": "16px",
+                    "gutter": "24px",
+                    "base": "4px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Playfair Display"],
+                    "display-lg": ["Playfair Display"],
+                    "caption": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "label-md": ["Plus Jakarta Sans"],
+                    "display-lg-mobile": ["Playfair Display"],
+                    "headline-sm": ["Playfair Display"],
+                    "body-md": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "caption": ["12px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "display-lg-mobile": ["36px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .glass-header {
+            background: rgba(18, 20, 17, 0.8);
+            backdrop-filter: blur(20px);
+        }
+        .saffron-glow {
+            box-shadow: 0 0 20px rgba(246, 198, 12, 0.15);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen pb-32">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 glass-header border-b border-outline-variant/10">
+<div class="flex justify-between items-center w-full px-4 h-16 max-w-container-max mx-auto">
+<span class="font-headline-sm text-headline-sm text-primary">Corporate Craving</span>
+<div class="flex items-center gap-4">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a sophisticated business executive in a dimly lit, high-end corporate setting. The lighting is low-key and dramatic, reflecting a premium dark-mode aesthetic with subtle warm amber highlights. The person is wearing a sharp, charcoal-colored tailored suit, conveying exclusivity and success in a luxury office environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGPQiIJDKeQZwh7aAUIGqnOzdcCgifDNLQF4ktovcNwCTlvwGbXGCi4_gFe7JjqwM8R9zOF0_pGVsuTTbJ5cPx8HN8kudYldVLABiUdB8CEDuOlSyg0XlY9czEFRSclfudLuwcwQ2koQAdt5qZlgNvkAhJXjiy_EY6jFICCGuFWy8PpFaTtxWSWfF5DVBRNFihxrWQ4Y4_P9UAnSUrnrsPTDg5q3hXxrOaOYFgrCqDxggRxKI-QuMYFcdgJhRhfXclWfHTkqmQlG6-"/>
+</div>
+</div>
+</div>
+</header>
+<main class="pt-20 px-4">
+<!-- Date Scroller -->
+<section class="mb-8">
+<div class="flex items-center justify-between mb-4">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Weekly Schedule</h2>
+<span class="font-label-md text-label-md text-primary">October 2024</span>
+</div>
+<div class="flex overflow-x-auto gap-4 hide-scrollbar py-2 -mx-4 px-4">
+<!-- Inactive Date -->
+<button class="flex-shrink-0 w-16 h-20 rounded-xl bg-surface-container flex flex-col items-center justify-center border border-outline-variant/20">
+<span class="font-label-md text-label-md text-on-surface-variant">MON</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">14</span>
+</button>
+<button class="flex-shrink-0 w-16 h-20 rounded-xl bg-surface-container flex flex-col items-center justify-center border border-outline-variant/20">
+<span class="font-label-md text-label-md text-on-surface-variant">TUE</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">15</span>
+</button>
+<!-- Active Date -->
+<button class="flex-shrink-0 w-16 h-24 rounded-xl bg-primary-container saffron-glow flex flex-col items-center justify-center -mt-2">
+<span class="font-label-md text-label-md text-on-primary-container">WED</span>
+<span class="font-headline-sm text-headline-sm text-on-primary-container">16</span>
+<div class="w-1.5 h-1.5 rounded-full bg-on-primary-container mt-1"></div>
+</button>
+<button class="flex-shrink-0 w-16 h-20 rounded-xl bg-surface-container flex flex-col items-center justify-center border border-outline-variant/20">
+<span class="font-label-md text-label-md text-on-surface-variant">THU</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">17</span>
+</button>
+<button class="flex-shrink-0 w-16 h-20 rounded-xl bg-surface-container flex flex-col items-center justify-center border border-outline-variant/20">
+<span class="font-label-md text-label-md text-on-surface-variant">FRI</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">18</span>
+</button>
+<button class="flex-shrink-0 w-16 h-20 rounded-xl bg-surface-container flex flex-col items-center justify-center border border-outline-variant/20">
+<span class="font-label-md text-label-md text-on-surface-variant">SAT</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">19</span>
+</button>
+</div>
+</section>
+<!-- Featured Card: Today's Menu -->
+<section class="mb-10">
+<div class="relative rounded-2xl overflow-hidden bg-surface-container-high border border-outline-variant/30 saffron-glow group">
+<div class="h-64 w-full relative">
+<img class="w-full h-full object-cover" data-alt="A gourmet, close-up shot of Saffron Infused Chicken Biryani served in a dark ceramic bowl. The lighting is moody and dramatic, with warm golden highlights from an overhead candle-like light source. Fine details of the long-grain basmati rice, tender chicken pieces, and fresh herb garnishes are visible against a deep slate and charcoal background, evoking a luxury fine-dining atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtdGnFwiknGS-y4pbU0sw9BqsSrpIPY7R6FYyHBMdLc7Fiml3zrZzeOkxa-oG0mxOloibR5ef-c0VJ-_TT0TUTbMENyFh5G_2nm9-xNe5_pUcXi_ODf7eCUE8MwSY6776cSoUSxs8uTP-MGWI3RjYhhyK7gfjcoF0QGnFefmMWiT3mh4wDfUlbfZq_v1hdFMTGiJwpOtMYYeeWoU8kjTpQJp_OaGxDBqJ7aOlDB4IyQW7wzqUOhZbr1yCqHLbjibz-l5cc1IGo6CDG"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-high via-surface-container-high/40 to-transparent"></div>
+<div class="absolute top-4 left-4">
+<span class="bg-primary-container text-on-primary-container px-3 py-1 rounded-full font-label-md text-label-md">Today's Selection</span>
+</div>
+</div>
+<div class="p-6 -mt-16 relative z-10">
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Saffron Infused Chicken Biryani</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 leading-relaxed">
+                        A fragrant masterpiece featuring slow-cooked succulent chicken, aged basmati rice, and a signature blend of 18 spices, finished with premium Kashmiri saffron strands.
+                    </p>
+<div class="flex flex-wrap gap-3 mb-6">
+<span class="flex items-center gap-1.5 font-label-md text-label-md text-secondary">
+<span class="material-symbols-outlined text-[18px]">timer</span> 12:30 PM
+                        </span>
+<span class="flex items-center gap-1.5 font-label-md text-label-md text-secondary">
+<span class="material-symbols-outlined text-[18px]">restaurant</span> 850 Cal
+                        </span>
+<span class="flex items-center gap-1.5 font-label-md text-label-md text-secondary">
+<span class="material-symbols-outlined text-[18px]">workspace_premium</span> Chef's Choice
+                        </span>
+</div>
+<button class="w-full bg-primary-container text-on-primary-container py-4 rounded-xl font-label-md text-label-md hover:opacity-90 transition-all flex items-center justify-center gap-2">
+                        View Detailed Nutrition
+                        <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Upcoming Menus -->
+<section>
+<div class="flex items-center justify-between mb-6">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Upcoming Menus</h2>
+<button class="text-primary font-label-md text-label-md">View Month</button>
+</div>
+<div class="space-y-4">
+<!-- Upcoming Item 1 -->
+<div class="flex gap-4 p-4 rounded-xl bg-surface-container-low border border-outline-variant/10 hover:border-primary/30 transition-all group">
+<div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A professional culinary photograph of a prime Wagyu beef tenderloin steak, perfectly seared with a dark crust. The dish is presented on a minimalist charcoal plate with a drizzle of red wine reduction and micro-greens. The aesthetic is sophisticated and high-end, utilizing a dark palette with saffron-colored warm lighting highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8GKQkpc7VpjEirOVbOYIaIGak6keeEgNUxFR01dfHTetb-2ml3JWK0vB89XtRsBFtFYZryQvrf2XuQFAB5y_e5NBO0zGc5apAflZf-t9zBW5BSHWXjqp5VGLI3J9PTFj8wNGa0u1hPUt19Ukbz7M2KwmBd1_lRUrhWVmc-micSHiQOcZ9jrdn1kpc68sl-jJ2R-7-3v6ZGMbGCuY68VDnnrzyxbtOYU0rE4jdkxlzkwGqjpqe0HvxjcQarDHlo94cysswxSSRFBq6"/>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-label-md text-label-md text-on-surface">Wagyu Beef Tenderloin</h4>
+<span class="font-caption text-caption text-on-surface-variant">THU, 17</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-1 mb-2">With truffle-infused potato purée and balsamic reduction.</p>
+<div class="flex gap-3">
+<span class="text-xs text-primary font-medium px-2 py-0.5 rounded bg-primary/10 border border-primary/20">Signature</span>
+<span class="text-xs text-on-surface-variant">Protein-Rich</span>
+</div>
+</div>
+</div>
+<!-- Upcoming Item 2 -->
+<div class="flex gap-4 p-4 rounded-xl bg-surface-container-low border border-outline-variant/10 hover:border-primary/30 transition-all group">
+<div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="An artistic presentation of a wild-caught Atlantic salmon fillet, glazed with a miso-honey sauce. The salmon sits atop a bed of vibrant green bok choy. The lighting is low and focused, creating a dramatic, upscale dining look consistent with a luxury brand. The colors emphasize deep greens, rich oranges, and charcoal tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6st2Wrshuz5cfcBafNswhfmj0pHUnD_o2GleBa0pVyg53dRhRBF5yBL-mzSpzgsS1oq6NjOOZFmJkwglZoKjnAQ8ORdRpYK9-b0RJbhOz_TPeGfJ98LHS24txirHxVLmKwFqKzFvJYJ6J-W5rlQP6DiZXPprGFoRXR1QUanvPvg0qhuchYO7OVTGLISyGIER6TLeKDIgYG_iA1b8Jlo4cdLpeGoFI1rc5MU0uFp26pKLFrqEvwEZY-5D603BLsyml9QlEkmlux60Y"/>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-label-md text-label-md text-on-surface">Miso Glazed Salmon</h4>
+<span class="font-caption text-caption text-on-surface-variant">FRI, 18</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-1 mb-2">Wild-caught salmon with sesame bok choy and ginger.</p>
+<div class="flex gap-3">
+<span class="text-xs text-primary font-medium px-2 py-0.5 rounded bg-primary/10 border border-primary/20">Omega-3</span>
+<span class="text-xs text-on-surface-variant">Low Carb</span>
+</div>
+</div>
+</div>
+<!-- Upcoming Item 3 -->
+<div class="flex gap-4 p-4 rounded-xl bg-surface-container-low border border-outline-variant/10 hover:border-primary/30 transition-all group">
+<div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A sophisticated vegetarian risotto dish featuring wild forest mushrooms and aged parmesan curls. The lighting is moody and elegant, with a focus on the creamy texture of the rice and the earthy tones of the mushrooms. High-end food photography style with deep shadows and soft amber light leaks, matching a luxury dark UI." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCod9v_NS1I92SOlzb2aougO3GyRhA9l33Ty4JFLHhLiHiUODNLX0jPC7ezAz9rgMAiGWV32HQkCCrEiRekT9HvrnS3NLSwppNxEdw7h-gmjOZgrcm3rpMuDdoU3Jv9DxvikcpaKYL0zIMLcvrF9qDBxq3B9qYg_wNvlX-r7VpImepYxHhaBie3yHCkp2WB39Q5l-vmbSUcbNfANpL1Bcn_7L7XfLiTlTX1mwnN4ddho6bKQkCRRfQOMAj8IBJnw2zwqR9RrNLRNCxy"/>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-label-md text-label-md text-on-surface">Wild Mushroom Risotto</h4>
+<span class="font-caption text-caption text-on-surface-variant">SAT, 19</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-1 mb-2">Arborio rice with porcini mushrooms and 24-month parmesan.</p>
+<div class="flex gap-3">
+<span class="text-xs text-primary font-medium px-2 py-0.5 rounded bg-primary/10 border border-primary/20">Vegetarian</span>
+<span class="text-xs text-on-surface-variant">Classic</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar (Mobile) -->
+<nav class="fixed bottom-0 left-0 w-full glass-header border-t border-outline-variant/10 flex justify-around items-center px-4 py-2 z-50 md:hidden">
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 transition-transform active:scale-95" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">calendar_today</span>
+<span class="font-label-md text-[10px] mt-0.5">Schedule</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:bg-surface-container-high rounded-full px-4 py-1 transition-transform active:scale-95" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-label-md text-[10px] mt-0.5">Package</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:bg-surface-container-high rounded-full px-4 py-1 transition-transform active:scale-95" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-md text-[10px] mt-0.5">Account</span>
+</a>
+</nav>
+<!-- Floating Action Button - Contextual for Schedule (Manage Subscription) -->
+<button class="fixed bottom-24 right-6 w-14 h-14 bg-primary-container text-on-primary-container rounded-full shadow-lg flex items-center justify-center saffron-glow z-40 transition-transform active:scale-90">
+<span class="material-symbols-outlined">edit_calendar</span>
+</button>
+<script>
+        // Micro-interaction for date selection
+        document.querySelectorAll('section div.flex.overflow-x-auto button').forEach(button => {
+            button.addEventListener('click', function() {
+                // Simplified toggle for demonstration
+                document.querySelectorAll('section div.flex.overflow-x-auto button').forEach(btn => {
+                    btn.classList.remove('bg-primary-container', 'text-on-primary-container', 'saffron-glow', '-mt-2', 'h-24');
+                    btn.classList.add('bg-surface-container', 'h-20');
+                    const dot = btn.querySelector('div');
+                    if(dot) dot.remove();
+                });
+                
+                this.classList.remove('bg-surface-container', 'h-20');
+                this.classList.add('bg-primary-container', 'text-on-primary-container', 'saffron-glow', '-mt-2', 'h-24');
+                
+                const indicator = document.createElement('div');
+                indicator.className = 'w-1.5 h-1.5 rounded-full bg-on-primary-container mt-1';
+                this.appendChild(indicator);
+            });
+        });
+    </script>
+</body></html>

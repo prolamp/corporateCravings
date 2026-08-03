@@ -1,0 +1,302 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Corporate Craving | Admin Portal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .font-display { font-family: 'Playfair Display', serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #d1c5ab; border-radius: 10px; }
+        .glass-panel { backdrop-filter: blur(8px); background: rgba(251, 249, 245, 0.8); }
+    </style>
+</head>
+<body class="bg-surface-cream text-on-surface min-h-screen flex overflow-hidden">
+<!-- Sidebar Navigation -->
+<aside class="fixed left-0 top-0 h-full w-[280px] bg-surface-container-low border-r border-outline-variant flex flex-col p-4 gap-2 z-50">
+<div class="mb-8 px-4">
+<h1 class="font-headline-lg text-headline-lg text-primary">Admin Portal</h1>
+<p class="font-label-bold text-label-bold text-on-surface-variant opacity-70">Management Console</p>
+</div>
+<nav class="flex-1 flex flex-col gap-1">
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 hover:bg-surface-container-highest transition-all duration-200 ease-in-out rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-bold text-label-bold">Overview</span>
+</a>
+<a class="flex items-center gap-3 bg-secondary-container text-on-secondary-container px-4 py-3 rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<span class="font-label-bold text-label-bold">Lunch Schedule</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 hover:bg-surface-container-highest transition-all duration-200 ease-in-out rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="font-label-bold text-label-bold">Catalog</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 hover:bg-surface-container-highest transition-all duration-200 ease-in-out rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-label-bold text-label-bold">Packages</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 hover:bg-surface-container-highest transition-all duration-200 ease-in-out rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="font-label-bold text-label-bold">Orders</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 hover:bg-surface-container-highest transition-all duration-200 ease-in-out rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="local_shipping">local_shipping</span>
+<span class="font-label-bold text-label-bold">Operations</span>
+</a>
+<div class="my-4 border-t border-outline-variant"></div>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 hover:bg-surface-container-highest transition-all duration-200 ease-in-out rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-bold text-label-bold">System</span>
+</a>
+</nav>
+<div class="mt-auto p-4 bg-primary-container rounded-2xl flex flex-col gap-3">
+<p class="font-label-bold text-label-bold text-on-primary-container">Need Assistance?</p>
+<button class="bg-primary text-on-primary py-2 px-4 rounded-xl font-label-bold text-label-bold flex items-center justify-center gap-2 transition-transform active:scale-95">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+                New Bulk Order
+            </button>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 ml-[280px] h-screen flex flex-col overflow-hidden relative">
+<!-- Top App Bar -->
+<header class="flex justify-between items-center px-8 h-16 w-full bg-surface-container-high border-b border-outline-variant">
+<div class="flex items-center gap-4">
+<h2 class="font-title-md text-title-md text-primary">Lunch Logistics</h2>
+<div class="h-6 w-[1px] bg-outline-variant"></div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="event">event</span>
+<span class="font-body-sm text-body-sm">Wednesday, Oct 24, 2024</span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="p-2 hover:bg-surface-container-highest rounded-full transition-colors"><span class="material-symbols-outlined" data-icon="notifications">notifications</span></button>
+<button class="p-2 hover:bg-surface-container-highest rounded-full transition-colors"><span class="material-symbols-outlined" data-icon="dark_mode">dark_mode</span></button>
+<div class="flex items-center gap-3 pl-4 border-l border-outline-variant">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed flex items-center justify-center font-bold text-primary">AK</div>
+<span class="font-label-bold text-label-bold hidden md:block">Adnan Khan</span>
+</div>
+</div>
+</header>
+<!-- Content Area -->
+<div class="flex-1 flex overflow-hidden">
+<!-- Left Panel: Calendar & Filters -->
+<section class="w-1/3 border-r border-outline-variant bg-surface-bright flex flex-col overflow-y-auto">
+<div class="p-6 space-y-8">
+<!-- Mini Calendar -->
+<div class="bg-white p-4 rounded-2xl border border-outline-variant shadow-sm"><div class="flex justify-between items-center mb-6"><span class="font-title-md text-title-md text-on-surface">October 2024</span><div class="flex gap-2"><button class="p-1.5 hover:bg-surface-container text-on-surface-variant rounded-lg transition-colors"><span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span></button><button class="p-1.5 hover:bg-surface-container text-on-surface-variant rounded-lg transition-colors"><span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span></button></div></div><div class="grid grid-cols-7 gap-1 text-center mb-3"><span class="text-label-sm font-label-bold text-outline">S</span><span class="text-label-sm font-label-bold text-outline">M</span><span class="text-label-sm font-label-bold text-outline">T</span><span class="text-label-sm font-label-bold text-outline">W</span><span class="text-label-sm font-label-bold text-outline">T</span><span class="text-label-sm font-label-bold text-outline">F</span><span class="text-label-sm font-label-bold text-outline">S</span></div><div class="grid grid-cols-7 gap-1 text-center"><div class="py-2"></div><div class="py-2"></div><div class="py-2"></div><button class="py-2 hover:bg-surface-container rounded-lg font-body-sm transition-colors">1</button><button class="py-2 hover:bg-surface-container rounded-lg font-body-sm transition-colors">2</button><button class="py-2 hover:bg-surface-container rounded-lg font-body-sm transition-colors">3</button><button class="py-2 hover:bg-surface-container rounded-lg font-body-sm transition-colors">4</button><button class="py-2 hover:bg-surface-container rounded-lg font-body-sm transition-colors">5</button><button class="py-2 hover:bg-surface-container rounded-lg font-body-sm transition-colors">6</button><button class="py-2 hover:bg-surface-container rounded-lg font-body-sm transition-colors">7</button><button class="py-2 hover:bg-surface-container rounded-lg font-body-sm transition-colors">8</button><button class="py-2 hover:bg-surface-container rounded-lg font-body-sm transition-colors">9</button><button class="py-2 hover:bg-surface-container rounded-lg font-body-sm transition-colors">10</button><button class="py-2 hover:bg-surface-container rounded-lg font-body-sm transition-colors">11</button><button class="py-2 hover:bg-surface-container rounded-lg font-body-sm transition-colors">12</button><button class="py-2 hover:bg-surface-container rounded-lg font-body-sm transition-colors">13</button><button class="py-2 hover:bg-surface-container rounded-lg font-body-sm transition-colors">14</button><button class="py-2 hover:bg-surface-container rounded-lg font-body-sm transition-colors">15</button><button class="py-2 hover:bg-surface-container rounded-lg font-body-sm transition-colors">16</button><button class="py-2 hover:bg-surface-container rounded-lg font-body-sm transition-colors">17</button><button class="py-2 hover:bg-surface-container rounded-lg font-body-sm transition-colors">18</button><button class="py-2 hover:bg-surface-container rounded-lg font-body-sm transition-colors">19</button><button class="py-2 hover:bg-surface-container rounded-lg font-body-sm transition-colors">20</button><button class="py-2 hover:bg-surface-container rounded-lg font-body-sm transition-colors">21</button><button class="py-2 hover:bg-surface-container rounded-lg font-body-sm transition-colors">22</button><button class="py-2 hover:bg-surface-container rounded-lg font-body-sm transition-colors">23</button><button class="py-2 bg-primary text-on-primary rounded-lg font-label-bold shadow-md">24</button><button class="py-2 hover:bg-surface-container rounded-lg font-body-sm transition-colors">25</button><button class="py-2 hover:bg-surface-container rounded-lg font-body-sm transition-colors">26</button><button class="py-2 hover:bg-surface-container rounded-lg font-body-sm transition-colors">27</button></div></div>
+<!-- Filters Section -->
+<div class="space-y-4">
+<h3 class="font-label-bold text-label-bold uppercase tracking-widest text-on-surface-variant">Zone Filters</h3>
+<div class="flex flex-wrap gap-2"><button class="px-4 py-2 rounded-full bg-primary text-on-primary font-label-bold text-label-sm shadow-sm transition-all active:scale-95">All Zones</button><button class="px-4 py-2 rounded-full border border-outline-variant bg-white text-on-surface-variant font-label-bold text-label-sm hover:border-primary hover:text-primary transition-all active:scale-95">Blue Area</button><button class="px-4 py-2 rounded-full border border-outline-variant bg-white text-on-surface-variant font-label-bold text-label-sm hover:border-primary hover:text-primary transition-all active:scale-95">E-7 Sector</button><button class="px-4 py-2 rounded-full border border-outline-variant bg-white text-on-surface-variant font-label-bold text-label-sm hover:border-primary hover:text-primary transition-all active:scale-95">DHA II</button><button class="px-4 py-2 rounded-full border border-outline-variant bg-white text-on-surface-variant font-label-bold text-label-sm hover:border-primary hover:text-primary transition-all active:scale-95">F-6 Markaz</button></div>
+</div>
+<!-- Statistics Summary -->
+<div class="grid grid-cols-2 gap-4"><div class="p-5 rounded-2xl bg-secondary-container text-on-secondary-container border border-outline-variant/20"><p class="text-label-bold font-label-bold uppercase tracking-wider opacity-70">Total Boxes</p><p class="text-display-lg font-display leading-none mt-2">482</p></div><div class="p-5 rounded-2xl bg-tertiary-container text-on-tertiary-container border border-outline-variant/20"><p class="text-label-bold font-label-bold uppercase tracking-wider opacity-70">Dispatched</p><p class="text-display-lg font-display leading-none mt-2">310</p></div></div>
+<!-- Mini Visual Map -->
+<div class="relative h-48 rounded-2xl overflow-hidden border border-outline-variant"><div class="absolute inset-0 grayscale opacity-60" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuByYrwioG0WEFIZwPPRbc94OFCqhfvB6OIxkCRoHW-ykuzngif9R8FfvgvX06W9LJ8GvLN1UVKOoVfFOgldqeqKVrOTCbO6CPMHgfC75QFnFtcSz1tarJt7sL1t_U8ygQNLcjjEP3fRJWL-x45bUwEmX0pXE7OZCSnKvKKP2H0KxutRLRO2LSEyxLehtb2sT-6tsyT6vPTu3cFgX5CPO5ChYFobTRcDeLNN9xtnQSSALTX_tUhVVF1lkPTUIfKfELTl87lyu5CsiUsC'); background-size: cover;"></div><div class="absolute inset-0 bg-gradient-to-t from-surface-bright/80 to-transparent"></div><div class="absolute bottom-4 left-4 right-4"><div class="p-3 bg-white/90 backdrop-blur rounded-xl shadow-lg flex items-center justify-between border border-outline-variant"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary" data-icon="location_on">location_on</span><span class="font-label-bold text-label-bold">Zone Status: Busy</span></div><span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span></div></div></div>
+</div>
+</section>
+<!-- Right Panel: Today's Deliveries -->
+<section class="flex-1 flex flex-col bg-surface overflow-hidden">
+<div class="p-6 border-b border-outline-variant flex justify-between items-center bg-white/50 backdrop-blur sticky top-0 z-10">
+<div>
+<h3 class="font-headline-lg text-headline-lg">Today's Deliveries</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Scheduled lunch distributions for active subscribers</p>
+</div>
+<div class="flex gap-2">
+<button class="flex items-center gap-2 px-4 py-2 bg-white border border-outline-variant rounded-xl font-label-bold text-label-bold hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="download">download</span>
+                            Export Manifest
+                        </button>
+<button class="flex items-center gap-2 px-4 py-2 bg-primary text-on-primary rounded-xl font-label-bold text-label-bold shadow-md hover:scale-105 transition-transform active:scale-95">
+<span class="material-symbols-outlined text-[18px]" data-icon="print">print</span>
+                            Print Labels
+                        </button>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto p-6">
+<div class="space-y-4"><!-- Delivery Item 1 --><div class="flex items-center gap-6 p-5 bg-white rounded-2xl border border-outline-variant hover:shadow-md transition-all duration-300 group"><!-- Delivery Item Template (Applied to all) -->
+<div class="w-14 h-14 rounded-2xl bg-surface-container-high flex items-center justify-center shrink-0">
+    <span class="material-symbols-outlined text-primary text-3xl">corporate_fare</span>
+</div>
+<div class="flex-1 grid grid-cols-12 gap-4 items-center min-w-0">
+    <!-- Client Info -->
+    <div class="col-span-4 min-w-0">
+        <div class="flex items-center gap-2 mb-1">
+            <h4 class="font-title-md text-title-md truncate text-on-surface">Telenor HQ Pakistan</h4>
+        </div>
+        <div class="flex flex-col gap-1">
+            <span class="inline-flex w-fit px-2 py-0.5 rounded-md bg-secondary-container text-on-secondary-container font-label-bold text-[10px] uppercase tracking-wider">Subscriber</span>
+            <span class="flex items-center gap-1.5 font-body-sm text-body-sm text-on-surface-variant">
+                <span class="material-symbols-outlined text-[18px] text-outline">lunch_dining</span>
+                Executive Thali
+            </span>
+        </div>
+    </div>
+    <!-- Logistics Info -->
+    <div class="col-span-3 flex flex-col gap-1 border-l border-outline-variant/20 pl-4">
+        <span class="flex items-center gap-1.5 font-body-sm text-body-sm text-on-surface-variant">
+            <span class="material-symbols-outlined text-[18px] text-outline">schedule</span>
+            12:30 PM
+        </span>
+        <span class="flex items-center gap-1.5 font-body-sm text-body-sm text-on-surface-variant">
+            <span class="material-symbols-outlined text-[18px] text-outline">map</span>
+            Blue Area
+        </span>
+    </div>
+    <!-- Quantity -->
+    <div class="col-span-2 text-center border-l border-outline-variant/20">
+        <p class="text-label-sm font-label-bold text-outline uppercase tracking-tighter">Quantity</p>
+        <p class="text-title-md font-bold text-on-surface">120 <span class="text-body-sm font-normal">Boxes</span></p>
+    </div>
+    <!-- Status -->
+    <div class="col-span-3 flex justify-end">
+        <div class="w-full max-w-[140px] flex items-center gap-2 px-3 py-2 bg-success-emerald/10 text-success-emerald rounded-xl font-label-bold text-label-sm border border-success-emerald/20">
+            <span class="material-symbols-outlined text-[20px]">check_circle</span>
+            Delivered
+        </div>
+    </div>
+</div>
+<button class="p-2 opacity-0 group-hover:opacity-100 transition-opacity hover:bg-surface-container rounded-full shrink-0">
+    <span class="material-symbols-outlined text-on-surface-variant">more_vert</span>
+</button></div><!-- Delivery Item 2 --><div class="flex items-center gap-6 p-5 bg-white rounded-2xl border border-outline-variant hover:shadow-md transition-all duration-300 group"><div class="w-14 h-14 rounded-2xl bg-surface-container-high flex items-center justify-center shrink-0">
+    <span class="material-symbols-outlined text-primary text-3xl">person</span>
+</div>
+<div class="flex-1 grid grid-cols-12 gap-4 items-center min-w-0">
+    <div class="col-span-4 min-w-0">
+        <div class="flex items-center gap-2 mb-1">
+            <h4 class="font-title-md text-title-md truncate text-on-surface">Ali Zain (Private Office)</h4>
+        </div>
+        <div class="flex flex-col gap-1">
+            <span class="inline-flex w-fit px-2 py-0.5 rounded-md bg-primary-container text-on-primary-container font-label-bold text-[10px] uppercase tracking-wider">Premium</span>
+            <span class="flex items-center gap-1.5 font-body-sm text-body-sm text-on-surface-variant">
+                <span class="material-symbols-outlined text-[18px] text-outline">lunch_dining</span>
+                Artisanal Box
+            </span>
+        </div>
+    </div>
+    <div class="col-span-3 flex flex-col gap-1 border-l border-outline-variant/20 pl-4">
+        <span class="flex items-center gap-1.5 font-body-sm text-body-sm text-on-surface-variant">
+            <span class="material-symbols-outlined text-[18px] text-outline">schedule</span>
+            12:45 PM
+        </span>
+        <span class="flex items-center gap-1.5 font-body-sm text-body-sm text-on-surface-variant">
+            <span class="material-symbols-outlined text-[18px] text-outline">map</span>
+            E-7 Sector
+        </span>
+    </div>
+    <div class="col-span-2 text-center border-l border-outline-variant/20">
+        <p class="text-label-sm font-label-bold text-outline uppercase tracking-tighter">Quantity</p>
+        <p class="text-title-md font-bold text-on-surface">12 <span class="text-body-sm font-normal">Boxes</span></p>
+    </div>
+    <div class="col-span-3 flex justify-end">
+        <div class="w-full max-w-[140px] flex items-center gap-2 px-3 py-2 bg-primary/10 text-primary rounded-xl font-label-bold text-label-sm border border-primary/20">
+            <span class="material-symbols-outlined text-[20px]">local_shipping</span>
+            Dispatched
+        </div>
+    </div>
+</div>
+<button class="p-2 opacity-0 group-hover:opacity-100 transition-opacity hover:bg-surface-container rounded-full shrink-0">
+    <span class="material-symbols-outlined text-on-surface-variant">more_vert</span>
+</button></div><!-- Delivery Item 3 --><div class="flex items-center gap-6 p-5 bg-white rounded-2xl border border-outline-variant hover:shadow-md transition-all duration-300 group"><div class="w-14 h-14 rounded-2xl bg-surface-container-high flex items-center justify-center shrink-0">
+    <span class="material-symbols-outlined text-primary text-3xl">apartment</span>
+</div>
+<div class="flex-1 grid grid-cols-12 gap-4 items-center min-w-0">
+    <div class="col-span-4 min-w-0">
+        <div class="flex items-center gap-2 mb-1">
+            <h4 class="font-title-md text-title-md truncate text-on-surface">Jazz Digital HQ</h4>
+        </div>
+        <div class="flex flex-col gap-1">
+            <span class="inline-flex w-fit px-2 py-0.5 rounded-md bg-secondary-container text-on-secondary-container font-label-bold text-[10px] uppercase tracking-wider">Subscriber</span>
+            <span class="flex items-center gap-1.5 font-body-sm text-body-sm text-on-surface-variant">
+                <span class="material-symbols-outlined text-[18px] text-outline">lunch_dining</span>
+                Green Bundle
+            </span>
+        </div>
+    </div>
+    <div class="col-span-3 flex flex-col gap-1 border-l border-outline-variant/20 pl-4">
+        <span class="flex items-center gap-1.5 font-body-sm text-body-sm text-on-surface-variant">
+            <span class="material-symbols-outlined text-[18px] text-outline">schedule</span>
+            01:15 PM
+        </span>
+        <span class="flex items-center gap-1.5 font-body-sm text-body-sm text-on-surface-variant">
+            <span class="material-symbols-outlined text-[18px] text-outline">map</span>
+            F-6 Markaz
+        </span>
+    </div>
+    <div class="col-span-2 text-center border-l border-outline-variant/20">
+        <p class="text-label-sm font-label-bold text-outline uppercase tracking-tighter">Quantity</p>
+        <p class="text-title-md font-bold text-on-surface">85 <span class="text-body-sm font-normal">Boxes</span></p>
+    </div>
+    <div class="col-span-3 flex justify-end">
+        <div class="w-full max-w-[140px] flex items-center gap-2 px-3 py-2 bg-on-surface-variant/10 text-on-surface-variant rounded-xl font-label-bold text-label-sm border border-outline-variant/20">
+            <span class="material-symbols-outlined text-[20px]">package_2</span>
+            Preparing
+        </div>
+    </div>
+</div>
+<button class="p-2 opacity-0 group-hover:opacity-100 transition-opacity hover:bg-surface-container rounded-full shrink-0">
+    <span class="material-symbols-outlined text-on-surface-variant">more_vert</span>
+</button></div></div>
+<!-- Empty State / Footer Info -->
+<div class="mt-12 text-center p-8 border-2 border-dashed border-outline-variant rounded-3xl">
+<span class="material-symbols-outlined text-outline text-4xl mb-2" data-icon="auto_awesome">auto_awesome</span>
+<p class="font-label-bold text-label-bold text-on-surface-variant">End of morning distribution cycle.</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant opacity-60 mt-1">Evening shift schedule will unlock at 03:00 PM</p>
+</div>
+</div>
+</section>
+</div>
+<!-- Footer -->
+<footer class="bg-white border-t border-outline-variant px-8 py-3 flex justify-between items-center z-10">
+<div class="flex items-center gap-6">
+<p class="font-body-sm text-body-sm text-on-surface-variant">© 2024 Corporate Craving. Islamabad Operations.</p>
+<div class="flex gap-4">
+<a class="font-body-sm text-body-sm text-primary hover:underline" href="#">WhatsApp Support</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary" href="#">System Status: Optimal</a>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-success-emerald animate-pulse"></span>
+<span class="font-label-bold text-label-bold text-on-surface-variant">Live Updates Active</span>
+</div>
+</footer>
+</main>
+<script>
+        // Micro-interactions for status dropdowns
+        document.querySelectorAll('select').forEach(select => {
+            select.addEventListener('change', function() {
+                const value = this.value;
+                this.classList.remove('bg-success-emerald/10', 'text-success-emerald', 'bg-primary/10', 'text-primary', 'bg-on-surface-variant/10', 'text-on-surface-variant');
+                
+                if (value === 'delivered') {
+                    this.classList.add('bg-success-emerald/10', 'text-success-emerald');
+                } else if (value === 'dispatched') {
+                    this.classList.add('bg-primary/10', 'text-primary');
+                } else {
+                    this.classList.add('bg-on-surface-variant/10', 'text-on-surface-variant');
+                }
+            });
+        });
+
+        // Hover effect for side nav items
+        const navItems = document.querySelectorAll('aside nav a');
+        navItems.forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                if(!item.classList.contains('bg-secondary-container')) {
+                    item.style.transform = 'translateX(4px)';
+                }
+            });
+            item.addEventListener('mouseleave', () => {
+                item.style.transform = 'translateX(0px)';
+            });
+        });
+    </script>
+
+
+</body></html>

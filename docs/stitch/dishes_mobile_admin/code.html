@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dishes Index | Corporate Craving Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error-container": "#ffdad6",
+                    "error": "#ba1a1a",
+                    "surface-tint": "#745c00",
+                    "on-surface-variant": "#4e4632",
+                    "on-tertiary-container": "#00642b",
+                    "on-secondary-container": "#5c6274",
+                    "primary-fixed": "#ffe089",
+                    "surface-container-highest": "#e4e2de",
+                    "on-tertiary-fixed": "#002109",
+                    "on-secondary": "#ffffff",
+                    "tertiary-fixed-dim": "#3de273",
+                    "surface-variant": "#e4e2de",
+                    "surface-dim": "#dbdad6",
+                    "background": "#fbf9f5",
+                    "surface-container": "#efeeea",
+                    "secondary-fixed-dim": "#c0c6db",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed-variant": "#574500",
+                    "on-surface": "#1b1c1a",
+                    "primary-fixed-dim": "#f0c100",
+                    "charcoal-text": "#111827",
+                    "surface-cream": "#FDFBF7",
+                    "danger-ruby": "#E11D48",
+                    "tertiary-fixed": "#66ff8e",
+                    "on-tertiary": "#ffffff",
+                    "secondary-container": "#d9dff5",
+                    "secondary-fixed": "#dce2f7",
+                    "outline-variant": "#d1c5ab",
+                    "surface-container-low": "#f5f3ef",
+                    "inverse-primary": "#f0c100",
+                    "on-primary-container": "#695300",
+                    "tertiary-container": "#45e878",
+                    "on-primary": "#ffffff",
+                    "secondary": "#575e70",
+                    "tertiary": "#006d2f",
+                    "on-primary-fixed": "#241a00",
+                    "on-error": "#ffffff",
+                    "success-emerald": "#10B981",
+                    "on-tertiary-fixed-variant": "#005322",
+                    "surface-container-high": "#eae8e4",
+                    "outline": "#807660",
+                    "on-secondary-fixed": "#141b2b",
+                    "on-secondary-fixed-variant": "#404758",
+                    "inverse-on-surface": "#f2f0ed",
+                    "inverse-surface": "#30312e",
+                    "surface": "#fbf9f5",
+                    "primary": "#745c00",
+                    "on-error-container": "#93000a",
+                    "primary-container": "#f6c60c",
+                    "surface-bright": "#fbf9f5",
+                    "on-background": "#1b1c1a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "container-max": "1280px",
+                    "margin-desktop": "40px",
+                    "gutter": "24px",
+                    "base": "8px",
+                    "margin-mobile": "16px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Playfair Display"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "title-md": ["Plus Jakarta Sans"],
+                    "label-sm": ["Plus Jakarta Sans"],
+                    "label-bold": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Playfair Display"],
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "body-sm": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "500"}],
+                    "label-bold": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* Custom Toggle Switch */
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 36px;
+            height: 20px;
+        }
+        .switch input { opacity: 0; width: 0; height: 0; }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 20px;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 14px; width: 14px;
+            left: 3px; bottom: 3px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .slider { background-color: #745c00; }
+        input:checked + .slider:before { transform: translateX(16px); }
+
+        /* Drawer Animation */
+        #mobile-drawer {
+            transform: translateX(-100%);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        #mobile-drawer.open {
+            transform: translateX(0);
+        }
+        #drawer-overlay {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease;
+        }
+        #drawer-overlay.open {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-lg overflow-x-hidden">
+<!-- Top AppBar (Small Variant from JSON) -->
+<header class="bg-surface-container-high dark:bg-inverse-surface shadow-sm docked full-width top-0 sticky z-40">
+<div class="flex justify-between items-center px-4 h-16 w-full">
+<div class="flex items-center gap-3">
+<button class="p-2 hover:bg-surface-container-highest rounded-full transition-colors" onclick="toggleDrawer()">
+<span class="material-symbols-outlined text-primary">menu</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Portal</h1>
+</div>
+<div class="flex items-center gap-1">
+<button class="p-2 hover:bg-surface-container-highest rounded-full transition-colors active:scale-90">
+<span class="material-symbols-outlined text-on-surface-variant">notifications</span>
+</button>
+<button class="p-2 hover:bg-surface-container-highest rounded-full transition-colors active:scale-90">
+<span class="material-symbols-outlined text-on-surface-variant">account_circle</span>
+</button>
+<button class="p-2 hover:bg-surface-container-highest rounded-full transition-colors active:scale-90">
+<span class="material-symbols-outlined text-on-surface-variant">dark_mode</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Drawer Overlay -->
+<div class="fixed inset-0 bg-black/50 z-50" id="drawer-overlay" onclick="toggleDrawer()"></div>
+<!-- SideNavBar (Mobile Drawer Mapping) -->
+<aside class="fixed left-0 top-0 h-full w-[280px] bg-surface-container-low z-50 flex flex-col shadow-2xl" id="mobile-drawer">
+<div class="p-6 border-b border-outline-variant">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-primary-container flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="A professional studio portrait of a Pakistani catering manager in business attire, looking confident and approachable. The lighting is soft and warm, reflecting a high-end corporate hospitality environment with the Corporate Craving saffron color scheme subtle in the background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDks68WAqHYuvUkcY1iHvw_Wx2-p2f9Qn3Ya5Fp0VIe4aOg-bccgNDApVBBHcqskaAs-88y0NAVTBU5dO00uhCTTQHXS8CYh6LGi9iDygIR5qTO_LAWObf8wuSJMXlrE0OaqvqNgzWBwfkwPwROw9j_7J7rsCgSV5sQJ2dVEUBP1Y3eWWYjw92D2XLQi78tDvAv-1bN9NlmCPQg0sGUZBpB7EOfmNbv9EOrjvLzgwErgNiVSeB-zVWezI5l_4npn0GeI_LcZdMbF93t"/>
+</div>
+<div>
+<h2 class="font-label-bold text-label-bold text-primary">Admin Portal</h2>
+<p class="text-[11px] text-on-surface-variant uppercase tracking-wider">Management Console</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 overflow-y-auto p-4 flex flex-col gap-1">
+<!-- Mapping labels from JSON -->
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 hover:bg-surface-container-highest transition-all rounded-xl" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-bold text-label-bold">Overview</span>
+</a>
+<a class="flex items-center gap-3 bg-secondary-container text-on-secondary-container rounded-xl px-4 py-3 transition-all" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="font-label-bold text-label-bold">Catalog</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 hover:bg-surface-container-highest transition-all rounded-xl" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-label-bold text-label-bold">Packages</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 hover:bg-surface-container-highest transition-all rounded-xl" href="#">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="font-label-bold text-label-bold">Orders</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 hover:bg-surface-container-highest transition-all rounded-xl" href="#">
+<span class="material-symbols-outlined">local_shipping</span>
+<span class="font-label-bold text-label-bold">Operations</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 hover:bg-surface-container-highest transition-all rounded-xl" href="#">
+<span class="material-symbols-outlined">article</span>
+<span class="font-label-bold text-label-bold">Content</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 hover:bg-surface-container-highest transition-all rounded-xl" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-label-bold text-label-bold">People</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 hover:bg-surface-container-highest transition-all rounded-xl" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-bold text-label-bold">System</span>
+</a>
+</nav>
+<div class="p-4 border-t border-outline-variant">
+<button class="w-full bg-primary text-on-primary font-label-bold text-label-bold py-3 rounded-xl flex items-center justify-center gap-2 shadow-sm active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[20px]">add</span>
+                New Bulk Order
+            </button>
+</div>
+</aside>
+<main class="min-h-screen px-4 pb-24 pt-6">
+<!-- Page Header & Search -->
+<div class="flex flex-col gap-4 mb-6">
+<div class="flex justify-between items-center">
+<div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Dish Catalog</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Manage your corporate menu items</p>
+</div>
+<button class="w-12 h-12 bg-primary text-on-primary rounded-full flex items-center justify-center shadow-lg active:scale-90 transition-transform">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full h-12 bg-surface-container border-none rounded-xl pl-12 pr-4 font-body-sm text-body-sm focus:ring-2 focus:ring-primary/20" placeholder="Search dishes, categories..." type="text"/>
+</div>
+</div>
+<!-- Dishes List (Optimized Mobile Cards) -->
+<div class="flex flex-col gap-3">
+<!-- Dish Card 1 -->
+<div class="bg-surface-cream border border-outline-variant rounded-xl p-3 flex gap-3 items-center shadow-sm">
+<div class="w-20 h-20 rounded-lg overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="A close-up shot of traditional Pakistani Biryani with aromatic saffron-colored basmati rice, tender pieces of chicken, and garnished with fresh cilantro and fried onions. The lighting is warm and enticing, presented on a clean white ceramic plate with a corporate food photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqQXwYKfLFGcJy6SLAon5PM8J1b6qZ54Z0mqkA8OfybSN-9wBdv1czbX4xPrvcOqQdxTSdCvoMW8c1JlMbagdImVqqgcXHTgDWwjpriGIL1bEg_dulEsZ4HWSXcpyAYaFeIvyIPrLcH_zIfFstDoKPtOzxrQJcT1wZa5Z5_0WeTvRxLi6TLN4YtwvsuHf3-k1vEaPK10fF1H5znTbf2r7h3z5CSm0XQ_qNduQWqnCDjEI91IeVOYHMYmIz2y2LWstuDIWc8X400f6e"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<span class="font-label-bold text-label-bold text-primary uppercase bg-primary-container/30 px-2 py-0.5 rounded text-[10px]">Mains</span>
+<button class="p-1 -mr-2 text-on-surface-variant">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface truncate pr-2">Saffron Chicken Biryani</h3>
+<p class="font-body-sm text-body-sm text-primary font-bold">Rs. 850 <span class="text-[10px] font-normal text-on-surface-variant">/ person</span></p>
+<div class="flex justify-between items-center mt-2">
+<span class="text-[11px] font-medium text-success-emerald flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-success-emerald"></span> Available
+                        </span>
+<label class="switch">
+<input checked="" type="checkbox"/>
+<span class="slider"></span>
+</label>
+</div>
+</div>
+</div>
+<!-- Dish Card 2 -->
+<div class="bg-surface-cream border border-outline-variant rounded-xl p-3 flex gap-3 items-center shadow-sm">
+<div class="w-20 h-20 rounded-lg overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="A professional photo of Seekh Kebabs, perfectly charred and glistening with moisture, served with a side of cooling mint chutney and thinly sliced red onions. The dish is arranged for a premium corporate catering presentation, with soft bokeh background and warm overhead lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQcAr2ARiNQJCTi5AE0P2DtDbuDJFDNsoS4OSYOs3WsgF0sFCD87_zntMHjNm7ilPrMIDrm7mnaf1lvobymGE46AhfoM3syqv3_TRjBCBgUALcL1xrcNn08wuwMLCndPb4oN0tc0_Befzv93GTTWRFunmkzTyYf5-xiUMudXM-RuQI5m5Wg81UyozJhjHPTIaEPKrKi1FGIuxKB3eoyXOxKJJ05mTFpWopRPZJjyfVO0UkjCDQdisa-U99ubVqA0dm4XTccTRHN6JC"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<span class="font-label-bold text-label-bold text-secondary uppercase bg-secondary-container/50 px-2 py-0.5 rounded text-[10px]">Appetizers</span>
+<button class="p-1 -mr-2 text-on-surface-variant">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface truncate pr-2">Smoked Beef Seekh Kebab</h3>
+<p class="font-body-sm text-body-sm text-primary font-bold">Rs. 450 <span class="text-[10px] font-normal text-on-surface-variant">/ person</span></p>
+<div class="flex justify-between items-center mt-2">
+<span class="text-[11px] font-medium text-on-surface-variant flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span> Hidden
+                        </span>
+<label class="switch">
+<input type="checkbox"/>
+<span class="slider"></span>
+</label>
+</div>
+</div>
+</div>
+<!-- Dish Card 3 -->
+<div class="bg-surface-cream border border-outline-variant rounded-xl p-3 flex gap-3 items-center shadow-sm">
+<div class="w-20 h-20 rounded-lg overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="Premium Shahi Tukray dessert, golden fried bread soaked in rich saffron milk, topped with silver leaf and crushed pistachios. Elegant presentation suitable for a corporate board lunch, photographed with high contrast and sophisticated heritage styling." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEd-p1YAK8bxI8xxCinQ7MLoSKMLAoQWnf_cI-dNfkb-6GVy4svg5aOdgSnLb0hBnFKgUF78LA8HizeYgDjLaGmNX1IRieiDsiwXyK2uvbT6Eqt4UXy4YR3BnkcybPJsZqyxl_uu3VHuo9PaD5QHHbUZw2fogiXoCMc9XLJlDYoilWsFJbLV_j2doCc_AajTBIR91OfGIaepHeGRcIQzKrsSYc7ov0fTCCe3fMY3OHs993ozoSV5-kk1jXJ5FSd4UZd_oKO8ToRfkK"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<span class="font-label-bold text-label-bold text-tertiary-container text-on-tertiary-container uppercase bg-tertiary-container/20 px-2 py-0.5 rounded text-[10px]">Desserts</span>
+<button class="p-1 -mr-2 text-on-surface-variant">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface truncate pr-2">Signature Shahi Tukray</h3>
+<p class="font-body-sm text-body-sm text-primary font-bold">Rs. 320 <span class="text-[10px] font-normal text-on-surface-variant">/ person</span></p>
+<div class="flex justify-between items-center mt-2">
+<span class="text-[11px] font-medium text-success-emerald flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-success-emerald"></span> Available
+                        </span>
+<label class="switch">
+<input checked="" type="checkbox"/>
+<span class="slider"></span>
+</label>
+</div>
+</div>
+</div>
+<!-- Dish Card 4 -->
+<div class="bg-surface-cream border border-outline-variant rounded-xl p-3 flex gap-3 items-center shadow-sm opacity-75">
+<div class="w-20 h-20 rounded-lg overflow-hidden shrink-0 grayscale">
+<img class="w-full h-full object-cover" data-alt="Traditional Pakistani Haleem served in a decorative copper bowl, garnished with lemon wedges, fresh ginger juliennes, and crispy fried onions. The lighting is moody and artisanal, highlighting the thick, slow-cooked texture of the stew. Corporate hospitality aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtofSeDdoBEsh6AKWQLljDT6AMGU_hPXJrMjBahEYb_PcxTDFdhxdQAozx5Fad9Jl3Vq-owkN4dsi5ZHXNSHKC9PLf7Tz8PBNlqh9R0AmHGwr-qZhh_-uuacwVQ6DSd_nlBwpVOUIVYj_zd-WPp-9SzAT6Q1efpEA_zZUDJ6yRFk8yjW2W4BRwbndP3IK8JKW5mzUChiF6f6n68jCfdbGjTesSlgpr-LW-axZl1FmH5iZSO9Zvg-Tg85VJB32fAeSKhJpMwzqJ0ZQH"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<span class="font-label-bold text-label-bold text-on-surface-variant uppercase bg-surface-container-highest px-2 py-0.5 rounded text-[10px]">Mains</span>
+<button class="p-1 -mr-2 text-on-surface-variant">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface truncate pr-2">Slow-Cooked Mutton Haleem</h3>
+<p class="font-body-sm text-body-sm text-primary font-bold">Rs. 950 <span class="text-[10px] font-normal text-on-surface-variant">/ person</span></p>
+<div class="flex justify-between items-center mt-2">
+<span class="text-[11px] font-medium text-error flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span> Out of Stock
+                        </span>
+<label class="switch">
+<input checked="" type="checkbox"/>
+<span class="slider"></span>
+</label>
+</div>
+</div>
+</div>
+<!-- Dish Card 5 -->
+<div class="bg-surface-cream border border-outline-variant rounded-xl p-3 flex gap-3 items-center shadow-sm">
+<div class="w-20 h-20 rounded-lg overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="A platter of fresh seasonal fruit cut into geometric shapes for a corporate office meeting, presented on a minimalist black slate tray. The lighting is crisp and natural, emphasizing the vibrant colors and freshness of the fruit. Clean, modern catering photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuANwr3pDqxv57IhGYVlDd_0jYPP3QhDN1sky5mifjVksXWvF9w1MOKIB58NezwpejPXgTLCiDulHrZOinYQN0v8kPNk1HuW8yaDL4rRbANt5fBRl9U2c0tNDlSa6yRUgM4Yvwh8QIGpyuaNSWwnqrbAaJzA0S6-0H5XUqM0M3mIJtDevVJ4EAQuQrMYE2ECMahaejv1bGDpxOAX545SM4D4-a1oCdY7Jes307WeXUoxNFEedaRx7Tols4EdP0SjKta0RuLnl5mQvPsC"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<span class="font-label-bold text-label-bold text-primary uppercase bg-primary-container/30 px-2 py-0.5 rounded text-[10px]">Refreshments</span>
+<button class="p-1 -mr-2 text-on-surface-variant">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface truncate pr-2">Seasonal Fruit Platter</h3>
+<p class="font-body-sm text-body-sm text-primary font-bold">Rs. 250 <span class="text-[10px] font-normal text-on-surface-variant">/ person</span></p>
+<div class="flex justify-between items-center mt-2">
+<span class="text-[11px] font-medium text-success-emerald flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-success-emerald"></span> Available
+                        </span>
+<label class="switch">
+<input checked="" type="checkbox"/>
+<span class="slider"></span>
+</label>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- WhatsApp CTA Sticky (Style Guidance) -->
+<a class="fixed bottom-6 right-6 bg-[#25D366] text-white p-4 rounded-full shadow-xl flex items-center justify-center z-30 hover:scale-105 active:scale-95 transition-all" href="#">
+<svg class="w-6 h-6 fill-current" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"></path></svg>
+</a>
+<!-- Footer (From JSON - Suppression Check: Admins usually need simpler footers, but adding for context) -->
+<footer class="bg-surface-container-highest w-full border-t border-outline-variant">
+<div class="max-w-container-max mx-auto px-margin-mobile py-8">
+<h3 class="font-headline-lg text-primary mb-4">Corporate Craving</h3>
+<div class="grid grid-cols-2 gap-4 mb-6">
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary underline" href="#">About Us</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary underline" href="#">Terms of Service</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary underline" href="#">Privacy Policy</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary underline" href="#">WhatsApp Support</a>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant opacity-80">
+                © 2024 Corporate Craving. Islamabad, Pakistan.
+            </p>
+</div>
+</footer>
+<script>
+        function toggleDrawer() {
+            const drawer = document.getElementById('mobile-drawer');
+            const overlay = document.getElementById('drawer-overlay');
+            drawer.classList.toggle('open');
+            overlay.classList.toggle('open');
+            
+            // Prevent body scroll when drawer is open
+            if (drawer.classList.contains('open')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+        }
+
+        // Search Bar Micro-interaction
+        const searchInput = document.querySelector('input[type="text"]');
+        searchInput.addEventListener('focus', () => {
+            searchInput.parentElement.classList.add('ring-2', 'ring-primary/20');
+        });
+        searchInput.addEventListener('blur', () => {
+            searchInput.parentElement.classList.remove('ring-2', 'ring-primary/20');
+        });
+    </script>
+</body></html>

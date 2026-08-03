@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Corporate Craving | Admin Portal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .font-display { font-family: 'Playfair Display', serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #d1c5ab; border-radius: 10px; }
+        .glass-panel { backdrop-filter: blur(8px); background: rgba(251, 249, 245, 0.8); }
+    </style>
+</head>
+<body class="bg-surface-cream text-on-surface min-h-screen flex overflow-hidden">
+<!-- Sidebar Navigation -->
+<aside class="fixed left-0 top-0 h-full w-[280px] bg-surface-container-low border-r border-outline-variant flex flex-col p-4 gap-2 z-50">
+<div class="mb-8 px-4">
+<h1 class="font-headline-lg text-headline-lg text-primary">Admin Portal</h1>
+<p class="font-label-bold text-label-bold text-on-surface-variant opacity-70">Management Console</p>
+</div>
+<nav class="flex-1 flex flex-col gap-1">
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 hover:bg-surface-container-highest transition-all duration-200 ease-in-out rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-bold text-label-bold">Overview</span>
+</a>
+<a class="flex items-center gap-3 bg-secondary-container text-on-secondary-container px-4 py-3 rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<span class="font-label-bold text-label-bold">Lunch Schedule</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 hover:bg-surface-container-highest transition-all duration-200 ease-in-out rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="font-label-bold text-label-bold">Catalog</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 hover:bg-surface-container-highest transition-all duration-200 ease-in-out rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-label-bold text-label-bold">Packages</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 hover:bg-surface-container-highest transition-all duration-200 ease-in-out rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="font-label-bold text-label-bold">Orders</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 hover:bg-surface-container-highest transition-all duration-200 ease-in-out rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="local_shipping">local_shipping</span>
+<span class="font-label-bold text-label-bold">Operations</span>
+</a>
+<div class="my-4 border-t border-outline-variant"></div>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 hover:bg-surface-container-highest transition-all duration-200 ease-in-out rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-bold text-label-bold">System</span>
+</a>
+</nav>
+<div class="mt-auto p-4 bg-primary-container rounded-2xl flex flex-col gap-3">
+<p class="font-label-bold text-label-bold text-on-primary-container">Need Assistance?</p>
+<button class="bg-primary text-on-primary py-2 px-4 rounded-xl font-label-bold text-label-bold flex items-center justify-center gap-2 transition-transform active:scale-95">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+                New Bulk Order
+            </button>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 ml-[280px] h-screen flex flex-col overflow-hidden relative">
+<!-- Top App Bar -->
+<header class="flex justify-between items-center px-8 h-16 w-full bg-surface-container-high border-b border-outline-variant">
+<div class="flex items-center gap-4">
+<h2 class="font-title-md text-title-md text-primary">Lunch Logistics</h2>
+<div class="h-6 w-[1px] bg-outline-variant"></div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="event">event</span>
+<span class="font-body-sm text-body-sm">Wednesday, Oct 24, 2024</span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="p-2 hover:bg-surface-container-highest rounded-full transition-colors"><span class="material-symbols-outlined" data-icon="notifications">notifications</span></button>
+<button class="p-2 hover:bg-surface-container-highest rounded-full transition-colors"><span class="material-symbols-outlined" data-icon="dark_mode">dark_mode</span></button>
+<div class="flex items-center gap-3 pl-4 border-l border-outline-variant">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed flex items-center justify-center font-bold text-primary">AK</div>
+<span class="font-label-bold text-label-bold hidden md:block">Adnan Khan</span>
+</div>
+</div>
+</header>
+<!-- Content Area -->
+<div class="flex-1 flex overflow-hidden">
+<!-- Left Panel: Calendar & Filters -->
+<section class="w-1/3 border-r border-outline-variant bg-surface-bright flex flex-col overflow-y-auto">
+<div class="p-6 space-y-8">
+<!-- Mini Calendar -->
+<div class="bg-white p-4 rounded-2xl border border-outline-variant shadow-sm">
+<div class="flex justify-between items-center mb-4">
+<span class="font-title-md text-title-md">October 2024</span>
+<div class="flex gap-1">
+<button class="p-1 hover:bg-surface-container text-on-surface-variant rounded-lg"><span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span></button>
+<button class="p-1 hover:bg-surface-container text-on-surface-variant rounded-lg"><span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span></button>
+</div>
+</div>
+<div class="grid grid-cols-7 gap-1 text-center mb-2">
+<span class="text-label-sm font-label-bold opacity-50">S</span>
+<span class="text-label-sm font-label-bold opacity-50">M</span>
+<span class="text-label-sm font-label-bold opacity-50">T</span>
+<span class="text-label-sm font-label-bold opacity-50">W</span>
+<span class="text-label-sm font-label-bold opacity-50">T</span>
+<span class="text-label-sm font-label-bold opacity-50">F</span>
+<span class="text-label-sm font-label-bold opacity-50">S</span>
+</div>
+<div class="grid grid-cols-7 gap-1 text-center">
+<!-- Empty cells for padding -->
+<div class="py-2"></div><div class="py-2"></div><div class="py-2"></div>
+<button class="py-2 hover:bg-surface-container rounded-lg font-body-sm">1</button>
+<button class="py-2 hover:bg-surface-container rounded-lg font-body-sm">2</button>
+<button class="py-2 hover:bg-surface-container rounded-lg font-body-sm">3</button>
+<button class="py-2 hover:bg-surface-container rounded-lg font-body-sm">4</button>
+<button class="py-2 hover:bg-surface-container rounded-lg font-body-sm">5</button>
+<button class="py-2 hover:bg-surface-container rounded-lg font-body-sm">6</button>
+<button class="py-2 hover:bg-surface-container rounded-lg font-body-sm">7</button>
+<button class="py-2 hover:bg-surface-container rounded-lg font-body-sm">8</button>
+<button class="py-2 hover:bg-surface-container rounded-lg font-body-sm">9</button>
+<button class="py-2 hover:bg-surface-container rounded-lg font-body-sm">10</button>
+<button class="py-2 hover:bg-surface-container rounded-lg font-body-sm">11</button>
+<button class="py-2 hover:bg-surface-container rounded-lg font-body-sm">12</button>
+<button class="py-2 hover:bg-surface-container rounded-lg font-body-sm">13</button>
+<button class="py-2 hover:bg-surface-container rounded-lg font-body-sm">14</button>
+<button class="py-2 hover:bg-surface-container rounded-lg font-body-sm">15</button>
+<button class="py-2 hover:bg-surface-container rounded-lg font-body-sm">16</button>
+<button class="py-2 hover:bg-surface-container rounded-lg font-body-sm">17</button>
+<button class="py-2 hover:bg-surface-container rounded-lg font-body-sm">18</button>
+<button class="py-2 hover:bg-surface-container rounded-lg font-body-sm">19</button>
+<button class="py-2 hover:bg-surface-container rounded-lg font-body-sm">20</button>
+<button class="py-2 hover:bg-surface-container rounded-lg font-body-sm">21</button>
+<button class="py-2 hover:bg-surface-container rounded-lg font-body-sm">22</button>
+<button class="py-2 hover:bg-surface-container rounded-lg font-body-sm">23</button>
+<button class="py-2 bg-primary text-on-primary rounded-lg font-label-bold shadow-md">24</button>
+<button class="py-2 hover:bg-surface-container rounded-lg font-body-sm">25</button>
+<button class="py-2 hover:bg-surface-container rounded-lg font-body-sm">26</button>
+<button class="py-2 hover:bg-surface-container rounded-lg font-body-sm">27</button>
+</div>
+</div>
+<!-- Filters Section -->
+<div class="space-y-4">
+<h3 class="font-label-bold text-label-bold uppercase tracking-widest text-on-surface-variant">Zone Filters</h3>
+<div class="flex flex-wrap gap-2">
+<button class="px-4 py-2 rounded-full border border-primary bg-primary-fixed text-on-primary-fixed font-label-bold text-label-sm">All Zones</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant bg-white text-on-surface-variant font-label-bold text-label-sm hover:bg-surface-container-high transition-colors">Blue Area</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant bg-white text-on-surface-variant font-label-bold text-label-sm hover:bg-surface-container-high transition-colors">E-7 Sector</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant bg-white text-on-surface-variant font-label-bold text-label-sm hover:bg-surface-container-high transition-colors">DHA II</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant bg-white text-on-surface-variant font-label-bold text-label-sm hover:bg-surface-container-high transition-colors">F-6 Markaz</button>
+</div>
+</div>
+<!-- Statistics Summary -->
+<div class="grid grid-cols-2 gap-4">
+<div class="p-4 rounded-2xl bg-secondary-fixed text-on-secondary-fixed">
+<p class="text-label-sm font-label-bold opacity-70">Total Boxes</p>
+<p class="text-display-lg font-display leading-none mt-1">482</p>
+</div>
+<div class="p-4 rounded-2xl bg-tertiary-fixed-dim text-on-tertiary-fixed">
+<p class="text-label-sm font-label-bold opacity-70">Dispatched</p>
+<p class="text-display-lg font-display leading-none mt-1">310</p>
+</div>
+</div>
+<!-- Mini Visual Map -->
+<div class="relative h-48 rounded-2xl overflow-hidden border border-outline-variant">
+<div class="absolute inset-0 grayscale opacity-40" data-alt="A detailed map background of Islamabad, Pakistan, showing street grids and major sectors like Blue Area and F-6. The map is presented in a minimalist grayscale vector style to serve as a subtle UI background element." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuByYrwioG0WEFIZwPPRbc94OFCqhfvB6OIxkCRoHW-ykuzngif9R8FfvgvX06W9LJ8GvLN1UVKOoVfFOgldqeqKVrOTCbO6CPMHgfC75QFnFtcSz1tarJt7sL1t_U8ygQNLcjjEP3fRJWL-x45bUwEmX0pXE7OZCSnKvKKP2H0KxutRLRO2LSEyxLehtb2sT-6tsyT6vPTu3cFgX5CPO5ChYFobTRcDeLNN9xtnQSSALTX_tUhVVF1lkPTUIfKfELTl87lyu5CsiUsC')"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="p-3 bg-white/90 backdrop-blur rounded-xl shadow-xl flex items-center gap-2 border border-outline-variant">
+<span class="material-symbols-outlined text-primary" data-icon="location_on">location_on</span>
+<span class="font-label-bold text-label-bold">Zone Status: Busy</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Right Panel: Today's Deliveries -->
+<section class="flex-1 flex flex-col bg-surface overflow-hidden">
+<div class="p-6 border-b border-outline-variant flex justify-between items-center bg-white/50 backdrop-blur sticky top-0 z-10">
+<div>
+<h3 class="font-headline-lg text-headline-lg">Today's Deliveries</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Scheduled lunch distributions for active subscribers</p>
+</div>
+<div class="flex gap-2">
+<button class="flex items-center gap-2 px-4 py-2 bg-white border border-outline-variant rounded-xl font-label-bold text-label-bold hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="download">download</span>
+                            Export Manifest
+                        </button>
+<button class="flex items-center gap-2 px-4 py-2 bg-primary text-on-primary rounded-xl font-label-bold text-label-bold shadow-md hover:scale-105 transition-transform active:scale-95">
+<span class="material-symbols-outlined text-[18px]" data-icon="print">print</span>
+                            Print Labels
+                        </button>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto p-6">
+<div class="space-y-4">
+<!-- Delivery Item 1 -->
+<div class="flex items-center gap-6 p-5 bg-white rounded-2xl border border-outline-variant hover:border-primary/30 transition-all duration-300 group">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-primary" data-icon="corporate_fare">corporate_fare</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-2">
+<h4 class="font-title-md text-title-md truncate">Telenor HQ Pakistan</h4>
+<span class="px-2 py-0.5 rounded-md bg-surface-container text-on-surface-variant font-label-sm text-[10px] uppercase tracking-wider">Subscriber</span>
+</div>
+<div class="flex items-center gap-4 mt-1 text-on-surface-variant">
+<span class="flex items-center gap-1 font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px]" data-icon="inventory_2">inventory_2</span>
+                                        Corporate Executive Thali
+                                    </span>
+<span class="flex items-center gap-1 font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px]" data-icon="schedule">schedule</span>
+                                        12:30 PM
+                                    </span>
+<span class="flex items-center gap-1 font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px]" data-icon="location_on">location_on</span>
+                                        Blue Area
+                                    </span>
+</div>
+</div>
+<div class="text-right">
+<p class="text-label-sm font-label-bold opacity-60">Quantity</p>
+<p class="text-title-md font-bold">120 Boxes</p>
+</div>
+<div class="w-48">
+<select class="w-full bg-success-emerald/10 text-success-emerald border-none rounded-xl font-label-bold text-label-sm py-2 px-3 focus:ring-2 focus:ring-success-emerald cursor-pointer">
+<option selected="" value="delivered">Delivered</option>
+<option value="dispatched">Dispatched</option>
+<option value="preparing">Preparing</option>
+</select>
+</div>
+<button class="p-2 opacity-0 group-hover:opacity-100 transition-opacity hover:bg-surface-container rounded-full">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+<!-- Delivery Item 2 -->
+<div class="flex items-center gap-6 p-5 bg-white rounded-2xl border border-outline-variant hover:border-primary/30 transition-all duration-300 group">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-primary" data-icon="person">person</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-2">
+<h4 class="font-title-md text-title-md truncate">Ali Zain (Private Office)</h4>
+<span class="px-2 py-0.5 rounded-md bg-surface-container text-on-surface-variant font-label-sm text-[10px] uppercase tracking-wider">Premium</span>
+</div>
+<div class="flex items-center gap-4 mt-1 text-on-surface-variant">
+<span class="flex items-center gap-1 font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px]" data-icon="inventory_2">inventory_2</span>
+                                        Artisanal Desi Box
+                                    </span>
+<span class="flex items-center gap-1 font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px]" data-icon="schedule">schedule</span>
+                                        12:45 PM
+                                    </span>
+<span class="flex items-center gap-1 font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px]" data-icon="location_on">location_on</span>
+                                        E-7 Sector
+                                    </span>
+</div>
+</div>
+<div class="text-right">
+<p class="text-label-sm font-label-bold opacity-60">Quantity</p>
+<p class="text-title-md font-bold">12 Boxes</p>
+</div>
+<div class="w-48">
+<select class="w-full bg-primary/10 text-primary border-none rounded-xl font-label-bold text-label-sm py-2 px-3 focus:ring-2 focus:ring-primary cursor-pointer">
+<option value="delivered">Delivered</option>
+<option selected="" value="dispatched">Dispatched</option>
+<option value="preparing">Preparing</option>
+</select>
+</div>
+<button class="p-2 opacity-0 group-hover:opacity-100 transition-opacity hover:bg-surface-container rounded-full">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+<!-- Delivery Item 3 -->
+<div class="flex items-center gap-6 p-5 bg-white rounded-2xl border border-outline-variant hover:border-primary/30 transition-all duration-300 group">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-primary" data-icon="apartment">apartment</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-2">
+<h4 class="font-title-md text-title-md truncate">Jazz Digital HQ</h4>
+<span class="px-2 py-0.5 rounded-md bg-surface-container text-on-surface-variant font-label-sm text-[10px] uppercase tracking-wider">Subscriber</span>
+</div>
+<div class="flex items-center gap-4 mt-1 text-on-surface-variant">
+<span class="flex items-center gap-1 font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px]" data-icon="inventory_2">inventory_2</span>
+                                        Healthy Green Bundle
+                                    </span>
+<span class="flex items-center gap-1 font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px]" data-icon="schedule">schedule</span>
+                                        01:15 PM
+                                    </span>
+<span class="flex items-center gap-1 font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px]" data-icon="location_on">location_on</span>
+                                        F-6 Markaz
+                                    </span>
+</div>
+</div>
+<div class="text-right">
+<p class="text-label-sm font-label-bold opacity-60">Quantity</p>
+<p class="text-title-md font-bold">85 Boxes</p>
+</div>
+<div class="w-48">
+<select class="w-full bg-on-surface-variant/10 text-on-surface-variant border-none rounded-xl font-label-bold text-label-sm py-2 px-3 focus:ring-2 focus:ring-on-surface-variant cursor-pointer">
+<option value="delivered">Delivered</option>
+<option value="dispatched">Dispatched</option>
+<option selected="" value="preparing">Preparing</option>
+</select>
+</div>
+<button class="p-2 opacity-0 group-hover:opacity-100 transition-opacity hover:bg-surface-container rounded-full">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+<!-- Delivery Item 4 -->
+<div class="flex items-center gap-6 p-5 bg-white rounded-2xl border border-outline-variant hover:border-primary/30 transition-all duration-300 group opacity-75">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-primary" data-icon="work">work</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-2">
+<h4 class="font-title-md text-title-md truncate">Systems Ltd.</h4>
+<span class="px-2 py-0.5 rounded-md bg-surface-container text-on-surface-variant font-label-sm text-[10px] uppercase tracking-wider">Enterprise</span>
+</div>
+<div class="flex items-center gap-4 mt-1 text-on-surface-variant">
+<span class="flex items-center gap-1 font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px]" data-icon="inventory_2">inventory_2</span>
+                                        Full Corporate Menu
+                                    </span>
+<span class="flex items-center gap-1 font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px]" data-icon="schedule">schedule</span>
+                                        12:00 PM
+                                    </span>
+<span class="flex items-center gap-1 font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px]" data-icon="location_on">location_on</span>
+                                        DHA II
+                                    </span>
+</div>
+</div>
+<div class="text-right">
+<p class="text-label-sm font-label-bold opacity-60">Quantity</p>
+<p class="text-title-md font-bold">265 Boxes</p>
+</div>
+<div class="w-48">
+<div class="w-full bg-success-emerald/10 text-success-emerald rounded-xl font-label-bold text-label-sm py-2 px-3 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[16px]" data-icon="check_circle">check_circle</span>
+                                    Delivered
+                                </div>
+</div>
+<button class="p-2 opacity-0 group-hover:opacity-100 transition-opacity hover:bg-surface-container rounded-full">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Empty State / Footer Info -->
+<div class="mt-12 text-center p-8 border-2 border-dashed border-outline-variant rounded-3xl">
+<span class="material-symbols-outlined text-outline text-4xl mb-2" data-icon="auto_awesome">auto_awesome</span>
+<p class="font-label-bold text-label-bold text-on-surface-variant">End of morning distribution cycle.</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant opacity-60 mt-1">Evening shift schedule will unlock at 03:00 PM</p>
+</div>
+</div>
+</section>
+</div>
+<!-- Footer -->
+<footer class="bg-white border-t border-outline-variant px-8 py-3 flex justify-between items-center z-10">
+<div class="flex items-center gap-6">
+<p class="font-body-sm text-body-sm text-on-surface-variant">© 2024 Corporate Craving. Islamabad Operations.</p>
+<div class="flex gap-4">
+<a class="font-body-sm text-body-sm text-primary hover:underline" href="#">WhatsApp Support</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary" href="#">System Status: Optimal</a>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-success-emerald animate-pulse"></span>
+<span class="font-label-bold text-label-bold text-on-surface-variant">Live Updates Active</span>
+</div>
+</footer>
+</main>
+<script>
+        // Micro-interactions for status dropdowns
+        document.querySelectorAll('select').forEach(select => {
+            select.addEventListener('change', function() {
+                const value = this.value;
+                this.classList.remove('bg-success-emerald/10', 'text-success-emerald', 'bg-primary/10', 'text-primary', 'bg-on-surface-variant/10', 'text-on-surface-variant');
+                
+                if (value === 'delivered') {
+                    this.classList.add('bg-success-emerald/10', 'text-success-emerald');
+                } else if (value === 'dispatched') {
+                    this.classList.add('bg-primary/10', 'text-primary');
+                } else {
+                    this.classList.add('bg-on-surface-variant/10', 'text-on-surface-variant');
+                }
+            });
+        });
+
+        // Hover effect for side nav items
+        const navItems = document.querySelectorAll('aside nav a');
+        navItems.forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                if(!item.classList.contains('bg-secondary-container')) {
+                    item.style.transform = 'translateX(4px)';
+                }
+            });
+            item.addEventListener('mouseleave', () => {
+                item.style.transform = 'translateX(0px)';
+            });
+        });
+    </script>
+</body></html>

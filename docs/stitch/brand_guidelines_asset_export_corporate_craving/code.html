@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Saffron &amp; Slate | Corporate Craving Brand Guidelines</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-highest": "#e4e2de",
+                        "on-secondary-fixed": "#141b2b",
+                        "surface-variant": "#e4e2de",
+                        "inverse-surface": "#30312e",
+                        "primary-container": "#f6c60c",
+                        "on-tertiary-fixed-variant": "#005322",
+                        "primary-fixed": "#ffe089",
+                        "success-emerald": "#10B981",
+                        "tertiary-container": "#45e878",
+                        "surface-bright": "#fbf9f5",
+                        "surface-cream": "#FDFBF7",
+                        "secondary-fixed": "#dce2f7",
+                        "primary-fixed-dim": "#f0c100",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed": "#241a00",
+                        "error": "#ba1a1a",
+                        "outline": "#807660",
+                        "error-container": "#ffdad6",
+                        "on-primary-container": "#695300",
+                        "on-secondary-fixed-variant": "#404758",
+                        "secondary-fixed-dim": "#c0c6db",
+                        "secondary-container": "#d9dff5",
+                        "on-primary-fixed-variant": "#574500",
+                        "surface-container-lowest": "#ffffff",
+                        "background": "#fbf9f5",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#f2f0ed",
+                        "outline-variant": "#d1c5ab",
+                        "tertiary-fixed-dim": "#3de273",
+                        "surface-tint": "#745c00",
+                        "surface-dim": "#dbdad6",
+                        "on-surface": "#1b1c1a",
+                        "on-secondary-container": "#5c6274",
+                        "on-background": "#1b1c1a",
+                        "charcoal-text": "#111827",
+                        "surface-container": "#efeeea",
+                        "inverse-primary": "#f0c100",
+                        "danger-ruby": "#E11D48",
+                        "on-tertiary-fixed": "#002109",
+                        "surface-container-low": "#f5f3ef",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#66ff8e",
+                        "surface": "#fbf9f5",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-container": "#00642b",
+                        "on-secondary": "#ffffff",
+                        "surface-container-high": "#eae8e4",
+                        "tertiary": "#006d2f",
+                        "on-surface-variant": "#4e4632",
+                        "secondary": "#575e70",
+                        "primary": "#745c00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-desktop": "40px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "margin-mobile": "16px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Playfair Display"],
+                        "label-bold": ["Plus Jakarta Sans"],
+                        "title-md": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "label-sm": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "body-sm": ["Plus Jakarta Sans"],
+                        "display-lg": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                        "label-bold": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                        "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "500"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .plinth-shadow {
+            box-shadow: 0px 4px 20px rgba(17, 24, 39, 0.08);
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #745c00;
+        }
+    </style>
+</head>
+<body class="bg-surface-cream text-on-surface font-body-lg selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation Anchor -->
+<header class="bg-surface-container-high shadow-sm sticky top-0 z-50">
+<div class="flex justify-between items-center px-4 h-16 w-full">
+<div class="flex items-center gap-4">
+<span class="font-headline-lg text-headline-lg text-primary">Portal</span>
+<div class="h-6 w-[1px] bg-outline-variant mx-2"></div>
+<span class="font-title-md text-title-md text-on-surface-variant">Brand Guidelines</span>
+</div>
+<div class="flex gap-4 items-center">
+<button class="hover:bg-surface-container-highest rounded-full p-2 transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="hover:bg-surface-container-highest rounded-full p-2 transition-colors">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+<button class="hover:bg-surface-container-highest rounded-full p-2 transition-colors">
+<span class="material-symbols-outlined">dark_mode</span>
+</button>
+</div>
+</div>
+</header>
+<div class="flex min-h-screen">
+<!-- Sidebar Shell -->
+<aside class="fixed left-0 top-16 h-[calc(100vh-64px)] w-[280px] bg-surface-container-low p-4 hidden md:flex flex-col gap-2 overflow-y-auto custom-scrollbar">
+<div class="mb-6 px-4">
+<h2 class="font-headline-lg text-headline-lg text-primary leading-tight">Corporate Craving</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mt-1">Saffron &amp; Slate v1.0</p>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 bg-secondary-container text-on-secondary-container rounded-xl px-4 py-3 transition-all duration-200 ease-in-out font-label-bold text-label-bold" href="#story">
+<span class="material-symbols-outlined">menu_book</span>
+                    Brand Story
+                </a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-highest rounded-xl px-4 py-3 transition-all duration-200 ease-in-out font-label-bold text-label-bold" href="#logo">
+<span class="material-symbols-outlined">diamond</span>
+                    Logo System
+                </a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-highest rounded-xl px-4 py-3 transition-all duration-200 ease-in-out font-label-bold text-label-bold" href="#typography">
+<span class="material-symbols-outlined">text_fields</span>
+                    Typography
+                </a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-highest rounded-xl px-4 py-3 transition-all duration-200 ease-in-out font-label-bold text-label-bold" href="#colors">
+<span class="material-symbols-outlined">palette</span>
+                    Color Palette
+                </a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-highest rounded-xl px-4 py-3 transition-all duration-200 ease-in-out font-label-bold text-label-bold" href="#imagery">
+<span class="material-symbols-outlined">image</span>
+                    Brand Imagery
+                </a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-highest rounded-xl px-4 py-3 transition-all duration-200 ease-in-out font-label-bold text-label-bold" href="#icons">
+<span class="material-symbols-outlined">interests</span>
+                    UI Elements
+                </a>
+<div class="h-[1px] bg-outline-variant my-4 mx-4"></div>
+<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-highest rounded-xl px-4 py-3 transition-all duration-200 ease-in-out font-label-bold text-label-bold" href="#export">
+<span class="material-symbols-outlined">download</span>
+                    Asset Export Hub
+                </a>
+</nav>
+<div class="mt-auto p-4 bg-primary-container/10 rounded-xl">
+<p class="font-label-bold text-label-bold text-primary mb-2">Internal Use Only</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Property of Corporate Craving Admin Console.</p>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 md:ml-[280px] p-margin-mobile md:p-margin-desktop max-w-container-max">
+<!-- Section: Brand Story -->
+<section class="mb-20" id="story">
+<div class="flex flex-col md:flex-row gap-gutter items-end mb-12">
+<div class="flex-1">
+<h1 class="font-display-lg text-display-lg text-primary mb-6">Modern Heritage</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+                            Corporate Craving is built on the intersection of rigorous corporate logistics and the soulful, inviting spirit of Pakistani hospitality. Our "Saffron &amp; Slate" identity balances the flavorful warmth of artisanal cuisine with the steadfast dependability required by elite procurement officers. We don't just deliver food; we deliver a legacy of taste wrapped in professional precision.
+                        </p>
+</div>
+<div class="hidden md:block w-48 h-48 border border-outline-variant rounded-full flex items-center justify-center p-8 text-center bg-white plinth-shadow">
+<p class="font-label-bold text-label-bold text-primary">Est. 2024 Islamabad</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="bg-white border border-outline-variant p-8 rounded-xl plinth-shadow">
+<span class="material-symbols-outlined text-primary text-4xl mb-4">handshake</span>
+<h3 class="font-title-md text-title-md text-on-surface mb-2">Dependable</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Logistical excellence that ensures every order arrives with clockwork precision.</p>
+</div>
+<div class="bg-white border border-outline-variant p-8 rounded-xl plinth-shadow">
+<span class="material-symbols-outlined text-primary text-4xl mb-4">restaurant</span>
+<h3 class="font-title-md text-title-md text-on-surface mb-2">Flavorful</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Authentic Pakistani spice profiles refined for a premium, contemporary palate.</p>
+</div>
+<div class="bg-white border border-outline-variant p-8 rounded-xl plinth-shadow">
+<span class="material-symbols-outlined text-primary text-4xl mb-4">visibility</span>
+<h3 class="font-title-md text-title-md text-on-surface mb-2">Attentive</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">A hospitality-first approach that anticipates the needs of our corporate partners.</p>
+</div>
+</div>
+</section>
+<!-- Section: Logo System -->
+<section class="mb-20 scroll-mt-24" id="logo">
+<div class="flex justify-between items-center mb-8 border-b border-outline-variant pb-4">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Logo System</h2>
+<button class="bg-primary text-on-primary font-label-bold text-label-bold px-6 py-2 rounded-xl flex items-center gap-2 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-sm">download</span> Download All Formats
+                    </button>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter">
+<div class="bg-white border border-outline-variant p-12 rounded-xl flex flex-col items-center justify-center min-h-[300px]">
+<div class="font-display-lg text-display-lg text-primary mb-8">Corporate Craving</div>
+<p class="font-label-bold text-label-bold text-on-surface-variant opacity-50 mb-4">Primary Wordmark</p>
+<div class="flex gap-2">
+<button class="text-xs px-3 py-1 border border-outline-variant rounded-full hover:bg-surface-container-low transition-colors">SVG</button>
+<button class="text-xs px-3 py-1 border border-outline-variant rounded-full hover:bg-surface-container-low transition-colors">PNG</button>
+<button class="text-xs px-3 py-1 border border-outline-variant rounded-full hover:bg-surface-container-low transition-colors">EPS</button>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-gutter">
+<div class="bg-inverse-surface border border-outline-variant p-12 rounded-xl flex flex-col items-center justify-center">
+<div class="font-display-lg text-display-lg text-primary-fixed mb-4">CC</div>
+<p class="font-label-bold text-label-bold text-inverse-on-surface opacity-50">Brand Mark</p>
+</div>
+<div class="bg-white border border-outline-variant p-12 rounded-xl flex flex-col items-center justify-center text-center">
+<div class="font-headline-lg text-headline-lg text-primary leading-none">C</div>
+<div class="font-headline-lg text-headline-lg text-secondary leading-none">C</div>
+<p class="font-label-bold text-label-bold text-on-surface-variant opacity-50 mt-4">Stacked Mini</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Typography -->
+<section class="mb-20 scroll-mt-24" id="typography">
+<div class="mb-8 border-b border-outline-variant pb-4">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Typography</h2>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+<div>
+<div class="mb-8">
+<p class="font-label-bold text-label-bold text-primary mb-2 uppercase tracking-widest">Primary Headline</p>
+<h3 class="font-display-lg text-display-lg text-on-surface">Playfair Display</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2 italic">Refined, sophisticated, and traditional. Used for brand storytelling and large headlines.</p>
+</div>
+<div class="flex flex-wrap gap-4 text-display-lg text-on-surface">
+<span class="font-headline-lg">Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz</span>
+</div>
+</div>
+<div>
+<div class="mb-8">
+<p class="font-label-bold text-label-bold text-primary mb-2 uppercase tracking-widest">Body &amp; Interface</p>
+<h3 class="font-title-md text-title-md text-on-surface">Plus Jakarta Sans</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2">Functional, modern, and legible. Used for all interface elements and long-form body text.</p>
+</div>
+<div class="flex flex-wrap gap-4 text-on-surface">
+<span class="font-body-lg">Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz 0123456789</span>
+</div>
+</div>
+</div>
+<div class="mt-12 bg-white border border-outline-variant rounded-xl overflow-hidden">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container">
+<th class="p-4 font-label-bold text-label-bold">Token Name</th>
+<th class="p-4 font-label-bold text-label-bold">Font Family</th>
+<th class="p-4 font-label-bold text-label-bold">Size / Lead</th>
+<th class="p-4 font-label-bold text-label-bold">Sample</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<tr>
+<td class="p-4 font-body-sm text-on-surface-variant">display-lg</td>
+<td class="p-4 font-body-sm text-on-surface-variant">Playfair Display</td>
+<td class="p-4 font-body-sm text-on-surface-variant">48px / 56px</td>
+<td class="p-4 font-display-lg text-display-lg">The Saffron Palette</td>
+</tr>
+<tr>
+<td class="p-4 font-body-sm text-on-surface-variant">headline-lg</td>
+<td class="p-4 font-body-sm text-on-surface-variant">Playfair Display</td>
+<td class="p-4 font-body-sm text-on-surface-variant">32px / 40px</td>
+<td class="p-4 font-headline-lg text-headline-lg">Artisanal Catering</td>
+</tr>
+<tr>
+<td class="p-4 font-body-sm text-on-surface-variant">title-md</td>
+<td class="p-4 font-body-sm text-on-surface-variant">Plus Jakarta Sans</td>
+<td class="p-4 font-body-sm text-on-surface-variant">20px / 28px</td>
+<td class="p-4 font-title-md text-title-md">Menu Collections</td>
+</tr>
+<tr>
+<td class="p-4 font-body-sm text-on-surface-variant">body-lg</td>
+<td class="p-4 font-body-sm text-on-surface-variant">Plus Jakarta Sans</td>
+<td class="p-4 font-body-sm text-on-surface-variant">16px / 24px</td>
+<td class="p-4 font-body-lg text-body-lg">Perfectly spiced biryani for your next meeting.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Section: Color Palette -->
+<section class="mb-20 scroll-mt-24" id="colors">
+<div class="mb-8 border-b border-outline-variant pb-4">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Color Palette</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Saffron -->
+<div class="flex flex-col gap-4">
+<div class="h-48 bg-primary rounded-xl plinth-shadow relative group overflow-hidden">
+<div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<button class="text-white text-xs bg-black/40 px-3 py-1 rounded-full backdrop-blur-md">Copy HEX</button>
+</div>
+</div>
+<div>
+<h4 class="font-label-bold text-label-bold text-on-surface">Saffron (Primary)</h4>
+<p class="text-xs text-on-surface-variant mt-1">HEX: #745C00</p>
+<p class="text-xs text-on-surface-variant">RGB: 116, 92, 0</p>
+<p class="text-xs text-on-surface-variant">CMYK: 0, 21, 100, 55</p>
+</div>
+</div>
+<!-- Slate -->
+<div class="flex flex-col gap-4">
+<div class="h-48 bg-secondary rounded-xl plinth-shadow relative group overflow-hidden">
+<div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<button class="text-white text-xs bg-black/40 px-3 py-1 rounded-full backdrop-blur-md">Copy HEX</button>
+</div>
+</div>
+<div>
+<h4 class="font-label-bold text-label-bold text-on-surface">Slate (Secondary)</h4>
+<p class="text-xs text-on-surface-variant mt-1">HEX: #575E70</p>
+<p class="text-xs text-on-surface-variant">RGB: 87, 94, 112</p>
+<p class="text-xs text-on-surface-variant">CMYK: 22, 16, 0, 56</p>
+</div>
+</div>
+<!-- Cream -->
+<div class="flex flex-col gap-4">
+<div class="h-48 bg-surface-cream border border-outline-variant rounded-xl plinth-shadow relative group overflow-hidden">
+<div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<button class="text-on-surface text-xs bg-white/60 px-3 py-1 rounded-full backdrop-blur-md">Copy HEX</button>
+</div>
+</div>
+<div>
+<h4 class="font-label-bold text-label-bold text-on-surface">Cream (Surface)</h4>
+<p class="text-xs text-on-surface-variant mt-1">HEX: #FDFBF7</p>
+<p class="text-xs text-on-surface-variant">RGB: 253, 251, 247</p>
+<p class="text-xs text-on-surface-variant">CMYK: 0, 1, 2, 1</p>
+</div>
+</div>
+<!-- Emerald -->
+<div class="flex flex-col gap-4">
+<div class="h-48 bg-success-emerald rounded-xl plinth-shadow relative group overflow-hidden">
+<div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<button class="text-white text-xs bg-black/40 px-3 py-1 rounded-full backdrop-blur-md">Copy HEX</button>
+</div>
+</div>
+<div>
+<h4 class="font-label-bold text-label-bold text-on-surface">Emerald (Accent)</h4>
+<p class="text-xs text-on-surface-variant mt-1">HEX: #10B981</p>
+<p class="text-xs text-on-surface-variant">RGB: 16, 185, 129</p>
+<p class="text-xs text-on-surface-variant">CMYK: 91, 0, 30, 27</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Brand Imagery -->
+<section class="mb-20 scroll-mt-24" id="imagery">
+<div class="flex justify-between items-center mb-8 border-b border-outline-variant pb-4">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Brand Imagery</h2>
+<div class="flex gap-2">
+<button class="font-label-bold text-label-bold text-on-surface-variant px-4 py-2 rounded-xl border border-outline-variant hover:bg-surface-container transition-colors">Filter: Food</button>
+<button class="font-label-bold text-label-bold text-on-surface-variant px-4 py-2 rounded-xl border border-outline-variant hover:bg-surface-container transition-colors">Filter: Lifestyle</button>
+</div>
+</div>
+<div class="columns-1 sm:columns-2 lg:columns-3 gap-gutter space-y-6">
+<div class="relative group overflow-hidden rounded-xl plinth-shadow">
+<img class="w-full h-auto" data-alt="Close-up professional food photography of a vibrant saffron-infused rice dish in a polished slate bowl. Warm, golden overhead lighting highlights individual grains and aromatic steam. The setting is a minimalist, modern corporate boardroom with light wood textures in the background. High contrast, sharp detail, appetizing and professional aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiI8sdcztFmG8Ojzl3G2ayCx8IWOkmNyNOHitJUFF5TZmW9hZ9BDgUmlsb9sorAjhPNplfFj9V5TAdCKZPcB2LLtmXKsiH1LfNAYDnj5z0ttNhblO7Bl8Z1y_KaATosFOG7o50QKPuFd5lpYboxjVhfL2diIUMXDqR-opCNS1VqmqgJ1B1TtCF5hsciu_welIwW4vc1_AQhWbR3WiDWzH42bvdxHXMSC-qxPBeDGDYgDZMsuGIwuXZo6ESJ9VqpXyK-cSu0eo9p6mW"/>
+<div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex justify-between items-center">
+<span class="text-white text-xs font-label-bold">Signature Dish High-Res</span>
+<span class="material-symbols-outlined text-white cursor-pointer hover:scale-110 transition-transform">download</span>
+</div>
+</div>
+<div class="relative group overflow-hidden rounded-xl plinth-shadow">
+<img class="w-full h-auto" data-alt="A sophisticated group of business professionals in smart casual attire engaged in a networking lunch. They are gathered around a beautifully presented spread of Pakistani fusion appetizers. The lighting is bright and natural, streaming through large glass windows of a contemporary office. Soft focus on the background to emphasize the interaction and food quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDT821g1XXiBteAmO7OPJ0D1F8FvyX2Jt-i-IQvR3TxuGabzxgeANdiDlmplPpyLL657eFwf_OI2BlmHvdW_CneDeJKkMg3nvH1jRJB0RzqN-X4fQKG7ZvnfeY_1Qviy59qQJMfsSwAI9Nitz2UBkpjnI3y722I9aSYId4d0w-bj_--4mUKzuumpFJg_iox9H-B910wEcW_8rhRq1zyBnVp8jk2MNNhXJdU_bG6eL8IRWiK_UN70X9JJQrvAjZw9WbLjyd6ePmah0wb"/>
+<div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex justify-between items-center">
+<span class="text-white text-xs font-label-bold">Corporate Lifestyle A</span>
+<span class="material-symbols-outlined text-white cursor-pointer hover:scale-110 transition-transform">download</span>
+</div>
+</div>
+<div class="relative group overflow-hidden rounded-xl plinth-shadow">
+<img class="w-full h-auto" data-alt="An artistic overhead flat lay of various Pakistani spices - whole saffron strands, green cardamom pods, and star anise - arranged on a clean white marble surface. The composition is geometric and minimalist. Shadows are soft and diffused. This image represents the 'Modern Heritage' brand pillar with its clean, laboratory-like precision applied to traditional ingredients." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLvdelZ_Su20Le1eJ5r8W_dqQzckdWJWakdRpCTrUIDPkWcdo9167GW4dt4581Sa0IR6louICjmE0CdIfTG3pWCy_lIze9cypAmlw30gzoh3nMdYi0JYRPnqqMr5X60ZUFrskmRpZNn_3eo_aF0lQ_iHAM_yN-kWJVGyX5dM5-jwS_tFMR5-GGUB2oebgPPyS4faRF1GEAPjUvznudSRqZJeLLW06cww9Z-_VD6ga2WNTUKTGIwj_WghXseDS_a6zLa192OKA-i2aH"/>
+<div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex justify-between items-center">
+<span class="text-white text-xs font-label-bold">Ingredient Abstract</span>
+<span class="material-symbols-outlined text-white cursor-pointer hover:scale-110 transition-transform">download</span>
+</div>
+</div>
+<div class="relative group overflow-hidden rounded-xl plinth-shadow">
+<img class="w-full h-auto" data-alt="A fleet of modern, clean delivery vehicles branded with the Saffron and Slate Corporate Craving logo, lined up outside a sleek commercial kitchen at sunrise. The lighting is cool and professional, with hints of warm morning sun. This image conveys dependability, scale, and logistical excellence for corporate partnerships." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBje5lYH2IqfnFxDlb1sEXm0QsHq86d8yvgO9DvEl29wSP8ZdtIXsA3sfpbxTR_rIImxgkNOOJwY3KGaA7GJAANJnbGwybrkT_4GOl6LmknlleqLHh5snoEZRWkHzK9Q1HXZnZxNqe5vRL_5BTGiJhxvWzeRy1aI2AkBPtoV4xeFTuuqeo-2wvrESTAj2oBctcFqN0UZ-EzV_PdCfrPAN78r6tRplCBefSwQtFOoWqSA-0z-EpopPYib7-eclblut0GI492FWq4ySj7"/>
+<div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex justify-between items-center">
+<span class="text-white text-xs font-label-bold">Logistics &amp; Fleet</span>
+<span class="material-symbols-outlined text-white cursor-pointer hover:scale-110 transition-transform">download</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: UI Elements -->
+<section class="mb-20 scroll-mt-24" id="icons">
+<div class="mb-8 border-b border-outline-variant pb-4">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">UI Elements &amp; Iconography</h2>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter">
+<div class="bg-white border border-outline-variant p-8 rounded-xl">
+<h4 class="font-label-bold text-label-bold text-primary mb-6 uppercase tracking-widest">Icon Set (Material Symbols)</h4>
+<div class="grid grid-cols-5 sm:grid-cols-8 gap-6">
+<div class="flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-on-surface-variant">dashboard</span>
+<span class="text-[10px] text-on-surface-variant">Dashboard</span>
+</div>
+<div class="flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-on-surface-variant">menu_book</span>
+<span class="text-[10px] text-on-surface-variant">Catalog</span>
+</div>
+<div class="flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-on-surface-variant">inventory_2</span>
+<span class="text-[10px] text-on-surface-variant">Packages</span>
+</div>
+<div class="flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-on-surface-variant">shopping_cart</span>
+<span class="text-[10px] text-on-surface-variant">Orders</span>
+</div>
+<div class="flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-on-surface-variant">local_shipping</span>
+<span class="text-[10px] text-on-surface-variant">Operations</span>
+</div>
+<div class="flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-on-surface-variant">article</span>
+<span class="text-[10px] text-on-surface-variant">Content</span>
+</div>
+<div class="flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-on-surface-variant">group</span>
+<span class="text-[10px] text-on-surface-variant">People</span>
+</div>
+<div class="flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-on-surface-variant">settings</span>
+<span class="text-[10px] text-on-surface-variant">System</span>
+</div>
+</div>
+</div>
+<div class="bg-white border border-outline-variant p-8 rounded-xl">
+<h4 class="font-label-bold text-label-bold text-primary mb-6 uppercase tracking-widest">Button States</h4>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary text-on-primary font-label-bold text-label-bold px-6 py-3 rounded-xl plinth-shadow hover:bg-surface-tint transition-all">Primary Action</button>
+<button class="bg-secondary text-on-secondary font-label-bold text-label-bold px-6 py-3 rounded-xl plinth-shadow hover:opacity-90 transition-all">Secondary Action</button>
+<button class="bg-success-emerald text-white font-label-bold text-label-bold px-6 py-3 rounded-xl flex items-center gap-2 plinth-shadow hover:brightness-110 transition-all">
+<span class="material-symbols-outlined">chat</span> WhatsApp Support
+                            </button>
+<button class="border border-outline-variant text-on-surface font-label-bold text-label-bold px-6 py-3 rounded-xl hover:bg-surface-container transition-all">Outlined Action</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Asset Export Hub -->
+<section class="mb-20 scroll-mt-24" id="export">
+<div class="mb-8 border-b border-outline-variant pb-4">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Asset Export Hub</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="bg-white border border-outline-variant rounded-xl overflow-hidden plinth-shadow flex flex-col">
+<div class="aspect-video bg-surface-container flex items-center justify-center p-8">
+<div class="w-full h-full border-2 border-dashed border-outline-variant rounded flex items-center justify-center opacity-50">
+<span class="material-symbols-outlined text-4xl">feed</span>
+</div>
+</div>
+<div class="p-6">
+<h4 class="font-title-md text-title-md text-on-surface">Marketing Templates</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2 mb-6">Includes Canva links and PSD files for Instagram, LinkedIn, and Facebook posts.</p>
+<button class="w-full border border-primary text-primary font-label-bold text-label-bold py-2 rounded-xl hover:bg-primary-container/10 transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">download</span> Access Folder
+                            </button>
+</div>
+</div>
+<div class="bg-white border border-outline-variant rounded-xl overflow-hidden plinth-shadow flex flex-col">
+<div class="aspect-video bg-surface-container flex items-center justify-center p-8">
+<div class="w-full h-full border-2 border-dashed border-outline-variant rounded flex items-center justify-center opacity-50">
+<span class="material-symbols-outlined text-4xl">mail</span>
+</div>
+</div>
+<div class="p-6">
+<h4 class="font-title-md text-title-md text-on-surface">Email Signature Kit</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2 mb-6">Standardized signatures for all departments including logo assets and typography guide.</p>
+<button class="w-full border border-primary text-primary font-label-bold text-label-bold py-2 rounded-xl hover:bg-primary-container/10 transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">download</span> Access Folder
+                            </button>
+</div>
+</div>
+<div class="bg-white border border-outline-variant rounded-xl overflow-hidden plinth-shadow flex flex-col">
+<div class="aspect-video bg-surface-container flex items-center justify-center p-8">
+<div class="w-full h-full border-2 border-dashed border-outline-variant rounded flex items-center justify-center opacity-50">
+<span class="material-symbols-outlined text-4xl">present_to_all</span>
+</div>
+</div>
+<div class="p-6">
+<h4 class="font-title-md text-title-md text-on-surface">Corporate Deck v2</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2 mb-6">Pitch deck template for new procurement partners in PowerPoint and Keynote formats.</p>
+<button class="w-full border border-primary text-primary font-label-bold text-label-bold py-2 rounded-xl hover:bg-primary-container/10 transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">download</span> Access Folder
+                            </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+</div>
+<!-- Footer Cluster -->
+<footer class="bg-surface-container-highest border-t border-outline-variant py-12 relative z-10">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-1">
+<h3 class="font-headline-lg text-headline-lg text-primary mb-4">Corporate Craving</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Modern Heritage Pakistani Hospitality for the Corporate World.</p>
+</div>
+<div>
+<h4 class="font-label-bold text-label-bold text-on-surface mb-4 uppercase tracking-widest">Navigation</h4>
+<ul class="flex flex-col gap-2">
+<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Home</a></li>
+<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Menu</a></li>
+<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Packages</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-bold text-label-bold text-on-surface mb-4 uppercase tracking-widest">Support</h4>
+<ul class="flex flex-col gap-2">
+<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">WhatsApp Support</a></li>
+<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Refund Policy</a></li>
+<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-bold text-label-bold text-on-surface mb-4 uppercase tracking-widest">Connect</h4>
+<div class="flex gap-4">
+<button class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center text-on-surface-variant hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined text-lg">public</span>
+</button>
+<button class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center text-on-surface-variant hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined text-lg">chat</span>
+</button>
+</div>
+</div>
+</div>
+<div class="mt-12 text-center border-t border-outline-variant pt-8">
+<p class="font-body-sm text-body-sm text-on-surface-variant opacity-70">© 2024 Corporate Craving. Islamabad, Pakistan. Built with Modern Heritage Principles.</p>
+</div>
+</footer>
+<script>
+        // Simple active state observer for sidebar navigation
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('aside nav a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 150)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('bg-secondary-container', 'text-on-secondary-container');
+                link.classList.add('text-on-surface-variant');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('bg-secondary-container', 'text-on-secondary-container');
+                    link.classList.remove('text-on-surface-variant');
+                }
+            });
+        });
+
+        // Add interaction effect to color chips
+        document.querySelectorAll('#colors .group').forEach(chip => {
+            chip.addEventListener('click', () => {
+                const hex = chip.nextElementSibling.querySelector('p').innerText.split(': ')[1];
+                navigator.clipboard.writeText(hex).then(() => {
+                    const btn = chip.querySelector('button');
+                    const originalText = btn.innerText;
+                    btn.innerText = 'Copied!';
+                    setTimeout(() => { btn.innerText = originalText; }, 2000);
+                });
+            });
+        });
+    </script>
+</body></html>

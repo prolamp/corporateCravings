@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Corporate Craving | Executive Dining</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Plus+Jakarta+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed": "#e1e2e6",
+                    "surface-dim": "#121411",
+                    "primary-fixed": "#ffe089",
+                    "error": "#ffb4ab",
+                    "secondary": "#c6c6c9",
+                    "surface-container-low": "#1a1c19",
+                    "inverse-primary": "#745c00",
+                    "surface-bright": "#383a36",
+                    "secondary-container": "#454749",
+                    "on-error": "#690005",
+                    "inverse-surface": "#e3e3de",
+                    "on-tertiary-fixed": "#191c1f",
+                    "on-tertiary-fixed-variant": "#44474a",
+                    "error-container": "#93000a",
+                    "primary": "#ffe6a3",
+                    "on-surface-variant": "#d1c5ab",
+                    "surface-container": "#1e201d",
+                    "secondary-fixed-dim": "#c6c6c9",
+                    "on-primary-fixed": "#241a00",
+                    "surface-tint": "#f0c100",
+                    "on-primary-fixed-variant": "#574500",
+                    "on-secondary": "#2f3133",
+                    "surface-container-high": "#292a27",
+                    "on-primary": "#3d2f00",
+                    "on-tertiary": "#2e3134",
+                    "on-background": "#e3e3de",
+                    "tertiary-container": "#caccd0",
+                    "tertiary-fixed-dim": "#c5c6ca",
+                    "primary-container": "#f6c60c",
+                    "on-error-container": "#ffdad6",
+                    "on-secondary-fixed": "#1a1c1e",
+                    "on-tertiary-container": "#53565a",
+                    "on-primary-container": "#695300",
+                    "outline-variant": "#4e4632",
+                    "primary-fixed-dim": "#f0c100",
+                    "surface-container-highest": "#333532",
+                    "surface-variant": "#333532",
+                    "surface-container-lowest": "#0d0f0c",
+                    "on-secondary-fixed-variant": "#454749",
+                    "inverse-on-surface": "#2f312e",
+                    "surface": "#121411",
+                    "on-surface": "#e3e3de",
+                    "outline": "#9a9078",
+                    "secondary-fixed": "#e2e2e5",
+                    "tertiary": "#e6e8ec",
+                    "on-secondary-container": "#b4b5b7",
+                    "background": "#121411"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "16px",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "md": "24px",
+                    "base": "4px",
+                    "container-max": "1200px",
+                    "xl": "80px",
+                    "sm": "16px",
+                    "gutter": "24px",
+                    "xs": "8px",
+                    "lg": "48px"
+            },
+            "fontFamily": {
+                    "body-md": ["Plus Jakarta Sans"],
+                    "headline-md": ["Playfair Display"],
+                    "headline-sm": ["Playfair Display"],
+                    "display-lg-mobile": ["Playfair Display"],
+                    "label-md": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "caption": ["Plus Jakarta Sans"],
+                    "display-lg": ["Playfair Display"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "display-lg-mobile": ["36px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "caption": ["12px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-nav {
+            background: rgba(18, 20, 17, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .saffron-glow {
+            box-shadow: 0 10px 30px -10px rgba(246, 198, 12, 0.3);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-nav-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+        body {
+            background-color: #121411;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="font-body-md text-on-background bg-background overflow-x-hidden">
+<!-- Top AppBar (Mobile Responsive) -->
+<header class="fixed top-0 left-0 right-0 z-50 glass-nav shadow-sm h-16 flex items-center justify-between px-md">
+<h1 class="font-headline-md text-headline-sm text-primary tracking-tight">Corporate Craving</h1>
+<div class="flex items-center gap-sm">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+</header>
+<main class="pt-16 pb-24">
+<!-- Hero Section: Signature Saffron Biryani -->
+<section class="relative w-full h-[618px] flex flex-col justify-end px-md pb-xl">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10"></div>
+<div class="w-full h-full bg-cover bg-center" data-alt="A gourmet close-up shot of signature Saffron Biryani served in a luxury charcoal-colored ceramic dish. The rice is vibrant gold, adorned with edible gold leaf and silver-tipped aromatic herbs. The lighting is low-key and dramatic, mimicking a candle-lit fine dining atmosphere with warm saffron-tinted highlights and deep nocturnal shadows, emphasizing the exclusive and prestigious mood of Corporate Craving." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDSzAumOT6CCsX_Fcu5sRu028-QW4e52Q8-wUtoWCyGB1RSzGeL_Tndk4uyG7Mld_qUtYdZfbk06YxS0fz-GrkOrQauemsoIWmrHcCXqCvGLuQXrfIH0TbP1bVd1BLG-LVvT5yoRkzlpKRJbnZPVBrRKTq0Nqljc9cfWPqdVQV-m6KvHTNGJYmCuveec5SeljoxdiLl7JMpNtSOPjenmxk4S2cHzXNDl8NJynASVqwV-TeTBPY4H0BqflfF1S6o_XAD3oNiTajPXLOn')"></div>
+</div>
+<div class="relative z-20 space-y-sm">
+<span class="inline-block px-sm py-1 bg-primary/10 text-primary border border-primary/20 rounded-full font-label-md text-caption uppercase tracking-widest">Limited Reserve</span>
+<h2 class="font-display-lg-mobile text-display-lg-mobile text-on-background leading-tight">The Imperial Saffron Biryani</h2>
+<p class="font-body-md text-on-surface-variant max-w-[80%]">Hand-picked Iranian saffron, 48-hour aged basmati, and executive-grade gold leaf garnish.</p>
+<div class="flex gap-sm pt-md">
+<button class="flex-1 py-4 bg-primary text-on-primary font-label-md text-label-md rounded-xl saffron-glow active:scale-95 transition-all">
+                        Reserve Now
+                    </button>
+<button class="px-md py-4 border-1.5 border-primary/40 text-primary font-label-md text-label-md rounded-xl active:scale-95 transition-all">
+                        View Details
+                    </button>
+</div>
+</div>
+</section>
+<!-- Bento Featured Grid -->
+<section class="px-md space-y-md">
+<div class="flex justify-between items-end">
+<h3 class="font-headline-sm text-headline-sm text-on-background">Curated For You</h3>
+<a class="font-label-md text-caption text-primary flex items-center gap-1" href="#">View All <span class="material-symbols-outlined text-[16px]">arrow_forward</span></a>
+</div>
+<div class="grid grid-cols-2 gap-sm">
+<!-- Bento Item 1 -->
+<div class="col-span-2 aspect-[16/10] bg-surface-container rounded-xl p-md flex flex-col justify-between relative overflow-hidden border border-outline-variant/10">
+<div class="absolute right-[-10%] top-[-10%] w-48 h-48 opacity-20">
+
+</div>
+<div class="z-10">
+<span class="material-symbols-outlined text-primary text-3xl">restaurant_menu</span>
+<h4 class="font-headline-sm text-headline-sm text-on-background mt-xs">Executive Tasting</h4>
+<p class="font-body-md text-on-surface-variant text-caption">A 7-course journey through world cuisines.</p>
+</div>
+<button class="z-10 self-start text-primary font-label-md text-label-md flex items-center gap-1">Book Suite <span class="material-symbols-outlined text-[18px]">chevron_right</span></button>
+</div>
+<!-- Bento Item 2 -->
+<div class="aspect-square bg-surface-container-high rounded-xl p-md flex flex-col justify-between border border-outline-variant/10">
+<span class="material-symbols-outlined text-primary text-2xl">wine_bar</span>
+<div>
+<h4 class="font-label-md text-label-md text-on-background">Vintage Cellar</h4>
+<p class="font-caption text-on-surface-variant mt-1">Sommelier picks from 1982.</p>
+</div>
+</div>
+<!-- Bento Item 3 -->
+<div class="aspect-square bg-surface-container-high rounded-xl p-md flex flex-col justify-between border border-outline-variant/10">
+<span class="material-symbols-outlined text-primary text-2xl">event_seat</span>
+<div>
+<h4 class="font-label-md text-label-md text-on-background">The Vault</h4>
+<p class="font-caption text-on-surface-variant mt-1">Private executive dining room.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Horizontal Scroll: Special Offers -->
+<section class="mt-xl">
+<div class="px-md mb-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-background">Member Privileges</h3>
+</div>
+<div class="flex overflow-x-auto gap-md px-md pb-md scrollbar-hide">
+<div class="flex-shrink-0 w-72 bg-surface-container rounded-xl overflow-hidden border border-outline-variant/10">
+<div class="h-40 bg-cover bg-center" data-alt="A moody, high-end interior of a private members club lounge within Corporate Craving. The space features plush charcoal velvet armchairs, dark wood paneling, and a low saffron glow from designer floor lamps. The atmosphere is quiet, exclusive, and sophisticated, perfectly aligned with a luxury corporate dining brand's dark mode aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBgJ0pDimCz4zvop_32yLzvybfXebAD1tz-Y_l8tN5tfrv9-VemfOmPcuRnHVzoXhgLHRPO-6dGmDWunqwROJGSGyfsTm5iiYk4Mpc1VjO4gnhDcLC8Jfac9xTTJS4M3EFm2qcVY2ne4a97iLAdaJw9bExqn4mRSmKA0wJ9hrQemHxLuAwbiT6bnuzCi8_iHJhA1ZRQi74QDj_5ujnbLrQ6awZqmPU-6cDTiBeN0TajgxpoCGGBVvxZviKTGsG79r79tw6gX6NbALyS')"></div>
+<div class="p-md space-y-xs">
+<h5 class="font-label-md text-label-md text-on-background">Club Access</h5>
+<p class="font-caption text-on-surface-variant">24/7 access to the Executive Lounge with priority concierge service.</p>
+</div>
+</div>
+<div class="flex-shrink-0 w-72 bg-surface-container rounded-xl overflow-hidden border border-outline-variant/10">
+<div class="h-40 bg-cover bg-center" data-alt="A macro shot of a gold-plated membership card resting on a dark slate surface. In the background, the soft bokeh of an expensive restaurant interior is visible, with tiny sparks of warm saffron-colored light reflecting off glassware. The image exudes prestige, wealth, and belonging to an elite corporate social circle." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAe32kvo8hbCBNImZ1lvmeTm4WKfqSXQ0XnubC-3kCTaxV27ue_T9jQOB-8e8wgRjuf8-dBZ-D-QLWArF9HKwtK-FrM--nT6wiqJiKKAR8d_antcblhjgvttAKiuowZAhEUfFNgTl5YrUr9CgGBUqbHlXEErac7qPXrr4drWpfD-YTmtwgcdt-wrUW1Q8uNkvshrTxJfZLJJwWjK2bSZ9xNQPRArlo7b5n9tJJBhbskViQlpeM_lprEoO7-Cx3UlJl42RKzRwoO3VWp')"></div>
+<div class="p-md space-y-xs">
+<h5 class="font-label-md text-label-md text-on-background">Global Reservations</h5>
+<p class="font-caption text-on-surface-variant">Instant table securing in London, Dubai, and New York locations.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Signature Experience CTA -->
+<section class="mt-lg px-md">
+<div class="bg-primary/5 rounded-xl p-lg border border-primary/20 flex flex-col items-center text-center space-y-md">
+<h3 class="font-headline-sm text-headline-sm text-primary">The Pinnacle of Dining</h3>
+<p class="font-body-md text-on-surface-variant">Experience corporate dining where every detail is tailored to your status.</p>
+<button class="px-xl py-4 bg-primary text-on-primary font-label-md text-label-md rounded-xl saffron-glow">Join the Club</button>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 right-0 z-50 glass-nav h-20 px-md flex justify-between items-center pb-2">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined active-nav-icon">home</span>
+<span class="text-[10px] font-label-md font-bold uppercase">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="text-[10px] font-label-md uppercase">Reserve</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="text-[10px] font-label-md uppercase">Menu</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">hub</span>
+<span class="text-[10px] font-label-md uppercase">Events</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-label-md uppercase">Profile</span>
+</a>
+</nav>
+<!-- Floating Action Button: Concierge -->
+<button class="fixed bottom-24 right-md z-50 w-14 h-14 bg-primary text-on-primary rounded-full flex items-center justify-center shadow-lg saffron-glow active:scale-90 transition-transform">
+<span class="material-symbols-outlined">support_agent</span>
+</button>
+<script>
+        // Simple scroll effect for top nav
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 20) {
+                header.classList.add('shadow-md');
+            } else {
+                header.classList.remove('shadow-md');
+            }
+        });
+
+        // Click interaction for bento cards
+        document.querySelectorAll('.aspect-square, .col-span-2').forEach(card => {
+            card.addEventListener('mousedown', () => card.style.transform = 'scale(0.98)');
+            card.addEventListener('mouseup', () => card.style.transform = 'scale(1)');
+            card.addEventListener('mouseleave', () => card.style.transform = 'scale(1)');
+        });
+    </script>
+</body></html>

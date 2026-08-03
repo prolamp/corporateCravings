@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Account Settings | Corporate Craving</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .soft-plinth {
+            box-shadow: 0px 4px 20px rgba(17, 24, 39, 0.08);
+        }
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #745c00 !important;
+            box-shadow: 0 0 0 2px rgba(116, 92, 0, 0.1);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #d1c5ab;
+            border-radius: 10px;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed": "#66ff8e",
+                        "surface-container-highest": "#e4e2de",
+                        "surface-variant": "#e4e2de",
+                        "tertiary-container": "#45e878",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#002109",
+                        "on-primary-fixed": "#241a00",
+                        "on-background": "#1b1c1a",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed-variant": "#574500",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#d9dff5",
+                        "on-tertiary-container": "#00642b",
+                        "primary-fixed-dim": "#f0c100",
+                        "on-secondary-fixed": "#141b2b",
+                        "secondary-fixed": "#dce2f7",
+                        "outline-variant": "#d1c5ab",
+                        "inverse-on-surface": "#f2f0ed",
+                        "surface-container": "#efeeea",
+                        "on-error-container": "#93000a",
+                        "on-secondary-container": "#5c6274",
+                        "secondary-fixed-dim": "#c0c6db",
+                        "secondary": "#575e70",
+                        "surface-bright": "#fbf9f5",
+                        "on-error": "#ffffff",
+                        "tertiary": "#006d2f",
+                        "on-surface-variant": "#4e4632",
+                        "surface-dim": "#dbdad6",
+                        "surface-tint": "#745c00",
+                        "surface": "#fbf9f5",
+                        "primary": "#745c00",
+                        "on-tertiary": "#ffffff",
+                        "outline": "#807660",
+                        "tertiary-fixed-dim": "#3de273",
+                        "surface-container-high": "#eae8e4",
+                        "charcoal-text": "#111827",
+                        "surface-cream": "#FDFBF7",
+                        "inverse-primary": "#f0c100",
+                        "on-secondary": "#ffffff",
+                        "danger-ruby": "#E11D48",
+                        "on-tertiary-fixed-variant": "#005322",
+                        "surface-container-low": "#f5f3ef",
+                        "primary-container": "#f6c60c",
+                        "on-surface": "#1b1c1a",
+                        "inverse-surface": "#30312e",
+                        "background": "#fbf9f5",
+                        "primary-fixed": "#ffe089",
+                        "on-secondary-fixed-variant": "#404758",
+                        "success-emerald": "#10B981",
+                        "on-primary-container": "#695300"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "base": "8px",
+                        "gutter": "24px",
+                        "margin-desktop": "40px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "label-bold": ["Plus Jakarta Sans"],
+                        "body-sm": ["Plus Jakarta Sans"],
+                        "title-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "label-sm": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-bold": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-lg">
+<!-- TopNavBar -->
+<nav class="bg-surface border-b border-outline-variant h-20 fixed top-0 w-full z-50">
+<div class="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-full">
+<div class="font-headline-lg text-headline-lg text-primary">Corporate Craving</div>
+<div class="hidden md:flex items-center gap-gutter">
+<a class="text-on-surface-variant font-label-bold hover:text-primary transition-colors duration-200" href="#">My Schedule</a>
+<a class="text-on-surface-variant font-label-bold hover:text-primary transition-colors duration-200" href="#">My Package</a>
+<a class="text-primary border-b-2 border-primary font-label-bold active:opacity-80 transition-all" href="#">Account</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-primary">notifications</button>
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a corporate procurement officer, styled in a clean, high-contrast studio setting. The subject wears a charcoal blazer and has a friendly yet professional expression. The background is a soft ivory cream, reflecting the modern-heritage aesthetic of the Corporate Craving brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBscCVCrmiQpPiAn81txadaxFzBIxUgwGG1aiBmsuvTXoNxainMvRxYa0Z63r-w4l2jBkpIfR_gYkRGQ1vYpJZh85no7gZbt5DV7R15XCOCe4hzlMAXAOZMeIBR0sbKA-1CD5YZvIFZnAhlBJk7GFkQjOUjHeFGPDAPTr0McVjiTZKQ9OaaM0WaG9GV7pV1RYuRbbJ3r7coNqG8UVjMoRGvxYl5Bs5IThTF2AtScfiDRGnB8CNIcwnu2Rvm5TtA43uLRBDCc429rnMe"/>
+</div>
+</div>
+</div>
+</nav>
+<main class="pt-24 pb-20 md:pb-32 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<header class="mb-10">
+<h1 class="font-display-lg text-headline-lg md:text-display-lg text-charcoal-text">Account Settings</h1>
+<p class="text-on-surface-variant font-body-lg">Manage your corporate profile, delivery logistics, and security preferences.</p>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Sidebar Navigation (Desktop) -->
+<aside class="hidden lg:block lg:col-span-3 space-y-2">
+<nav class="sticky top-28">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary-container text-on-primary-container font-label-bold" href="#profile">
+<span class="material-symbols-outlined">business</span>
+                        Profile Management
+                    </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant font-label-bold hover:bg-surface-container transition-colors" href="#delivery">
+<span class="material-symbols-outlined">local_shipping</span>
+                        Delivery Address
+                    </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant font-label-bold hover:bg-surface-container transition-colors" href="#notifications">
+<span class="material-symbols-outlined">notifications_active</span>
+                        Notifications
+                    </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant font-label-bold hover:bg-surface-container transition-colors" href="#security">
+<span class="material-symbols-outlined">security</span>
+                        Security
+                    </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant font-label-bold hover:bg-surface-container transition-colors" href="#billing">
+<span class="material-symbols-outlined">payments</span>
+                        Billing &amp; Payments
+                    </a>
+</nav>
+</aside>
+<!-- Main Content Canvas -->
+<div class="lg:col-span-9 space-y-gutter">
+<!-- Profile Section -->
+<section class="bg-white border border-outline-variant rounded-xl p-6 md:p-8" id="profile">
+<div class="flex items-center justify-between mb-6">
+<h2 class="font-headline-lg text-headline-lg text-charcoal-text flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">business</span>
+                            Company Profile
+                        </h2>
+<button class="px-6 py-2 bg-primary text-on-primary font-label-bold rounded-lg hover:opacity-90 transition-all">Save Changes</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="space-y-2">
+<label class="font-label-bold text-on-surface-variant">Company Name</label>
+<input class="w-full px-4 py-3 border border-outline rounded-lg font-body-lg text-charcoal-text bg-surface-cream focus:bg-white transition-colors" type="text" value="Nexus Tech Solutions"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-bold text-on-surface-variant">Primary Contact Person</label>
+<input class="w-full px-4 py-3 border border-outline rounded-lg font-body-lg text-charcoal-text bg-surface-cream focus:bg-white transition-colors" type="text" value="Zahid Ahmed"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-bold text-on-surface-variant">Email Address</label>
+<input class="w-full px-4 py-3 border border-outline rounded-lg font-body-lg text-charcoal-text bg-surface-cream focus:bg-white transition-colors" type="email" value="zahid@nexustech.com.pk"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-bold text-on-surface-variant">Phone Number</label>
+<input class="w-full px-4 py-3 border border-outline rounded-lg font-body-lg text-charcoal-text bg-surface-cream focus:bg-white transition-colors" type="tel" value="+92 300 1234567"/>
+</div>
+</div>
+</section>
+<!-- Delivery Address Section -->
+<section class="bg-white border border-outline-variant rounded-xl p-6 md:p-8" id="delivery">
+<h2 class="font-headline-lg text-headline-lg text-charcoal-text mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">location_on</span>
+                        Delivery Address
+                    </h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="space-y-4">
+<div class="space-y-2">
+<label class="font-label-bold text-on-surface-variant">Main Office Address</label>
+<textarea class="w-full px-4 py-3 border border-outline rounded-lg font-body-lg text-charcoal-text bg-surface-cream focus:bg-white transition-colors" rows="3">Block 4, Gulshan-e-Iqbal, Karachi. Floor 12, Nexus Plaza.</textarea>
+</div>
+<div class="space-y-2">
+<label class="font-label-bold text-on-surface-variant">Delivery Instructions</label>
+<input class="w-full px-4 py-3 border border-outline rounded-lg font-body-lg text-charcoal-text bg-surface-cream focus:bg-white transition-colors" placeholder="e.g. Leave at Reception" type="text"/>
+</div>
+<button class="w-full md:w-auto px-6 py-3 border border-primary text-primary font-label-bold rounded-lg hover:bg-primary-container transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">edit_location</span>
+                                Update Location on Map
+                            </button>
+</div>
+<div class="relative h-64 md:h-full min-h-[240px] rounded-xl overflow-hidden border border-outline-variant">
+<div class="absolute inset-0 bg-surface-container-high flex items-center justify-center" data-location="Karachi" style="">
+<img class="w-full h-full object-cover" data-alt="A stylized minimalist map of Karachi, Pakistan, showing the urban grid in soft charcoal and muted saffron lines. A prominent delivery marker with the Corporate Craving logo sits on the Gulshan-e-Iqbal area. The aesthetic is clean, professional, and institutional, avoiding clutter for a focused user interface experience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOFq90SmNClCsNJdm8VJzZbk5TxsU2utC3F1jc5iRw3U_P1gb3xi7y2IiNrB8-csncBCAK-4c4o9yzwCthu4qsakyMyYEly4QAWMvBtZSvbhy7eNuRvtQZzZRkZW587FnC7GItxXRgFb7rq3lCRE4hb60kkIhsfbZiEWSstOw6pxx29IS5AZdGw8nE-Tq3vWgBE4B_qrCwjIv802gVvX9Vptfj00jvxFE5t3zVE202frVzYWVXCYMFAdHNCzATfeKl1elutprGCBNk"/>
+<div class="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-lg border border-outline-variant text-label-bold text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">verified</span>
+                                    Verified Delivery Zone
+                                </div>
+</div>
+</div>
+</div>
+</section>
+<!-- Notifications Section -->
+<section class="bg-white border border-outline-variant rounded-xl p-6 md:p-8" id="notifications">
+<h2 class="font-headline-lg text-headline-lg text-charcoal-text mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">notifications</span>
+                        Notification Preferences
+                    </h2>
+<div class="space-y-6">
+<!-- Delivery Updates -->
+<div class="flex items-center justify-between p-4 bg-surface-cream rounded-lg">
+<div>
+<h3 class="font-title-md text-charcoal-text">Delivery Updates</h3>
+<p class="font-body-sm text-on-surface-variant">Real-time alerts when your food is prepared and dispatched.</p>
+</div>
+<div class="flex gap-4">
+<label class="flex flex-col items-center gap-1 cursor-pointer">
+<input checked="" class="w-5 h-5 text-primary border-outline rounded" type="checkbox"/>
+<span class="font-label-sm">Email</span>
+</label>
+<label class="flex flex-col items-center gap-1 cursor-pointer">
+<input checked="" class="w-5 h-5 text-success-emerald border-outline rounded" type="checkbox"/>
+<span class="font-label-sm">WhatsApp</span>
+</label>
+</div>
+</div>
+<!-- Billing Alerts -->
+<div class="flex items-center justify-between p-4 border border-outline-variant rounded-lg">
+<div>
+<h3 class="font-title-md text-charcoal-text">Billing &amp; Invoices</h3>
+<p class="font-body-sm text-on-surface-variant">Receive monthly statements and payment confirmations.</p>
+</div>
+<div class="flex gap-4">
+<label class="flex flex-col items-center gap-1 cursor-pointer">
+<input checked="" class="w-5 h-5 text-primary border-outline rounded" type="checkbox"/>
+<span class="font-label-sm">Email</span>
+</label>
+<label class="flex flex-col items-center gap-1 cursor-pointer">
+<input class="w-5 h-5 text-primary border-outline rounded" type="checkbox"/>
+<span class="font-label-sm">Push</span>
+</label>
+</div>
+</div>
+</div>
+</section>
+<!-- Security Section -->
+<section class="bg-white border border-outline-variant rounded-xl p-6 md:p-8" id="security">
+<h2 class="font-headline-lg text-headline-lg text-charcoal-text mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">shield</span>
+                        Security
+                    </h2>
+<div class="space-y-4">
+<div class="flex items-center justify-between py-4 border-b border-outline-variant">
+<div>
+<p class="font-title-md text-charcoal-text">Change Password</p>
+<p class="font-body-sm text-on-surface-variant">Last updated 3 months ago</p>
+</div>
+<button class="px-4 py-2 border border-outline text-on-surface font-label-bold rounded-lg hover:bg-surface-container transition-colors">Update</button>
+</div>
+<div class="flex items-center justify-between py-4">
+<div>
+<p class="font-title-md text-charcoal-text">Two-Factor Authentication</p>
+<p class="font-body-sm text-on-surface-variant">Add an extra layer of security to your corporate account.</p>
+</div>
+<div class="relative inline-block w-12 h-6 transition duration-200 ease-in-out bg-surface-container rounded-full cursor-pointer">
+<div class="absolute left-1 top-1 bg-white w-4 h-4 rounded-full transition transform translate-x-0"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Billing & Payments -->
+<section class="bg-white border border-outline-variant rounded-xl p-6 md:p-8" id="billing">
+<h2 class="font-headline-lg text-headline-lg text-charcoal-text mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">credit_card</span>
+                        Billing &amp; Payment Methods
+                    </h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+<div class="p-4 border-2 border-primary bg-primary-container/10 rounded-xl flex items-start gap-4">
+<div class="p-2 bg-white rounded-lg border border-outline-variant">
+<span class="material-symbols-outlined text-primary">account_balance</span>
+</div>
+<div class="flex-1">
+<p class="font-label-bold text-primary">Default Payment</p>
+<p class="font-title-md text-charcoal-text">Bank Transfer (HBL)</p>
+<p class="font-body-sm text-on-surface-variant">Ending in **** 9820</p>
+</div>
+<span class="material-symbols-outlined text-success-emerald">check_circle</span>
+</div>
+<div class="p-4 border border-outline-variant hover:border-outline transition-colors rounded-xl flex items-center justify-center gap-3 cursor-pointer border-dashed">
+<span class="material-symbols-outlined text-on-surface-variant">add</span>
+<span class="font-label-bold text-on-surface-variant">Add New Payment Method</span>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-lg p-4">
+<div class="flex items-center gap-3 text-on-surface-variant font-body-sm">
+<span class="material-symbols-outlined text-sm">info</span>
+                            Billing occurs on the 1st of every month. Invoices are automatically sent to zahid@nexustech.com.pk.
+                        </div>
+</div>
+</section>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-margin-mobile py-2 bg-surface border-t border-outline-variant backdrop-blur-md bg-surface/90 md:hidden z-50">
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:bg-surface-container-high transition-transform active:scale-95" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="font-label-sm text-label-sm">Schedule</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:bg-surface-container-high transition-transform active:scale-95" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-label-sm text-label-sm">Package</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 active:bg-surface-container-high transition-transform active:scale-95" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm">Account</span>
+</a>
+</nav>
+<!-- Footer -->
+<footer class="w-full py-12 px-margin-desktop max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-base border-t border-outline-variant bg-surface-container-low">
+<div class="flex flex-col items-center md:items-start gap-2">
+<div class="font-headline-lg text-headline-lg text-primary">Corporate Craving</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">© 2024 Corporate Craving. All rights reserved.</p>
+</div>
+<div class="flex gap-gutter">
+<a class="text-on-surface-variant font-label-bold hover:text-primary transition-colors" href="#">Support</a>
+<a class="text-on-surface-variant font-label-bold hover:text-primary transition-colors" href="#">Privacy</a>
+<a class="text-on-surface-variant font-label-bold hover:text-primary transition-colors" href="#">Terms</a>
+</div>
+</footer>
+<script>
+        // Smooth scroll for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Update active state in sidebar
+                    if (window.innerWidth >= 1024) {
+                        document.querySelectorAll('aside nav a').forEach(navLink => {
+                            navLink.classList.remove('bg-primary-container', 'text-on-primary-container');
+                            navLink.classList.add('text-on-surface-variant');
+                        });
+                        this.classList.add('bg-primary-container', 'text-on-primary-container');
+                        this.classList.remove('text-on-surface-variant');
+                    }
+                }
+            });
+        });
+
+        // Simple toggle simulation for 2FA
+        const toggles = document.querySelectorAll('.relative.inline-block.w-12.h-6');
+        toggles.forEach(toggle => {
+            toggle.addEventListener('click', function() {
+                const dot = this.querySelector('div');
+                const isActive = dot.classList.contains('translate-x-6');
+                
+                if (isActive) {
+                    dot.classList.remove('translate-x-6');
+                    dot.classList.add('translate-x-0');
+                    this.classList.remove('bg-primary');
+                    this.classList.add('bg-surface-container');
+                } else {
+                    dot.classList.remove('translate-x-0');
+                    dot.classList.add('translate-x-6');
+                    this.classList.remove('bg-surface-container');
+                    this.classList.add('bg-primary');
+                }
+            });
+        });
+    </script>
+</body></html>

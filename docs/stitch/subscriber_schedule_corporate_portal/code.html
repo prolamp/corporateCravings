@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Subscriber Schedule | Corporate Craving</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "inverse-primary": "#f0c100",
+                  "on-tertiary-container": "#00642b",
+                  "on-surface-variant": "#4e4632",
+                  "charcoal-text": "#111827",
+                  "secondary": "#575e70",
+                  "primary-fixed": "#ffe089",
+                  "outline-variant": "#d1c5ab",
+                  "surface-tint": "#745c00",
+                  "success-emerald": "#10B981",
+                  "error": "#ba1a1a",
+                  "surface": "#fbf9f5",
+                  "primary-fixed-dim": "#f0c100",
+                  "on-error-container": "#93000a",
+                  "surface-variant": "#e4e2de",
+                  "secondary-fixed": "#dce2f7",
+                  "surface-container-lowest": "#ffffff",
+                  "tertiary-container": "#45e878",
+                  "surface-dim": "#dbdad6",
+                  "on-primary-fixed": "#241a00",
+                  "outline": "#807660",
+                  "inverse-surface": "#30312e",
+                  "surface-container-low": "#f5f3ef",
+                  "surface-container-highest": "#e4e2de",
+                  "on-tertiary": "#ffffff",
+                  "surface-cream": "#FDFBF7",
+                  "on-secondary-fixed": "#141b2b",
+                  "secondary-fixed-dim": "#c0c6db",
+                  "on-tertiary-fixed-variant": "#005322",
+                  "on-primary": "#ffffff",
+                  "on-surface": "#1b1c1a",
+                  "surface-container": "#efeeea",
+                  "background": "#fbf9f5",
+                  "surface-bright": "#fbf9f5",
+                  "on-background": "#1b1c1a",
+                  "on-secondary-fixed-variant": "#404758",
+                  "on-secondary-container": "#5c6274",
+                  "primary-container": "#f6c60c",
+                  "on-primary-fixed-variant": "#574500",
+                  "on-primary-container": "#695300",
+                  "tertiary": "#006d2f",
+                  "secondary-container": "#d9dff5",
+                  "on-error": "#ffffff",
+                  "error-container": "#ffdad6",
+                  "surface-container-high": "#eae8e4",
+                  "on-tertiary-fixed": "#002109",
+                  "on-secondary": "#ffffff",
+                  "primary": "#745c00",
+                  "danger-ruby": "#E11D48",
+                  "tertiary-fixed-dim": "#3de273",
+                  "tertiary-fixed": "#66ff8e",
+                  "inverse-on-surface": "#f2f0ed"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.125rem",
+                  "lg": "0.25rem",
+                  "xl": "0.5rem",
+                  "full": "0.75rem"
+          },
+          "spacing": {
+                  "margin-mobile": "16px",
+                  "gutter": "24px",
+                  "container-max": "1280px",
+                  "base": "8px",
+                  "margin-desktop": "40px"
+          },
+          "fontFamily": {
+                  "label-sm": ["Plus Jakarta Sans"],
+                  "body-sm": ["Plus Jakarta Sans"],
+                  "headline-lg": ["Playfair Display"],
+                  "title-md": ["Plus Jakarta Sans"],
+                  "display-lg": ["Playfair Display"],
+                  "body-lg": ["Plus Jakarta Sans"],
+                  "headline-lg-mobile": ["Playfair Display"],
+                  "label-bold": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+                  "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "500"}],
+                  "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                  "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                  "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                  "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                  "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                  "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                  "label-bold": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+    .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+    .custom-scrollbar::-webkit-scrollbar-thumb { background: #d1c5ab; border-radius: 10px; }
+    
+    .glass-effect {
+      background: rgba(251, 249, 245, 0.8);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body-lg text-body-lg min-h-screen">
+<!-- TopNavBar Implementation from JSON -->
+<header class="sticky top-0 z-50 flex justify-between items-center px-margin-desktop py-4 w-full max-w-container-max mx-auto bg-surface dark:bg-inverse-surface border-b border-outline-variant dark:border-outline">
+<div class="flex items-center gap-8">
+<h1 class="font-headline-lg text-headline-lg text-primary dark:text-inverse-primary tracking-tight">Corporate Craving</h1>
+<nav class="hidden md:flex items-center gap-6">
+<a class="font-title-md text-title-md text-primary dark:text-inverse-primary font-bold border-b-2 border-primary dark:border-inverse-primary pb-1 transition-all duration-200" href="#">My Schedule</a>
+<a class="font-title-md text-title-md text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-inverse-primary transition-all duration-200" href="#">My Package</a>
+<a class="font-title-md text-title-md text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-inverse-primary transition-all duration-200" href="#">Account</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined p-2 rounded-full hover:bg-surface-container-low transition-colors cursor-pointer active:scale-95">dark_mode</button>
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed font-bold">T</div>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-margin-desktop py-gutter">
+<!-- Hero Header: Subscriber & Package -->
+<section class="mb-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<span class="font-label-bold text-label-bold text-primary tracking-widest uppercase mb-2 block">Subscriber Dashboard</span>
+<h2 class="font-display-lg text-display-lg text-on-background">Telenor HQ, Islamabad</h2>
+<div class="flex items-center gap-3 mt-4">
+<span class="px-4 py-1.5 bg-secondary-container text-on-secondary-container rounded-full font-label-bold text-label-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">restaurant</span>
+              Executive Desi Platter
+            </span>
+<span class="text-secondary font-body-sm text-body-sm">• Active Subscription</span>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="bg-primary text-on-primary px-6 py-3 rounded-xl font-bold flex items-center gap-2 shadow-lg hover:shadow-xl transition-all active:scale-95">
+<span class="material-symbols-outlined">edit_calendar</span>
+            Request Change
+          </button>
+<button class="bg-[#25D366] text-white px-6 py-3 rounded-xl font-bold flex items-center gap-2 shadow-lg hover:shadow-xl transition-all active:scale-95">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat</span>
+            WhatsApp Support
+          </button>
+</div>
+</div>
+</section>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Weekly Calendar (Horizontal View) -->
+<div class="lg:col-span-12 bg-white rounded-xl border border-outline-variant p-6 flex flex-col gap-6">
+<div class="flex justify-between items-center">
+<h3 class="font-title-md text-title-md flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">calendar_month</span>
+            Weekly Delivery Schedule
+          </h3>
+<div class="flex items-center gap-2">
+<button class="p-1.5 rounded-lg hover:bg-surface-container transition-colors"><span class="material-symbols-outlined">chevron_left</span></button>
+<span class="font-label-bold text-label-bold">May 15 - May 19</span>
+<button class="p-1.5 rounded-lg hover:bg-surface-container transition-colors"><span class="material-symbols-outlined">chevron_right</span></button>
+</div>
+</div>
+<div class="grid grid-cols-5 gap-4">
+<div class="p-4 rounded-xl border border-outline-variant hover:border-primary transition-all cursor-pointer bg-surface-cream text-center">
+<div class="text-secondary font-label-bold text-label-bold mb-1">MON</div>
+<div class="text-xl font-bold">15</div>
+</div>
+<div class="p-4 rounded-xl border border-outline-variant hover:border-primary transition-all cursor-pointer bg-surface-cream text-center">
+<div class="text-secondary font-label-bold text-label-bold mb-1">TUE</div>
+<div class="text-xl font-bold">16</div>
+</div>
+<div class="p-4 rounded-xl border-2 border-primary bg-primary-container/10 text-center relative">
+<div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-on-primary px-2 py-0.5 rounded-full text-[10px] font-bold">TODAY</div>
+<div class="text-primary font-label-bold text-label-bold mb-1">WED</div>
+<div class="text-xl font-bold text-primary">17</div>
+</div>
+<div class="p-4 rounded-xl border border-outline-variant hover:border-primary transition-all cursor-pointer bg-surface-cream text-center">
+<div class="text-secondary font-label-bold text-label-bold mb-1">THU</div>
+<div class="text-xl font-bold">18</div>
+</div>
+<div class="p-4 rounded-xl border border-outline-variant hover:border-primary transition-all cursor-pointer bg-surface-cream text-center">
+<div class="text-secondary font-label-bold text-label-bold mb-1">FRI</div>
+<div class="text-xl font-bold">19</div>
+</div>
+</div>
+</div>
+<!-- Today's Daily Detail -->
+<div class="lg:col-span-7 bg-white rounded-xl border border-outline-variant overflow-hidden flex flex-col">
+<div class="h-64 relative">
+<img class="w-full h-full object-cover" data-alt="A premium food photography shot of a large copper pot filled with steaming Saffron Chicken Biryani, garnished with fresh mint and fried onions, set on a rustic wooden table with side bowls of raita and salad. The lighting is warm and cinematic, suggesting high-quality artisanal Pakistani cuisine. The background is a soft-focus corporate courtyard setting at dusk." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIpPrEmq5Bvf5Wfxgsv4rqWaA7aVWjvuHm7SPM4DTbIC1Q3chJkhlUdyAJdK9EdrTzOCfG4QWuLMfHns5zW6d4QLQwukMvZoyh9J4pRm7eyr6Cxxl0XOGCmF1hehlPTlLGouZHRYUPXAQIJrYQF2Wawnm_EsSOqWwBy4-5wSUEp6AT35OvhpBqS0tvwJLZjX4f4T8rheV6DOuLeQ4O82lHBxHyzpsyrnAHLT6DvtFQ57R0s2Scj-Dai2Hy6IpgbvB6WMZnPq6Hd21_"/>
+<div class="absolute top-4 left-4">
+<span class="px-4 py-2 bg-primary text-on-primary rounded-full font-bold flex items-center gap-2 shadow-lg">
+<span class="material-symbols-outlined text-[20px]">local_shipping</span>
+              Delivering
+            </span>
+</div>
+<div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent text-white">
+<h3 class="text-2xl font-bold">Today's Menu</h3>
+<p class="opacity-90 font-medium">Saffron Chicken Biryani &amp; Garden Sides</p>
+</div>
+</div>
+<div class="p-8 grid grid-cols-2 gap-8 border-b border-outline-variant">
+<div class="flex items-start gap-4">
+<div class="p-3 bg-surface-container-low rounded-xl">
+<span class="material-symbols-outlined text-primary">schedule</span>
+</div>
+<div>
+<div class="text-secondary font-label-bold text-label-bold">ESTIMATED ARRIVAL</div>
+<div class="text-xl font-bold">12:30 PM</div>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="p-3 bg-surface-container-low rounded-xl">
+<span class="material-symbols-outlined text-primary">inventory_2</span>
+</div>
+<div>
+<div class="text-secondary font-label-bold text-label-bold">QUANTITY</div>
+<div class="text-xl font-bold">45 Boxes</div>
+</div>
+</div>
+</div>
+<div class="p-8 bg-surface-cream">
+<h4 class="font-label-bold text-label-bold text-secondary mb-4 uppercase tracking-widest">Included Items</h4>
+<ul class="space-y-3">
+<li class="flex items-center gap-3">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="font-medium">Saffron Infused Chicken Biryani</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="font-medium">Kachumbar Salad (Fresh Tomato, Onion, Cucumber)</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="font-medium">Mint &amp; Cumin Yogurt Raita</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="font-medium">Gulab Jamun (Dessert)</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Upcoming Deliveries & Quick Stats -->
+<div class="lg:col-span-5 flex flex-col gap-gutter">
+<div class="bg-white rounded-xl border border-outline-variant p-6">
+<h3 class="font-title-md text-title-md mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">next_plan</span>
+            Upcoming Menus
+          </h3>
+<div class="space-y-6">
+<div class="flex gap-4 p-4 rounded-xl border border-outline-variant hover:bg-surface-container-low transition-colors group cursor-pointer">
+<div class="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 bg-surface-variant">
+<div class="w-full h-full bg-cover bg-center" data-alt="A close-up artistic shot of a traditional Pakistani Karahi dish with ginger julienne and green chilies. The lighting is warm and evocative, showing steam rising from the spicy tomato-based gravy. Modern heritage aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDSD6cc7Ow7HbMkXgYTadaFTMQ4cCV8tSYQQ5sJrpEJ71Uawxcri-bd6L-qCZjncSat9geBRaXw-TAyD4pVlf8Q8IuQM38BskXFUMqoGM_Q_EodrtNWCqPu3TkgWWUalV1PuIgPxdJl3ADEK2E3NQobdQ40nD9YgcMc6CjnOfW6Mnzq9Swgw9pn0LyOVMpz_YG6iZg_18iG9B1qv9ukcSr1xXObxS6094cDZ3JEcvUcONg8fsHn-1irCkgPBzSIIO85-h3a8W76JFXH')"></div>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start">
+<span class="font-label-bold text-label-bold text-primary">THU • MAY 18</span>
+<span class="text-body-sm text-secondary">12:30 PM</span>
+</div>
+<h4 class="font-bold group-hover:text-primary transition-colors">Lahori Mutton Karahi</h4>
+<p class="text-body-sm text-secondary truncate">with Sesame Naan &amp; Salad</p>
+</div>
+</div>
+<div class="flex gap-4 p-4 rounded-xl border border-outline-variant hover:bg-surface-container-low transition-colors group cursor-pointer">
+<div class="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 bg-surface-variant">
+<div class="w-full h-full bg-cover bg-center" data-alt="A top-down view of a colorful vegetarian Thali platter with various small bowls containing lentils, spinach, and cottage cheese curry. Vibrantly colored with turmeric and chili powder accents. Professional studio lighting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAP9i7-ws2Q0VfsThuNLn8EPg1aAewPaqM77iBFiTE0jBZ6dZgsxJnL29WOTg7tOcCcsEQmymqegYRRXrTQD1UsDbaOvYAKENFkEuA_y1ZLhh9vhbreS5Z6f2uYmim2C4d6WOP28uCFpWgT0LcYlL42-i17qVDSkYiDrynGFBVwPi1wDoK_wUq--clLZok_nt-k61Afp1TN3cIqJjW0d2LG_16g2Xiity3vmv6Dy-_Dsa4U5n07SawyqsajkUtfXEM06A2eWQI70Kdl')"></div>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start">
+<span class="font-label-bold text-label-bold text-primary">FRI • MAY 19</span>
+<span class="text-body-sm text-secondary">12:30 PM</span>
+</div>
+<h4 class="font-bold group-hover:text-primary transition-colors">Vegetarian Special Thali</h4>
+<p class="text-body-sm text-secondary truncate">Palak Paneer &amp; Daal Makhni</p>
+</div>
+</div>
+<div class="flex gap-4 p-4 rounded-xl border border-outline-variant hover:bg-surface-container-low transition-colors group cursor-pointer opacity-60">
+<div class="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 bg-surface-variant">
+<div class="w-full h-full bg-cover bg-center" data-alt="A professional shot of a grilled chicken tikka platter served with green chutney and lime. High contrast, warm shadows, focusing on the texture of the charred meat. Clean corporate food presentation." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBU-OzRZ_RbMRNuRRwCoBX4rFVJkxu-DthONk1eeoxfIvh5TPz4i05Hd90Am5SEsAA_UL3ITMP11g8Z7jdRJrWRiYV-qn5ajX4VrWoxuR2N0ldBRr6MKyV930vVD7DYt7aQe7nroJ5tFnvIsHw2Gbz0AmAMqN-LmWzzKLc_K9dnuKi0I7AAFxrbHwUnuKSzSALhKYJO9v_D2VdLdv50lf2D9Li80E4iCkm3aHeDTtEti-YgMa3iNsab4R324Dozkzq0GMjyDr8v90me')"></div>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start">
+<span class="font-label-bold text-label-bold text-primary">MON • MAY 22</span>
+<span class="text-body-sm text-secondary">12:30 PM</span>
+</div>
+<h4 class="font-bold group-hover:text-primary transition-colors">Chicken Tikka &amp; Kabab</h4>
+<p class="text-body-sm text-secondary truncate">Mint Chutney &amp; Puri Paratha</p>
+</div>
+</div>
+</div>
+<button class="w-full mt-6 py-3 text-primary font-bold hover:bg-primary-container/10 rounded-xl transition-colors border border-dashed border-primary">
+            View Full Monthly Menu
+          </button>
+</div>
+<!-- Weekly Summary Card -->
+<div class="bg-charcoal-text text-white rounded-xl p-8 shadow-xl relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/20 rounded-full -mr-16 -mt-16 blur-3xl group-hover:bg-primary/40 transition-all duration-700"></div>
+<div class="relative z-10">
+<h3 class="font-label-bold text-label-bold opacity-60 tracking-widest uppercase mb-4">Weekly Engagement</h3>
+<div class="flex items-center justify-between mb-6">
+<div>
+<span class="text-4xl font-bold text-primary">225</span>
+<span class="text-body-sm opacity-60 block">Meals delivered this week</span>
+</div>
+<div class="w-12 h-12 rounded-full border-2 border-primary/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">trending_up</span>
+</div>
+</div>
+<div class="flex gap-1 h-2 bg-white/10 rounded-full overflow-hidden">
+<div class="w-1/5 bg-primary"></div>
+<div class="w-1/5 bg-primary"></div>
+<div class="w-1/5 bg-primary"></div>
+<div class="w-1/5 bg-white/20"></div>
+<div class="w-1/5 bg-white/20"></div>
+</div>
+<p class="mt-4 text-body-sm opacity-60">Wednesday's delivery in progress. On track for 400 meals/week.</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Implementation from JSON -->
+<footer class="w-full px-margin-desktop py-gutter flex flex-col md:flex-row justify-between items-center gap-base bg-surface-container dark:bg-surface-container-highest mt-12">
+<div class="flex flex-col md:flex-row items-center gap-6">
+<span class="font-label-bold text-label-bold text-on-surface dark:text-inverse-on-surface">Corporate Craving</span>
+<nav class="flex gap-4">
+<a class="font-body-sm text-body-sm text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-inverse-primary underline transition-all" href="#">Support</a>
+<a class="font-body-sm text-body-sm text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-inverse-primary underline transition-all" href="#">Privacy Policy</a>
+<a class="font-body-sm text-body-sm text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-inverse-primary underline transition-all" href="#">Terms of Service</a>
+<a class="font-body-sm text-body-sm text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-inverse-primary underline transition-all" href="#">Contact Us</a>
+</nav>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface dark:text-inverse-on-surface opacity-70">© 2024 Corporate Craving. All rights reserved.</p>
+</footer>
+<script>
+    // Micro-interaction for the theme toggle (visual only for now)
+    document.querySelector('.material-symbols-outlined').addEventListener('click', function() {
+      const isDark = document.documentElement.classList.contains('dark');
+      if(isDark) {
+        document.documentElement.classList.remove('dark');
+        this.textContent = 'dark_mode';
+      } else {
+        document.documentElement.classList.add('dark');
+        this.textContent = 'light_mode';
+      }
+    });
+
+    // Add some hover parallax effects to cards
+    const cards = document.querySelectorAll('.bg-white, .bg-charcoal-text');
+    cards.forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.setProperty('--mouse-x', `${x}px`);
+        card.style.setProperty('--mouse-y', `${y}px`);
+      });
+    });
+  </script>
+</body></html>

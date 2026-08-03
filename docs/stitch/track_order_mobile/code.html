@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Order Status - Corporate Craving</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Source+Sans+3:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-highest": "#e5e2e1",
+                    "surface-container": "#f0eded",
+                    "surface-bright": "#fcf9f8",
+                    "primary": "#855300",
+                    "error": "#ba1a1a",
+                    "on-background": "#1c1b1b",
+                    "surface-container-high": "#eae7e7",
+                    "error-container": "#ffdad6",
+                    "on-secondary": "#ffffff",
+                    "tertiary-fixed": "#e5e2db",
+                    "surface-tint": "#855300",
+                    "on-tertiary-fixed": "#1c1c18",
+                    "on-tertiary": "#ffffff",
+                    "on-surface-variant": "#524435",
+                    "on-primary-container": "#5b3800",
+                    "secondary-fixed-dim": "#b9c9d3",
+                    "tertiary": "#5f5e59",
+                    "inverse-surface": "#313030",
+                    "surface-container-low": "#f6f3f2",
+                    "inverse-primary": "#ffb95f",
+                    "on-secondary-container": "#55656d",
+                    "on-error": "#ffffff",
+                    "primary-fixed": "#ffddb8",
+                    "on-primary-fixed-variant": "#653e00",
+                    "inverse-on-surface": "#f3f0ef",
+                    "surface": "#fcf9f8",
+                    "outline": "#857463",
+                    "secondary-fixed": "#d5e5ef",
+                    "background": "#fcf9f8",
+                    "surface-dim": "#dcd9d9",
+                    "on-surface": "#1c1b1b",
+                    "primary-fixed-dim": "#ffb95f",
+                    "on-primary": "#ffffff",
+                    "secondary": "#516169",
+                    "surface-variant": "#e5e2e1",
+                    "tertiary-container": "#adaba5",
+                    "tertiary-fixed-dim": "#c9c6c0",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-container": "#40403b",
+                    "primary-container": "#e89b2d",
+                    "on-primary-fixed": "#2a1700",
+                    "outline-variant": "#d7c3af",
+                    "on-secondary-fixed-variant": "#3a4951",
+                    "on-error-container": "#93000a",
+                    "on-secondary-fixed": "#0e1d25",
+                    "secondary-container": "#d2e2ec",
+                    "on-tertiary-fixed-variant": "#474742"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "stack-sm": "8px",
+                    "touch-target-min": "48px",
+                    "margin-mobile": "20px",
+                    "gutter-mobile": "16px",
+                    "stack-md": "16px",
+                    "stack-lg": "24px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Source Sans 3"],
+                    "body-lg": ["Source Sans 3"],
+                    "headline-lg": ["Playfair Display"],
+                    "label-md": ["Source Sans 3"],
+                    "body-md": ["Source Sans 3"],
+                    "headline-sm": ["Playfair Display"],
+                    "headline-md": ["Playfair Display"]
+            },
+            "fontSize": {
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .thumb-zone {
+            padding-bottom: 120px;
+        }
+        @keyframes pulse-soft {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        .pulse-animation {
+            animation: pulse-soft 2s infinite ease-in-out;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center px-margin-mobile h-touch-target-min w-full fixed top-0 z-50 bg-surface dark:bg-surface-dim bg-surface-container-low dark:bg-surface-container-high">
+<button class="text-primary dark:text-primary-fixed-dim hover:bg-surface-container-highest transition-colors active:scale-95 duration-150 p-2 rounded-full">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-primary font-bold">Corporate Craving</h1>
+<button class="text-primary dark:text-primary-fixed-dim hover:bg-surface-container-highest transition-colors active:scale-95 duration-150 p-2 rounded-full">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</header>
+<main class="pt-touch-target-min thumb-zone">
+<!-- Order Identity & Quick Status -->
+<section class="px-margin-mobile pt-stack-lg">
+<div class="flex justify-between items-end mb-stack-sm">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1">ORDER ID: #CC-89241</p>
+<h2 class="font-headline-lg text-headline-lg text-on-background">Out for Delivery</h2>
+</div>
+<div class="text-right">
+<p class="font-label-sm text-label-sm text-primary">ETA</p>
+<p class="font-headline-md text-headline-md text-primary" id="countdown">12:45</p>
+</div>
+</div>
+<!-- Dynamic Progress Bar -->
+<div class="h-1 w-full bg-surface-container rounded-full overflow-hidden mb-stack-md">
+<div class="h-full bg-primary-container w-3/4 rounded-full"></div>
+</div>
+</section>
+<!-- Map View Section -->
+<section class="relative w-full h-80 my-stack-md overflow-hidden bg-surface-container-high">
+<div class="absolute inset-0 z-0 bg-cover bg-center grayscale contrast-75 brightness-90" data-alt="A sophisticated, high-end digital map interface showing a delivery route through a stylized urban city grid. The map uses a muted grayscale and slate color palette with a vibrant saffron path line indicating movement. Subtle glows and professional UI markers denote the origin and destination points. The aesthetic is clean, minimalist, and luxury-oriented, reflecting a premium corporate service." data-location="Manhattan, New York" style="">
+</div>
+<!-- Interactive Overlay Elements -->
+<div class="absolute inset-0 z-10 flex flex-col justify-center items-center pointer-events-none">
+<div class="bg-surface p-2 rounded-full shadow-lg border border-outline-variant pulse-animation">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">pedal_bike</span>
+</div>
+</div>
+<!-- Map Controls -->
+<div class="absolute bottom-4 right-4 z-20 flex flex-col gap-2">
+<button class="w-10 h-10 bg-white/90 backdrop-blur rounded-full flex items-center justify-center shadow-sm text-secondary">
+<span class="material-symbols-outlined">my_location</span>
+</button>
+</div>
+</section>
+<!-- Order Details & Support -->
+<section class="px-margin-mobile space-y-stack-lg">
+<!-- Support Action Card -->
+<div class="p-stack-md bg-secondary-container rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-stack-md">
+<div class="w-12 h-12 rounded-full bg-white flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">support_agent</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-secondary-fixed">Need assistance?</p>
+<p class="text-xs text-on-secondary-fixed-variant">Our concierge is online</p>
+</div>
+</div>
+<button class="bg-primary text-white px-stack-md py-2 rounded-full font-label-sm text-label-sm flex items-center gap-2 hover:opacity-90 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+                    WhatsApp
+                </button>
+</div>
+<!-- Bento Summary Grid -->
+<div class="grid grid-cols-2 gap-stack-md">
+<div class="col-span-2 p-stack-md bg-surface border border-outline-variant rounded-xl">
+<h3 class="font-label-md text-label-md text-on-surface-variant mb-stack-sm border-b border-surface-container pb-2">Order Summary</h3>
+<div class="space-y-2">
+<div class="flex justify-between text-body-md">
+<span>Prime Rib Bento Box x2</span>
+<span class="font-bold">$54.00</span>
+</div>
+<div class="flex justify-between text-body-md">
+<span>Sparkling Mineral Water</span>
+<span class="font-bold">$6.50</span>
+</div>
+<div class="flex justify-between pt-2 border-t border-surface-container text-primary font-bold">
+<span>Total</span>
+<span>$60.50</span>
+</div>
+</div>
+</div>
+<div class="p-stack-md bg-surface border border-outline-variant rounded-xl flex flex-col justify-between">
+<span class="material-symbols-outlined text-primary mb-2">location_on</span>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">DELIVER TO</p>
+<p class="text-sm font-semibold truncate">Suite 402, Skyline Tower</p>
+</div>
+</div>
+<div class="p-stack-md bg-surface border border-outline-variant rounded-xl flex flex-col justify-between">
+<span class="material-symbols-outlined text-primary mb-2">payments</span>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">PAYMENT</p>
+<p class="text-sm font-semibold">Corporate Card **** 9012</p>
+</div>
+</div>
+</div>
+<!-- Status Timeline -->
+<div class="p-stack-md">
+<h3 class="font-label-md text-label-md text-on-surface-variant mb-stack-md">Activity Log</h3>
+<div class="space-y-6 relative before:absolute before:left-[11px] before:top-2 before:bottom-2 before:w-[2px] before:bg-surface-container-highest">
+<div class="relative pl-8 flex flex-col">
+<div class="absolute left-0 top-1 w-[24px] h-[24px] rounded-full bg-primary-container flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-[14px] text-white">check</span>
+</div>
+<span class="font-label-md text-label-md">Courier Picked Up Order</span>
+<span class="text-xs text-on-surface-variant">12:32 PM</span>
+</div>
+<div class="relative pl-8 flex flex-col">
+<div class="absolute left-0 top-1 w-[24px] h-[24px] rounded-full bg-surface-container-highest flex items-center justify-center z-10">
+<div class="w-2 h-2 bg-outline rounded-full"></div>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">Arriving Soon</span>
+<span class="text-xs text-on-surface-variant">Estimated 12:45 PM</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-4 py-2 bg-surface dark:bg-surface-dim bg-surface/80 backdrop-blur-md border-t border-outline-variant shadow-sm rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-secondary hover:bg-primary-container/20 transition-all active:opacity-80 p-2" href="#">
+<span class="material-symbols-outlined">restaurant</span>
+<span class="font-label-sm text-label-sm">Menu</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary hover:bg-primary-container/20 transition-all active:opacity-80 p-2" href="#">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="font-label-sm text-label-sm">Cart</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary font-bold hover:bg-primary-container/20 transition-all active:opacity-80 p-2" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">receipt_long</span>
+<span class="font-label-sm text-label-sm">Orders</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary hover:bg-primary-container/20 transition-all active:opacity-80 p-2" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm">Account</span>
+</a>
+</nav>
+<script>
+        // Simple countdown logic for the ETA
+        let timeLeft = 765; // 12 minutes 45 seconds in seconds
+        const countdownElement = document.getElementById('countdown');
+
+        const updateTimer = () => {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            countdownElement.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+            if (timeLeft > 0) timeLeft--;
+        };
+
+        setInterval(updateTimer, 1000);
+    </script>
+</body></html>

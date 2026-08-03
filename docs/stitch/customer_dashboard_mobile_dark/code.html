@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Corporate Craving | Customer Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;family=Playfair+Display:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#333532",
+                    "surface-dim": "#121411",
+                    "on-tertiary-fixed": "#191c1f",
+                    "surface-container-highest": "#333532",
+                    "secondary-fixed-dim": "#c6c6c9",
+                    "on-error-container": "#ffdad6",
+                    "secondary": "#c6c6c9",
+                    "on-primary-fixed-variant": "#574500",
+                    "surface": "#121411",
+                    "surface-bright": "#383a36",
+                    "error-container": "#93000a",
+                    "tertiary-fixed": "#e1e2e6",
+                    "tertiary-container": "#caccd0",
+                    "background": "#121411",
+                    "secondary-container": "#454749",
+                    "on-surface": "#e3e3de",
+                    "on-secondary": "#2f3133",
+                    "surface-container-lowest": "#0d0f0c",
+                    "primary-container": "#f6c60c",
+                    "inverse-surface": "#e3e3de",
+                    "on-secondary-container": "#b4b5b7",
+                    "on-surface-variant": "#d1c5ab",
+                    "on-error": "#690005",
+                    "inverse-on-surface": "#2f312e",
+                    "on-primary-fixed": "#241a00",
+                    "on-primary-container": "#695300",
+                    "on-tertiary": "#2e3134",
+                    "inverse-primary": "#745c00",
+                    "tertiary": "#e6e8ec",
+                    "secondary-fixed": "#e2e2e5",
+                    "on-secondary-fixed-variant": "#454749",
+                    "on-secondary-fixed": "#1a1c1e",
+                    "surface-container": "#1e201d",
+                    "outline-variant": "#4e4632",
+                    "on-primary": "#3d2f00",
+                    "on-background": "#e3e3de",
+                    "surface-container-high": "#292a27",
+                    "surface-tint": "#f0c100",
+                    "tertiary-fixed-dim": "#c5c6ca",
+                    "on-tertiary-container": "#53565a",
+                    "surface-container-low": "#1a1c19",
+                    "primary-fixed-dim": "#f0c100",
+                    "primary": "#ffe6a3",
+                    "on-tertiary-fixed-variant": "#44474a",
+                    "error": "#ffb4ab",
+                    "outline": "#9a9078",
+                    "primary-fixed": "#ffe089"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "16px",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1200px",
+                    "lg": "48px",
+                    "md": "24px",
+                    "xs": "8px",
+                    "xl": "80px",
+                    "sm": "16px",
+                    "gutter": "24px",
+                    "base": "4px",
+                    "margin-mobile": "16px",
+                    "margin-desktop": "80px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Playfair Display"],
+                    "display-lg": ["Playfair Display"],
+                    "caption": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "label-md": ["Plus Jakarta Sans"],
+                    "display-lg-mobile": ["Playfair Display"],
+                    "headline-sm": ["Playfair Display"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "label-bold": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "caption": ["12px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "display-lg-mobile": ["36px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-bold": ["14px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #121411;
+            color: #e3e3de;
+            -webkit-font-smoothing: antialiased;
+        }
+        .glass-nav {
+            background: rgba(18, 20, 17, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .saffron-glow {
+            box-shadow: 0 0 20px rgba(246, 198, 12, 0.15);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .progress-bar-inner {
+            transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="pb-24">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-outline-variant/30 h-20">
+<div class="flex justify-between items-center w-full px-margin-mobile h-full max-w-container-max mx-auto">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tight">Corporate Craving</h1>
+<div class="flex items-center gap-sm">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="w-10 h-10 rounded-full border border-primary-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a corporate executive for a profile avatar. The lighting is dramatic and moody, with warm saffron highlights reflecting off the side of the face against a deep charcoal background. The style is sophisticated, clean, and high-end, mirroring a luxury fine-dining aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzC1bmrkBag51TgC_17e44_cQsIfuWhaPlGeZz6UocZZ-iJrLsZViTV3YkePeqaio-LZXOl218aJWCTvK3nMnidTKaB1dX0zIo8gzPYc57H1-f9r2Yaai1V9d_VmuYMjkZu6d4S7Q0oFN7QoccmNgNWR4pI7wae6D_bLKejn_TAqxPys5S290sM_7qRuXbLw9MRavjqiflC6c2TdtUjr6NBVkriK8gho8BwcdFt2CatJgc8LXKX3BX6giHrQt3YsiapRzihtdB7b6B"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="mt-24 px-margin-mobile space-y-lg">
+<!-- Welcome Section -->
+<section class="animate-in fade-in duration-700 slide-in-from-bottom-4">
+<p class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest mb-1">DASHBOARD</p>
+<h2 class="font-headline-md text-headline-md text-on-surface">Welcome back, <span class="text-primary-container">Telenor Team</span></h2>
+</section>
+<!-- Today's Menu Card -->
+<section class="relative overflow-hidden group">
+<div class="bg-surface-container-high rounded-xl p-6 border border-outline-variant/50 saffron-glow transition-all duration-300 hover:-translate-y-1">
+<div class="flex justify-between items-start mb-6">
+<div>
+<span class="inline-block px-3 py-1 bg-primary-container/10 border border-primary-container/20 rounded-full text-primary-container font-label-bold text-xs tracking-wider mb-3 uppercase">TODAY'S SPECIAL</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-1">Chicken Biryani &amp; Raita</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Traditional aromatic basmati rice with slow-cooked chicken and cucumber yogurt.</p>
+</div>
+</div>
+<div class="relative h-48 w-full rounded-lg overflow-hidden mb-6">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A gourmet, close-up photograph of Chicken Biryani served in a dark ceramic bowl. The scene is illuminated by warm candlelight, casting soft shadows. The rice is vibrant with saffron hues, topped with fried onions and fresh herbs. A small bowl of creamy Raita sits to the side. The overall mood is luxurious, intimate, and high-end fine dining." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6C1pFKzymCVPUNzKRa69c0c3LrAfN4hWBl75g3RDhNi94Q_rmwOH8GczhOsEx1FknOeh6w0AFJwHHKbU1XkeHMFX6EvCDdtWqjuYe7N9GchiAwl3vpeu-c6qpXPbVnpZa5bPzzmRKuXwlDw6J8R46zH_pMwT1eXUiU3HQGusvdB4t8Wnewo2-LW1QyMknE0IGUJwN_vDHI2NZgtOLUqaJ8_wjAfDEZBQX9S--kt1JcAVMvItkkzW7xbIT0LY92iac2tie0Qh47TX0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dim/80 to-transparent"></div>
+<div class="absolute bottom-4 left-4 flex items-center gap-2 bg-primary-container text-on-primary-container px-4 py-2 rounded-full">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span class="font-label-bold text-sm">ETA: 12:45 PM</span>
+</div>
+</div>
+<button class="w-full bg-primary-container text-on-primary-container py-4 rounded-xl font-label-bold flex items-center justify-center gap-2 active:scale-95 transition-all">
+                    View Full Details
+                    <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</section>
+<!-- Subscription Health -->
+<section class="bg-surface-container rounded-xl p-6 border border-outline-variant/30">
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-label-bold text-label-bold text-on-surface">Subscription Health</h3>
+<span class="text-primary-container font-label-bold text-sm">84% Optimal</span>
+</div>
+<div class="space-y-4">
+<div>
+<div class="flex justify-between text-xs font-label-md text-on-surface-variant mb-2">
+<span>MONTHLY CYCLE PROGRESS</span>
+<span>21 / 25 DAYS</span>
+</div>
+<div class="h-1.5 w-full bg-surface-variant rounded-full overflow-hidden">
+<div class="progress-bar-inner h-full bg-primary-container shadow-[0_0_10px_rgba(246,198,12,0.4)]" style="width: 84%"></div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-sm pt-2">
+<div class="bg-surface-container-high/50 p-4 rounded-lg border border-outline-variant/20">
+<p class="text-[10px] text-on-surface-variant font-label-bold uppercase tracking-tighter">TOTAL DELIVERED</p>
+<p class="text-xl font-headline-sm text-primary">164</p>
+</div>
+<div class="bg-surface-container-high/50 p-4 rounded-lg border border-outline-variant/20">
+<p class="text-[10px] text-on-surface-variant font-label-bold uppercase tracking-tighter">SAVINGS THIS MONTH</p>
+<p class="text-xl font-headline-sm text-primary">$1.2k</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Quick Actions -->
+<section>
+<h3 class="font-label-bold text-label-bold text-on-surface-variant mb-4 px-1">QUICK ACTIONS</h3>
+<div class="grid grid-cols-2 gap-md">
+<button class="flex flex-col items-start gap-4 p-5 bg-surface-container-high border border-outline-variant/40 rounded-xl hover:border-primary-container/40 transition-all active:scale-95">
+<div class="w-10 h-10 rounded-lg bg-error-container/10 flex items-center justify-center text-error">
+<span class="material-symbols-outlined">report_problem</span>
+</div>
+<div class="text-left">
+<p class="font-label-bold text-on-surface text-sm">Report Issue</p>
+<p class="text-[11px] text-on-surface-variant leading-tight mt-1">Direct line to concierge</p>
+</div>
+</button>
+<button class="flex flex-col items-start gap-4 p-5 bg-surface-container-high border border-outline-variant/40 rounded-xl hover:border-primary-container/40 transition-all active:scale-95">
+<div class="w-10 h-10 rounded-lg bg-primary-container/10 flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined">event_repeat</span>
+</div>
+<div class="text-left">
+<p class="font-label-bold text-on-surface text-sm">Reschedule</p>
+<p class="text-[11px] text-on-surface-variant leading-tight mt-1">Adjust delivery timings</p>
+</div>
+</button>
+</div>
+</section>
+<!-- Footer Spacer -->
+<div class="h-8"></div>
+</main>
+<!-- Bottom Navigation Bar (Shared Component) -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-margin-mobile py-2 bg-surface dark:bg-surface border-t border-outline-variant backdrop-blur-md bg-surface/90 z-50 md:hidden h-20">
+<!-- Schedule (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:bg-surface-container-high transition-all active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<span class="font-label-sm text-label-sm mt-1">Schedule</span>
+</a>
+<!-- Package (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:bg-surface-container-high transition-all active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-label-sm text-label-sm mt-1">Package</span>
+</a>
+<!-- Account (Active - Mapped to Dashboard Context) -->
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-6 py-2 active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="person" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-label-sm text-label-sm mt-1">Account</span>
+</a>
+</nav>
+<script>
+        // Micro-interaction for progress bar on load
+        window.addEventListener('DOMContentLoaded', () => {
+            const bar = document.querySelector('.progress-bar-inner');
+            bar.style.width = '0%';
+            setTimeout(() => {
+                bar.style.width = '84%';
+            }, 100);
+        });
+
+        // Touch feedback for cards
+        document.querySelectorAll('.bg-surface-container-high').forEach(card => {
+            card.addEventListener('touchstart', () => {
+                card.style.transform = 'scale(0.98)';
+                card.style.transition = 'transform 0.15s ease';
+            });
+            card.addEventListener('touchend', () => {
+                card.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body></html>

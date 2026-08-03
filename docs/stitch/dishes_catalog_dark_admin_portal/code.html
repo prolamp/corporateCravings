@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dish Catalog | Corporate Craving Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-nav-pill {
+            transition: all 0.2s ease-in-out;
+        }
+        /* Custom scrollbar for a cleaner look */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4e4632;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #9a9078;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#1e201d",
+                        "secondary-fixed-dim": "#c6c6c9",
+                        "on-error": "#690005",
+                        "tertiary": "#e6e8ec",
+                        "error": "#ffb4ab",
+                        "error-container": "#93000a",
+                        "background": "#121411",
+                        "on-secondary-container": "#b4b5b7",
+                        "surface-container-high": "#292a27",
+                        "outline-variant": "#4e4632",
+                        "surface-bright": "#383a36",
+                        "surface": "#121411",
+                        "on-background": "#e3e3de",
+                        "inverse-on-surface": "#2f312e",
+                        "surface-dim": "#121411",
+                        "on-primary-fixed": "#241a00",
+                        "primary-fixed-dim": "#f0c100",
+                        "primary-fixed": "#ffe089",
+                        "surface-container-highest": "#333532",
+                        "on-tertiary-fixed": "#191c1f",
+                        "surface-variant": "#333532",
+                        "on-primary-fixed-variant": "#574500",
+                        "on-primary-container": "#695300",
+                        "on-primary": "#3d2f00",
+                        "surface-tint": "#f0c100",
+                        "surface-container-low": "#1a1c19",
+                        "on-surface-variant": "#d1c5ab",
+                        "on-tertiary-container": "#53565a",
+                        "on-surface": "#e3e3de",
+                        "inverse-primary": "#745c00",
+                        "on-tertiary-fixed-variant": "#44474a",
+                        "tertiary-container": "#caccd0",
+                        "outline": "#9a9078",
+                        "secondary-fixed": "#e2e2e5",
+                        "secondary-container": "#454749",
+                        "on-secondary-fixed": "#1a1c1e",
+                        "on-secondary": "#2f3133",
+                        "tertiary-fixed-dim": "#c5c6ca",
+                        "tertiary-fixed": "#e1e2e6",
+                        "inverse-surface": "#e3e3de",
+                        "primary-container": "#f6c60c",
+                        "primary": "#ffe6a3",
+                        "on-secondary-fixed-variant": "#454749",
+                        "secondary": "#c6c6c9",
+                        "on-tertiary": "#2e3134",
+                        "surface-container-lowest": "#0d0f0c",
+                        "on-error-container": "#ffdad6",
+                        "success-emerald": "#10B981",
+                        "danger-ruby": "#ffb4ab"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "24px",
+                        "gutter": "24px",
+                        "xs": "8px",
+                        "sm": "16px",
+                        "base": "4px",
+                        "lg": "48px",
+                        "container-max": "1200px",
+                        "xl": "80px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": ["Playfair Display"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "headline-sm": ["Playfair Display"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "caption": ["Plus Jakarta Sans"],
+                        "headline-md": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["36px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "caption": ["12px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+<!-- Sidebar Navigation -->
+<aside class="fixed left-0 top-0 h-full w-[280px] bg-surface-container-low border-r border-outline-variant flex flex-col p-4 gap-2 z-50">
+<div class="mb-8 px-4 py-2">
+<h1 class="font-display-lg text-headline-md text-primary">Admin Portal</h1>
+<p class="font-label-md text-caption text-on-surface-variant uppercase tracking-wider">Management Console</p>
+</div>
+<nav class="flex flex-col gap-1 overflow-y-auto">
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 hover:bg-surface-container-highest transition-all duration-200 ease-in-out font-label-md rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Overview</span>
+</a>
+<a class="flex items-center gap-3 bg-secondary-container text-on-secondary-container rounded-xl px-4 py-3 transition-all duration-200 ease-in-out font-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book" data-weight="fill" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+<span>Catalog</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 hover:bg-surface-container-highest transition-all duration-200 ease-in-out font-label-md rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span>Packages</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 hover:bg-surface-container-highest transition-all duration-200 ease-in-out font-label-md rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span>Orders</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 hover:bg-surface-container-highest transition-all duration-200 ease-in-out font-label-md rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="local_shipping">local_shipping</span>
+<span>Operations</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 hover:bg-surface-container-highest transition-all duration-200 ease-in-out font-label-md rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="article">article</span>
+<span>Content</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 hover:bg-surface-container-highest transition-all duration-200 ease-in-out font-label-md rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span>People</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 hover:bg-surface-container-highest transition-all duration-200 ease-in-out font-label-md rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>System</span>
+</a>
+</nav>
+<div class="mt-auto pt-6 border-t border-outline-variant">
+<button class="w-full bg-primary-container text-on-primary-container font-label-md py-3 rounded-xl hover:shadow-lg transition-transform active:scale-95 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+                New Bulk Order
+            </button>
+<div class="mt-4 flex items-center gap-3 px-4 py-3 bg-surface-container rounded-xl">
+<img alt="Administrator profile" class="w-10 h-10 rounded-full border border-outline-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuButY8qcJZ1y7EdH38xnPAzXZRnYsB8pOu660GZK5Ag6dlUY9i7x_WBYMKX7in6CShSuQMrnmGj_6nEXmv0qJMRe7Qy2qIucemF2ZHbuUHxKLFugBxlMmbsT_MGxMsgRpllH2NhzLVRVeD7_E1SXkMw8n42HzJVN_-zqK2Wz64ryhMD1DgZl0uhyCW2QrcmAQx47RaT1IGJ1t-plaE449mCSMswY4zjygfWQa7SMV0DfKfdAwzUsaqUMDd1emG0sf3o8PsKZCR0brJR"/>
+<div class="overflow-hidden">
+<p class="text-on-surface font-label-md truncate">Arshad Khan</p>
+<p class="text-on-surface-variant text-[10px] uppercase tracking-wider">Super Admin</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-[280px] min-h-screen flex flex-col relative">
+<!-- Top App Bar -->
+<header class="flex justify-between items-center px-8 h-16 w-full bg-surface-container-highest border-b border-outline-variant sticky top-0 z-40">
+<div class="flex items-center gap-4">
+<span class="font-display-lg text-headline-sm text-primary">Dish Catalog</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-surface-container-high rounded-full transition-colors relative text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-2.5 right-2.5 w-2 h-2 bg-primary rounded-full border-2 border-surface-container-highest"></span>
+</button>
+<button class="p-2 hover:bg-surface-container-high rounded-full transition-colors text-primary">
+<span class="material-symbols-outlined" data-icon="light_mode">light_mode</span>
+</button>
+<button class="flex items-center gap-2 p-1 hover:bg-surface-container-high rounded-full transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Catalog Content -->
+<section class="p-8 max-w-container-max w-full mx-auto">
+<!-- Filters & Search Action Bar -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+<div class="flex items-center gap-4 flex-1 max-w-2xl">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant" data-icon="search">search</span>
+<input class="w-full pl-10 pr-4 py-2.5 bg-surface-container-lowest border border-outline-variant rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-container focus:border-transparent font-body-md text-on-surface" placeholder="Search dish by name, ingredients or category..." type="text"/>
+</div>
+<div class="relative">
+<select class="appearance-none pl-4 pr-10 py-2.5 bg-surface-container-lowest border border-outline-variant rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-container font-body-md text-on-surface cursor-pointer">
+<option>All Categories</option>
+<option>Rice</option>
+<option>Chicken</option>
+<option>Vegetable</option>
+<option>Salads</option>
+<option>Desserts</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex items-center gap-2 px-4 py-2.5 bg-surface-container-lowest border border-outline-variant text-on-surface rounded-xl hover:bg-surface-container-high transition-colors font-label-md">
+<span class="material-symbols-outlined text-[20px]" data-icon="filter_list">filter_list</span>
+                        Advanced Filters
+                    </button>
+<button class="flex items-center gap-2 px-6 py-2.5 bg-primary-container text-on-primary-container rounded-xl hover:shadow-lg transition-transform active:scale-95 font-label-md">
+<span class="material-symbols-outlined text-[20px]" data-icon="add_circle">add_circle</span>
+                        Add New Dish
+                    </button>
+</div>
+</div>
+<!-- Category Chips -->
+<div class="flex flex-wrap gap-2 mb-8">
+<button class="px-5 py-2 bg-primary-container text-on-primary-container rounded-full font-label-md text-caption uppercase tracking-widest">Show All</button>
+<button class="px-5 py-2 bg-surface-container text-on-surface-variant hover:bg-surface-container-highest rounded-full font-label-md text-caption uppercase tracking-widest transition-colors">Rice &amp; Grains</button>
+<button class="px-5 py-2 bg-surface-container text-on-surface-variant hover:bg-surface-container-highest rounded-full font-label-md text-caption uppercase tracking-widest transition-colors">Poultry Specialties</button>
+<button class="px-5 py-2 bg-surface-container text-on-surface-variant hover:bg-surface-container-highest rounded-full font-label-md text-caption uppercase tracking-widest transition-colors">Beef &amp; Mutton</button>
+<button class="px-5 py-2 bg-surface-container text-on-surface-variant hover:bg-surface-container-highest rounded-full font-label-md text-caption uppercase tracking-widest transition-colors">Traditional Desserts</button>
+<button class="px-5 py-2 bg-surface-container text-on-surface-variant hover:bg-surface-container-highest rounded-full font-label-md text-caption uppercase tracking-widest transition-colors">Continental</button>
+</div>
+<!-- Data Table Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-2xl overflow-hidden shadow-xl">
+<div class="overflow-x-auto">
+<table class="w-full border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b border-outline-variant">
+<th class="px-6 py-5 text-left font-label-md text-on-surface-variant uppercase tracking-wider">Dish Detail</th>
+<th class="px-6 py-5 text-left font-label-md text-on-surface-variant uppercase tracking-wider">Category</th>
+<th class="px-6 py-5 text-left font-label-md text-on-surface-variant uppercase tracking-wider">Starting Price</th>
+<th class="px-6 py-5 text-left font-label-md text-on-surface-variant uppercase tracking-wider">Status</th>
+<th class="px-6 py-5 text-right font-label-md text-on-surface-variant uppercase tracking-wider">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<!-- Dish 1 -->
+<tr class="hover:bg-surface-container-high transition-colors group">
+<td class="px-6 py-5">
+<div class="flex items-center gap-4">
+<div class="w-16 h-16 rounded-xl bg-surface-container-highest overflow-hidden flex-shrink-0 border border-outline-variant">
+<img alt="Chicken Biryani" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCf5K_U9Qtz6ImgjDtPaauc8zy-7CEXOGa7qAHi3dHu9jOi7b3zSEfTsPRGklzMUHNDG5saUJ-Bic0Uz7nraMZoNhEPtLxCdxRPY9A42f-ePal3_OAnhSbQjQq5YoW5Xnn9wloMFi0kJlCzbD0kgbZyHBjpg4PsIOVsrZ0xjZhwQh2Kdfo3iPVUSA_tUcf84xSVdjFp3gGH2upwenoJbs7w5cXDePuD623sACrQm5fuTzu3MIxMZvHzeWDfjW0weV54Wz2E2jwyF0Ee"/>
+</div>
+<div>
+<p class="font-headline-sm text-[18px] text-on-surface">Chicken Biryani</p>
+<p class="text-caption text-on-surface-variant line-clamp-1">Basmati rice with authentic Sindhi spices.</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full font-label-md text-[11px]">RICE</span>
+</td>
+<td class="px-6 py-5 font-label-md text-primary">Rs. 850</td>
+<td class="px-6 py-5">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 bg-success-emerald/20 text-success-emerald rounded-full font-label-md text-[11px]">
+<span class="w-1.5 h-1.5 rounded-full bg-success-emerald animate-pulse"></span>
+                                        Active
+                                    </span>
+</td>
+<td class="px-6 py-5 text-right">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors hover:bg-surface-container-highest rounded-lg" title="Edit">
+<span class="material-symbols-outlined text-[20px]" data-icon="edit">edit</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-error transition-colors hover:bg-error-container/30 rounded-lg" title="Delete">
+<span class="material-symbols-outlined text-[20px]" data-icon="delete">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Dish 2 -->
+<tr class="hover:bg-surface-container-high transition-colors group">
+<td class="px-6 py-5">
+<div class="flex items-center gap-4">
+<div class="w-16 h-16 rounded-xl bg-surface-container-highest overflow-hidden flex-shrink-0 border border-outline-variant">
+<img alt="Chicken Karahi" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWYdvPN_b5qykQl4KAqeBgSpmUpjAHpYDsg22oun1RHDJTn8sVhDuOqvIILT_yw7smye6vHmPDLFNKG14Ke_a17itykRoUGZcJ6eor0O6iIOHYz1y3Sh872AZBI7ccjV-083MpNimQN-4yXs-5jEXGdJcWtUm7nUncqmGMV1OAz-enp_6b8MiEJ2VcuCOexA4D-zwahE1xy2xJzbTxTC2_BRLR2Zg8k2IAw3yJ2t6wGp2A2IQaC14NYdBiLyeUTTDE6dbspc4w78ex"/>
+</div>
+<div>
+<p class="font-headline-sm text-[18px] text-on-surface">Chicken Karahi</p>
+<p class="text-caption text-on-surface-variant line-clamp-1">Wok-cooked chicken with tomato base.</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full font-label-md text-[11px]">CHICKEN</span>
+</td>
+<td class="px-6 py-5 font-label-md text-primary">Rs. 1,200</td>
+<td class="px-6 py-5">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 bg-success-emerald/20 text-success-emerald rounded-full font-label-md text-[11px]">
+<span class="w-1.5 h-1.5 rounded-full bg-success-emerald animate-pulse"></span>
+                                        Active
+                                    </span>
+</td>
+<td class="px-6 py-5 text-right">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors hover:bg-surface-container-highest rounded-lg" title="Edit">
+<span class="material-symbols-outlined text-[20px]" data-icon="edit">edit</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-error transition-colors hover:bg-error-container/30 rounded-lg" title="Delete">
+<span class="material-symbols-outlined text-[20px]" data-icon="delete">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Dish 3 -->
+<tr class="hover:bg-surface-container-high transition-colors group">
+<td class="px-6 py-5">
+<div class="flex items-center gap-4">
+<div class="w-16 h-16 rounded-xl bg-surface-container-highest overflow-hidden flex-shrink-0 border border-outline-variant">
+<img alt="Mixed Vegetable" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgDR6mMS0BcZcEtXn9WP9d3fwxzc08X6UJg7tenOIJ8ct2pxJ0F3Yaeof7CTnvHLQfc8lbkZ1V5Tc6iELr0HN6W9lwDXga9YonZifBRXq6hhI6aYZJcQ6NtFlTSBt3resODJq0yeuwuF0lwsre3UJNZuSlWG8kTlsqNgglrZyS1Se_HdXmsVQhUNXx1qJCuf1HWEsnZ4iQl3m88z4fTawnMbeTVknOx8iiYr8qNvnDRRkKZDIr2vszTCqGH5VonPC13bJa2U4c_cXI"/>
+</div>
+<div>
+<p class="font-headline-sm text-[18px] text-on-surface">Mixed Vegetable</p>
+<p class="text-caption text-on-surface-variant line-clamp-1">Seasonal garden vegetables in local spices.</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full font-label-md text-[11px]">VEGETABLE</span>
+</td>
+<td class="px-6 py-5 font-label-md text-primary">Rs. 750</td>
+<td class="px-6 py-5">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 bg-success-emerald/20 text-success-emerald rounded-full font-label-md text-[11px]">
+<span class="w-1.5 h-1.5 rounded-full bg-success-emerald animate-pulse"></span>
+                                        Active
+                                    </span>
+</td>
+<td class="px-6 py-5 text-right">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors hover:bg-surface-container-highest rounded-lg" title="Edit">
+<span class="material-symbols-outlined text-[20px]" data-icon="edit">edit</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-error transition-colors hover:bg-error-container/30 rounded-lg" title="Delete">
+<span class="material-symbols-outlined text-[20px]" data-icon="delete">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Dish 4 -->
+<tr class="hover:bg-surface-container-high transition-colors group opacity-60">
+<td class="px-6 py-5">
+<div class="flex items-center gap-4">
+<div class="w-16 h-16 rounded-xl bg-surface-container-highest overflow-hidden flex-shrink-0 border border-outline-variant">
+<img alt="Daal Chawal" class="w-full h-full object-cover grayscale transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8nm_FhBDzDLk3Wvdiu-6HE2qhTu5SnxPzqHzViqpUE7ieVm5FT--3ryeyADFcUwiowdj3aUJXyG_jnev02-zud1agxI8XrrqkgekRR87MOst5LUChTSzqa2i6l3dqUMQ3qt1tNm0ceF5yzeCwIhnZ6WVxrliuTT00Frdlyn6_Kh6kRGUhmXlDN5MmceA8Sh7LSVSWxKS130sUUTR0OHPvbTwcXVg8VcO6sASDF1YK6sz9gEGF9sNw0vXgaBhLXSWLL2cRNYiwNPt0"/>
+</div>
+<div>
+<p class="font-headline-sm text-[18px] text-on-surface">Daal Chawal</p>
+<p class="text-caption text-on-surface-variant line-clamp-1">Yellow lentils with tempered spices &amp; rice.</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="px-3 py-1 bg-surface-container-highest text-on-surface-variant rounded-full font-label-md text-[11px]">DAAL</span>
+</td>
+<td class="px-6 py-5 font-label-md text-on-surface-variant">Rs. 650</td>
+<td class="px-6 py-5">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 bg-surface-variant/20 text-on-surface-variant rounded-full font-label-md text-[11px]">
+<span class="w-1.5 h-1.5 rounded-full bg-on-surface-variant"></span>
+                                        Inactive
+                                    </span>
+</td>
+<td class="px-6 py-5 text-right">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors hover:bg-surface-container-highest rounded-lg" title="Edit">
+<span class="material-symbols-outlined text-[20px]" data-icon="edit">edit</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-error transition-colors hover:bg-error-container/30 rounded-lg" title="Delete">
+<span class="material-symbols-outlined text-[20px]" data-icon="delete">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Dish 5 -->
+<tr class="hover:bg-surface-container-high transition-colors group">
+<td class="px-6 py-5">
+<div class="flex items-center gap-4">
+<div class="w-16 h-16 rounded-xl bg-surface-container-highest overflow-hidden flex-shrink-0 border border-outline-variant">
+<img alt="Russian Salad" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaA8oKyJKzq3rSvuxSGG3s0QnnT5Lc8NUTeBgDZPZ79Sxn_nX-i7aZM-Gw_715BoWsbOhiZlSmiNlncxKIGFI5PKInesmPyOqG1wFNXI3hGDuRu2ZEZ70IjB4YiTljVhjL4oiSTtvmf_1xrZ8LCe1A0pDczlY_AlL9Q2G1aqBuIZiKxgCFYVPuOrJ26Vf2RmT8jxyTeUUdIbnOQo817MxQlglMyHuzxjh13wQwc14sSFlLE9Ctb1FXQ8jcFLmya8JCnLwk3M7MJCTP"/>
+</div>
+<div>
+<p class="font-headline-sm text-[18px] text-on-surface">Russian Salad</p>
+<p class="text-caption text-on-surface-variant line-clamp-1">Classic fruit and vegetable cream salad.</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full font-label-md text-[11px]">SALADS</span>
+</td>
+<td class="px-6 py-5 font-label-md text-primary">Rs. 550</td>
+<td class="px-6 py-5">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 bg-success-emerald/20 text-success-emerald rounded-full font-label-md text-[11px]">
+<span class="w-1.5 h-1.5 rounded-full bg-success-emerald animate-pulse"></span>
+                                        Active
+                                    </span>
+</td>
+<td class="px-6 py-5 text-right">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors hover:bg-surface-container-highest rounded-lg" title="Edit">
+<span class="material-symbols-outlined text-[20px]" data-icon="edit">edit</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-error transition-colors hover:bg-error-container/30 rounded-lg" title="Delete">
+<span class="material-symbols-outlined text-[20px]" data-icon="delete">delete</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination Footer -->
+<div class="px-6 py-5 border-t border-outline-variant flex items-center justify-between bg-surface-container-low">
+<p class="text-caption text-on-surface-variant">Showing 1 to 5 of 42 entries</p>
+<div class="flex items-center gap-2">
+<button class="p-2 rounded-lg hover:bg-surface-container-highest text-on-surface-variant transition-colors disabled:opacity-20" disabled="">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-primary text-on-primary font-label-md flex items-center justify-center">1</button>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container-highest text-on-surface font-label-md flex items-center justify-center">2</button>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container-highest text-on-surface font-label-md flex items-center justify-center">3</button>
+<span class="text-on-surface-variant px-1">...</span>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container-highest text-on-surface font-label-md flex items-center justify-center">7</button>
+<button class="p-2 rounded-lg hover:bg-surface-container-highest text-on-surface-variant transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer Overlay -->
+<footer class="mt-auto border-t border-outline-variant bg-surface-container-low">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-8 py-10 max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-2">
+<h2 class="font-display-lg text-headline-sm text-primary mb-3">Corporate Craving</h2>
+<p class="font-body-md text-on-surface-variant max-w-sm">Efficient catering logistics meeting Pakistani culinary heritage. The premium solution for corporate bulk meal procurement and event management.</p>
+</div>
+<div class="flex flex-col gap-3">
+<p class="font-label-md text-primary uppercase tracking-widest text-[12px]">Admin Quick Links</p>
+<a class="text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">System Logs</a>
+<a class="text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Staff Support</a>
+</div>
+<div class="flex flex-col gap-3">
+<p class="font-label-md text-primary uppercase tracking-widest text-[12px]">Contact Support</p>
+<a class="flex items-center gap-2 text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="chat">chat</span>
+                        WhatsApp Support
+                    </a>
+<p class="text-caption text-on-surface-variant mt-2">© 2024 Corporate Craving. <br/>Islamabad, Pakistan.</p>
+</div>
+</div>
+</footer>
+</main>
+<!-- Interactions Script -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Smooth scaling for buttons
+            const buttons = document.querySelectorAll('button');
+            buttons.forEach(btn => {
+                btn.addEventListener('mousedown', () => btn.classList.add('scale-95'));
+                btn.addEventListener('mouseup', () => btn.classList.remove('scale-95'));
+                btn.addEventListener('mouseleave', () => btn.classList.remove('scale-95'));
+            });
+        });
+    </script>
+</body></html>

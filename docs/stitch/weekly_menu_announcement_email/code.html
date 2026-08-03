@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Weekly Menu Announcement | Corporate Craving</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-low": "#f5f3ef",
+                    "background": "#fbf9f5",
+                    "on-tertiary-container": "#00642b",
+                    "secondary-container": "#d9dff5",
+                    "primary-fixed": "#ffe089",
+                    "surface-tint": "#745c00",
+                    "on-secondary-container": "#5c6274",
+                    "on-secondary": "#ffffff",
+                    "on-primary-container": "#695300",
+                    "primary-container": "#f6c60c",
+                    "inverse-on-surface": "#f2f0ed",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed-variant": "#005322",
+                    "secondary-fixed-dim": "#c0c6db",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed": "#66ff8e",
+                    "secondary-fixed": "#dce2f7",
+                    "primary-fixed-dim": "#f0c100",
+                    "inverse-surface": "#30312e",
+                    "on-error": "#ffffff",
+                    "outline-variant": "#d1c5ab",
+                    "surface-bright": "#fbf9f5",
+                    "primary": "#745c00",
+                    "surface-dim": "#dbdad6",
+                    "outline": "#807660",
+                    "tertiary-container": "#45e878",
+                    "on-surface-variant": "#4e4632",
+                    "on-surface": "#1b1c1a",
+                    "tertiary": "#006d2f",
+                    "on-primary-fixed": "#241a00",
+                    "danger-ruby": "#E11D48",
+                    "inverse-primary": "#f0c100",
+                    "surface-container-highest": "#e4e2de",
+                    "surface-container-high": "#eae8e4",
+                    "on-secondary-fixed-variant": "#404758",
+                    "surface": "#fbf9f5",
+                    "success-emerald": "#10B981",
+                    "charcoal-text": "#111827",
+                    "on-tertiary-fixed": "#002109",
+                    "tertiary-fixed-dim": "#3de273",
+                    "surface-container": "#efeeea",
+                    "surface-variant": "#e4e2de",
+                    "on-primary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "secondary": "#575e70",
+                    "surface-cream": "#FDFBF7",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-fixed": "#141b2b",
+                    "on-primary-fixed-variant": "#574500",
+                    "on-background": "#1b1c1a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-desktop": "40px",
+                    "margin-mobile": "16px",
+                    "container-max": "1280px",
+                    "gutter": "24px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Playfair Display"],
+                    "title-md": ["Plus Jakarta Sans"],
+                    "body-sm": ["Plus Jakarta Sans"],
+                    "label-sm": ["Plus Jakarta Sans"],
+                    "display-lg": ["Playfair Display"],
+                    "label-bold": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "500"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-bold": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .menu-border-left {
+            border-left: 2px solid #d1c5ab;
+        }
+        .chef-special-gradient {
+            background: linear-gradient(135deg, #fbf9f5 0%, #f6c60c 400%);
+        }
+    </style>
+</head>
+<body class="bg-surface-container-low font-body-lg text-on-surface antialiased">
+<!-- Top Navigation (Shell Implementation) -->
+<header class="bg-surface-cream border-b border-outline-variant h-20 flex justify-center sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="font-headline-lg text-headline-lg text-primary">Corporate Craving</div>
+<nav class="hidden md:flex gap-base">
+<a class="text-primary font-bold border-b-2 border-primary px-3 py-2 transition-colors" href="#">Weekly Menu</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors px-3 py-2" href="#">Corporate Catering</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors px-3 py-2" href="#">Referral Program</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors px-3 py-2" href="#">About Us</a>
+</nav>
+<div class="flex gap-4">
+<button class="bg-primary text-on-primary font-label-bold text-label-bold px-6 py-2.5 rounded-lg shadow-sm hover:opacity-90 transition-opacity">Get a Proposal</button>
+</div>
+</div>
+</header>
+<main class="max-w-[700px] mx-auto my-12 px-margin-mobile">
+<!-- Hero Section -->
+<section class="text-center mb-16">
+<span class="font-label-bold text-label-bold text-primary tracking-widest uppercase mb-4 block">Executive Announcement</span>
+<h1 class="font-display-lg text-display-lg mb-6 leading-tight">Next Week's Executive Menu</h1>
+<p class="text-on-surface-variant max-w-[500px] mx-auto font-body-lg text-body-lg">
+                Crafting productivity through culinary excellence. Discover our curated selection of heritage-inspired dishes for the upcoming work week.
+            </p>
+</section>
+<!-- Weekly Timeline -->
+<section class="space-y-gutter relative">
+<!-- Monday -->
+<div class="flex flex-col md:flex-row gap-6 bg-surface-cream p-8 rounded-xl border border-outline-variant hover:shadow-md transition-shadow">
+<div class="flex-shrink-0 flex items-center justify-center w-12 h-12 rounded-full bg-surface-container-high text-primary">
+<span class="material-symbols-outlined">local_dining</span>
+</div>
+<div>
+<div class="font-label-bold text-label-bold text-outline uppercase mb-1">Monday</div>
+<h3 class="font-title-md text-title-md mb-2">Saffron Infused Biryani</h3>
+<p class="text-on-surface-variant font-body-sm text-body-sm leading-relaxed">
+                        Slow-cooked long-grain basmati rice layered with tender marinated chicken, aromatic spices, and caramelized onions. Served with cucumber raita.
+                    </p>
+</div>
+</div>
+<!-- Tuesday -->
+<div class="flex flex-col md:flex-row gap-6 bg-surface-cream p-8 rounded-xl border border-outline-variant hover:shadow-md transition-shadow">
+<div class="flex-shrink-0 flex items-center justify-center w-12 h-12 rounded-full bg-surface-container-high text-primary">
+<span class="material-symbols-outlined">flatware</span>
+</div>
+<div>
+<div class="font-label-bold text-label-bold text-outline uppercase mb-1">Tuesday</div>
+<h3 class="font-title-md text-title-md mb-2">Artisanal Seekh Kabab Wraps</h3>
+<p class="text-on-surface-variant font-body-sm text-body-sm leading-relaxed">
+                        Hand-pressed minced lamb skewers, flame-grilled and wrapped in freshly baked sourdough naan with mint chutney and pickled radish.
+                    </p>
+</div>
+</div>
+<!-- Wednesday (Chef's Special) -->
+<div class="relative group">
+<div class="absolute -inset-1 bg-primary-container rounded-2xl blur opacity-10 group-hover:opacity-20 transition duration-1000"></div>
+<div class="relative flex flex-col md:flex-row gap-6 bg-surface-cream p-8 rounded-xl border-2 border-primary-container shadow-sm">
+<div class="flex-shrink-0 flex items-center justify-center w-12 h-12 rounded-full bg-primary-container text-on-primary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<div>
+<div class="flex items-center gap-3 mb-1">
+<div class="font-label-bold text-label-bold text-primary uppercase">Wednesday</div>
+<span class="bg-primary-container text-on-primary-container text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-tighter">Chef's Special</span>
+</div>
+<h3 class="font-title-md text-title-md mb-2">Heritage Nihari with Bone Marrow</h3>
+<p class="text-on-surface-variant font-body-sm text-body-sm leading-relaxed">
+                            A royal delicacy. 12-hour slow-cooked beef shank in a rich, spicy gravy, finished with toasted ginger and fresh coriander. Served with fluffy Khamiri Roti.
+                        </p>
+</div>
+</div>
+</div>
+<!-- Thursday -->
+<div class="flex flex-col md:flex-row gap-6 bg-surface-cream p-8 rounded-xl border border-outline-variant hover:shadow-md transition-shadow">
+<div class="flex-shrink-0 flex items-center justify-center w-12 h-12 rounded-full bg-surface-container-high text-primary">
+<span class="material-symbols-outlined">set_meal</span>
+</div>
+<div>
+<div class="font-label-bold text-label-bold text-outline uppercase mb-1">Thursday</div>
+<h3 class="font-title-md text-title-md mb-2">Charred Paneer Tikka Salad</h3>
+<p class="text-on-surface-variant font-body-sm text-body-sm leading-relaxed">
+                        Modern twist on a classic. Organic garden greens, honey-glazed paneer, roasted chickpeas, and a zesty pomegranate-tamarind dressing.
+                    </p>
+</div>
+</div>
+<!-- Friday -->
+<div class="flex flex-col md:flex-row gap-6 bg-surface-cream p-8 rounded-xl border border-outline-variant hover:shadow-md transition-shadow">
+<div class="flex-shrink-0 flex items-center justify-center w-12 h-12 rounded-full bg-surface-container-high text-primary">
+<span class="material-symbols-outlined">restaurant</span>
+</div>
+<div>
+<div class="font-label-bold text-label-bold text-outline uppercase mb-1">Friday</div>
+<h3 class="font-title-md text-title-md mb-2">Lahori Degi Chargha</h3>
+<p class="text-on-surface-variant font-body-sm text-body-sm leading-relaxed">
+                        Steam-roasted whole chicken marinated in traditional Lahori spices, finished on a high-heat wok. A perfect celebratory end to the work week.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Call to Action -->
+<section class="mt-20 p-12 bg-inverse-surface rounded-2xl text-center text-inverse-on-surface overflow-hidden relative">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary opacity-20 -mr-16 -mt-16 rounded-full blur-3xl"></div>
+<h2 class="font-headline-lg text-headline-lg mb-6">Experience the Flavor</h2>
+<p class="font-body-lg text-body-lg mb-8 opacity-80 max-w-md mx-auto">
+                Ready to secure your team's lunch for next week? Early bookings receive a complimentary dessert platter.
+            </p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<button class="bg-primary text-on-primary px-8 py-3 rounded-lg font-label-bold text-label-bold hover:scale-[1.02] transition-transform">Book Now</button>
+<button class="bg-transparent border border-outline text-inverse-on-surface px-8 py-3 rounded-lg font-label-bold text-label-bold flex items-center justify-center gap-2 hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined">download</span>
+                    Download PDF Menu
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="bg-surface-container-highest dark:bg-inverse-surface mt-24">
+<div class="w-full py-12 px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-base max-w-container-max mx-auto">
+<div class="flex flex-col items-center md:items-start gap-4">
+<div class="font-headline-lg text-headline-lg text-on-surface">Corporate Craving</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-center md:text-left">
+                    © 2024 Corporate Craving. Modern-Heritage Catering for the Professional Palate.
+                </p>
+</div>
+<div class="flex flex-wrap justify-center md:justify-end gap-6 mt-8 md:mt-0">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Sustainability</a>
+<a class="font-label-sm text-label-sm text-primary underline" href="#">Manage Subscription</a>
+</div>
+</div>
+</footer>
+<!-- Micro-interaction script -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuCards = document.querySelectorAll('section div[class*="bg-surface-cream"]');
+            
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.classList.add('translate-y-0', 'opacity-100');
+                            entry.target.classList.remove('translate-y-8', 'opacity-0');
+                        }, index * 100);
+                    }
+                });
+            }, observerOptions);
+
+            menuCards.forEach(card => {
+                card.classList.add('transform', 'transition-all', 'duration-700', 'translate-y-8', 'opacity-0');
+                observer.observe(card);
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Saffron Biryani | Corporate Craving</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@100..900&family=Plus+Jakarta+Sans:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface": "#1b1c1a",
+                        "secondary": "#575e70",
+                        "on-surface-variant": "#4e4632",
+                        "tertiary": "#006d2f",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#1b1c1a",
+                        "inverse-surface": "#30312e",
+                        "inverse-primary": "#f0c100",
+                        "surface": "#fbf9f5",
+                        "surface-container-highest": "#e4e2de",
+                        "success-emerald": "#10B981",
+                        "on-tertiary-fixed-variant": "#005322",
+                        "danger-ruby": "#E11D48",
+                        "surface-variant": "#e4e2de",
+                        "on-secondary-container": "#5c6274",
+                        "outline": "#807660",
+                        "secondary-container": "#d9dff5",
+                        "surface-container-high": "#eae8e4",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed": "#dce2f7",
+                        "primary-fixed-dim": "#f0c100",
+                        "outline-variant": "#d1c5ab",
+                        "primary-container": "#f6c60c",
+                        "on-primary-container": "#695300",
+                        "surface-dim": "#dbdad6",
+                        "on-error-container": "#93000a",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-container": "#00642b",
+                        "background": "#fbf9f5",
+                        "surface-container-low": "#f5f3ef",
+                        "primary": "#745c00",
+                        "tertiary-fixed-dim": "#3de273",
+                        "on-secondary-fixed": "#141b2b",
+                        "on-secondary": "#ffffff",
+                        "surface-cream": "#FDFBF7",
+                        "on-error": "#ffffff",
+                        "error": "#ba1a1a",
+                        "inverse-on-surface": "#f2f0ed",
+                        "tertiary-container": "#45e878",
+                        "on-primary-fixed-variant": "#574500",
+                        "secondary-fixed-dim": "#c0c6db",
+                        "surface-container": "#efeeea",
+                        "surface-bright": "#fbf9f5",
+                        "on-primary-fixed": "#241a00",
+                        "charcoal-text": "#111827",
+                        "primary-fixed": "#ffe089",
+                        "on-secondary-fixed-variant": "#404758",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed": "#66ff8e",
+                        "surface-tint": "#745c00",
+                        "on-tertiary-fixed": "#002109"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-desktop": "40px",
+                        "base": "8px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Playfair Display"],
+                        "headline-lg": ["Playfair Display"],
+                        "title-md": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "body-sm": ["Plus Jakarta Sans"],
+                        "label-sm": ["Plus Jakarta Sans"],
+                        "label-bold": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                        "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "500"}],
+                        "label-bold": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        .scrolled-header {
+            backdrop-filter: blur(8px);
+            background-color: rgba(251, 249, 245, 0.9);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-lg">
+<!-- TopNavBar -->
+<header class="bg-surface fixed top-0 w-full z-50 border-b border-outline-variant">
+<nav class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 w-full max-w-container-max mx-auto">
+<div class="font-display-lg text-display-lg text-primary">Corporate Craving</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-title-md text-title-md text-on-surface-variant hover:text-primary transition-colors" href="#">Home</a>
+<a class="font-title-md text-title-md text-primary border-b-2 border-primary pb-1" href="#">Menu</a>
+<a class="font-title-md text-title-md text-on-surface-variant hover:text-primary transition-colors" href="#">Packages</a>
+<a class="font-title-md text-title-md text-on-surface-variant hover:text-primary transition-colors" href="#">Bulk Orders</a>
+<a class="font-title-md text-title-md text-on-surface-variant hover:text-primary transition-colors" href="#">Track Order</a>
+<a class="font-title-md text-title-md text-on-surface-variant hover:text-primary transition-colors" href="#">Contact</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="font-title-md text-title-md text-primary px-4 py-2 hover:bg-surface-container-high rounded-xl transition-colors">Login</button>
+<button class="flex items-center gap-2 bg-primary text-on-primary px-6 py-2 rounded-xl font-bold active:scale-95 transition-transform">
+<span class="material-symbols-outlined">shopping_cart</span>
+                    Cart
+                </button>
+</div>
+</nav>
+</header>
+<main class="pt-24 pb-20 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<!-- Breadcrumbs -->
+<nav class="flex items-center gap-2 mb-8 text-on-surface-variant">
+<span class="font-label-bold text-label-bold">MENU</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="font-label-bold text-label-bold">BIRYANIS</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="font-label-bold text-label-bold text-primary">SAFFRON BIRYANI</span>
+</nav>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Left Column: Visuals & Description -->
+<div class="lg:col-span-7 space-y-12">
+<!-- Main Image -->
+<div class="relative rounded-2xl overflow-hidden aspect-[4/3] bg-surface-container-highest shadow-sm">
+<img class="w-full h-full object-cover" data-alt="A gourmet close-up shot of authentic Saffron Biryani served in a traditional hand-hammered copper handi. Long grains of golden-yellow basmati rice are perfectly separated and topped with caramelized onions, fresh mint leaves, and vibrant saffron threads. The scene is illuminated by soft, warm sunlight streaming through a window, emphasizing the steam rising from the dish. The overall aesthetic is one of refined professional culinary photography, set against a minimalist light-mode background with creamy neutral tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZ1LFLcaHQAXQoQcykodGsDzHk-DdE3RZn-FxImztL8jJ3tL1WilawAV52ha-TGGqC1vby2VaejOQ9nF3epETUcFBLTzC-J7iDTMwZfIpbEthzONV2TFyFr28h4RFiokmefchavRf_zNSfrqSzeoYcNR4vNoVmfae6t-_1SX6qrRlgt5OyvzF5tu7EglZ7JaHNdSv2QT5bwBHgq3PjW1Ug9PeyZLW2BKOUP643lcOLJbHuIdCKiB3OgLSnKIlNE_cPl6QLnPxC7HOJ"/>
+<div class="absolute top-4 left-4 bg-primary text-on-primary font-label-bold text-label-bold px-4 py-2 rounded-full uppercase tracking-wider">
+                        Chef's Special
+                    </div>
+</div>
+<!-- Product Intro -->
+<div class="space-y-6">
+<h1 class="font-display-lg text-display-lg text-charcoal-text">Saffron Biryani</h1>
+<div class="prose prose-on-surface max-w-none">
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                            Our signature Saffron Biryani is a testament to the grand culinary traditions of the Subcontinent. Each serving is slow-cooked using the traditional 'Dum' method, where a sealed vessel allows the flavors to meld into a sublime harmony. We use aged extra-long grain Basmati rice, hand-selected for its fragrance and delicate texture.
+                        </p>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed mt-4">
+                            The secret lies in our proprietary spice blend, featuring whole cloves, cardamom, and cinnamon, elevated by the world’s finest Kashmiri saffron. This premium variety features tender, marinated protein pieces that have been braised for hours, ensuring every bite is rich with authentic Pakistani heritage and high-end artisanal quality.
+                        </p>
+</div>
+</div>
+<!-- Attributes Grid -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 py-8 border-y border-outline-variant">
+<div class="flex flex-col items-center text-center p-4">
+<span class="material-symbols-outlined text-primary mb-2" style="font-variation-settings: 'opsz' 32;">timer</span>
+<span class="font-label-bold text-label-bold text-on-surface-variant">45 MINS</span>
+<span class="text-[10px] uppercase text-outline">Prep Time</span>
+</div>
+<div class="flex flex-col items-center text-center p-4 border-l border-outline-variant">
+<span class="material-symbols-outlined text-primary mb-2" style="font-variation-settings: 'opsz' 32;">restaurant</span>
+<span class="font-label-bold text-label-bold text-on-surface-variant">MEDIUM SPICE</span>
+<span class="text-[10px] uppercase text-outline">Intensity</span>
+</div>
+<div class="flex flex-col items-center text-center p-4 border-l border-outline-variant">
+<span class="material-symbols-outlined text-primary mb-2" style="font-variation-settings: 'opsz' 32;">eco</span>
+<span class="font-label-bold text-label-bold text-on-surface-variant">GLUTEN FREE</span>
+<span class="text-[10px] uppercase text-outline">Dietary</span>
+</div>
+<div class="flex flex-col items-center text-center p-4 border-l border-outline-variant">
+<span class="material-symbols-outlined text-primary mb-2" style="font-variation-settings: 'opsz' 32;">verified_user</span>
+<span class="font-label-bold text-label-bold text-on-surface-variant">HYGIENE A+</span>
+<span class="text-[10px] uppercase text-outline">Certification</span>
+</div>
+</div>
+</div>
+<!-- Right Column: Ordering Shell -->
+<div class="lg:col-span-5 space-y-gutter">
+<!-- Single Serving Section -->
+<section class="bg-white border border-outline-variant rounded-2xl p-8 shadow-sm">
+<div class="flex justify-between items-start mb-6">
+<h2 class="font-title-md text-title-md text-charcoal-text">Single Serving</h2>
+<div class="text-right">
+<span class="font-label-bold text-label-bold text-outline">STARTING FROM</span>
+<div class="font-headline-lg text-headline-lg text-primary">Rs. 850</div>
+</div>
+</div>
+<div class="space-y-6">
+<!-- Variation -->
+<div class="space-y-3">
+<label class="font-label-bold text-label-bold text-on-surface">SELECT VARIATION</label>
+<div class="flex gap-4">
+<button class="flex-1 border-2 border-primary bg-primary-container/10 px-4 py-3 rounded-xl text-left transition-all">
+<div class="font-label-bold text-label-bold text-on-primary-container">Standard</div>
+<div class="text-sm text-on-surface-variant">Single Meat Piece</div>
+</button>
+<button class="flex-1 border border-outline-variant hover:border-primary px-4 py-3 rounded-xl text-left transition-all">
+<div class="font-label-bold text-label-bold text-on-surface">Premium</div>
+<div class="text-sm text-on-surface-variant">+ Rs. 250 Extra Meat</div>
+</button>
+</div>
+</div>
+<!-- Quantity and CTA -->
+<div class="flex items-center gap-4 pt-4">
+<div class="flex items-center border border-outline-variant rounded-xl h-14">
+<button class="w-12 h-full flex items-center justify-center hover:bg-surface-container-low" onclick="updateQty(-1)">
+<span class="material-symbols-outlined">remove</span>
+</button>
+<span class="w-12 text-center font-title-md text-title-md" id="qty-val">1</span>
+<button class="w-12 h-full flex items-center justify-center hover:bg-surface-container-low" onclick="updateQty(1)">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+<button class="flex-1 h-14 bg-primary text-on-primary rounded-xl font-bold flex items-center justify-center gap-2 active:scale-95 transition-transform">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+                                Add to Cart
+                            </button>
+</div>
+</div>
+</section>
+<!-- Bulk Offerings Section -->
+<section class="bg-surface-container-low rounded-2xl p-8 border border-outline-variant">
+<div class="flex items-center justify-between mb-6">
+<div>
+<h2 class="font-title-md text-title-md text-charcoal-text">Bulk Offerings</h2>
+<p class="font-label-bold text-label-bold text-on-surface-variant uppercase tracking-tighter mt-1">Corporate & Events</p>
+</div>
+<span class="material-symbols-outlined text-primary" style="font-size: 32px;">groups</span>
+</div>
+<div class="space-y-4">
+<!-- Bulk Tier 1 -->
+<div class="flex items-center justify-between p-4 bg-white rounded-xl border border-outline-variant">
+<div>
+<div class="font-label-bold text-label-bold text-on-surface">5 KG DEGH</div>
+<div class="text-xs text-on-surface-variant">Feeds ~15-20 Persons</div>
+</div>
+<div class="text-right">
+<div class="font-title-md text-title-md text-charcoal-text">Rs. 12,500</div>
+<div class="text-[10px] text-outline">ESTIMATED PRICE</div>
+</div>
+</div>
+<!-- Bulk Tier 2 -->
+<div class="flex items-center justify-between p-4 bg-white rounded-xl border border-outline-variant">
+<div>
+<div class="font-label-bold text-label-bold text-on-surface">8 KG DEGH</div>
+<div class="text-xs text-on-surface-variant">Feeds ~25-32 Persons</div>
+</div>
+<div class="text-right">
+<div class="font-title-md text-title-md text-charcoal-text">Rs. 19,200</div>
+<div class="text-[10px] text-outline">ESTIMATED PRICE</div>
+</div>
+</div>
+<!-- Bulk Tier 3 -->
+<div class="flex items-center justify-between p-4 bg-white rounded-xl border-primary ring-1 ring-primary">
+<div>
+<div class="font-label-bold text-label-bold text-on-surface">10 KG DEGH</div>
+<div class="text-xs text-on-surface-variant">Feeds ~35-45 Persons</div>
+</div>
+<div class="text-right">
+<div class="font-title-md text-title-md text-charcoal-text">Rs. 23,000</div>
+<div class="text-[10px] text-outline">BEST VALUE</div>
+</div>
+</div>
+</div>
+<div class="mt-8">
+<button class="w-full h-14 bg-[#25D366] text-white rounded-xl font-bold flex items-center justify-center gap-3 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat</span>
+                            Quote on WhatsApp
+                        </button>
+<p class="text-center text-[11px] text-on-surface-variant mt-3 px-4">
+                            Bulk orders require 24h advance notice for guaranteed premium quality.
+                        </p>
+</div>
+</section>
+<!-- Recommendation Card -->
+<div class="bg-tertiary-container/20 p-6 rounded-2xl border border-tertiary/20 flex gap-4">
+<span class="material-symbols-outlined text-tertiary text-4xl">local_offer</span>
+<div>
+<h4 class="font-label-bold text-label-bold text-on-tertiary-container">COMBO SAVINGS</h4>
+<p class="text-sm text-on-surface-variant">Order 5 or more single servings and get free Raita & Salad for your team.</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Mobile Sticky Action Bar -->
+<div class="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-outline-variant p-4 z-50 flex items-center justify-between gap-4">
+<div>
+<div class="text-[10px] text-outline uppercase font-bold">Price</div>
+<div class="font-title-md text-title-md text-primary">Rs. 850</div>
+</div>
+<button class="flex-1 h-12 bg-primary text-on-primary rounded-xl font-bold flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">shopping_cart</span>
+            Add to Order
+        </button>
+</div>
+<!-- Footer -->
+<footer class="bg-surface-container-highest border-t border-outline-variant mt-20">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-12 max-w-container-max mx-auto">
+<div class="md:col-span-1">
+<div class="font-headline-lg text-headline-lg text-primary mb-4">Corporate Craving</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                    Premium artisanal catering for the modern professional. Bringing Pakistani flavors to the boardroom.
+                </p>
+</div>
+<div>
+<h4 class="font-label-bold text-label-bold mb-4 text-on-surface">Explore</h4>
+<ul class="space-y-2">
+<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary hover:underline" href="#">About Us</a></li>
+<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary hover:underline" href="#">Full Menu</a></li>
+<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary hover:underline" href="#">Catering Solutions</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-bold text-label-bold mb-4 text-on-surface">Policies</h4>
+<ul class="space-y-2">
+<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary hover:underline" href="#">Terms of Service</a></li>
+<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary hover:underline" href="#">Privacy Policy</a></li>
+<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary hover:underline" href="#">Refund Policy</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-bold text-label-bold mb-4 text-on-surface">Support</h4>
+<ul class="space-y-2">
+<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary hover:underline" href="#">WhatsApp Support</a></li>
+<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary hover:underline" href="#">Corporate Accounts</a></li>
+<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary hover:underline" href="#">Contact Center</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-outline-variant px-margin-mobile md:px-margin-desktop py-6 max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+<span class="font-body-sm text-body-sm text-on-surface-variant">© 2024 Corporate Craving. Islamabad, Pakistan.</span>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary transition-colors">qr_code_2</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary transition-colors">photo_camera</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary transition-colors">alternate_email</span>
+</div>
+</div>
+</footer>
+<script>
+        function updateQty(delta) {
+            const qtyElement = document.getElementById('qty-val');
+            let currentQty = parseInt(qtyElement.innerText);
+            currentQty = Math.max(1, currentQty + delta);
+            qtyElement.innerText = currentQty;
+        }
+
+        // Add subtle animation for hover states
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('mousedown', () => btn.classList.add('scale-95'));
+            btn.addEventListener('mouseup', () => btn.classList.remove('scale-95'));
+            btn.addEventListener('mouseleave', () => btn.classList.remove('scale-95'));
+        });
+    </script>
+</body></html>

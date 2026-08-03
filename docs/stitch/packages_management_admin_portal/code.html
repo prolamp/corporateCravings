@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Packages | Corporate Craving Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@100..900&family=Plus+Jakarta+Sans:wght@100..900&display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #fbf9f5;
+        }
+        .sidebar-active {
+            transition: all 0.2s ease-in-out;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed-variant": "#404758",
+                        "primary": "#745c00",
+                        "surface-cream": "#FDFBF7",
+                        "tertiary-container": "#45e878",
+                        "on-background": "#1b1c1a",
+                        "surface-container-high": "#eae8e4",
+                        "on-surface-variant": "#4e4632",
+                        "on-error-container": "#93000a",
+                        "inverse-surface": "#30312e",
+                        "danger-ruby": "#E11D48",
+                        "surface-bright": "#fbf9f5",
+                        "success-emerald": "#10B981",
+                        "surface-container-highest": "#e4e2de",
+                        "background": "#fbf9f5",
+                        "on-primary-fixed-variant": "#574500",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#c0c6db",
+                        "on-tertiary-container": "#00642b",
+                        "on-secondary": "#ffffff",
+                        "outline-variant": "#d1c5ab",
+                        "on-tertiary-fixed": "#002109",
+                        "on-tertiary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-container": "#efeeea",
+                        "inverse-on-surface": "#f2f0ed",
+                        "on-primary-fixed": "#241a00",
+                        "tertiary-fixed-dim": "#3de273",
+                        "on-secondary-fixed": "#141b2b",
+                        "surface-dim": "#dbdad6",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-container": "#f6c60c",
+                        "inverse-primary": "#f0c100",
+                        "secondary-fixed": "#dce2f7",
+                        "on-secondary-container": "#5c6274",
+                        "on-surface": "#1b1c1a",
+                        "secondary-container": "#d9dff5",
+                        "primary-fixed": "#ffe089",
+                        "charcoal-text": "#111827",
+                        "secondary": "#575e70",
+                        "outline": "#807660",
+                        "surface-container-low": "#f5f3ef",
+                        "surface-tint": "#745c00",
+                        "surface": "#fbf9f5",
+                        "on-tertiary-fixed-variant": "#005322",
+                        "primary-fixed-dim": "#f0c100",
+                        "tertiary-fixed": "#66ff8e",
+                        "on-primary": "#ffffff",
+                        "tertiary": "#006d2f",
+                        "surface-variant": "#e4e2de",
+                        "on-primary-container": "#695300",
+                        "on-error": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "margin-desktop": "40px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "label-bold": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Playfair Display"],
+                        "label-sm": ["Plus Jakarta Sans"],
+                        "display-lg": ["Playfair Display"],
+                        "title-md": ["Plus Jakarta Sans"],
+                        "body-sm": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-bold": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "title-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background antialiased flex">
+<!-- SideNavBar (Shared Component) -->
+<aside class="fixed left-0 top-0 h-full w-[280px] bg-surface-container-low dark:bg-inverse-surface flex flex-col p-4 gap-2 border-r border-outline-variant">
+<div class="mb-8 px-4 py-2">
+<h1 class="font-headline-lg text-headline-lg text-primary">Admin Portal</h1>
+<p class="text-on-surface-variant font-label-sm uppercase tracking-widest opacity-70">Management Console</p>
+</div>
+<nav class="flex flex-col gap-1 overflow-y-auto">
+<!-- Overview -->
+<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-highest transition-all duration-200 px-4 py-3 rounded-lg font-label-bold" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Overview</span>
+</a>
+<!-- Catalog -->
+<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-highest transition-all duration-200 px-4 py-3 rounded-lg font-label-bold" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span>Catalog</span>
+</a>
+<!-- Packages (ACTIVE) -->
+<a class="flex items-center gap-3 bg-secondary-container text-on-secondary-container rounded-xl px-4 py-3 font-label-bold shadow-sm" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+<span>Packages</span>
+</a>
+<!-- Orders -->
+<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-highest transition-all duration-200 px-4 py-3 rounded-lg font-label-bold" href="#">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span>Orders</span>
+</a>
+<!-- Operations -->
+<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-highest transition-all duration-200 px-4 py-3 rounded-lg font-label-bold" href="#">
+<span class="material-symbols-outlined">local_shipping</span>
+<span>Operations</span>
+</a>
+<!-- Content -->
+<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-highest transition-all duration-200 px-4 py-3 rounded-lg font-label-bold" href="#">
+<span class="material-symbols-outlined">article</span>
+<span>Content</span>
+</a>
+<!-- People -->
+<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-highest transition-all duration-200 px-4 py-3 rounded-lg font-label-bold" href="#">
+<span class="material-symbols-outlined">group</span>
+<span>People</span>
+</a>
+<!-- System -->
+<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-highest transition-all duration-200 px-4 py-3 rounded-lg font-label-bold" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span>System</span>
+</a>
+</nav>
+<div class="mt-auto pt-4 border-t border-outline-variant px-4">
+<button class="w-full bg-primary text-on-primary font-label-bold py-3 px-4 rounded-xl flex items-center justify-center gap-2 hover:opacity-90 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-sm">add</span>
+                New Bulk Order
+            </button>
+<div class="flex items-center gap-3 mt-6">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center border border-outline-variant">
+<span class="material-symbols-outlined text-on-surface-variant">person</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-bold text-on-surface">Admin User</span>
+<span class="text-xs text-on-surface-variant opacity-70">admin@corpcrave.pk</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-[280px] w-full min-h-screen flex flex-col">
+<!-- TopNavBar Small (Shared Component inspired) -->
+<header class="flex justify-between items-center px-8 h-16 w-full bg-surface-container-high shadow-sm sticky top-0 z-10 border-b border-outline-variant">
+<div class="flex items-center gap-4">
+<span class="font-headline-lg text-primary text-xl">Portal</span>
+<span class="text-outline-variant">/</span>
+<span class="font-title-md text-on-surface-variant text-sm">Package Management</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-highest rounded-full transition-all">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-highest rounded-full transition-all">
+<span class="material-symbols-outlined">dark_mode</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-highest rounded-full transition-all">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Page Header Section -->
+<section class="px-margin-desktop py-8 bg-surface-cream">
+<div class="max-w-container-max mx-auto flex flex-col md:flex-row md:items-center justify-between gap-6">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-charcoal-text">Packages</h2>
+<p class="text-body-sm text-on-surface-variant mt-1">Manage corporate meal tiers and curated menu bundles.</p>
+</div>
+<button class="bg-primary text-on-primary font-label-bold py-3 px-6 rounded-xl flex items-center gap-2 shadow-lg hover:shadow-xl active:scale-95 transition-all">
+<span class="material-symbols-outlined">add_circle</span>
+                    Create Package
+                </button>
+</div>
+<!-- Controls: Search and Filter -->
+<div class="max-w-container-max mx-auto mt-8 flex flex-col md:flex-row gap-4">
+<div class="relative flex-1 group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary transition-colors">search</span>
+<input class="w-full pl-12 pr-4 py-3 bg-white border border-outline-variant rounded-xl focus:ring-2 focus:ring-primary focus:border-primary transition-all outline-none text-body-lg" placeholder="Search packages by name or ID..." type="text"/>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex bg-white border border-outline-variant p-1 rounded-xl">
+<button class="px-6 py-2 rounded-lg font-label-bold bg-primary-fixed text-on-primary-container shadow-sm">All</button>
+<button class="px-6 py-2 rounded-lg font-label-bold text-on-surface-variant hover:bg-surface-container transition-colors">Active</button>
+<button class="px-6 py-2 rounded-lg font-label-bold text-on-surface-variant hover:bg-surface-container transition-colors">Inactive</button>
+</div>
+<button class="flex items-center gap-2 bg-white border border-outline-variant px-4 py-3 rounded-xl font-label-bold text-on-surface-variant hover:bg-surface-container transition-all">
+<span class="material-symbols-outlined">tune</span>
+                        Filters
+                    </button>
+</div>
+</div>
+</section>
+<!-- Grid Content -->
+<section class="flex-1 px-margin-desktop py-8 bg-background">
+<div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-gutter">
+<!-- Package Card 1 -->
+<div class="group bg-white rounded-xl border border-outline-variant overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col relative">
+<div class="h-56 w-full relative overflow-hidden">
+<img alt="Corporate Package Thumbnail" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AP1WRLuLis1hd_x8Mr4uLX64CJd0JgM_C-iUGSHd3uV19UwUtKrCR7OgoEs0uhqR7rJwmrnw_0232syJVVv2vvdYBJFtwUkib4ivnUGf2sTgCRVQOd8mAkP_lX-WmUoLVxq3NgeFUs_ciUj4qMXQLToVLfN8yPxbWkCuBA5RDZbDwMsvQvAWlb-nzgtjlS_Os9BoVQ_i7BRV5nvtIm7r0GXgtnYqbGlcXMU3lhUSxHG9hcrfeZcfLqVGGHopq6ji"/>
+<div class="absolute top-4 left-4">
+<span class="bg-emerald-100 text-success-emerald px-3 py-1 rounded-full font-label-bold text-[10px] uppercase border border-emerald-200">Active</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-title-md text-charcoal-text group-hover:text-primary transition-colors">Executive Desi Platter</h3>
+<span class="font-label-bold text-primary text-lg">Rs. 2,450 <span class="text-xs text-on-surface-variant font-normal">/pp</span></span>
+</div>
+<p class="text-body-sm text-on-surface-variant mb-4 line-clamp-2">A premium curation of slow-cooked chicken biryani, hand-rolled naans, and signature kulfi. Perfect for VIP board meetings.</p>
+<div class="mt-auto flex items-center justify-between border-t border-outline-variant pt-4">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">restaurant</span>
+<span class="font-label-bold text-[11px]">8 DISHES INCLUDED</span>
+</div>
+<div class="flex gap-2">
+<button class="p-2 rounded-lg border border-outline-variant text-on-surface-variant hover:bg-surface-container transition-all" title="Settings">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<button class="flex items-center gap-1 px-4 py-2 rounded-lg bg-charcoal-text text-white font-label-bold hover:bg-black transition-all">
+<span class="material-symbols-outlined text-sm">edit</span>
+                                    Edit
+                                </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Package Card 2 -->
+<div class="group bg-white rounded-xl border border-outline-variant overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col relative">
+<div class="h-56 w-full relative overflow-hidden">
+<img alt="Corporate Package Thumbnail" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AP1WRLucmis_EB-nOaCIcJvZ5dW9YdZVvS6GCjjakhsuXVWjXTdGT9ZTz2_2jMPk3-K7EvV9GTDQnY6-WJTdWszAhCkh4h8wfUtRMekIuC415lB314HChFTdEdcC9r1OXP7IRY4CKIX0V_WrMyoUY94VqmHbr8wgSxz2ZKxMmK_0YoroLFmX_97hI_CYcTWtDVY8JAySPBpp0cNdxB5xDx38AODz_RAaE4Cvyl9QpBaF1lAv0gc_C7q0DBjlvIMs"/>
+<div class="absolute top-4 left-4">
+<span class="bg-emerald-100 text-success-emerald px-3 py-1 rounded-full font-label-bold text-[10px] uppercase border border-emerald-200">Active</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-title-md text-charcoal-text group-hover:text-primary transition-colors">Grand BBQ Feast</h3>
+<span class="font-label-bold text-primary text-lg">Rs. 3,100 <span class="text-xs text-on-surface-variant font-normal">/pp</span></span>
+</div>
+<p class="text-body-sm text-on-surface-variant mb-4 line-clamp-2">An extensive selection of charcoal-grilled kebabs, malai boti, and house-made chutneys. High-energy team celebrations.</p>
+<div class="mt-auto flex items-center justify-between border-t border-outline-variant pt-4">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">restaurant</span>
+<span class="font-label-bold text-[11px]">12 DISHES INCLUDED</span>
+</div>
+<div class="flex gap-2">
+<button class="p-2 rounded-lg border border-outline-variant text-on-surface-variant hover:bg-surface-container transition-all" title="Settings">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<button class="flex items-center gap-1 px-4 py-2 rounded-lg bg-charcoal-text text-white font-label-bold hover:bg-black transition-all">
+<span class="material-symbols-outlined text-sm">edit</span>
+                                    Edit
+                                </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Package Card 3 (Placeholder for variety) -->
+<div class="group bg-white rounded-xl border border-outline-variant overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col relative opacity-80 grayscale-[0.5]">
+<div class="h-56 w-full relative overflow-hidden bg-surface-container">
+<div class="w-full h-full flex items-center justify-center text-outline">
+<span class="material-symbols-outlined text-6xl">image_not_supported</span>
+</div>
+<div class="absolute top-4 left-4">
+<span class="bg-surface-dim text-on-surface-variant px-3 py-1 rounded-full font-label-bold text-[10px] uppercase border border-outline">Inactive</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-title-md text-charcoal-text">Standard Working Lunch</h3>
+<span class="font-label-bold text-primary text-lg">Rs. 1,200 <span class="text-xs text-on-surface-variant font-normal">/pp</span></span>
+</div>
+<p class="text-body-sm text-on-surface-variant mb-4 line-clamp-2">Quick, efficient and hygienic individual meal boxes for training sessions and workshops.</p>
+<div class="mt-auto flex items-center justify-between border-t border-outline-variant pt-4">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">restaurant</span>
+<span class="font-label-bold text-[11px]">4 DISHES INCLUDED</span>
+</div>
+<div class="flex gap-2">
+<button class="p-2 rounded-lg border border-outline-variant text-on-surface-variant hover:bg-surface-container transition-all" title="Settings">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<button class="flex items-center gap-1 px-4 py-2 rounded-lg bg-charcoal-text text-white font-label-bold hover:bg-black transition-all">
+<span class="material-symbols-outlined text-sm">edit</span>
+                                    Edit
+                                </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer (Shared Component) -->
+<footer class="w-full border-t border-outline-variant bg-surface-container-highest mt-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-12 max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-1">
+<h2 class="font-headline-lg text-primary text-2xl mb-4">Corporate Craving</h2>
+<p class="text-body-sm text-on-surface-variant max-w-[240px]">Redefining corporate logistics with the essence of authentic Pakistani heritage.</p>
+</div>
+<div>
+<h4 class="font-label-bold text-on-surface mb-4">Quick Links</h4>
+<ul class="flex flex-col gap-2">
+<li><a class="text-body-sm text-on-surface-variant hover:text-primary transition-colors underline" href="#">About Us</a></li>
+<li><a class="text-body-sm text-on-surface-variant hover:text-primary transition-colors underline" href="#">WhatsApp Support</a></li>
+<li><a class="text-body-sm text-on-surface-variant hover:text-primary transition-colors underline" href="#">Refund Policy</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-bold text-on-surface mb-4">Governance</h4>
+<ul class="flex flex-col gap-2">
+<li><a class="text-body-sm text-on-surface-variant hover:text-primary transition-colors underline" href="#">Terms of Service</a></li>
+<li><a class="text-body-sm text-on-surface-variant hover:text-primary transition-colors underline" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="flex flex-col items-start md:items-end">
+<h4 class="font-label-bold text-on-surface mb-4">Contact Support</h4>
+<a class="flex items-center gap-2 bg-[#25D366] text-white px-4 py-2 rounded-xl font-label-bold hover:opacity-90 transition-opacity mb-4" href="https://wa.me/92000000000">
+<span class="material-symbols-outlined">chat</span>
+                        Live Support
+                    </a>
+<p class="text-[10px] text-on-surface-variant opacity-60">© 2024 Corporate Craving. Islamabad, Pakistan.</p>
+</div>
+</div>
+</footer>
+</main>
+<!-- Floating Micro-Interaction Script -->
+<script>
+        document.querySelectorAll('.group').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                // Subtle interaction logic could go here
+            });
+        });
+
+        // Search Bar Focus Effect
+        const searchInput = document.querySelector('input[type="text"]');
+        searchInput.addEventListener('focus', () => {
+            searchInput.parentElement.classList.add('ring-2', 'ring-primary');
+        });
+        searchInput.addEventListener('blur', () => {
+            searchInput.parentElement.classList.remove('ring-2', 'ring-primary');
+        });
+    </script>
+</body></html>

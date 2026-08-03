@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Orders Management | Corporate Craving Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#f5f3ef",
+                        "surface-dim": "#dbdad6",
+                        "primary-container": "#f6c60c",
+                        "outline": "#807660",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed": "#241a00",
+                        "on-secondary-fixed-variant": "#404758",
+                        "charcoal-text": "#111827",
+                        "on-error": "#ffffff",
+                        "background": "#fbf9f5",
+                        "tertiary": "#006d2f",
+                        "surface-variant": "#e4e2de",
+                        "on-primary-fixed-variant": "#574500",
+                        "tertiary-fixed": "#66ff8e",
+                        "surface": "#fbf9f5",
+                        "surface-container-highest": "#e4e2de",
+                        "tertiary-fixed-dim": "#3de273",
+                        "secondary-container": "#d9dff5",
+                        "on-secondary": "#ffffff",
+                        "on-surface": "#1b1c1a",
+                        "inverse-surface": "#30312e",
+                        "on-secondary-fixed": "#141b2b",
+                        "danger-ruby": "#E11D48",
+                        "outline-variant": "#d1c5ab",
+                        "surface-cream": "#FDFBF7",
+                        "primary-fixed": "#ffe089",
+                        "inverse-primary": "#f0c100",
+                        "on-surface-variant": "#4e4632",
+                        "on-secondary-container": "#5c6274",
+                        "on-tertiary-container": "#00642b",
+                        "secondary-fixed-dim": "#c0c6db",
+                        "on-primary-container": "#695300",
+                        "secondary": "#575e70",
+                        "on-primary": "#ffffff",
+                        "surface-bright": "#fbf9f5",
+                        "surface-container": "#efeeea",
+                        "success-emerald": "#10B981",
+                        "tertiary-container": "#45e878",
+                        "error-container": "#ffdad6",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed-variant": "#005322",
+                        "surface-container-high": "#eae8e4",
+                        "surface-tint": "#745c00",
+                        "on-error-container": "#93000a",
+                        "inverse-on-surface": "#f2f0ed",
+                        "primary": "#745c00",
+                        "secondary-fixed": "#dce2f7",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed-dim": "#f0c100",
+                        "on-tertiary-fixed": "#002109",
+                        "on-background": "#1b1c1a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "container-max": "1280px",
+                        "gutter": "24px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "40px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Playfair Display"],
+                        "body-sm": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "label-bold": ["Plus Jakarta Sans"],
+                        "title-md": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Playfair Display"],
+                        "label-sm": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-bold": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                        "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .order-row:hover {
+            background-color: rgba(246, 198, 12, 0.05);
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #807660;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-lg overflow-x-hidden">
+<!-- Sidebar Navigation -->
+<aside class="fixed left-0 top-0 h-full w-[280px] bg-surface-container-low dark:bg-inverse-surface flex flex-col p-4 gap-2 border-r border-outline-variant z-50">
+<div class="mb-8 px-4">
+<h1 class="font-headline-lg text-headline-lg text-primary">Admin Portal</h1>
+<p class="font-label-bold text-label-bold text-on-surface-variant opacity-70">Management Console</p>
+</div>
+<nav class="flex-1 flex flex-col gap-1">
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 hover:bg-surface-container-highest transition-all duration-200 rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-bold text-label-bold">Overview</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 hover:bg-surface-container-highest transition-all duration-200 rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="font-label-bold text-label-bold">Catalog</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 hover:bg-surface-container-highest transition-all duration-200 rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-label-bold text-label-bold">Packages</span>
+</a>
+<!-- Active State for Orders -->
+<a class="flex items-center gap-3 bg-secondary-container text-on-secondary-container px-4 py-3 rounded-xl shadow-sm" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_cart" style="font-variation-settings: 'FILL' 1;">shopping_cart</span>
+<span class="font-label-bold text-label-bold">Orders</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 hover:bg-surface-container-highest transition-all duration-200 rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="local_shipping">local_shipping</span>
+<span class="font-label-bold text-label-bold">Operations</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 hover:bg-surface-container-highest transition-all duration-200 rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="article">article</span>
+<span class="font-label-bold text-label-bold">Content</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 hover:bg-surface-container-highest transition-all duration-200 rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-label-bold text-label-bold">People</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 hover:bg-surface-container-highest transition-all duration-200 rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-bold text-label-bold">System</span>
+</a>
+</nav>
+<div class="mt-auto p-4 bg-surface-container-high rounded-xl">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center font-bold text-on-primary-container">AZ</div>
+<div>
+<p class="font-label-bold text-label-bold">Admin User</p>
+<p class="text-[10px] text-on-surface-variant">Super Admin</p>
+</div>
+</div>
+<button class="w-full py-2 bg-primary text-on-primary rounded-xl font-label-bold text-label-bold hover:opacity-90 active:scale-95 transition-all">
+                New Bulk Order
+            </button>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="ml-[280px] min-h-screen p-margin-desktop">
+<!-- Top Nav Bar (Small Variant) -->
+<header class="flex justify-between items-center h-16 w-full bg-surface-container-high rounded-xl px-6 mb-8 shadow-sm">
+<h2 class="font-title-md text-title-md text-primary">Portal › Orders Management</h2>
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-surface-container-highest rounded-full transition-transform active:scale-90">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 hover:bg-surface-container-highest rounded-full transition-transform active:scale-90">
+<span class="material-symbols-outlined" data-icon="dark_mode">dark_mode</span>
+</button>
+<div class="h-6 w-px bg-outline-variant mx-2"></div>
+<button class="flex items-center gap-2 px-3 py-1 hover:bg-surface-container-highest rounded-full transition-transform active:scale-90">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+<span class="font-label-bold text-label-bold">Logout</span>
+</button>
+</div>
+</header>
+<!-- Summary Cards (Bento Style) -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-12">
+<div class="bg-surface-cream border border-outline-variant rounded-xl p-6 flex items-start justify-between">
+<div>
+<p class="font-label-bold text-label-bold text-on-surface-variant mb-2">TOTAL ORDERS TODAY</p>
+<h3 class="font-display-lg text-display-lg text-primary">124</h3>
+<p class="font-body-sm text-body-sm text-success-emerald mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="trending_up">trending_up</span>
+                        12% from yesterday
+                    </p>
+</div>
+<div class="p-3 bg-primary-container rounded-lg">
+<span class="material-symbols-outlined text-on-primary-container" data-icon="receipt_long">receipt_long</span>
+</div>
+</div>
+<div class="bg-surface-cream border border-outline-variant rounded-xl p-6 flex items-start justify-between">
+<div>
+<p class="font-label-bold text-label-bold text-on-surface-variant mb-2">PENDING SHIPMENTS</p>
+<h3 class="font-display-lg text-display-lg text-secondary">42</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2">18 Bulk Corporate Orders</p>
+</div>
+<div class="p-3 bg-secondary-container rounded-lg">
+<span class="material-symbols-outlined text-on-secondary-container" data-icon="pending_actions">pending_actions</span>
+</div>
+</div>
+<div class="bg-surface-cream border border-outline-variant rounded-xl p-6 flex items-start justify-between">
+<div>
+<p class="font-label-bold text-label-bold text-on-surface-variant mb-2">ESTIMATED REVENUE</p>
+<h3 class="font-display-lg text-display-lg text-tertiary">PKR 82.5k</h3>
+<p class="font-body-sm text-body-sm text-success-emerald mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="payments">payments</span>
+                        Collected via COD
+                    </p>
+</div>
+<div class="p-3 bg-tertiary-container rounded-lg">
+<span class="material-symbols-outlined text-on-tertiary-container" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+</div>
+</section>
+<!-- Filters Section -->
+<section class="bg-surface-container-low border border-outline-variant rounded-xl p-6 mb-8">
+<div class="flex flex-wrap items-end gap-6">
+<div class="flex-1 min-w-[200px]">
+<label class="font-label-bold text-label-bold block mb-2 text-on-surface-variant">SEARCH ORDERS</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant" data-icon="search">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-lowest border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none" placeholder="Search by ID, Customer, or Phone" type="text"/>
+</div>
+</div>
+<div class="w-48">
+<label class="font-label-bold text-label-bold block mb-2 text-on-surface-variant">ORDER TYPE</label>
+<select class="w-full px-4 py-2 bg-surface-container-lowest border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary outline-none">
+<option>All Types</option>
+<option>Individual COD</option>
+<option>Bulk Corporate</option>
+</select>
+</div>
+<div class="w-48">
+<label class="font-label-bold text-label-bold block mb-2 text-on-surface-variant">STATUS</label>
+<select class="w-full px-4 py-2 bg-surface-container-lowest border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary outline-none">
+<option>All Statuses</option>
+<option>Pending</option>
+<option>Preparing</option>
+<option>Out for Delivery</option>
+<option>Delivered</option>
+<option>Cancelled</option>
+</select>
+</div>
+<div class="w-64">
+<label class="font-label-bold text-label-bold block mb-2 text-on-surface-variant">DATE RANGE</label>
+<div class="flex items-center bg-surface-container-lowest border border-outline-variant rounded-lg px-3 py-2">
+<span class="material-symbols-outlined text-on-surface-variant mr-2" data-icon="calendar_today">calendar_today</span>
+<input class="bg-transparent border-none p-0 focus:ring-0 w-full font-body-sm text-body-sm" type="text" value="Oct 20 - Oct 27, 2024"/>
+</div>
+</div>
+<button class="px-6 py-2 bg-secondary text-on-secondary rounded-lg font-label-bold flex items-center gap-2 hover:opacity-90 active:scale-95 transition-all">
+<span class="material-symbols-outlined" data-icon="filter_list">filter_list</span>
+                    Apply Filters
+                </button>
+</div>
+</section>
+<!-- Orders Table Section -->
+<section class="bg-surface-cream border border-outline-variant rounded-xl overflow-hidden shadow-sm">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead class="bg-surface-container border-b border-outline-variant">
+<tr>
+<th class="px-6 py-4 font-label-bold text-label-bold text-on-surface-variant">ORDER ID</th>
+<th class="px-6 py-4 font-label-bold text-label-bold text-on-surface-variant">CUSTOMER / COMPANY</th>
+<th class="px-6 py-4 font-label-bold text-label-bold text-on-surface-variant">ORDER TYPE</th>
+<th class="px-6 py-4 font-label-bold text-label-bold text-on-surface-variant">ITEMS</th>
+<th class="px-6 py-4 font-label-bold text-label-bold text-on-surface-variant">TOTAL AMOUNT</th>
+<th class="px-6 py-4 font-label-bold text-label-bold text-on-surface-variant">STATUS</th>
+<th class="px-6 py-4 font-label-bold text-label-bold text-on-surface-variant">ACTIONS</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<!-- Row 1 -->
+<tr class="order-row transition-colors">
+<td class="px-6 py-4 font-label-bold text-primary">#CC-8942</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]" data-icon="person">person</span>
+</div>
+<div>
+<p class="font-body-sm font-bold">Ahmed Hassan</p>
+<p class="text-[11px] text-on-surface-variant">F-7 Markaz, Islamabad</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 font-body-sm">Individual COD</td>
+<td class="px-6 py-4 font-body-sm">Beef Haleem, Naan x2</td>
+<td class="px-6 py-4 font-bold">PKR 1,250</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 bg-primary-container/20 text-primary-fixed-dim border border-primary/20 rounded-full text-[11px] font-bold uppercase tracking-wider">Preparing</span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<button class="p-1 hover:text-primary transition-colors" title="View Details"><span class="material-symbols-outlined" data-icon="visibility">visibility</span></button>
+<button class="p-1 hover:text-success-emerald transition-colors" title="Approve"><span class="material-symbols-outlined" data-icon="check_circle">check_circle</span></button>
+<button class="p-1 hover:text-danger-ruby transition-colors" title="Cancel"><span class="material-symbols-outlined" data-icon="cancel">cancel</span></button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="order-row transition-colors bg-surface-container-low/50">
+<td class="px-6 py-4 font-label-bold text-primary">#BC-1022</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px] text-on-secondary-container" data-icon="business">business</span>
+</div>
+<div>
+<p class="font-body-sm font-bold">Telenor HQ</p>
+<p class="text-[11px] text-on-surface-variant">Procurement Team</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 font-body-sm">Bulk Corporate</td>
+<td class="px-6 py-4 font-body-sm">Mutton Biryani Platter x15</td>
+<td class="px-6 py-4 font-bold">PKR 22,500</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 bg-surface-variant text-on-surface-variant border border-outline-variant rounded-full text-[11px] font-bold uppercase tracking-wider">Pending</span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<button class="p-1 hover:text-primary transition-colors"><span class="material-symbols-outlined" data-icon="visibility">visibility</span></button>
+<button class="p-1 hover:text-success-emerald transition-colors"><span class="material-symbols-outlined" data-icon="check_circle">check_circle</span></button>
+<button class="p-1 hover:text-danger-ruby transition-colors"><span class="material-symbols-outlined" data-icon="cancel">cancel</span></button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="order-row transition-colors">
+<td class="px-6 py-4 font-label-bold text-primary">#CC-8939</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]" data-icon="person">person</span>
+</div>
+<div>
+<p class="font-body-sm font-bold">Sara Khan</p>
+<p class="text-[11px] text-on-surface-variant">Bahria Phase 7, RWP</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 font-body-sm">Individual COD</td>
+<td class="px-6 py-4 font-body-sm">Chicken Karahi (Half), Roti x4</td>
+<td class="px-6 py-4 font-bold">PKR 1,850</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 bg-tertiary-container/20 text-tertiary border border-tertiary/20 rounded-full text-[11px] font-bold uppercase tracking-wider">Delivering</span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<button class="p-1 hover:text-primary transition-colors"><span class="material-symbols-outlined" data-icon="visibility">visibility</span></button>
+<button class="p-1 hover:text-success-emerald transition-colors"><span class="material-symbols-outlined" data-icon="check_circle">check_circle</span></button>
+<button class="p-1 hover:text-danger-ruby transition-colors"><span class="material-symbols-outlined" data-icon="cancel">cancel</span></button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="order-row transition-colors bg-surface-container-low/50">
+<td class="px-6 py-4 font-label-bold text-primary">#BC-1021</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px] text-on-secondary-container" data-icon="business">business</span>
+</div>
+<div>
+<p class="font-body-sm font-bold">Jazz Digital Park</p>
+<p class="text-[11px] text-on-surface-variant">Employee Lunch</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 font-body-sm">Bulk Corporate</td>
+<td class="px-6 py-4 font-body-sm">Assorted Tea Cakes x20</td>
+<td class="px-6 py-4 font-bold">PKR 15,000</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 bg-success-emerald/20 text-success-emerald border border-success-emerald/20 rounded-full text-[11px] font-bold uppercase tracking-wider">Delivered</span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<button class="p-1 hover:text-primary transition-colors"><span class="material-symbols-outlined" data-icon="visibility">visibility</span></button>
+<button class="p-1 text-on-surface-variant opacity-30 cursor-not-allowed"><span class="material-symbols-outlined" data-icon="check_circle">check_circle</span></button>
+<button class="p-1 text-on-surface-variant opacity-30 cursor-not-allowed"><span class="material-symbols-outlined" data-icon="cancel">cancel</span></button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="bg-surface-container border-t border-outline-variant px-6 py-4 flex items-center justify-between">
+<p class="font-body-sm text-on-surface-variant">Showing 1 to 4 of 124 orders</p>
+<div class="flex items-center gap-2">
+<button class="p-2 border border-outline-variant rounded-lg hover:bg-surface-container-highest transition-colors disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="w-10 h-10 bg-primary text-on-primary rounded-lg font-label-bold shadow-md">1</button>
+<button class="w-10 h-10 border border-outline-variant rounded-lg font-label-bold hover:bg-surface-container-highest transition-colors">2</button>
+<button class="w-10 h-10 border border-outline-variant rounded-lg font-label-bold hover:bg-surface-container-highest transition-colors">3</button>
+<span class="px-2">...</span>
+<button class="w-10 h-10 border border-outline-variant rounded-lg font-label-bold hover:bg-surface-container-highest transition-colors">31</button>
+<button class="p-2 border border-outline-variant rounded-lg hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="mt-16 pt-12 pb-8 border-t border-outline-variant">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter mb-8">
+<div>
+<h4 class="font-headline-lg text-primary mb-4">Corporate Craving</h4>
+<p class="font-body-sm text-on-surface-variant">Exquisite Catering &amp; Daily Meals for the Modern Workplace. Rooted in Tradition, Delivered with Precision.</p>
+</div>
+<div>
+<h5 class="font-label-bold text-primary mb-4">OPERATIONS</h5>
+<ul class="space-y-2">
+<li><a class="font-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Kitchen Queue</a></li>
+<li><a class="font-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Rider Fleet</a></li>
+<li><a class="font-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Inventory Log</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-label-bold text-primary mb-4">REPORTS</h5>
+<ul class="space-y-2">
+<li><a class="font-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Sales Analytics</a></li>
+<li><a class="font-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Corporate Billing</a></li>
+<li><a class="font-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Audit Logs</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-label-bold text-primary mb-4">SUPPORT</h5>
+<ul class="space-y-2">
+<li><a class="font-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Tech Support</a></li>
+<li><a class="font-body-sm text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2" href="#">
+<span class="w-2 h-2 rounded-full bg-success-emerald animate-pulse"></span>
+                            System Status: Online
+                        </a></li>
+</ul>
+</div>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-center gap-4 text-on-surface-variant pt-8 border-t border-outline-variant/30">
+<p class="font-body-sm">© 2024 Corporate Craving. Islamabad, Pakistan.</p>
+<div class="flex gap-6 font-body-sm">
+<a class="hover:underline" href="#">Privacy Policy</a>
+<a class="hover:underline" href="#">Terms of Service</a>
+<a class="hover:underline" href="#">WhatsApp Support</a>
+</div>
+</div>
+</footer>
+</main>
+<!-- Floating Action for Quick Add -->
+<button class="fixed bottom-8 right-8 w-14 h-14 bg-primary text-on-primary rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all z-[60]" title="Create New Order">
+<span class="material-symbols-outlined text-[32px]" data-icon="add">add</span>
+</button>
+<script>
+        // Micro-interactions and row selection
+        document.querySelectorAll('.order-row').forEach(row => {
+            row.addEventListener('click', (e) => {
+                if (e.target.closest('button')) return;
+                row.classList.toggle('bg-primary-container/10');
+            });
+        });
+
+        // Simple dashboard notification animation
+        setTimeout(() => {
+            const bell = document.querySelector('[data-icon="notifications"]');
+            bell.classList.add('animate-bounce');
+            setTimeout(() => bell.classList.remove('animate-bounce'), 2000);
+        }, 3000);
+    </script>
+</body></html>
