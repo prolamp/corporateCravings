@@ -9,7 +9,7 @@ type Props = { slip: BillSlipReceiptData };
 export default function SubscriberBillReceipt({ slip }: Props) {
     return (
         <>
-            <Head title={`Receipt ${slip.slip_number}`} />
+            <Head title={slip.site_name || 'Bill slip'} />
             <BillSlipReceiptDocument slip={slip} />
         </>
     );

@@ -45,8 +45,26 @@ export function BillSlipReceiptDocument({ slip }: Props) {
 
     return (
         <div className="mx-auto max-w-3xl bg-white p-6 text-zinc-900 print:max-w-none print:p-0">
-            <div className="mb-4 flex flex-wrap items-center justify-between gap-4 border-b-2 border-zinc-900 pb-3">
-                <div className="min-w-0">
+            <style>{`
+                @media print {
+                    @page {
+                        margin: 12mm;
+                    }
+                }
+            `}</style>
+
+            <div className="mb-3 flex justify-end print:hidden">
+                <button
+                    type="button"
+                    onClick={() => window.print()}
+                    className="rounded-md border border-zinc-300 px-3 py-1.5 text-sm"
+                >
+                    Print / save PDF
+                </button>
+            </div>
+
+            <div className="mb-4 flex items-start justify-between gap-4 border-b-2 border-zinc-900 pb-3">
+                <div className="min-w-0 shrink-0">
                     {slip.logo_url ? (
                         <img
                             src={slip.logo_url}
@@ -59,46 +77,23 @@ export function BillSlipReceiptDocument({ slip }: Props) {
                         </p>
                     )}
                 </div>
-                <div className="flex flex-col items-end gap-2 text-right">
-                    <button
-                        type="button"
-                        onClick={() => window.print()}
-                        className="rounded-md border border-zinc-300 px-3 py-1.5 text-sm print:hidden"
-                    >
-                        Print / save PDF
-                    </button>
-                    <div>
-                        <h1 className="text-base font-semibold tracking-tight">
-                            Bill slip / receipt
-                        </h1>
-                        <p className="mt-0.5 text-xs text-zinc-600">
-                            {slip.slip_number} · {slip.status_label}
-                        </p>
-                    </div>
-                </div>
-            </div>
 
-            <div className="grid gap-2 text-sm sm:grid-cols-2">
-                <div>
-                    <p className="text-[11px] font-bold tracking-[0.1em] text-zinc-500 uppercase">
-                        Billed to
+                <div className="min-w-0 text-right">
+                    <h1 className="text-base font-semibold tracking-tight">
+                        Bill slip / receipt
+                    </h1>
+                    <p className="mt-1 text-xs leading-tight text-zinc-700">
+                        <span className="text-zinc-500">Billed to: </span>
+                        <span className="font-medium">{slip.company_name}</span>
                     </p>
-                    <p className="mt-0.5 text-base font-semibold leading-tight">
-                        {slip.company_name}
-                    </p>
-                </div>
-                <div className="sm:text-right">
-                    <p className="text-[11px] font-bold tracking-[0.1em] text-zinc-500 uppercase">
-                        Details
-                    </p>
-                    <p className="mt-0.5 leading-tight">
-                        <span className="text-zinc-500">Period </span>
+                    <p className="mt-0.5 text-xs leading-tight text-zinc-700">
+                        <span className="text-zinc-500">Period: </span>
                         <span className="font-medium">{slip.period_label}</span>
                     </p>
                 </div>
             </div>
 
-            <table className="mt-4 w-full text-left text-xs">
+            <table className="mt-0 w-full text-left text-xs">
                 <thead className="border-y border-zinc-900 text-xs font-bold tracking-[0.08em] text-zinc-500 uppercase">
                     <tr>
                         <th className="py-1 pr-3">Date</th>
