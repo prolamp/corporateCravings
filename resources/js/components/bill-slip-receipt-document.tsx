@@ -45,13 +45,13 @@ export function BillSlipReceiptDocument({ slip }: Props) {
 
     return (
         <div className="mx-auto max-w-3xl bg-white p-6 text-zinc-900 print:max-w-none print:p-0">
-            <div className="mb-8 flex flex-wrap items-center justify-between gap-4 border-b-2 border-zinc-900 pb-5">
+            <div className="mb-4 flex flex-wrap items-center justify-between gap-4 border-b-2 border-zinc-900 pb-3">
                 <div className="min-w-0">
                     {slip.logo_url ? (
                         <img
                             src={slip.logo_url}
                             alt={slip.site_name}
-                            className="h-8 w-auto object-contain object-left print:h-7"
+                            className="h-9 w-auto object-contain object-left print:h-9"
                         />
                     ) : (
                         <p className="text-sm font-semibold tracking-tight">
@@ -68,22 +68,22 @@ export function BillSlipReceiptDocument({ slip }: Props) {
                         Print / save PDF
                     </button>
                     <div>
-                        <h1 className="text-2xl font-semibold tracking-tight">
+                        <h1 className="text-base font-semibold tracking-tight">
                             Bill slip / receipt
                         </h1>
-                        <p className="mt-1 text-sm text-zinc-600">
+                        <p className="mt-0.5 text-xs text-zinc-600">
                             {slip.slip_number} · {slip.status_label}
                         </p>
                     </div>
                 </div>
             </div>
 
-            <div className="grid gap-6 text-sm sm:grid-cols-2">
+            <div className="grid gap-2 text-sm sm:grid-cols-2">
                 <div>
                     <p className="text-[11px] font-bold tracking-[0.1em] text-zinc-500 uppercase">
                         Billed to
                     </p>
-                    <p className="mt-2 text-base font-semibold">
+                    <p className="mt-0.5 text-base font-semibold leading-tight">
                         {slip.company_name}
                     </p>
                 </div>
@@ -91,21 +91,21 @@ export function BillSlipReceiptDocument({ slip }: Props) {
                     <p className="text-[11px] font-bold tracking-[0.1em] text-zinc-500 uppercase">
                         Details
                     </p>
-                    <p className="mt-2">
+                    <p className="mt-0.5 leading-tight">
                         <span className="text-zinc-500">Period </span>
                         <span className="font-medium">{slip.period_label}</span>
                     </p>
                 </div>
             </div>
 
-            <table className="mt-8 w-full text-left text-sm">
-                <thead className="border-y border-zinc-900 text-[11px] font-bold tracking-[0.08em] text-zinc-500 uppercase">
+            <table className="mt-4 w-full text-left text-xs">
+                <thead className="border-y border-zinc-900 text-xs font-bold tracking-[0.08em] text-zinc-500 uppercase">
                     <tr>
-                        <th className="py-2.5 pr-3">Date</th>
-                        <th className="py-2.5 pr-3">Dish</th>
-                        <th className="py-2.5 pr-3">Persons</th>
-                        <th className="py-2.5 pr-3">Unit</th>
-                        <th className="py-2.5 text-right">Amount</th>
+                        <th className="py-1 pr-3">Date</th>
+                        <th className="py-1 pr-3">Dish</th>
+                        <th className="py-1 pr-3">Persons</th>
+                        <th className="py-1 pr-3">Unit</th>
+                        <th className="py-1 text-right">Amount</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -114,15 +114,15 @@ export function BillSlipReceiptDocument({ slip }: Props) {
                             key={item.id}
                             className="border-b border-zinc-100"
                         >
-                            <td className="py-2.5 pr-3 whitespace-nowrap">
+                            <td className="py-1 pr-3 whitespace-nowrap">
                                 {item.date_formatted}
                             </td>
-                            <td className="py-2.5 pr-3">{item.dish_title}</td>
-                            <td className="py-2.5 pr-3">{item.persons}</td>
-                            <td className="py-2.5 pr-3 whitespace-nowrap">
+                            <td className="py-1 pr-3">{item.dish_title}</td>
+                            <td className="py-1 pr-3">{item.persons}</td>
+                            <td className="py-1 pr-3 whitespace-nowrap">
                                 {item.unit_price_formatted}
                             </td>
-                            <td className="py-2.5 text-right font-medium whitespace-nowrap">
+                            <td className="py-1 text-right font-medium whitespace-nowrap">
                                 {item.line_total_formatted}
                             </td>
                         </tr>
@@ -130,7 +130,7 @@ export function BillSlipReceiptDocument({ slip }: Props) {
                 </tbody>
             </table>
 
-            <div className="ml-auto mt-6 w-full max-w-xs space-y-1.5 text-sm">
+            <div className="ml-auto mt-6 w-full max-w-xs space-y-1.5 text-[13px]">
                 <div className="flex justify-between">
                     <span className="text-zinc-600">Subtotal</span>
                     <span>{slip.subtotal_formatted}</span>
@@ -141,7 +141,7 @@ export function BillSlipReceiptDocument({ slip }: Props) {
                         <span>{slip.adjustment_formatted}</span>
                     </div>
                 )}
-                <div className="flex justify-between border-t-2 border-zinc-900 pt-2 text-base font-semibold">
+                <div className="flex justify-between border-t-2 border-zinc-900 pt-2 text-sm font-semibold">
                     <span>Total</span>
                     <span>{slip.total_formatted}</span>
                 </div>
@@ -152,19 +152,19 @@ export function BillSlipReceiptDocument({ slip }: Props) {
                 slip.notes ||
                 hasSignatureBlock) && (
                 <div className="mt-10 grid gap-8 border-t border-zinc-200 pt-8 sm:grid-cols-2">
-                    <div className="space-y-4 text-sm">
+                    <div className="space-y-4 text-xs">
                         {hasBank && (
                             <div>
                                 <p className="text-[11px] font-bold tracking-[0.1em] text-zinc-500 uppercase">
                                     Payment details
                                 </p>
                                 {slip.bank_label && (
-                                    <p className="mt-2 font-medium">
+                                    <p className="mt-2 text-xs font-medium">
                                         {slip.bank_label}
                                     </p>
                                 )}
                                 {slip.bank_account_number && (
-                                    <p className="mt-0.5 font-mono text-zinc-700">
+                                    <p className="mt-0.5 font-mono text-xs text-zinc-700">
                                         {slip.bank_account_number}
                                     </p>
                                 )}
@@ -172,13 +172,13 @@ export function BillSlipReceiptDocument({ slip }: Props) {
                         )}
 
                         {slip.receipt_description && (
-                            <p className="whitespace-pre-wrap text-zinc-600">
+                            <p className="whitespace-pre-wrap text-xs text-zinc-600">
                                 {slip.receipt_description}
                             </p>
                         )}
 
                         {slip.notes && (
-                            <p className="text-zinc-600">
+                            <p className="text-xs text-zinc-600">
                                 <span className="font-medium text-zinc-800">
                                     Notes:{' '}
                                 </span>
