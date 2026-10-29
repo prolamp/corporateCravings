@@ -25,6 +25,13 @@ class UpdateSiteSettingsRequest extends FormRequest
             'values.brand.email' => ['nullable', 'email', 'max:160'],
             'values.brand.address' => ['nullable', 'string', 'max:500'],
             'values.brand.hours' => ['nullable', 'string', 'max:160'],
+            'values.receipt' => ['required', 'array'],
+            'values.receipt.manager_name' => ['nullable', 'string', 'max:160'],
+            'values.receipt.bank_label' => ['nullable', 'string', 'max:160'],
+            'values.receipt.bank_account_number' => ['nullable', 'string', 'max:64'],
+            'values.receipt.description' => ['nullable', 'string', 'max:2000'],
+            'signature' => ['nullable', 'image', 'max:10240'],
+            'remove_signature' => ['sometimes', 'boolean'],
             'values.analytics' => ['required', 'array'],
             'values.analytics.ga_measurement_id' => [
                 'nullable',
@@ -44,5 +51,17 @@ class UpdateSiteSettingsRequest extends FormRequest
             'values.brand.whatsapp.regex' => 'WhatsApp should be digits (optional +) with country code.',
             'values.analytics.ga_measurement_id.regex' => 'GA4 ID must look like G-XXXXXXXXXX or be empty.',
         ];
+    }
+
+    protected function prepareForValidation(): void
+    {
+        if ($this->has('remove_signature')) {
+            $this->merge([
+                'remove_signature' => filter_var(
+                    $this->input('remove_signature'),
+                    FILTER_VALIDATE_BOOLEAN,
+                ),
+            ]);
+        }
     }
 }

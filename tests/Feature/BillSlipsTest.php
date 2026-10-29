@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Setting;
 use App\Models\User;
 use App\Modules\Orders\Models\Order;
 use App\Modules\Subscribers\Models\SubscribeContract;
@@ -187,4 +188,49 @@ test('admin bill slips index renders', function () {
         ->get(route('admin.bill-slips.index'))
         ->assertOk()
         ->assertInertia(fn (Assert $page) => $page->component('admin/bill-slips/index'));
+});
+
+test('admin receipt includes configured bank and manager details', function () {
+    Setting::query()->updateOrCreate(
+        ['key' => 'brand.name'],
+        ['group' => 'brand', 'value' => 'Corporate Cravings', 'type' => 'string'],
+    );
+    Setting::query()->updateOrCreate(
+        ['key' => 'receipt.manager_name'],
+        ['group' => 'receipt', 'value' => 'Ayesha Khan', 'type' => 'string'],
+    );
+    Setting::query()->updateOrCreate(
+        ['key' => 'receipt.bank_label'],
+        ['group' => 'receipt', 'value' => 'Meezan Bank', 'type' => 'string'],
+    );
+    Setting::query()->updateOrCreate(
+        ['key' => 'receipt.bank_account_number'],
+        ['group' => 'receipt', 'value' => '0123456789012', 'type' => 'string'],
+    );
+    Setting::query()->updateOrCreate(
+        ['key' => 'receipt.description'],
+        ['group' => 'receipt', 'value' => 'Thank you for your business.', 'type' => 'text'],
+    );
+
+    $admin = billSlipAdmin();
+    $subscriber = billSlipSubscriber();
+    $contract = SubscribeContract::factory()->forUser($subscriber)->create();
+    $schedule = SubscriberSchedule::factory()->delivered()->create([
+        'subscribe_contract_id' => $contract->id,
+        'date' => now()->subDay()->toDateString(),
+        'total' => 2000,
+    ]);
+    $slip = app(BillSlipService::class)->create($admin, $contract, [$schedule->id]);
+
+    $this->actingAs($admin)
+        ->get(route('admin.bill-slips.receipt', $slip))
+        ->assertOk()
+        ->assertInertia(fn (Assert $page) => $page
+            ->component('admin/bill-slips/receipt')
+            ->where('slip.site_name', 'Corporate Cravings')
+            ->where('slip.logo_url', '/images/brand/logo.svg')
+            ->where('slip.manager_name', 'Ayesha Khan')
+            ->where('slip.bank_label', 'Meezan Bank')
+            ->where('slip.bank_account_number', '0123456789012')
+            ->where('slip.receipt_description', 'Thank you for your business.'));
 });

@@ -1,5 +1,5 @@
 import { Head, useForm } from '@inertiajs/react';
-import type { FormEvent } from 'react';
+import { useEffect, useState, type FormEvent } from 'react';
 import InputError from '@/components/input-error';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -26,12 +26,43 @@ type NestedValues = Record<string, Record<string, string>>;
 type Props = {
     groups: Group[];
     values: NestedValues;
+    signature_url: string | null;
 };
 
-export default function SiteSettingsIndex({ groups, values }: Props) {
+export default function SiteSettingsIndex({
+    groups,
+    values,
+    signature_url,
+}: Props) {
     const form = useForm({
         values: structuredClone(values),
+        signature: null as File | null,
+        remove_signature: false as boolean,
+        _method: 'put',
     });
+
+    const [signaturePreview, setSignaturePreview] = useState<string | null>(
+        null,
+    );
+
+    useEffect(() => {
+        if (!form.data.signature) {
+            setSignaturePreview(null);
+
+            return;
+        }
+
+        const url = URL.createObjectURL(form.data.signature);
+        setSignaturePreview(url);
+
+        return () => URL.revokeObjectURL(url);
+    }, [form.data.signature]);
+
+    const existingSignature =
+        !form.data.remove_signature && !signaturePreview
+            ? signature_url
+            : null;
+    const displaySignature = signaturePreview ?? existingSignature;
 
     function setField(group: string, field: string, value: string) {
         form.setData('values', {
@@ -45,7 +76,7 @@ export default function SiteSettingsIndex({ groups, values }: Props) {
 
     function submit(event: FormEvent) {
         event.preventDefault();
-        form.put('/admin/settings');
+        form.post('/admin/settings', { forceFormData: true });
     }
 
     return (
@@ -60,8 +91,7 @@ export default function SiteSettingsIndex({ groups, values }: Props) {
                         Site settings
                     </h2>
                     <p className="mt-1 text-sm text-muted-foreground">
-                        Brand contact details and analytics for the public site
-                        and WhatsApp links.
+                        Brand contact, bill-slip receipt footer, and analytics.
                     </p>
                 </div>
 
@@ -84,40 +114,158 @@ export default function SiteSettingsIndex({ groups, values }: Props) {
                                 {group.label}
                             </h3>
                             <div className="mt-4 space-y-4">
-                                {group.fields.map((field) => (
-                                    <div key={field.key} className="grid gap-2">
-                                        <Label htmlFor={field.key}>
-                                            {field.label}
-                                        </Label>
-                                        <Input
-                                            id={field.key}
-                                            value={
-                                                form.data.values[field.group]?.[
-                                                    field.field
-                                                ] ?? ''
-                                            }
-                                            onChange={(e) =>
-                                                setField(
-                                                    field.group,
-                                                    field.field,
-                                                    e.target.value,
-                                                )
-                                            }
-                                        />
-                                        {field.help && (
-                                            <p className="text-xs text-muted-foreground">
-                                                {field.help}
-                                            </p>
-                                        )}
-                                        <InputError
-                                            message={
-                                                form.errors[
-                                                    `values.${field.group}.${field.field}`
-                                                ]
-                                            }
-                                        />
-                                    </div>
-                                ))}
+                                {group.fields.map((field) => {
+                                    if (field.type === 'image') {
+                                        return (
+                                            <div
+                                                key={field.key}
+                                                className="grid gap-2"
+                                            >
+                                                <Label htmlFor={field.key}>
+                                                    {field.label}
+                                                </Label>
+                                                {displaySignature && (
+                                                    <img
+                                                        src={displaySignature}
+                                                        alt="Signature preview"
+                                                        className="h-16 w-auto rounded border border-border/60 bg-white object-contain p-2"
+                                                    />
+                                                )}
+                                                <Input
+                                                    id={field.key}
+                                                    type="file"
+                                                    accept="image/*"
+                                                    onChange={(e) => {
+                                                        const file =
+                                                            e.target.files?.[0] ??
+                                                            null;
+                                                        form.setData(
+                                                            'signature',
+                                                            file,
+                                                        );
+                                                        if (file) {
+                                                            form.setData(
+                                                                'remove_signature',
+                                                                false,
+                                                            );
+                                                        }
+                                                    }}
+                                                />
+                                                {(displaySignature ||
+                                                    form.data.signature) && (
+                                                    <Button
+                                                        type="button"
+                                                        variant="outline"
+                                                        size="sm"
+                                                        className="w-fit"
+                                                        onClick={() => {
+                                                            form.setData(
+                                                                'signature',
+                                                                null,
+                                                            );
+                                                            form.setData(
+                                                                'remove_signature',
+                                                                true,
+                                                            );
+                                                        }}
+                                                    >
+                                                        Remove signature
+                                                    </Button>
+                                                )}
+                                                {field.help && (
+                                                    <p className="text-xs text-muted-foreground">
+                                                        {field.help}
+                                                    </p>
+                                                )}
+                                                <InputError
+                                                    message={
+                                                        form.errors.signature
+                                                    }
+                                                />
+                                            </div>
+                                        );
+                                    }
+
+                                    if (field.type === 'text') {
+                                        return (
+                                            <div
+                                                key={field.key}
+                                                className="grid gap-2"
+                                            >
+                                                <Label htmlFor={field.key}>
+                                                    {field.label}
+                                                </Label>
+                                                <textarea
+                                                    id={field.key}
+                                                    rows={4}
+                                                    className="border-input flex min-h-24 w-full rounded-md border bg-background px-3 py-2 text-sm shadow-xs outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50"
+                                                    value={
+                                                        form.data.values[
+                                                            field.group
+                                                        ]?.[field.field] ?? ''
+                                                    }
+                                                    onChange={(e) =>
+                                                        setField(
+                                                            field.group,
+                                                            field.field,
+                                                            e.target.value,
+                                                        )
+                                                    }
+                                                />
+                                                {field.help && (
+                                                    <p className="text-xs text-muted-foreground">
+                                                        {field.help}
+                                                    </p>
+                                                )}
+                                                <InputError
+                                                    message={
+                                                        form.errors[
+                                                            `values.${field.group}.${field.field}`
+                                                        ]
+                                                    }
+                                                />
+                                            </div>
+                                        );
+                                    }
+
+                                    return (
+                                        <div
+                                            key={field.key}
+                                            className="grid gap-2"
+                                        >
+                                            <Label htmlFor={field.key}>
+                                                {field.label}
+                                            </Label>
+                                            <Input
+                                                id={field.key}
+                                                value={
+                                                    form.data.values[
+                                                        field.group
+                                                    ]?.[field.field] ?? ''
+                                                }
+                                                onChange={(e) =>
+                                                    setField(
+                                                        field.group,
+                                                        field.field,
+                                                        e.target.value,
+                                                    )
+                                                }
+                                            />
+                                            {field.help && (
+                                                <p className="text-xs text-muted-foreground">
+                                                    {field.help}
+                                                </p>
+                                            )}
+                                            <InputError
+                                                message={
+                                                    form.errors[
+                                                        `values.${field.group}.${field.field}`
+                                                    ]
+                                                }
+                                            />
+                                        </div>
+                                    );
+                                })}
                             </div>
                         </section>
                     ))}

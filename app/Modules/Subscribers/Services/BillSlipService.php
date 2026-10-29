@@ -3,6 +3,7 @@
 namespace App\Modules\Subscribers\Services;
 
 use App\Models\User;
+use App\Modules\Cms\Services\SiteSettingsService;
 use App\Modules\Subscribers\Models\SubscribeContract;
 use App\Modules\Subscribers\Models\SubscriberBillSlip;
 use App\Modules\Subscribers\Models\SubscriberBillSlipItem;
@@ -17,6 +18,10 @@ use InvalidArgumentException;
 
 class BillSlipService
 {
+    public function __construct(
+        private readonly SiteSettingsService $siteSettings,
+    ) {}
+
     /**
      * @param  array{
      *     search?: string|null,
@@ -399,12 +404,20 @@ class BillSlipService
         }
 
         if ($receipt) {
+            $receiptSettings = $this->siteSettings->receiptPayload();
+
             $payload['subscriber_phone'] = $user?->phone;
             $payload['subscriber_email'] = $user?->email;
             $payload['subscriber_address'] = $user?->address;
             $payload['created_by_name'] = $slip->creator?->name;
             $payload['paid_by_name'] = $slip->paidByUser?->name;
-            $payload['site_name'] = config('app.name', 'Corporate Cravings');
+            $payload['site_name'] = $receiptSettings['site_name'];
+            $payload['logo_url'] = $receiptSettings['logo_url'];
+            $payload['manager_name'] = $receiptSettings['manager_name'];
+            $payload['bank_label'] = $receiptSettings['bank_label'];
+            $payload['bank_account_number'] = $receiptSettings['bank_account_number'];
+            $payload['receipt_description'] = $receiptSettings['description'];
+            $payload['signature_url'] = $receiptSettings['signature_url'];
         }
 
         return $payload;

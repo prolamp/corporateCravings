@@ -25,7 +25,13 @@ class SiteSettingsController extends Controller
 
     public function update(UpdateSiteSettingsRequest $request): RedirectResponse
     {
-        $this->settings->update($request->validated()['values'] ?? []);
+        $validated = $request->validated();
+
+        $this->settings->update(
+            $validated['values'] ?? [],
+            $request->file('signature'),
+            (bool) ($validated['remove_signature'] ?? false),
+        );
 
         return back()
             ->with('success', true)

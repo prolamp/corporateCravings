@@ -3,10 +3,16 @@
 namespace App\Modules\Cms\Services;
 
 use App\Models\Setting;
+use App\Support\ImageService;
+use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\DB;
 
 class SiteSettingsService
 {
+    public function __construct(
+        private readonly ImageService $images,
+    ) {}
+
     /**
      * Editable site settings (excludes status_labels / error_messages overrides).
      *
@@ -54,6 +60,40 @@ class SiteSettingsService
                 'help' => 'e.g. Mon–Sat 10:00–22:00',
                 'default' => 'Mon–Sat 10:00–22:00',
             ],
+            'receipt.manager_name' => [
+                'label' => 'Manager name',
+                'group' => 'receipt',
+                'type' => 'string',
+                'help' => 'Shown on receipts without a label, above the signature.',
+                'default' => '',
+            ],
+            'receipt.bank_label' => [
+                'label' => 'Bank name',
+                'group' => 'receipt',
+                'type' => 'string',
+                'help' => 'e.g. Meezan Bank / HBL',
+                'default' => '',
+            ],
+            'receipt.bank_account_number' => [
+                'label' => 'Bank account number',
+                'group' => 'receipt',
+                'type' => 'string',
+                'default' => '',
+            ],
+            'receipt.description' => [
+                'label' => 'Receipt description',
+                'group' => 'receipt',
+                'type' => 'text',
+                'help' => 'Optional note printed on receipts (payment instructions, thanks, etc.).',
+                'default' => '',
+            ],
+            'receipt.signature_path' => [
+                'label' => 'Manager signature',
+                'group' => 'receipt',
+                'type' => 'image',
+                'help' => 'Upload a signature image (PNG/JPG). Shown at the bottom of receipts.',
+                'default' => '',
+            ],
             'analytics.ga_measurement_id' => [
                 'label' => 'GA4 measurement ID',
                 'group' => 'analytics',
@@ -69,7 +109,8 @@ class SiteSettingsService
      *
      * @return array{
      *     groups: list<array{key: string, label: string, fields: list<array<string, mixed>>}>,
-     *     values: array<string, array<string, string>>
+     *     values: array<string, array<string, string>>,
+     *     signature_url: string|null
      * }
      */
     public function formPayload(): array
@@ -101,11 +142,27 @@ class SiteSettingsService
 
         $groupLabels = [
             'brand' => 'Brand & contact',
+            'receipt' => 'Bill slip / receipt',
             'analytics' => 'Analytics',
         ];
 
+        $groupOrder = ['brand', 'receipt', 'analytics'];
         $groups = [];
+        foreach ($groupOrder as $groupKey) {
+            if (! isset($byGroup[$groupKey])) {
+                continue;
+            }
+            $groups[] = [
+                'key' => $groupKey,
+                'label' => $groupLabels[$groupKey] ?? ucfirst($groupKey),
+                'fields' => $byGroup[$groupKey],
+            ];
+        }
+
         foreach ($byGroup as $groupKey => $fields) {
+            if (in_array($groupKey, $groupOrder, true)) {
+                continue;
+            }
             $groups[] = [
                 'key' => $groupKey,
                 'label' => $groupLabels[$groupKey] ?? ucfirst($groupKey),
@@ -113,21 +170,31 @@ class SiteSettingsService
             ];
         }
 
+        $signaturePath = (string) ($stored['receipt.signature_path'] ?? '');
+
         return [
             'groups' => $groups,
             'values' => $values,
+            'signature_url' => $this->images->url($signaturePath !== '' ? $signaturePath : null),
         ];
     }
 
     /**
      * @param  array<string, array<string, string|null>>  $nested
      */
-    public function update(array $nested): void
-    {
+    public function update(
+        array $nested,
+        ?UploadedFile $signature = null,
+        bool $removeSignature = false,
+    ): void {
         $definitions = $this->definitions();
 
-        DB::transaction(function () use ($nested, $definitions): void {
+        DB::transaction(function () use ($nested, $definitions, $signature, $removeSignature): void {
             foreach ($definitions as $key => $definition) {
+                if (($definition['type'] ?? 'string') === 'image') {
+                    continue;
+                }
+
                 [$group, $field] = explode('.', $key, 2);
                 if (! array_key_exists($group, $nested) || ! array_key_exists($field, $nested[$group])) {
                     continue;
@@ -145,7 +212,50 @@ class SiteSettingsService
                     ],
                 );
             }
+
+            $this->syncSignature($signature, $removeSignature);
         });
+    }
+
+    /**
+     * Settings printed on bill slip receipts.
+     *
+     * @return array{
+     *     site_name: string,
+     *     logo_url: string,
+     *     manager_name: string|null,
+     *     bank_label: string|null,
+     *     bank_account_number: string|null,
+     *     description: string|null,
+     *     signature_url: string|null
+     * }
+     */
+    public function receiptPayload(): array
+    {
+        $definitions = $this->definitions();
+        $this->ensureDefaults($definitions);
+
+        $stored = Setting::query()
+            ->whereIn('group', ['brand', 'receipt'])
+            ->pluck('value', 'key');
+
+        $blankToNull = static function (?string $value): ?string {
+            $trimmed = trim((string) $value);
+
+            return $trimmed !== '' ? $trimmed : null;
+        };
+
+        $signaturePath = $blankToNull($stored['receipt.signature_path'] ?? null);
+
+        return [
+            'site_name' => (string) ($stored['brand.name'] ?? $definitions['brand.name']['default'] ?? config('app.name', 'Corporate Cravings')),
+            'logo_url' => '/images/brand/logo.svg',
+            'manager_name' => $blankToNull($stored['receipt.manager_name'] ?? null),
+            'bank_label' => $blankToNull($stored['receipt.bank_label'] ?? null),
+            'bank_account_number' => $blankToNull($stored['receipt.bank_account_number'] ?? null),
+            'description' => $blankToNull($stored['receipt.description'] ?? null),
+            'signature_url' => $this->images->url($signaturePath),
+        ];
     }
 
     /**
@@ -203,6 +313,39 @@ class SiteSettingsService
         }
 
         return strtoupper($id);
+    }
+
+    private function syncSignature(?UploadedFile $signature, bool $removeSignature): void
+    {
+        $definition = $this->definitions()['receipt.signature_path'];
+        $existing = Setting::query()->where('key', 'receipt.signature_path')->value('value');
+        $existingPath = is_string($existing) && $existing !== '' ? $existing : null;
+
+        if ($removeSignature && ! $signature) {
+            $this->images->delete($existingPath);
+            Setting::query()->updateOrCreate(
+                ['key' => 'receipt.signature_path'],
+                [
+                    'group' => $definition['group'],
+                    'value' => '',
+                    'type' => $definition['type'],
+                ],
+            );
+
+            return;
+        }
+
+        if ($signature instanceof UploadedFile) {
+            $path = $this->images->store($signature, 'settings/signatures', $existingPath);
+            Setting::query()->updateOrCreate(
+                ['key' => 'receipt.signature_path'],
+                [
+                    'group' => $definition['group'],
+                    'value' => $path,
+                    'type' => $definition['type'],
+                ],
+            );
+        }
     }
 
     /**
