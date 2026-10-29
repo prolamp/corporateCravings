@@ -21,6 +21,7 @@ class UpdateSubscriberScheduleRequest extends FormRequest
         return [
             'dish_id' => ['nullable', 'integer', 'exists:dishes,id'],
             'persons' => ['required', 'integer', 'min:1', 'max:10000'],
+            'unit_price' => ['required', 'numeric', 'min:0'],
             'status' => ['required', 'string', Rule::in(StatusRegistry::codes('schedule'))],
             'notes' => ['nullable', 'string', 'max:2000'],
         ];

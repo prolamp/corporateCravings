@@ -21,6 +21,7 @@ export type ScheduleEntry = {
     day: string | null;
     day_full: string | null;
     persons: number;
+    unit_price: number;
     unit_price_formatted: string;
     total: number;
     total_formatted: string;
@@ -535,9 +536,20 @@ function EditScheduleDialog({
     const form = useForm({
         dish_id: entry.dish_id ? String(entry.dish_id) : '',
         persons: String(entry.persons),
+        unit_price: String(entry.unit_price ?? 0),
         status: entry.status,
         notes: entry.notes ?? '',
     });
+
+    const previewTotal = useMemo(() => {
+        const persons = Number(form.data.persons);
+        const unit = Number(form.data.unit_price);
+        if (!Number.isFinite(persons) || !Number.isFinite(unit)) {
+            return null;
+        }
+
+        return persons * unit;
+    }, [form.data.persons, form.data.unit_price]);
 
     function submit(event: FormEvent) {
         event.preventDefault();
@@ -545,6 +557,7 @@ function EditScheduleDialog({
             ...data,
             dish_id: data.dish_id ? Number(data.dish_id) : null,
             persons: Number(data.persons),
+            unit_price: Number(data.unit_price),
             notes: data.notes || null,
         }));
         form.put(`/admin/schedules/${entry.id}`, {
@@ -594,19 +607,52 @@ function EditScheduleDialog({
                     </select>
                 </div>
 
-                <div>
-                    <Label htmlFor="persons">Persons</Label>
-                    <Input
-                        id="persons"
-                        className="mt-2"
-                        type="number"
-                        min={1}
-                        value={form.data.persons}
-                        onChange={(e) =>
-                            form.setData('persons', e.target.value)
-                        }
-                    />
+                <div className="grid gap-4 sm:grid-cols-2">
+                    <div>
+                        <Label htmlFor="persons">Persons</Label>
+                        <Input
+                            id="persons"
+                            className="mt-2"
+                            type="number"
+                            min={1}
+                            value={form.data.persons}
+                            onChange={(e) =>
+                                form.setData('persons', e.target.value)
+                            }
+                        />
+                    </div>
+                    <div>
+                        <Label htmlFor="unit_price">Per head (PKR)</Label>
+                        <Input
+                            id="unit_price"
+                            className="mt-2"
+                            type="number"
+                            min={0}
+                            step="0.01"
+                            value={form.data.unit_price}
+                            onChange={(e) =>
+                                form.setData('unit_price', e.target.value)
+                            }
+                        />
+                        <p className="mt-1 text-xs text-muted-foreground">
+                            Defaults to contract rate. Change for special
+                            deliveries.
+                        </p>
+                    </div>
                 </div>
+
+                {previewTotal !== null && (
+                    <p className="text-sm text-muted-foreground">
+                        Day total:{' '}
+                        <span className="font-medium text-foreground">
+                            PKR{' '}
+                            {previewTotal.toLocaleString('en-PK', {
+                                minimumFractionDigits: 2,
+                                maximumFractionDigits: 2,
+                            })}
+                        </span>
+                    </p>
+                )}
 
                 <div>
                     <Label htmlFor="status">Status</Label>

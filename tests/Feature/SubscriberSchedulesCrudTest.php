@@ -140,6 +140,7 @@ test('admin can shuffle and update a schedule day', function () {
         ->put(route('admin.schedules.update', $day), [
             'dish_id' => $dishB->id,
             'persons' => 30,
+            'unit_price' => 350,
             'status' => 'confirmed',
             'notes' => 'Gate B',
         ])
@@ -148,8 +149,24 @@ test('admin can shuffle and update a schedule day', function () {
     $fresh = $day->fresh();
     expect($fresh->dish_id)->toBe($dishB->id)
         ->and((int) $fresh->persons)->toBe(30)
+        ->and((float) $fresh->unit_price)->toBe(350.0)
         ->and($fresh->status)->toBe('confirmed')
         ->and((float) $fresh->total)->toBe(10500.0);
+
+    $this->actingAs($admin)
+        ->put(route('admin.schedules.update', $day), [
+            'dish_id' => $dishB->id,
+            'persons' => 25,
+            'unit_price' => 400,
+            'status' => 'confirmed',
+            'notes' => 'Special delivery rate',
+        ])
+        ->assertRedirect();
+
+    $fresh = $day->fresh();
+    expect((int) $fresh->persons)->toBe(25)
+        ->and((float) $fresh->unit_price)->toBe(400.0)
+        ->and((float) $fresh->total)->toBe(10000.0);
 });
 
 test('deliver creates subscription order for daily bills', function () {

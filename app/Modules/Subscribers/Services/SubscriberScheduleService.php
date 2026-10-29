@@ -417,6 +417,7 @@ class SubscriberScheduleService
      * @param  array{
      *     dish_id?: int|null,
      *     persons?: int,
+     *     unit_price?: float|int|string,
      *     status?: string,
      *     notes?: string|null,
      * }  $data
@@ -427,17 +428,24 @@ class SubscriberScheduleService
             throw new InvalidArgumentException('Delivered days cannot change status backward. Edit notes only if needed.');
         }
 
-        if ($schedule->status === 'delivered' && isset($data['dish_id'], $data['persons'])) {
-            // Allow notes-only style edits; block dish/persons after delivery.
-            if ((int) ($data['dish_id'] ?? $schedule->dish_id) !== (int) $schedule->dish_id
-                || (int) ($data['persons'] ?? $schedule->persons) !== (int) $schedule->persons) {
-                throw new InvalidArgumentException('Delivered days cannot change meal or persons.');
+        if ($schedule->status === 'delivered') {
+            $dishChanged = array_key_exists('dish_id', $data)
+                && (int) ($data['dish_id'] ?? $schedule->dish_id) !== (int) $schedule->dish_id;
+            $personsChanged = array_key_exists('persons', $data)
+                && (int) ($data['persons'] ?? $schedule->persons) !== (int) $schedule->persons;
+            $unitChanged = array_key_exists('unit_price', $data)
+                && abs((float) $data['unit_price'] - (float) $schedule->unit_price) > 0.009;
+
+            if ($dishChanged || $personsChanged || $unitChanged) {
+                throw new InvalidArgumentException('Delivered days cannot change meal, persons, or per-head price.');
             }
         }
 
         return DB::transaction(function () use ($schedule, $data): SubscriberSchedule {
             $persons = (int) ($data['persons'] ?? $schedule->persons);
-            $unit = (float) $schedule->unit_price;
+            $unit = array_key_exists('unit_price', $data)
+                ? (float) $data['unit_price']
+                : (float) $schedule->unit_price;
 
             if (array_key_exists('dish_id', $data) && $data['dish_id']) {
                 $dish = Dish::query()->findOrFail((int) $data['dish_id']);
@@ -446,6 +454,7 @@ class SubscriberScheduleService
             }
 
             $schedule->persons = $persons;
+            $schedule->unit_price = Money::of($unit);
             $schedule->total = Money::of($unit * $persons);
 
             if (array_key_exists('notes', $data)) {
