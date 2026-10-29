@@ -45,20 +45,30 @@ export function BillSlipReceiptDocument({ slip }: Props) {
 
     return (
         <div className="mx-auto max-w-3xl bg-white p-6 text-zinc-900 print:max-w-none print:p-0">
-            <div className="mb-8 flex flex-wrap items-start justify-between gap-4 border-b-2 border-zinc-900 pb-5">
-                <div className="flex min-w-0 items-start gap-4">
+            <div className="mb-8 flex flex-wrap items-center justify-between gap-4 border-b-2 border-zinc-900 pb-5">
+                <div className="min-w-0">
                     {slip.logo_url ? (
                         <img
                             src={slip.logo_url}
                             alt={slip.site_name}
-                            className="h-14 w-auto object-contain object-left print:h-12"
+                            className="h-8 w-auto object-contain object-left print:h-7"
                         />
-                    ) : null}
-                    <div className="min-w-0">
-                        <p className="text-xs font-bold tracking-[0.14em] text-zinc-500 uppercase">
+                    ) : (
+                        <p className="text-sm font-semibold tracking-tight">
                             {slip.site_name}
                         </p>
-                        <h1 className="mt-1 text-2xl font-semibold tracking-tight">
+                    )}
+                </div>
+                <div className="flex flex-col items-end gap-2 text-right">
+                    <button
+                        type="button"
+                        onClick={() => window.print()}
+                        className="rounded-md border border-zinc-300 px-3 py-1.5 text-sm print:hidden"
+                    >
+                        Print / save PDF
+                    </button>
+                    <div>
+                        <h1 className="text-2xl font-semibold tracking-tight">
                             Bill slip / receipt
                         </h1>
                         <p className="mt-1 text-sm text-zinc-600">
@@ -66,13 +76,6 @@ export function BillSlipReceiptDocument({ slip }: Props) {
                         </p>
                     </div>
                 </div>
-                <button
-                    type="button"
-                    onClick={() => window.print()}
-                    className="rounded-md border border-zinc-300 px-3 py-1.5 text-sm print:hidden"
-                >
-                    Print / save PDF
-                </button>
             </div>
 
             <div className="grid gap-6 text-sm sm:grid-cols-2">
@@ -83,52 +86,15 @@ export function BillSlipReceiptDocument({ slip }: Props) {
                     <p className="mt-2 text-base font-semibold">
                         {slip.company_name}
                     </p>
-                    {slip.subscriber_phone && (
-                        <p className="mt-1 text-zinc-600">
-                            {slip.subscriber_phone}
-                        </p>
-                    )}
-                    {slip.subscriber_email && (
-                        <p className="text-zinc-600">{slip.subscriber_email}</p>
-                    )}
-                    {slip.subscriber_address && (
-                        <p className="mt-1 text-zinc-600">
-                            {slip.subscriber_address}
-                        </p>
-                    )}
                 </div>
                 <div className="sm:text-right">
                     <p className="text-[11px] font-bold tracking-[0.1em] text-zinc-500 uppercase">
                         Details
                     </p>
-                    <dl className="mt-2 space-y-1">
-                        <div className="flex justify-between gap-4 sm:justify-end">
-                            <dt className="text-zinc-500">Period</dt>
-                            <dd className="font-medium">{slip.period_label}</dd>
-                        </div>
-                        <div className="flex justify-between gap-4 sm:justify-end">
-                            <dt className="text-zinc-500">Issued</dt>
-                            <dd className="font-medium">
-                                {slip.created_at_formatted || '—'}
-                            </dd>
-                        </div>
-                        {slip.paid_at_formatted && (
-                            <div className="flex justify-between gap-4 sm:justify-end">
-                                <dt className="text-zinc-500">Paid</dt>
-                                <dd className="font-medium">
-                                    {slip.paid_at_formatted}
-                                </dd>
-                            </div>
-                        )}
-                        {slip.package_title && (
-                            <div className="flex justify-between gap-4 sm:justify-end">
-                                <dt className="text-zinc-500">Package</dt>
-                                <dd className="font-medium">
-                                    {slip.package_title}
-                                </dd>
-                            </div>
-                        )}
-                    </dl>
+                    <p className="mt-2">
+                        <span className="text-zinc-500">Period </span>
+                        <span className="font-medium">{slip.period_label}</span>
+                    </p>
                 </div>
             </div>
 
@@ -227,7 +193,7 @@ export function BillSlipReceiptDocument({ slip }: Props) {
                                 <img
                                     src={slip.signature_url}
                                     alt=""
-                                    className="mb-2 h-16 w-auto max-w-[220px] object-contain object-right"
+                                    className="mb-1.5 h-10 w-auto max-w-[140px] object-contain object-right"
                                 />
                             )}
                             {slip.manager_name && (
