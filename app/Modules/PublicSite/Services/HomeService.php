@@ -37,7 +37,7 @@ class HomeService
         $featured = $dishes->map(fn (Dish $dish) => $this->dishes->card($dish))->values()->all();
 
         $packageFrom = Package::query()
-            ->active()
+            ->visibleOnWebsite()
             ->orderBy('total_amount_per_person')
             ->value('total_amount_per_person');
 

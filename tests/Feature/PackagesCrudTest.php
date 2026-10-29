@@ -90,6 +90,7 @@ test('admin can create a package with auto base and public total', function () {
             'title' => 'Office Lunch Combo',
             'short_description' => 'Daily corporate lunch',
             'status' => 'active',
+            'show_on_website' => true,
             'sort_order' => 1,
             'discount_amount' => 100,
             'discount_percent' => 0,
@@ -105,6 +106,7 @@ test('admin can create a package with auto base and public total', function () {
 
     expect($package)->not->toBeNull()
         ->and($package->slug)->toBe('office-lunch-combo')
+        ->and($package->show_on_website)->toBeTrue()
         ->and((float) $package->base_amount_per_person)->toBe(500.0)
         ->and((float) $package->discount_amount)->toBe(100.0)
         ->and((float) $package->total_amount_per_person)->toBe(400.0)
@@ -137,6 +139,7 @@ test('admin can update package discounts and items', function () {
             'title' => 'Updated Combo',
             'short_description' => 'Updated',
             'status' => 'active',
+            'show_on_website' => false,
             'sort_order' => 2,
             'discount_amount' => 50,
             'discount_percent' => 10,
@@ -151,6 +154,7 @@ test('admin can update package discounts and items', function () {
 
     // dish sum 1000 ÷ 2 = avg base 500; amount 50 + 10% of 500 = 100; total 400
     expect($package->title)->toBe('Updated Combo')
+        ->and($package->show_on_website)->toBeFalse()
         ->and((float) $package->base_amount_per_person)->toBe(500.0)
         ->and((float) $package->total_amount_per_person)->toBe(400.0)
         ->and($package->items()->count())->toBe(2);

@@ -31,6 +31,7 @@ class UpdatePackageRequest extends FormRequest
             ],
             'short_description' => ['nullable', 'string', 'max:500'],
             'status' => ['required', 'string', Rule::in(StatusRegistry::codes('generic'))],
+            'show_on_website' => ['required', 'boolean'],
             'sort_order' => ['nullable', 'integer', 'min:0', 'max:9999'],
             'discount_amount' => ['nullable', 'numeric', 'min:0'],
             'discount_percent' => ['nullable', 'numeric', 'min:0', 'max:100'],
@@ -44,6 +45,13 @@ class UpdatePackageRequest extends FormRequest
 
     protected function prepareForValidation(): void
     {
+        $this->merge([
+            'show_on_website' => filter_var(
+                $this->input('show_on_website', true),
+                FILTER_VALIDATE_BOOLEAN,
+            ),
+        ]);
+
         if ($this->has('items') && is_string($this->input('items'))) {
             $decoded = json_decode($this->input('items'), true);
             if (is_array($decoded)) {

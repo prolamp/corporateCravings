@@ -34,6 +34,14 @@ test('sitemap includes public pages dishes and packages', function () {
         'title' => 'SEO Package',
         'slug' => 'seo-package',
         'status' => 'active',
+        'show_on_website' => true,
+    ]);
+
+    Package::factory()->create([
+        'title' => 'Private SEO Package',
+        'slug' => 'private-seo-package',
+        'status' => 'active',
+        'show_on_website' => false,
     ]);
 
     Page::query()->updateOrCreate(
@@ -63,7 +71,8 @@ test('sitemap includes public pages dishes and packages', function () {
         ->toContain(url('/menu/'.$dish->slug))
         ->toContain(url('/packages/'.$package->slug))
         ->toContain(url('/privacy-policy'))
-        ->not->toContain('inactive-seo-dish');
+        ->not->toContain('inactive-seo-dish')
+        ->not->toContain('private-seo-package');
 });
 
 test('home shares seo defaults for public pages', function () {

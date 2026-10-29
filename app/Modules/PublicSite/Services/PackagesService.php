@@ -22,7 +22,7 @@ class PackagesService
     public function listing(): array
     {
         $packages = Package::query()
-            ->active()
+            ->visibleOnWebsite()
             ->withCount('items')
             ->orderBy('sort_order')
             ->orderBy('title')
@@ -51,7 +51,7 @@ class PackagesService
     public function detail(string $slug): array
     {
         $package = Package::query()
-            ->active()
+            ->visibleOnWebsite()
             ->where('slug', $slug)
             ->with([
                 'items' => fn ($query) => $query

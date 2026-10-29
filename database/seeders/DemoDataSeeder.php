@@ -209,6 +209,7 @@ class DemoDataSeeder extends Seeder
                 'discount_percent' => 0,
                 'total_amount_per_person' => Money::of($total),
                 'status' => 'active',
+                'show_on_website' => true,
                 'sort_order' => 1,
             ],
         );

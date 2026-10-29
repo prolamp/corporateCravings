@@ -161,7 +161,7 @@ class SeoService
         }
 
         $packages = Package::query()
-            ->active()
+            ->visibleOnWebsite()
             ->orderBy('slug')
             ->get(['slug', 'updated_at']);
 

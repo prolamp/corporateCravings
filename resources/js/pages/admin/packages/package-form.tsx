@@ -42,6 +42,7 @@ export type AdminPackage = {
     status: string;
     status_label: string;
     status_badge: string;
+    show_on_website: boolean;
     sort_order: number;
     items_count: number;
     items: PackageItemRow[];
@@ -79,6 +80,7 @@ export function PackageForm({
         title: packageModel?.title ?? '',
         short_description: packageModel?.short_description ?? '',
         status: packageModel?.status ?? 'active',
+        show_on_website: packageModel?.show_on_website ?? true,
         sort_order: String(packageModel?.sort_order ?? 0),
         discount_amount: String(packageModel?.discount_amount ?? 0),
         discount_percent: String(packageModel?.discount_percent ?? 0),
@@ -211,6 +213,32 @@ export function PackageForm({
                         ))}
                     </select>
                 </Field>
+
+                <div className="flex items-center justify-between gap-3 rounded-lg border border-border/60 px-3 py-3 md:col-span-2">
+                    <div>
+                        <Label htmlFor="show_on_website">Show on website</Label>
+                        <p className="mt-1 text-sm text-muted-foreground">
+                            Turn off for on-demand or private packages. They
+                            stay available in admin and subscriber contracts.
+                        </p>
+                    </div>
+                    <label className="flex items-center gap-2 text-sm font-medium">
+                        <input
+                            id="show_on_website"
+                            type="checkbox"
+                            checked={form.data.show_on_website}
+                            onChange={(e) =>
+                                form.setData(
+                                    'show_on_website',
+                                    e.target.checked,
+                                )
+                            }
+                            className="size-4 rounded border"
+                        />
+                        Public
+                    </label>
+                </div>
+                <InputError message={form.errors.show_on_website} />
 
                 <Field
                     label="Sort order"

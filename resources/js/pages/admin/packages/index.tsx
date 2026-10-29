@@ -152,6 +152,9 @@ export default function PackagesIndex({
                                                 Dishes
                                             </th>
                                             <th className="px-4 py-3">
+                                                Website
+                                            </th>
+                                            <th className="px-4 py-3">
                                                 Status
                                             </th>
                                             <th className="px-4 py-3 text-right">
@@ -197,6 +200,19 @@ export default function PackagesIndex({
                                                 </td>
                                                 <td className="px-4 py-3">
                                                     {pkg.items_count}
+                                                </td>
+                                                <td className="px-4 py-3">
+                                                    <span
+                                                        className={
+                                                            pkg.show_on_website
+                                                                ? 'text-sm font-medium text-foreground'
+                                                                : 'text-sm text-muted-foreground'
+                                                        }
+                                                    >
+                                                        {pkg.show_on_website
+                                                            ? 'Visible'
+                                                            : 'Hidden'}
+                                                    </span>
                                                 </td>
                                                 <td className="px-4 py-3">
                                                     <StatusBadge

@@ -35,6 +35,7 @@ class PackageFactory extends Factory
             'discount_percent' => 0,
             'total_amount_per_person' => $base - $discount,
             'status' => 'active',
+            'show_on_website' => true,
             'sort_order' => 0,
         ];
     }

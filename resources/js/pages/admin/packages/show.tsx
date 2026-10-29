@@ -45,6 +45,18 @@ export default function PackagesShow({
                                     label={pkg.status_label}
                                     badge={pkg.status_badge}
                                 />
+                                <StatusBadge
+                                    label={
+                                        pkg.show_on_website
+                                            ? 'On website'
+                                            : 'Hidden from website'
+                                    }
+                                    badge={
+                                        pkg.show_on_website
+                                            ? 'success'
+                                            : 'default'
+                                    }
+                                />
                                 <span className="text-sm font-medium">
                                     {pkg.total_amount_per_person_formatted} /pp
                                 </span>

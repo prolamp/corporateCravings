@@ -16,6 +16,7 @@ test('packages listing shows active packages with public pricing', function () {
         'title' => 'Boardroom Lunch',
         'slug' => 'boardroom-lunch',
         'status' => 'active',
+        'show_on_website' => true,
         'total_amount_per_person' => Money::of(850),
         'base_amount_per_person' => Money::of(950),
         'sort_order' => 1,
@@ -25,13 +26,23 @@ test('packages listing shows active packages with public pricing', function () {
         'title' => 'Hidden Package',
         'slug' => 'hidden-package',
         'status' => 'inactive',
+        'show_on_website' => true,
         'total_amount_per_person' => Money::of(500),
+    ]);
+
+    Package::factory()->create([
+        'title' => 'On-demand Private',
+        'slug' => 'on-demand-private',
+        'status' => 'active',
+        'show_on_website' => false,
+        'total_amount_per_person' => Money::of(400),
     ]);
 
     Package::factory()->create([
         'title' => 'Executive Buffet',
         'slug' => 'executive-buffet',
         'status' => 'active',
+        'show_on_website' => true,
         'total_amount_per_person' => Money::of(1200),
         'sort_order' => 2,
     ]);
@@ -108,6 +119,14 @@ test('package detail shows included dishes and hides inactive packages', functio
         'status' => 'inactive',
     ]);
 
+    Package::factory()->create([
+        'title' => 'Secret On Demand',
+        'slug' => 'secret-on-demand',
+        'status' => 'active',
+        'show_on_website' => false,
+    ]);
+
     $this->get(route('packages.show', 'inactive-pack'))->assertNotFound();
+    $this->get(route('packages.show', 'secret-on-demand'))->assertNotFound();
     $this->get(route('packages.show', 'missing-pack'))->assertNotFound();
 });

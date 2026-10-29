@@ -53,6 +53,7 @@ class PackageService
      *     title: string,
      *     short_description?: string|null,
      *     status: string,
+     *     show_on_website: bool,
      *     sort_order?: int|null,
      *     discount_amount?: float|int|string|null,
      *     discount_percent?: float|int|string|null,
@@ -68,6 +69,7 @@ class PackageService
                 'slug' => $this->uniqueSlug($data['title']),
                 'short_description' => $data['short_description'] ?? null,
                 'status' => $data['status'],
+                'show_on_website' => (bool) ($data['show_on_website'] ?? true),
                 'sort_order' => (int) ($data['sort_order'] ?? 0),
                 'discount_amount' => Money::of($data['discount_amount'] ?? 0),
                 'discount_percent' => Money::of($data['discount_percent'] ?? 0),
@@ -91,6 +93,7 @@ class PackageService
      *     title: string,
      *     short_description?: string|null,
      *     status: string,
+     *     show_on_website: bool,
      *     sort_order?: int|null,
      *     discount_amount?: float|int|string|null,
      *     discount_percent?: float|int|string|null,
@@ -106,6 +109,7 @@ class PackageService
             $package->slug = $this->uniqueSlug($data['title'], $package->id);
             $package->short_description = $data['short_description'] ?? null;
             $package->status = $data['status'];
+            $package->show_on_website = (bool) ($data['show_on_website'] ?? true);
             $package->sort_order = (int) ($data['sort_order'] ?? 0);
             $package->discount_amount = Money::of($data['discount_amount'] ?? 0);
             $package->discount_percent = Money::of($data['discount_percent'] ?? 0);
@@ -267,6 +271,7 @@ class PackageService
             'status' => $status['code'],
             'status_label' => $status['label'],
             'status_badge' => $status['badge'],
+            'show_on_website' => (bool) $package->show_on_website,
             'sort_order' => (int) $package->sort_order,
             'items_count' => (int) ($package->items_count ?? $items->count()),
             'items' => $items->map(fn (PackageItem $item) => [

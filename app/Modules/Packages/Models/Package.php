@@ -32,6 +32,7 @@ class Package extends Model
         'discount_percent',
         'total_amount_per_person',
         'status',
+        'show_on_website',
         'sort_order',
     ];
 
@@ -45,6 +46,7 @@ class Package extends Model
             'discount_amount' => 'decimal:2',
             'discount_percent' => 'decimal:2',
             'total_amount_per_person' => 'decimal:2',
+            'show_on_website' => 'bool',
         ];
     }
 
@@ -54,6 +56,16 @@ class Package extends Model
     public function scopeActive(Builder $query): void
     {
         $query->where('status', 'active');
+    }
+
+    /**
+     * Active packages that are listed on the public website.
+     *
+     * @param  Builder<$this>  $query
+     */
+    public function scopeVisibleOnWebsite(Builder $query): void
+    {
+        $query->active()->where('show_on_website', true);
     }
 
     /**
